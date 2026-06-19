@@ -28,8 +28,12 @@ export interface Product {
   warehouse: "US";
   tags: string[];
   features: string[];
-  /** CJ Dropshipping product ID — fill when product goes live */
+  /** CJ product ID (reference only) */
   supplierSku?: string;
+  /** CJ variant ID — required for automatic fulfillment */
+  cjVid?: string;
+  /** CJ variant SKU — optional fallback */
+  cjSku?: string;
 }
 
 export interface CartItem {

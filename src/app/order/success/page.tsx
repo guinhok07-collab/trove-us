@@ -5,16 +5,18 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { brand } from "@/data/brand";
+import { ORDER_STORAGE_KEY } from "@/lib/orders";
 import { formatUsd } from "@/lib/format";
 
 interface SavedOrder {
   orderId: string;
   email: string;
   total: number;
+  cjOrderId?: string;
+  fulfillmentMode?: string;
+  message?: string;
   items: { name: string; quantity: number; price: number; image: string }[];
 }
-
-import { ORDER_STORAGE_KEY } from "@/lib/orders";
 
 function OrderSuccessContent() {
   const searchParams = useSearchParams();
@@ -64,6 +66,14 @@ function OrderSuccessContent() {
           been placed. A confirmation will be sent to{" "}
           <strong className="text-[#1c1917]">{order.email}</strong>.
         </p>
+        {order.cjOrderId && (
+          <p className="mt-3 text-sm text-[#4d7366]">
+            CJ order ID: <strong>{order.cjOrderId}</strong>
+          </p>
+        )}
+        {order.message && (
+          <p className="mt-2 text-xs text-[#78716c]">{order.message}</p>
+        )}
       </div>
 
       <section className="card mt-6 p-6">

@@ -158,22 +158,74 @@ Para cada produto encontrado no CJ:
    - `price` — preço de venda Trove
    - `compareAtPrice` — ~30–40% acima (opcional)
    - `image` e `images` — URL da foto do CJ (clique direito → copiar URL)
-   - `supplierSku` — ID do produto no CJ (para referência)
-   - `rating` / `reviews` / `sold` — use números reais do CJ ou remova exageros
+   - `image` e `images` — URL da foto do CJ
+   - `supplierSku` — ID do produto CJ (referência)
+   - **`cjVid`** — ID da variante CJ (**obrigatório** para pedido automático)
+   - `cjSku` — SKU da variante (opcional)
 
-4. Salve e teste: `npm run dev`
+4. Salve e faça deploy: `npm run deploy`
 
-### 4. Fluxo de pedido (manual no início)
+---
+
+## Pedidos automáticos (API CJ)
+
+Documentação oficial: [developers.cjdropshipping.com](https://developers.cjdropshipping.com)
+
+### O que você precisa
+
+| # | O quê | Onde conseguir |
+|---|-------|----------------|
+| 1 | **CJ_API_KEY** | CJ → Authorization → API → **Generate** |
+| 2 | **Saldo na wallet CJ** | CJ → Wallet → add funds (para `CJ_PAY_TYPE=2`) |
+| 3 | **cjVid** em cada produto | CJ → abra produto → variantes → copie Variant ID |
+| 4 | Variáveis na **Vercel** | Project → Settings → Environment Variables |
+
+### Variáveis na Vercel
 
 ```
-Cliente compra no Trove → PayPal (quando conectar)
-       ↓
-Você recebe email/notificação
-       ↓
-Entra no CJ → My CJ → Orders → Create order
-       ↓
-Cola endereço do cliente → Paga CJ → CJ envia dos EUA
+CJ_API_KEY=sua-chave-aqui
+CJ_PAY_TYPE=2
+CJ_FROM_COUNTRY=US
+CJ_STORE_NAME=Trove
 ```
+
+| CJ_PAY_TYPE | Comportamento |
+|-------------|---------------|
+| `2` | **Automático** — paga do saldo CJ e envia |
+| `3` | Cria pedido no CJ — você paga manual no painel |
+
+Depois de salvar as variáveis → **Redeploy** na Vercel.
+
+### Fluxo automático
+
+```
+Cliente finaliza checkout no Trove
+        ↓
+Site chama /api/orders
+        ↓
+Calcula frete CJ (US → US)
+        ↓
+Cria pedido no CJ (createOrderV2)
+        ↓
+CJ envia pro cliente
+```
+
+### Como achar o cjVid
+
+1. No CJ, abra o produto
+2. Clique em **Connect** / adicione a **My Products**
+3. Veja as variantes (S/M/L etc.) — cada uma tem um **VID**
+4. Cole em `products.ts`:
+
+```typescript
+cjVid: "439FC05B-1311-4349-87FA-1E1EF942C418",
+cjSku: "CJSKU123",
+supplierSku: "1234567890",
+```
+
+### Webhook (opcional)
+
+URL para configurar no CJ: `https://trove-us.vercel.app/api/cj/webhook`
 
 ---
 
@@ -182,11 +234,11 @@ Cola endereço do cliente → Paga CJ → CJ envia dos EUA
 | Parte | Status |
 |-------|--------|
 | Site (design, páginas, carrinho) | ✅ Pronto |
-| Checkout (fluxo demo) | ✅ Pronto |
+| Checkout + API CJ | ✅ Pronto (precisa CJ_API_KEY) |
 | SEO (sitemap, robots, favicon) | ✅ Pronto |
-| Pagamento real (PayPal/Stripe) | ⏳ Próximo |
-| Produtos reais CJ | ⏳ Você faz agora |
-| Domínio + deploy | ⏳ Passo 1 acima |
+| Deploy Vercel | ✅ No ar |
+| Pagamento cliente (PayPal/Stripe) | ⏳ Próximo |
+| Produtos reais + cjVid | ⏳ Você faz agora |
 
 ---
 
@@ -204,5 +256,5 @@ hello@trovegoods.com (configure no domínio depois de comprar)
 |---------|----------|
 | `src/data/sourcing.ts` | 10 produtos launch + margens |
 | `src/data/products.ts` | Catálogo do site |
-| `.env.example` | Variáveis de ambiente |
+| `src/lib/cj/` | Integração API CJ |
 | `scripts/margins.mjs` | Calculadora de margem |

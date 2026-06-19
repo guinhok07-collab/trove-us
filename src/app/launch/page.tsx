@@ -97,9 +97,13 @@ function LaunchChecklist() {
         <p className="font-semibold text-[#1c1917]">After sourcing</p>
         <ol className="mt-2 list-inside list-decimal space-y-1">
           <li>Copy CJ image URL into products.ts</li>
-          <li>Set price and supplierSku (CJ product ID)</li>
+          <li>
+            Add <code>cjVid</code> (variant ID from CJ) — required for auto
+            orders
+          </li>
+          <li>Set price and optional supplierSku (CJ product ID)</li>
           <li>Rewrite description in your own words</li>
-          <li>Test add-to-cart → checkout flow</li>
+          <li>Configure CJ_API_KEY in Vercel → test checkout</li>
         </ol>
       </div>
     </div>
