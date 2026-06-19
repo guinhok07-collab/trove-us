@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "margins": "node scripts/margins.mjs"
+    "margins": "node scripts/margins.mjs",
+    "deploy": "vercel --prod --yes",
+    "deploy:preview": "vercel --yes"
   },
   "dependencies": {
     "next": "16.2.9",
@@ -22,6 +24,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^54.14.2"
   }
 }

@@ -17,7 +17,42 @@ npm run dev
 
 ---
 
-## PASSO 1 — Colocar o site no ar (Vercel)
+## Deploy daqui (Cursor / terminal)
+
+O projeto já está linkado à Vercel (`trove-us`).
+
+### Publicar em produção
+
+```powershell
+cd C:\Users\Guimi\meusprojeto\techdrop-us
+npm run deploy
+```
+
+### Preview (teste antes de ir ao ar)
+
+```powershell
+npm run deploy:preview
+```
+
+### Atualizar via GitHub (automático)
+
+```powershell
+git add .
+git commit -m "sua mudanca"
+git push
+```
+
+A Vercel redeploya sozinha quando você dá push na branch `main`.
+
+### Conta Vercel linkada
+
+- Team: `dadoscacambas-7977s-projects`
+- Projeto: `trove-us`
+- URL: https://trove-us.vercel.app
+
+Se `npm run deploy` pedir login: `npx vercel login`
+
+---
 
 ### 1. Criar conta (grátis)
 
