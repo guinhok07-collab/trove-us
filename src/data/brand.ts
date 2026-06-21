@@ -88,6 +88,9 @@ export const copy = {
   guaranteeTitle: "Our satisfaction guarantee",
   guaranteeText:
     "If your order isn't right, we'll fix it. Contact us within 30 days for a refund or replacement. No runaround, no fine print games.",
+  contactHelpIntro:
+    "We're here to help with orders, shipping, and returns.",
+  contactHelpResponse: "We aim to respond within one business day.",
   promiseTitle: "Shop with confidence",
   promiseText:
     "Useful products for real life — your home, your pets, your health, and your daily routine. One checkout, one team, one promise to take care of you.",
