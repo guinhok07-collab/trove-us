@@ -1,16 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { brand, copy } from "@/data/brand";
-import { getProductsByStore } from "@/data/products";
 import { storeList } from "@/data/stores";
+import type { Store } from "@/types/product";
 import { Icon, IconBox } from "@/components/icons";
 
-const heroTiles = storeList.map((store) => ({
-  store,
-  image: getProductsByStore(store.id)[0]?.image,
-}));
+interface HeroTile {
+  store: Store;
+  image?: string;
+}
 
-export function HeroBanner() {
+interface HeroBannerProps {
+  heroTiles: HeroTile[];
+}
+
+export function HeroBanner({ heroTiles }: HeroBannerProps) {
   return (
     <section className="relative overflow-hidden rounded-3xl border border-[#e7e5e4] bg-gradient-to-br from-[#f5f3ef] via-white to-[#eef4f1] px-6 py-10 sm:px-10 sm:py-14 lg:px-12">
       <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
@@ -25,14 +29,17 @@ export function HeroBanner() {
             {brand.tagline}
           </p>
           <p className="mt-3 text-sm font-medium text-[#5f8a7a]">
-            {brand.shippingLine} · {brand.deliveryLine}
+            {brand.shippingLine}
+          </p>
+          <p className="mt-1 text-sm text-[#78716c]">
+            {brand.deliveryLine} · {brand.supportLine}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="#departments" className="btn-primary px-6 py-3 shadow-sm">
               {copy.heroCta}
             </Link>
             <Link
-              href="/products"
+              href="#bundles"
               className="inline-flex items-center rounded-full border border-[#d6d3d1] bg-white px-6 py-3 text-sm font-semibold text-[#44403c] transition hover:border-[#5f8a7a] hover:text-[#4d7366]"
             >
               {copy.heroSecondary}

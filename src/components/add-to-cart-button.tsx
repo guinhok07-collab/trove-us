@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Product } from "@/types/product";
 import { useCart } from "@/context/cart-context";
 import { trackEvent } from "@/lib/analytics";
+import { trackMetaAddToCart } from "@/lib/meta-pixel";
 
 interface AddToCartButtonProps {
   product: Product;
@@ -17,6 +18,12 @@ export function AddToCartButton({ product, className = "" }: AddToCartButtonProp
   function handleClick() {
     addItem(product);
     trackEvent(product.store, "add_to_cart", product.id);
+    trackMetaAddToCart({
+      id: product.id,
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   }

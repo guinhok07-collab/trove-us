@@ -1,15 +1,31 @@
 import { NextResponse } from "next/server";
+import {
+  handleCjWebhookPayload,
+  verifyCjWebhookSignature,
+  type CjWebhookPayload,
+} from "@/lib/cj/webhook";
 
-/**
- * CJ webhook receiver — configure in CJ dashboard when ready.
- * https://developers.cjdropshipping.com/en/api/api2/api/webhook.html
- */
 export async function POST(request: Request) {
+  const rawBody = await request.text();
+  const sign = request.headers.get("sign");
+
+  if (!verifyCjWebhookSignature(rawBody, sign)) {
+    console.warn("[cj-webhook] invalid signature");
+    return NextResponse.json({ ok: false, error: "Invalid signature" }, { status: 401 });
+  }
+
+  let payload: CjWebhookPayload;
   try {
-    const payload = await request.json();
-    console.info("[cj-webhook]", JSON.stringify(payload));
-    return NextResponse.json({ ok: true });
+    payload = JSON.parse(rawBody) as CjWebhookPayload;
   } catch {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
+
+  try {
+    await handleCjWebhookPayload(payload);
+  } catch (error) {
+    console.error("[cj-webhook]", error);
+  }
+
+  return NextResponse.json({ ok: true });
 }

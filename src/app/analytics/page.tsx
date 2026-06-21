@@ -45,16 +45,24 @@ function AnalyticsDashboard() {
             Private stats — see which department performs best.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => {
-            clearAnalytics();
-            refresh();
-          }}
-          className="shrink-0 text-sm text-red-500 hover:underline"
-        >
-          Reset data
-        </button>
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
+          <Link
+            href="/admin"
+            className="rounded-full border border-[#e7e5e4] px-4 py-2 text-sm font-semibold text-[#44403c] hover:border-[#5f8a7a]"
+          >
+            Operações
+          </Link>
+          <button
+            type="button"
+            onClick={() => {
+              clearAnalytics();
+              refresh();
+            }}
+            className="text-sm text-red-500 hover:underline"
+          >
+            Reset data
+          </button>
+        </div>
       </div>
 
       {!hasData ? (

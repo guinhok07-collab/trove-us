@@ -1,9 +1,13 @@
-import { products } from "@/data/products";
+import { getVisibleProducts } from "@/lib/catalog/visible-products";
 import { storeList } from "@/data/stores";
 import { siteUrl } from "@/lib/site";
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = "force-dynamic";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const visibleProducts = await getVisibleProducts();
+
   const staticPages: MetadataRoute.Sitemap = [
     "",
     "/products",
@@ -12,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/terms",
     "/cart",
+    "/track",
+    "/returns",
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),
@@ -26,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const productPages = products.map((product) => ({
+  const productPages = visibleProducts.map((product) => ({
     url: `${siteUrl}/products/${product.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

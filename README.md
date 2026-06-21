@@ -87,7 +87,7 @@ git push -u origin main
 | Variável | Valor |
 |----------|-------|
 | `NEXT_PUBLIC_SITE_URL` | `https://trovegoods.com` (ou URL `.vercel.app` temporária) |
-| `NEXT_PUBLIC_ANALYTICS_PIN` | Um PIN secreto (ex: `8421`) |
+| `OWNER_PIN` | PIN secreto do dono (server-only — **não** use `NEXT_PUBLIC_`) |
 
 5. Clique **Deploy** — em ~2 min o site está no ar.
 

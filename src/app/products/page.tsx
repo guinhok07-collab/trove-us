@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
-import { storeLabels, products } from "@/data/products";
+import { storeLabels } from "@/data/products";
+import { getVisibleProducts } from "@/lib/catalog/visible-products";
 import { storeList } from "@/data/stores";
 import { StoreCategory } from "@/types/product";
+
+export const dynamic = "force-dynamic";
 
 interface ProductsPageProps {
   searchParams: Promise<{ store?: string; q?: string }>;
@@ -13,7 +16,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const store = params.store as StoreCategory | undefined;
   const query = params.q?.toLowerCase().trim();
 
-  let filtered = products;
+  let filtered = await getVisibleProducts();
 
   if (store && store in storeLabels) {
     filtered = filtered.filter((p) => p.store === store);

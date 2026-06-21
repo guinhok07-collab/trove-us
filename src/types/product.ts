@@ -34,6 +34,8 @@ export interface Product {
   cjVid?: string;
   /** CJ variant SKU — optional fallback */
   cjSku?: string;
+  /** Hidden from storefront by default — toggle in /admin */
+  catalogHidden?: boolean;
 }
 
 export interface CartItem {

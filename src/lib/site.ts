@@ -1,7 +1,7 @@
 import { brand } from "@/data/brand";
 
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://trovegoods.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://trove-us.com";
 
 export const policyLastUpdated = "June 15, 2026";
 

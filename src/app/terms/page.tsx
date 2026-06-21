@@ -51,7 +51,11 @@ export default function TermsPage() {
       <PolicySection title="Returns">
         <p>
           Most items can be returned within 30 days of delivery in unused
-          condition. Contact {brand.supportEmail} before sending anything back.
+          condition. Start at our{" "}
+          <Link href="/returns" className="text-[#5f8a7a] hover:underline">
+            return request page
+          </Link>{" "}
+          or contact {brand.supportEmail} before sending anything back.
         </p>
       </PolicySection>
 

@@ -5,11 +5,12 @@ import Link from "next/link";
 import { copy } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
 import { formatUsd } from "@/lib/format";
+import { calculateShipping, FREE_SHIPPING_MIN } from "@/lib/pricing";
 
 export default function CartPage() {
   const { items, subtotal, updateQuantity, removeItem, clearCart } = useCart();
 
-  const shipping = subtotal >= 35 || subtotal === 0 ? 0 : 4.99;
+  const shipping = subtotal === 0 ? 0 : calculateShipping(subtotal);
   const total = subtotal + shipping;
 
   if (items.length === 0) {
@@ -110,9 +111,9 @@ export default function CartPage() {
                 {shipping === 0 ? "Free" : formatUsd(shipping)}
               </dd>
             </div>
-            {subtotal < 35 && subtotal > 0 && (
+            {subtotal < FREE_SHIPPING_MIN && subtotal > 0 && (
               <p className="text-xs text-[#5f8a7a]">
-                Add {formatUsd(35 - subtotal)} more for free shipping
+                Add {formatUsd(FREE_SHIPPING_MIN - subtotal)} more for free shipping
               </p>
             )}
             <div className="flex justify-between border-t border-[#f5f5f4] pt-4">

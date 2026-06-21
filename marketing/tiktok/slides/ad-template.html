@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trove Ad</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      background: #57534e;
+    }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #57534e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 8px 24px;
+    }
+    #preview-hint {
+      display: none;
+      max-width: 1080px;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+    }
+    body.is-preview #preview-hint {
+      display: block;
+    }
+    #stage-wrap {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    #stage {
+      width: 1080px;
+      height: 1920px;
+      transform-origin: top left;
+      background: #faf9f7;
+      color: #1c1917;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Safe zones: TikTok UI eats top ~100px and bottom ~180px */
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: scale(1.01);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      padding: 100px 52px 130px;
+      overflow: hidden;
+    }
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .badge {
+      align-self: flex-start;
+      flex-shrink: 0;
+      background: #eef4f1;
+      color: #4d7366;
+      font-size: 24px;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      max-width: 100%;
+      line-height: 1.25;
+    }
+    .slide-intro .slide-top {
+      flex: 0 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      max-height: 42%;
+      overflow: hidden;
+    }
+    .preview-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      max-height: 520px;
+      margin: 16px 0;
+    }
+    .preview-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 24px;
+      box-shadow: 0 16px 48px rgb(28 25 23 / 12%);
+    }
+    .slide-intro .slide-bottom {
+      flex-shrink: 0;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 2px solid #eceae8;
+    }
+    .hook {
+      margin-top: 32px;
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      overflow-wrap: anywhere;
+      hyphens: auto;
+    }
+    .sub {
+      margin-top: 20px;
+      font-size: 32px;
+      color: #57534e;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+    .price {
+      font-size: 80px;
+      font-weight: 800;
+      color: #4d7366;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .price .compare {
+      font-size: 38px;
+      color: #a8a29e;
+      text-decoration: line-through;
+      font-weight: 600;
+      margin-right: 12px;
+    }
+    .price span.product-name {
+      font-size: 34px;
+      color: #78716c;
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    .slide-why {
+      background: linear-gradient(180deg, #faf9f7 0%, #eef4f1 100%);
+      padding-top: 96px;
+      padding-bottom: 120px;
+    }
+    .why-head {
+      flex-shrink: 0;
+    }
+    .why-title {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-top: 20px;
+    }
+    .why-sub {
+      margin-top: 10px;
+      font-size: 24px;
+      color: #57534e;
+      line-height: 1.25;
+    }
+    .why-list {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      flex: 1;
+      align-content: center;
+      min-height: 0;
+    }
+    .why-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: white;
+      border: 2px solid #e7e5e4;
+      border-radius: 18px;
+      padding: 18px 16px;
+      min-height: 0;
+    }
+    .why-check {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #eef4f1;
+      color: #4d7366;
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .why-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1c1917;
+      line-height: 1.2;
+    }
+    .why-text small {
+      display: block;
+      margin-top: 6px;
+      font-size: 17px;
+      font-weight: 500;
+      color: #78716c;
+      line-height: 1.2;
+    }
+    .slide-product .slide-top {
+      flex-shrink: 0;
+    }
+    .img-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+      margin: 24px 0 20px;
+    }
+    .img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgb(28 25 23 / 10%);
+    }
+    .trust {
+      flex-shrink: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .pill {
+      background: white;
+      border: 2px solid #e7e5e4;
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #44403c;
+      line-height: 1.2;
+    }
+    .slide-cta {
+      background: linear-gradient(160deg, #eef4f1 0%, #faf9f7 45%, #f5ebe0 100%);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 120px;
+      padding-bottom: 160px;
+    }
+    .logo {
+      font-size: 76px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #1c1917;
+      line-height: 1;
+    }
+    .logo-dot {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background: #5f8a7a;
+      border-radius: 50%;
+      margin-left: 6px;
+      vertical-align: super;
+    }
+    .cta-url {
+      margin-top: 32px;
+      font-size: 46px;
+      font-weight: 800;
+      color: #4d7366;
+      line-height: 1.1;
+    }
+    .cta-btn {
+      margin-top: 36px;
+      background: #5f8a7a;
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      padding: 24px 56px;
+      border-radius: 999px;
+    }
+    .cta-note {
+      margin-top: 32px;
+      font-size: 26px;
+      color: #57534e;
+      line-height: 1.35;
+      max-width: 780px;
+    }
+    .progress {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 6px;
+      background: #5f8a7a;
+      width: 0%;
+      transition: width linear;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <p id="preview-hint">
+    Preview PC: use <strong>Ctrl+F5</strong> para atualizar. No DevTools, escolha
+    <strong>390 × 844</strong> ou <strong>1080 × 1920</strong>. Testar slide Why Trove:
+    <strong>?slide=2</strong>
+  </p>
+  <div id="stage-wrap">
+    <div id="stage">
+      <div id="slides"></div>
+      <div class="progress" id="progress"></div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const data = {
+      hook: params.get("hook") || "POV: your indoor cat finally has something to do",
+      sub: params.get("sub") || "Interactive feather wand · under $7",
+      price: params.get("price") || "$6.99",
+      compare: params.get("compare") || "",
+      image: params.get("image") || "",
+      product: params.get("product") || "Cat Feather Teaser",
+      badge: params.get("badge") || "US shipping · 3–5 days",
+      perk: params.get("perk") || "Curated essentials · fair prices · real support",
+    };
+
+    const badgeText = data.badge.includes("·")
+      ? data.badge
+      : data.badge + " · US shipping";
+
+    const compareHtml = data.compare
+      ? `<span class="compare">${data.compare}</span>`
+      : "";
+    const previewImg = data.image
+      ? `<div class="preview-wrap"><img src="${data.image}" alt="" crossorigin="anonymous" /></div>`
+      : "";
+
+    const slides = [
+      {
+        className: "slide-intro",
+        html: `
+          <div class="slide-top">
+            <div class="badge">${badgeText}</div>
+            <h1 class="hook">${data.hook}</h1>
+            <p class="sub">${data.sub}</p>
+          </div>
+          ${previewImg}
+          <div class="slide-bottom">
+            <div class="price">${compareHtml}${data.price}<span class="product-name">${data.product}</span></div>
+          </div>
+        `,
+      },
+      {
+        className: "slide-product",
+        html: `
+          <div class="slide-top"><div class="badge">${data.badge}</div></div>
+          <div class="img-wrap"><img src="${data.image}" alt="" crossorigin="anonymous" /></div>
+          <div class="trust">
+            <span class="pill">🇺🇸 Ships from US</span>
+            <span class="pill">Free shipping $35+</span>
+            <span class="pill">30-day returns</span>
+          </div>
+        `,
+      },
+      {
+        className: "slide-why",
+        html: `
+          <div class="why-head">
+            <div class="badge">Why Trove?</div>
+            <h2 class="why-title">Shop smarter.<br/>Not harder.</h2>
+            <p class="why-sub">${data.perk}</p>
+          </div>
+          <div class="why-list">
+            <div class="why-item"><span class="why-check">✓</span><div class="why-text">US shipping<small>3–5 business days</small></div></div>
+            <div class="why-item"><span class="why-check">✓</span><div class="why-text">Free ship $35+<small>Add one more item</small></div></div>
+            <div class="why-item"><span class="why-check">✓</span><div class="why-text">30-day returns<small>Easy refund or exchange</small></div></div>
+            <div class="why-item"><span class="why-check">✓</span><div class="why-text">PayPal secure<small>Real support · no hidden fees</small></div></div>
+          </div>
+        `,
+      },
+      {
+        className: "slide-cta",
+        html: `
+          <div class="logo">Trove<span class="logo-dot"></span></div>
+          <p class="sub" style="margin-top:24px;">Life's essentials, in one place</p>
+          <p class="cta-url">trove-us.com</p>
+          <div class="cta-btn">Shop now →</div>
+          <p class="cta-note">Secure checkout · PayPal · Real support</p>
+        `,
+      },
+    ];
+
+    const root = document.getElementById("slides");
+    slides.forEach((s) => {
+      const el = document.createElement("div");
+      el.className = "slide " + s.className;
+      el.innerHTML = s.html;
+      root.appendChild(el);
+    });
+
+    function fitPreviewScale() {
+      const wrap = document.getElementById("stage-wrap");
+      const stage = document.getElementById("stage");
+      const scale = Math.min(window.innerWidth / 1080, (window.innerHeight - 80) / 1920, 1);
+      if (scale < 1) {
+        document.body.classList.add("is-preview");
+        stage.style.transform = `scale(${scale})`;
+        wrap.style.width = `${1080 * scale}px`;
+        wrap.style.height = `${1920 * scale}px`;
+      } else {
+        document.body.classList.remove("is-preview");
+        stage.style.transform = "";
+        wrap.style.width = "1080px";
+        wrap.style.height = "1920px";
+      }
+    }
+
+    function fitWhySlide() {
+      const slide = document.querySelector(".slide-why");
+      if (!slide) return;
+      slide.style.fontSize = "";
+      let size = 100;
+      slide.style.fontSize = `${size}%`;
+      while (size > 82 && slide.scrollHeight > slide.clientHeight + 2) {
+        size -= 2;
+        slide.style.fontSize = `${size}%`;
+      }
+    }
+
+    function fitHookText() {
+      const hook = document.querySelector(".hook");
+      if (!hook) return;
+      const top = hook.closest(".slide-top");
+      let size = 64;
+      hook.style.fontSize = size + "px";
+      while (size > 40 && top.scrollHeight > top.clientHeight + 2) {
+        size -= 2;
+        hook.style.fontSize = size + "px";
+      }
+    }
+
+    const SLIDE_MS = 3200;
+    const startSlide = Math.min(
+      Math.max(Number(params.get("slide") ?? 0), 0),
+      slides.length - 1,
+    );
+    const TOTAL = slides.length * SLIDE_MS;
+    let idx = startSlide;
+    const els = document.querySelectorAll(".slide");
+    const progress = document.getElementById("progress");
+
+    function show(i) {
+      els.forEach((el, j) => el.classList.toggle("active", j === i));
+      if (i === 0) requestAnimationFrame(fitHookText);
+      if (i === 2) requestAnimationFrame(fitWhySlide);
+    }
+
+    show(startSlide);
+    window.addEventListener("load", () => {
+      fitHookText();
+      fitWhySlide();
+      fitPreviewScale();
+    });
+    window.addEventListener("resize", fitPreviewScale);
+
+    if (params.get("slide") === null) {
+      progress.style.transition = `width ${TOTAL}ms linear`;
+      requestAnimationFrame(() => {
+        progress.style.width = "100%";
+      });
+
+      setInterval(() => {
+        idx = (idx + 1) % els.length;
+        show(idx);
+      }, SLIDE_MS);
+    } else {
+      progress.style.width = `${((startSlide + 1) / slides.length) * 100}%`;
+    }
+  </script>
+</body>
+</html>

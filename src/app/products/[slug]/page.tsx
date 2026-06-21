@@ -3,25 +3,25 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/add-to-cart-button";
+import { BackToBrowseButton } from "@/components/back-to-browse-button";
 import { TrackProductView } from "@/components/track-analytics";
 import { brand, copy } from "@/data/brand";
-import { getProductBySlug, products, storeLabels } from "@/data/products";
+import { storeLabels } from "@/data/products";
+import { getVisibleProductBySlug } from "@/lib/catalog/visible-products";
 import { stores } from "@/data/stores";
 import { calcDiscount, formatUsd } from "@/lib/format";
 
+export const dynamic = "force-dynamic";
+
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
-}
-
-export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getVisibleProductBySlug(slug);
   if (!product) return { title: "Product not found" };
 
   return {
@@ -37,7 +37,7 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getVisibleProductBySlug(slug);
 
   if (!product) notFound();
 
@@ -46,7 +46,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
-      <TrackProductView store={product.store} productId={product.id} />
+      <TrackProductView
+        store={product.store}
+        productId={product.id}
+        slug={product.slug}
+        name={product.name}
+        price={product.price}
+      />
+
+      <BackToBrowseButton
+        fallbackHref={`/stores/${product.store}`}
+        fallbackLabel={`Back to ${storeLabels[product.store]}`}
+      />
 
       <nav className="mb-6 text-sm text-[#a8a29e]">
         <Link href="/" className="hover:text-[#4d7366]">

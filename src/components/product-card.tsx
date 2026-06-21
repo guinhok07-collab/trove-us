@@ -1,8 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { storeLabels } from "@/data/products";
+import { saveBrowseReturn } from "@/lib/browse-return";
 import { Product } from "@/types/product";
 import { calcDiscount, formatUsd } from "@/lib/format";
+
+const FALLBACK_IMAGE =
+  "https://cf.cjdropshipping.com/8c2a47b2-cff5-43ef-9950-1b0e517b85d7.png";
 
 interface ProductCardProps {
   product: Product;
@@ -10,19 +17,23 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const discount = calcDiscount(product.price, product.compareAtPrice);
+  const [imageSrc, setImageSrc] = useState(product.image);
 
   return (
     <Link
+      id={`browse-${product.slug}`}
       href={`/products/${product.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-[#e7e5e4] bg-white transition duration-300 hover:border-[#d6d3d1] hover:shadow-[0_8px_30px_rgb(28_25_23_/6%)]"
+      onClick={() => saveBrowseReturn(product.slug)}
+      className="group flex flex-col overflow-hidden rounded-2xl border border-[#e7e5e4] bg-white transition duration-300 hover:border-[#d6d3d1] hover:shadow-[0_8px_30px_rgb(28_25_23_/6%)] scroll-mt-28"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-[#f5f5f4]">
         <Image
-          src={product.image}
+          src={imageSrc}
           alt={product.name}
           fill
           className="object-cover transition duration-500 group-hover:scale-[1.03]"
           sizes="(max-width: 768px) 50vw, 25vw"
+          onError={() => setImageSrc(FALLBACK_IMAGE)}
         />
         {discount > 0 && (
           <span className="absolute left-3 top-3 rounded-full bg-[#fef2f2] px-2.5 py-1 text-[11px] font-semibold text-[#b45309]">

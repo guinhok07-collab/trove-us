@@ -113,3 +113,21 @@ h4 {
   color: var(--muted);
   line-height: 1.5;
 }
+
+.browse-return-highlight {
+  animation: browse-return-pulse 1.8s ease-out;
+  outline: 2px solid #5f8a7a;
+  outline-offset: 2px;
+}
+
+@keyframes browse-return-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(95 138 122 / 45%);
+  }
+  35% {
+    box-shadow: 0 0 0 8px rgb(95 138 122 / 18%);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(95 138 122 / 0%);
+  }
+}

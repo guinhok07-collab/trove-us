@@ -38,8 +38,10 @@ export default function PrivacyPage() {
       <PolicySection title="Cookies">
         <p>
           We use essential cookies to keep your cart working and remember your
-          session. Optional analytics cookies may be added in the future — you
-          will be able to opt out.
+          session. When enabled, we may use the Meta (Facebook) Pixel to measure
+          ad performance and site usage — this helps us show relevant offers and
+          improve the store. You can limit ad tracking in your browser or Meta
+          account settings.
         </p>
       </PolicySection>
 

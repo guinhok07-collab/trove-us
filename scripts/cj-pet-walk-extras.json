@@ -1,0 +1,42 @@
+{
+  "pet-waste-bag-refills": {
+    "slug": "pet-waste-bag-refills",
+    "pid": "2001203215179640834",
+    "cost": 10.97,
+    "ship": 3.5,
+    "price": 18.99,
+    "compareAtPrice": 20.99,
+    "cjVid": "2001203216836390914",
+    "cjSku": "CJFU26521920001",
+    "supplierSku": "CJFU2652192",
+    "image": "https://cf.cjdropshipping.com/17659296/bf527348-0c17-48e9-8379-0802e60a85bb.jpg",
+    "images": [
+      "https://cf.cjdropshipping.com/17659296/bf527348-0c17-48e9-8379-0802e60a85bb.jpg",
+      "https://cf.cjdropshipping.com/17659296/ce57311d-7edd-43fb-ac00-b97b237c56bc.jpg",
+      "https://cf.cjdropshipping.com/17659296/e1855a6d-06c2-4cc2-b7b3-1b198b64bdcd.jpg",
+      "https://cf.cjdropshipping.com/17659296/4f7cae34-6bbf-4afb-a5ef-f81bc3d3d74e.jpg",
+      "https://cf.cjdropshipping.com/17659296/efd95e4b-8865-4b21-8f50-e85057322c0c.jpg"
+    ],
+    "listedNum": 500
+  },
+  "dog-treat-pouch": {
+    "slug": "dog-treat-pouch",
+    "pid": "2001622280918327298",
+    "cost": 12.26,
+    "ship": 3.5,
+    "price": 20.99,
+    "compareAtPrice": 22.99,
+    "cjVid": "2001622281010601986",
+    "cjSku": "CJPC26582960001",
+    "supplierSku": "CJPC2658296",
+    "image": "https://cf.cjdropshipping.com/17660160/2269b89b-8910-4601-b77a-9f6224d67dc7.jpg",
+    "images": [
+      "https://cf.cjdropshipping.com/17660160/2269b89b-8910-4601-b77a-9f6224d67dc7.jpg",
+      "https://cf.cjdropshipping.com/17660160/a9df520c-1771-424e-ba01-9f105339cfb6.jpg",
+      "https://cf.cjdropshipping.com/17660160/7c8f838a-e1e3-4403-9226-8bef82cb3846.jpg",
+      "https://cf.cjdropshipping.com/17660160/c42e9b5a-1e8b-48a6-a1b7-73c5355ebd86.jpg",
+      "https://cf.cjdropshipping.com/17660160/cfc5d32a-e767-4a9a-9b1a-624ba75bc402.jpg"
+    ],
+    "listedNum": 200
+  }
+}

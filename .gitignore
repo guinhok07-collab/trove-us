@@ -42,3 +42,9 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+.env*
+
+# generated marketing assets (regenerate locally)
+marketing/tiktok/output/
+screenshots-mobile/
+reports/

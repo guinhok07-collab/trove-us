@@ -3,10 +3,12 @@ import { brand, copy } from "@/data/brand";
 import { ProductCard } from "@/components/product-card";
 import { StoreIcon } from "@/components/icons";
 import { TrackStoreView } from "@/components/track-analytics";
-import { getProductsByStore } from "@/data/products";
+import { getVisibleProductsByStore } from "@/lib/catalog/visible-products";
 import { getStore, storeList } from "@/data/stores";
 import { StoreCategory } from "@/types/product";
 import { notFound } from "next/navigation";
+
+export const dynamic = "force-dynamic";
 
 interface StorePageProps {
   params: Promise<{ store: string }>;
@@ -22,7 +24,7 @@ export default async function StorePage({ params }: StorePageProps) {
   if (!storeList.some((s) => s.id === storeId)) notFound();
 
   const store = getStore(storeId as StoreCategory);
-  const storeProducts = getProductsByStore(store.id);
+  const storeProducts = await getVisibleProductsByStore(store.id);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">

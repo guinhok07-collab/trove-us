@@ -4,12 +4,13 @@ export const brand = {
   tagline: "Life's essentials, in one place",
   description:
     "Everyday products for home, pets, wellness, and work — curated with care, delivered fast across the United States.",
-  supportEmail: "hello@trovegoods.com",
+  supportEmail: "orders@trove-us.com",
   locationLine: "Delivering to all 50 states",
-  shippingLine: "Free delivery on orders over $35",
+  shippingLine: "Ships from US warehouses · Free delivery over $35",
   deliveryLine: "Most orders arrive in 3–5 business days",
-  trustLine: "Secure checkout · Easy 30-day returns · Real support",
-  suggestedDomain: "trovegoods.com",
+  supportLine: "Real support at orders@trove-us.com",
+  trustLine: "Secure checkout · Easy 30-day returns · Real human support",
+  suggestedDomain: "trove-us.com",
 } as const;
 
 export const domainGuide = {
@@ -23,7 +24,7 @@ export const domainGuide = {
     "Check .com availability before you commit",
   ],
   examples: [
-    "trovegoods.com",
+    "trove-us.com",
     "shoptrove.com",
     "gettrove.com",
     "trove.co",
@@ -31,9 +32,16 @@ export const domainGuide = {
 } as const;
 
 export const copy = {
-  heroBadge: "Curated essentials · Fast delivery · Easy returns",
+  heroBadge: "US shipping · Curated essentials · Real support",
+  promoBadge: "This week's pick",
+  promoTitle: "Mini massage gun — recovery under $15 delivered",
+  promoText:
+    "Deep percussion relief after workouts, without the $60+ price tag. Pair it with our Recovery Duo kit or add any second item to unlock free shipping.",
+  bundlesTitle: "Curated kits",
+  bundlesSub:
+    "Save on shipping with ready-made bundles — pet walks, desk setup, and recovery.",
   heroCta: "Start Shopping",
-  heroSecondary: "Shop Best Sellers",
+  heroSecondary: "Shop kits",
   shopDepartments: "Shop by Department",
   shopDepartmentsSub:
     "Home, pets, wellness, and everyday gear — all in one place.",
@@ -47,18 +55,18 @@ export const copy = {
     },
     {
       icon: "truck" as const,
-      title: "Fast, reliable delivery",
-      text: "Most orders reach your door in 3–5 business days.",
+      title: "Ships from the US",
+      text: "Most orders leave our US warehouse and arrive in 3–5 business days.",
+    },
+    {
+      icon: "support" as const,
+      title: "Real human support",
+      text: "Email us anytime — we reply within 24 hours, no bots.",
     },
     {
       icon: "return" as const,
       title: "Easy 30-day returns",
       text: "Not satisfied? Full refund or exchange — no hassle.",
-    },
-    {
-      icon: "support" as const,
-      title: "Real people, real support",
-      text: "Email us anytime — we respond within 24 hours.",
     },
   ],
   trustStrip: [

@@ -7,6 +7,7 @@ import { Suspense, useEffect, useState } from "react";
 import { brand } from "@/data/brand";
 import { ORDER_STORAGE_KEY } from "@/lib/orders";
 import { formatUsd } from "@/lib/format";
+import { trackMetaPurchaseOnce } from "@/lib/meta-pixel";
 
 interface SavedOrder {
   orderId: string;
@@ -15,7 +16,13 @@ interface SavedOrder {
   cjOrderId?: string;
   fulfillmentMode?: string;
   message?: string;
-  items: { name: string; quantity: number; price: number; image: string }[];
+  items: {
+    slug?: string;
+    name: string;
+    quantity: number;
+    price: number;
+    image: string;
+  }[];
 }
 
 function OrderSuccessContent() {
@@ -30,6 +37,17 @@ function OrderSuccessContent() {
       const parsed: SavedOrder = JSON.parse(raw);
       if (!orderParam || parsed.orderId === orderParam) {
         setOrder(parsed);
+        trackMetaPurchaseOnce(
+          parsed.orderId,
+          parsed.total,
+          parsed.items.map((item, index) => ({
+            id: item.slug ?? `item-${index}`,
+            slug: item.slug ?? item.name.toLowerCase().replace(/\s+/g, "-"),
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity,
+          })),
+        );
       }
     } catch {
       /* ignore */
@@ -63,16 +81,18 @@ function OrderSuccessContent() {
         </h1>
         <p className="mt-2 text-sm text-[#78716c]">
           Order <strong className="text-[#1c1917]">{order.orderId}</strong> has
-          been placed. A confirmation will be sent to{" "}
+          been placed. A confirmation email was sent to{" "}
           <strong className="text-[#1c1917]">{order.email}</strong>.
         </p>
         {order.cjOrderId && (
-          <p className="mt-3 text-sm text-[#4d7366]">
-            CJ order ID: <strong>{order.cjOrderId}</strong>
+          <p className="mt-3 text-sm text-[#78716c]">
+            Your order is being processed. Save your order number{" "}
+            <strong className="text-[#1c1917]">{order.orderId}</strong> for
+            tracking.
           </p>
         )}
         {order.message && (
-          <p className="mt-2 text-xs text-[#78716c]">{order.message}</p>
+          <p className="mt-2 text-sm text-[#4d7366]">{order.message}</p>
         )}
       </div>
 
@@ -123,10 +143,16 @@ function OrderSuccessContent() {
           Continue shopping
         </Link>
         <Link
-          href="/shipping-returns"
+          href={`/track?order=${encodeURIComponent(order.orderId)}&email=${encodeURIComponent(order.email)}`}
           className="inline-flex items-center rounded-full border border-[#e7e5e4] px-6 py-3 text-sm font-semibold text-[#44403c] hover:border-[#5f8a7a]"
         >
-          Shipping info
+          Track order
+        </Link>
+        <Link
+          href={`/returns?order=${encodeURIComponent(order.orderId)}&email=${encodeURIComponent(order.email)}`}
+          className="inline-flex items-center rounded-full border border-[#e7e5e4] px-6 py-3 text-sm font-semibold text-[#44403c] hover:border-[#5f8a7a]"
+        >
+          Start a return
         </Link>
       </div>
     </div>

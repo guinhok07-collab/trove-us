@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { brand } from "@/data/brand";
 import { PolicyLayout, PolicySection } from "@/components/policy-layout";
+import { RETURN_FRAUD_RULES, RETURN_STEPS } from "@/lib/returns/policy";
 
 export const metadata: Metadata = {
   title: `Shipping & Returns — ${brand.name}`,
@@ -12,7 +14,7 @@ export default function ShippingReturnsPage() {
     <PolicyLayout title="Shipping & Returns">
       <PolicySection title="Shipping">
         <ul className="mt-2 list-inside list-disc space-y-1.5">
-          <li>We ship to all 50 US states</li>
+          <li>Ships from US warehouses to all 50 states</li>
           <li>Most orders arrive in 3–5 business days</li>
           <li>Free standard shipping on orders over $35</li>
           <li>
@@ -28,11 +30,28 @@ export default function ShippingReturnsPage() {
           <li>Items must be unused and in original packaging</li>
           <li>Full refund or exchange — your choice</li>
           <li>
-            Contact us first at {brand.supportEmail} to start a return
+            Start online at our{" "}
+            <Link href="/returns" className="font-medium text-[#5f8a7a] hover:underline">
+              return request page
+            </Link>{" "}
+            (order number + email required)
           </li>
           <li>
-            Refunds processed within 5–7 business days after we receive the item
+            Refunds processed within 5–7 business days after we approve the return
           </li>
+        </ul>
+        <ol className="mt-4 list-inside list-decimal space-y-1.5">
+          {RETURN_STEPS.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+      </PolicySection>
+
+      <PolicySection title="Return fraud policy">
+        <ul className="mt-2 list-inside list-disc space-y-1.5">
+          {RETURN_FRAUD_RULES.map((rule) => (
+            <li key={rule}>{rule}</li>
+          ))}
         </ul>
       </PolicySection>
 
@@ -45,15 +64,18 @@ export default function ShippingReturnsPage() {
 
       <div className="rounded-xl border border-[#e7e5e4] bg-[#eef4f1] p-6">
         <p>
-          <strong className="text-[#1c1917]">Need help with an order?</strong>{" "}
-          Email{" "}
+          <strong className="text-[#1c1917]">Ready to return an item?</strong>{" "}
+          <Link href="/returns" className="font-medium text-[#5f8a7a] hover:underline">
+            Start a return request
+          </Link>{" "}
+          — or email{" "}
           <a
             href={`mailto:${brand.supportEmail}`}
             className="font-medium text-[#5f8a7a] hover:underline"
           >
             {brand.supportEmail}
           </a>{" "}
-          with your order number and we&apos;ll take care of you.
+          with your order number.
         </p>
       </div>
     </PolicyLayout>

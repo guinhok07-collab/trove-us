@@ -8,13 +8,23 @@
     "start": "next start",
     "lint": "eslint",
     "margins": "node scripts/margins.mjs",
+    "tiktok:ads": "node scripts/record-tiktok-ad.mjs all",
+    "tiktok:ads:batch2": "node scripts/record-tiktok-ad.mjs batch2",
+    "tiktok:ads:pet": "node scripts/record-tiktok-ad.mjs pet",
+    "tiktok:ads:wellness": "node scripts/record-tiktok-ad.mjs wellness",
+    "tiktok:ads:tech": "node scripts/record-tiktok-ad.mjs tech",
+    "tiktok:ads:home": "node scripts/record-tiktok-ad.mjs home",
+    "tiktok:ads:walk-kit": "node scripts/record-tiktok-ad.mjs pet-walk-kit",
     "deploy": "vercel --prod --yes",
     "deploy:preview": "vercel --yes"
   },
   "dependencies": {
+    "@paypal/react-paypal-js": "^10.0.0",
+    "@upstash/redis": "^1.38.0",
     "next": "16.2.9",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "resend": "^6.14.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -23,6 +33,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "playwright": "^1.52.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vercel": "^54.14.2"
