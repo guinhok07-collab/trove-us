@@ -2,6 +2,7 @@
 
 import {
   PayPalButtons,
+  PayPalMessages,
   PayPalScriptProvider,
 } from "@paypal/react-paypal-js";
 import type { CreateStoreOrderRequest } from "@/lib/cj/types";
@@ -10,6 +11,7 @@ import { toUserErrorMessage } from "@/lib/user-errors";
 interface PayPalCheckoutProps {
   clientId: string;
   mode: string;
+  total: number;
   orderPayload: CreateStoreOrderRequest;
   disabled?: boolean;
   onSuccess: (result: {
@@ -24,23 +26,36 @@ interface PayPalCheckoutProps {
 export function PayPalCheckout({
   clientId,
   mode,
+  total,
   orderPayload,
   disabled,
   onSuccess,
   onError,
 }: PayPalCheckoutProps) {
+  const live = mode === "live";
+
   return (
     <PayPalScriptProvider
       options={{
         clientId,
         currency: "USD",
         intent: "capture",
-        components: "buttons",
+        components: live ? "buttons,messages" : "buttons",
         locale: "en_US",
-        enableFunding: mode === "live" ? "card,venmo" : "card",
+        buyerCountry: "US",
+        enableFunding: live ? "card,venmo,paylater" : "card,paylater",
       }}
     >
       <div className={disabled ? "pointer-events-none opacity-50" : ""}>
+        {live && total >= 30 && (
+          <div className="mb-4 min-h-[24px]">
+            <PayPalMessages
+              amount={Math.round(total * 100) / 100}
+              placement="payment"
+              style={{ layout: "text", logo: { type: "primary" } }}
+            />
+          </div>
+        )}
         <PayPalButtons
           style={{ layout: "vertical", shape: "rect", label: "paypal" }}
           disabled={disabled}

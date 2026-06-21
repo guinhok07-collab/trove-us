@@ -72,6 +72,7 @@ export const copy = {
   trustStrip: [
     { icon: "lock" as const, label: "SSL Secure Checkout" },
     { icon: "credit-card" as const, label: "PayPal & Cards Accepted" },
+    { icon: "credit-card" as const, label: "Pay in 4 — orders $30+" },
     { icon: "package" as const, label: "Free Shipping $35+" },
     { icon: "return" as const, label: "30-Day Returns" },
     { icon: "map-pin" as const, label: "All 50 States" },
@@ -100,7 +101,9 @@ export const copy = {
   productDelivery: "Delivery in 3–5 business days",
   productShipsUs: "Ships anywhere in the US",
   checkoutSecure: "Secure checkout — your information is protected",
-  checkoutPayment: "Pay safely with PayPal or credit card",
+  checkoutPayment: "Pay safely with PayPal, card, or Pay in 4 (on eligible orders)",
+  payLaterBelowMinimum:
+    "Pay in 4 is available on orders $30+. Add an item to unlock installments at checkout.",
   marketingOptInLabel:
     "Send me occasional deals and new arrivals. Unsubscribe anytime.",
   newsletterTitle: "Deals & new arrivals",

@@ -330,6 +330,7 @@ export default function CheckoutPage() {
                       <PayPalCheckout
                         clientId={paypalConfig!.clientId!}
                         mode={paypalConfig!.mode}
+                        total={total}
                         orderPayload={orderPayload}
                         disabled={submitting}
                         onSuccess={completeOrder}
@@ -347,6 +348,7 @@ export default function CheckoutPage() {
                 <PayPalCheckout
                   clientId={paypalConfig!.clientId!}
                   mode={paypalConfig!.mode}
+                  total={total}
                   orderPayload={orderPayload}
                   disabled={!formReady || submitting}
                   onSuccess={completeOrder}
@@ -410,6 +412,12 @@ export default function CheckoutPage() {
               <dd>{formatUsd(total)}</dd>
             </div>
           </dl>
+
+          {paypalReady && total > 0 && total < 30 && (
+            <p className="mt-4 text-xs leading-relaxed text-[#78716c]">
+              {copy.payLaterBelowMinimum}
+            </p>
+          )}
 
           {!paypalReady && directOrdersAllowed && (
             <button
