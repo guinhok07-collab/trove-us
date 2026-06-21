@@ -85,6 +85,7 @@ export interface CreateStoreOrderRequest {
   subtotal: number;
   shipping: number;
   total: number;
+  marketingOptIn?: boolean;
 }
 
 export interface CreateStoreOrderResponse {

@@ -32,7 +32,14 @@ interface CatalogProduct {
   hasOverride: boolean;
 }
 
-type Tab = "returns" | "orders" | "catalog";
+type Tab = "returns" | "orders" | "catalog" | "subscribers";
+
+interface MarketingSubscriberRow {
+  email: string;
+  fullName: string;
+  source: string;
+  subscribedAt: string;
+}
 
 const RETURN_STATUS_LABEL: Record<ReturnRequestStatus, string> = {
   pending: "Pendente",
@@ -65,6 +72,9 @@ export function AdminDashboard() {
   const [catalogFilter, setCatalogFilter] = useState<"all" | "visible" | "hidden">("all");
   const [catalogSearch, setCatalogSearch] = useState("");
   const [catalogToggling, setCatalogToggling] = useState<string | null>(null);
+  const [subscribers, setSubscribers] = useState<MarketingSubscriberRow[]>([]);
+  const [subscriberCount, setSubscriberCount] = useState(0);
+  const [mailchimpConnected, setMailchimpConnected] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
   const [filter, setFilter] = useState<ReturnRequestStatus | "all">("all");
   const [selected, setSelected] = useState<StoredReturnRequest | null>(null);
@@ -111,17 +121,36 @@ export function AdminDashboard() {
     }
   }, []);
 
+  const loadSubscribers = useCallback(async () => {
+    const res = await fetch("/api/owner/subscribers?limit=200");
+    if (res.status === 401) {
+      window.location.reload();
+      return;
+    }
+    const data = await res.json();
+    if (data.ok) {
+      setSubscribers(data.subscribers ?? []);
+      setSubscriberCount(data.subscribed ?? 0);
+      setMailchimpConnected(Boolean(data.mailchimp));
+    }
+  }, []);
+
   const refresh = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
-      await Promise.all([loadReturns(), loadOrders(), loadCatalog()]);
+      await Promise.all([
+        loadReturns(),
+        loadOrders(),
+        loadCatalog(),
+        loadSubscribers(),
+      ]);
     } catch {
       setError("Não foi possível carregar o painel.");
     } finally {
       setLoading(false);
     }
-  }, [loadReturns, loadOrders, loadCatalog]);
+  }, [loadReturns, loadOrders, loadCatalog, loadSubscribers]);
 
   useEffect(() => {
     void refresh();
@@ -297,6 +326,22 @@ export function AdminDashboard() {
           }`}
         >
           Catálogo
+        </button>
+        <button
+          type="button"
+          onClick={() => setTab("subscribers")}
+          className={`border-b-2 px-4 py-2 text-sm font-semibold ${
+            tab === "subscribers"
+              ? "border-[#5f8a7a] text-[#4d7366]"
+              : "border-transparent text-[#78716c]"
+          }`}
+        >
+          Promoções
+          {subscriberCount > 0 && (
+            <span className="ml-2 rounded-full bg-[#eef4f1] px-2 py-0.5 text-xs text-[#4d7366]">
+              {subscriberCount}
+            </span>
+          )}
         </button>
       </div>
 
@@ -497,6 +542,57 @@ export function AdminDashboard() {
             )}
           </div>
         </div>
+      ) : tab === "orders" ? (
+        <div className="space-y-3">
+          {orders.length === 0 ? (
+            <div className="card p-8 text-center text-sm text-[#78716c]">
+              Nenhum pedido salvo ainda. Novos pedidos aparecem aqui após checkout.
+            </div>
+          ) : (
+            orders.map((o) => (
+              <div key={o.orderId} className="card p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="font-semibold text-[#1c1917]">{o.orderId}</p>
+                    <p className="text-sm text-[#57534e]">
+                      {o.fullName} · {o.email}
+                    </p>
+                    <p className="mt-1 text-xs text-[#78716c]">{o.statusLabel}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-[#1c1917]">{formatUsd(o.total)}</p>
+                    <p className="text-xs text-[#a8a29e]">{formatPtTime(o.createdAt)}</p>
+                  </div>
+                </div>
+                <ul className="mt-3 text-xs text-[#78716c]">
+                  {o.items.map((item) => (
+                    <li key={item.name}>
+                      {item.name} × {item.quantity}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-3 flex flex-wrap gap-3 text-xs">
+                  {o.trackingUrl && (
+                    <a
+                      href={o.trackingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[#5f8a7a] hover:underline"
+                    >
+                      Tracking
+                    </a>
+                  )}
+                  <Link
+                    href={`/returns?order=${encodeURIComponent(o.orderId)}&email=${encodeURIComponent(o.email)}`}
+                    className="font-semibold text-[#5f8a7a] hover:underline"
+                  >
+                    Ver devolução
+                  </Link>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
       ) : tab === "catalog" ? (
         <div className="space-y-4">
           <div className="card p-4">
@@ -600,54 +696,51 @@ export function AdminDashboard() {
           )}
         </div>
       ) : (
-        <div className="space-y-3">
-          {orders.length === 0 ? (
+        <div className="space-y-4">
+          <div className="card p-4">
+            <p className="text-sm text-[#57534e]">
+              Pessoas que aceitaram receber promoções (rodapé do site ou checkbox
+              no checkout). Exporte para Mailchimp ou envie campanhas por lá.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <a
+                href="/api/owner/subscribers?format=csv"
+                className="rounded-full bg-[#5f8a7a] px-4 py-2 text-xs font-semibold text-white hover:bg-[#4d7366]"
+              >
+                Exportar CSV
+              </a>
+              {mailchimpConnected && (
+                <span className="rounded-full bg-[#dcfce7] px-3 py-1.5 text-xs font-semibold text-[#166534]">
+                  Mailchimp conectado
+                </span>
+              )}
+            </div>
+          </div>
+
+          {subscribers.length === 0 ? (
             <div className="card p-8 text-center text-sm text-[#78716c]">
-              Nenhum pedido salvo ainda. Novos pedidos aparecem aqui após checkout.
+              Nenhum inscrito ainda. Aparecem aqui quando alguém marcar no
+              checkout ou entrar pelo rodapé.
             </div>
           ) : (
-            orders.map((o) => (
-              <div key={o.orderId} className="card p-4">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <p className="font-semibold text-[#1c1917]">{o.orderId}</p>
-                    <p className="text-sm text-[#57534e]">
-                      {o.fullName} · {o.email}
-                    </p>
-                    <p className="mt-1 text-xs text-[#78716c]">{o.statusLabel}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-semibold text-[#1c1917]">{formatUsd(o.total)}</p>
-                    <p className="text-xs text-[#a8a29e]">{formatPtTime(o.createdAt)}</p>
+            <div className="space-y-2">
+              {subscribers.map((s) => (
+                <div key={s.email} className="card p-4">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p className="font-semibold text-[#1c1917]">
+                        {s.fullName || s.email}
+                      </p>
+                      <p className="text-sm text-[#57534e]">{s.email}</p>
+                      <p className="mt-1 text-xs text-[#a8a29e]">
+                        {s.source === "checkout" ? "Checkout" : "Rodapé"} ·{" "}
+                        {formatPtTime(s.subscribedAt)}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <ul className="mt-3 text-xs text-[#78716c]">
-                  {o.items.map((item) => (
-                    <li key={item.name}>
-                      {item.name} × {item.quantity}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-3 flex flex-wrap gap-3 text-xs">
-                  {o.trackingUrl && (
-                    <a
-                      href={o.trackingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-[#5f8a7a] hover:underline"
-                    >
-                      Tracking
-                    </a>
-                  )}
-                  <Link
-                    href={`/returns?order=${encodeURIComponent(o.orderId)}&email=${encodeURIComponent(o.email)}`}
-                    className="font-semibold text-[#5f8a7a] hover:underline"
-                  >
-                    Ver devolução
-                  </Link>
-                </div>
-              </div>
-            ))
+              ))}
+            </div>
           )}
         </div>
       )}

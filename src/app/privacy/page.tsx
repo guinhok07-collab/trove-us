@@ -29,9 +29,26 @@ export default function PrivacyPage() {
           <li>Send shipping updates and order confirmations</li>
           <li>Provide customer support</li>
           <li>Improve our website and product selection</li>
+          <li>
+            Send promotional emails about deals and new products — only if you
+            opt in (footer signup or checkout checkbox)
+          </li>
         </ul>
         <p className="mt-2">
           We do not sell your personal data to third parties.
+        </p>
+      </PolicySection>
+
+      <PolicySection title="Marketing emails">
+        <p>
+          If you join our deals list or check the box at checkout, we may email
+          you occasional offers and new arrivals. You can unsubscribe anytime
+          from any message or at{" "}
+          <Link href="/unsubscribe" className="font-medium text-[#5f8a7a] hover:underline">
+            trove-us.com/unsubscribe
+          </Link>
+          . Order-related emails (confirmations, tracking) are separate and
+          still sent when you purchase.
         </p>
       </PolicySection>
 

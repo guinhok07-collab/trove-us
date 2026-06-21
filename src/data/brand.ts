@@ -101,4 +101,20 @@ export const copy = {
   productShipsUs: "Ships anywhere in the US",
   checkoutSecure: "Secure checkout — your information is protected",
   checkoutPayment: "Pay safely with PayPal or credit card",
+  marketingOptInLabel:
+    "Send me occasional deals and new arrivals. Unsubscribe anytime.",
+  newsletterTitle: "Deals & new arrivals",
+  newsletterText:
+    "Get pet, home, and wellness picks — plus early access to bundles and sales.",
+  newsletterPlaceholder: "Your email",
+  newsletterButton: "Join",
+  newsletterSuccess: "You're on the list. Watch your inbox for Trove deals.",
+  newsletterFinePrint:
+    "Occasional emails only. Unsubscribe anytime from any message.",
+  unsubscribeTitle: "Unsubscribe from deals",
+  unsubscribeText:
+    "You won't receive promotional emails from Trove anymore. Order updates are separate.",
+  unsubscribeButton: "Unsubscribe",
+  unsubscribeSuccess:
+    "You're unsubscribed from Trove deals. You can still shop anytime at trove-us.com.",
 } as const;

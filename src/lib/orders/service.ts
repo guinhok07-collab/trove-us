@@ -1,5 +1,6 @@
 import type { CreateStoreOrderRequest } from "@/lib/cj/types";
 import { sendEmail } from "@/lib/email/client";
+import { subscribeToMarketing } from "@/lib/marketing/subscribe";
 import { notifyNewSale } from "@/lib/notifications/sale-alert";
 import {
   confirmationEmail,
@@ -91,6 +92,17 @@ export async function persistPaidOrder(
 
   await saveOrder(stored);
   await sendOrderConfirmation(stored.orderId);
+
+  if (order.marketingOptIn) {
+    void subscribeToMarketing({
+      email: order.email,
+      fullName: order.fullName,
+      source: "checkout",
+    }).catch((err) => {
+      console.error("[orders] marketing subscribe failed:", err);
+    });
+  }
+
   void notifyNewSale(stored).catch((err) => {
     console.error("[orders] sale notify failed:", err);
   });

@@ -69,6 +69,7 @@ export default function CheckoutPage() {
   const [cjConfig, setCjConfig] = useState<CjConfig | null>(null);
   const [paypalConfig, setPaypalConfig] = useState<PayPalConfig | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const shipping = calculateShipping(subtotal);
@@ -141,8 +142,9 @@ export default function CheckoutPage() {
         cjVid: product.cjVid,
         cjSku: product.cjSku,
       })),
+      marketingOptIn,
     };
-  }, [form, items, orderId, subtotal, shipping, total]);
+  }, [form, items, marketingOptIn, orderId, subtotal, shipping, total]);
 
   function updateField(field: keyof ShippingForm, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
@@ -289,6 +291,15 @@ export default function CheckoutPage() {
                 />
               ))}
             </div>
+            <label className="mt-4 flex items-start gap-3 text-sm text-[#57534e]">
+              <input
+                type="checkbox"
+                checked={marketingOptIn}
+                onChange={(e) => setMarketingOptIn(e.target.checked)}
+                className="mt-0.5 h-4 w-4 rounded border-[#d6d3d1] text-[#5f8a7a] focus:ring-[#5f8a7a]"
+              />
+              <span>{copy.marketingOptInLabel}</span>
+            </label>
           </section>
 
           <section className="card p-6">
