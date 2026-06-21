@@ -3,9 +3,9 @@ import { brand, copy } from "@/data/brand";
 import UnsubscribePageClient from "./unsubscribe-client";
 
 export const metadata: Metadata = {
-  title: `${copy.unsubscribeTitle} — ${brand.name}`,
-  description: copy.unsubscribeText,
-  robots: { index: false, follow: false },
+  title: `${copy.dealsPageTitle} — ${brand.name}`,
+  description: copy.dealsPageText,
+  robots: { index: true, follow: true },
 };
 
 export default function UnsubscribePage() {

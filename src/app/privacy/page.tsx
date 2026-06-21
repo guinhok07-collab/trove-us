@@ -44,8 +44,8 @@ export default function PrivacyPage() {
           If you join our deals list or check the box at checkout, we may email
           you occasional offers and new arrivals. You can unsubscribe anytime
           from any message or at{" "}
-          <Link href="/unsubscribe" className="font-medium text-[#5f8a7a] hover:underline">
-            trove-us.com/unsubscribe
+          <Link href="/unsubscribe?action=unsubscribe" className="font-medium text-[#5f8a7a] hover:underline">
+            email preferences
           </Link>
           . Order-related emails (confirmations, tracking) are separate and
           still sent when you purchase.

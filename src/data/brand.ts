@@ -114,10 +114,18 @@ export const copy = {
   newsletterSuccess: "You're on the list. Watch your inbox for Trove deals.",
   newsletterFinePrint:
     "Occasional emails only. Unsubscribe anytime from any message.",
-  unsubscribeTitle: "Unsubscribe from deals",
+  dealsPageTitle: "Get Trove deals & news",
+  dealsPageText:
+    "Want promos, new products, and bundle offers in your inbox? Join our list — occasional emails only, no spam.",
+  dealsPageButton: "Join the list",
+  dealsPageSuccess:
+    "You're in! Watch your inbox for Trove deals, new arrivals, and early access to sales.",
+  dealsPageUnsubscribeHint: "Already on the list and want to stop?",
+  dealsPageUnsubscribeLink: "Unsubscribe here",
+  unsubscribeTitle: "Email preferences",
   unsubscribeText:
-    "You won't receive promotional emails from Trove anymore. Order updates are separate.",
+    "Enter your email to stop promotional messages. Order confirmations and shipping updates are separate.",
   unsubscribeButton: "Unsubscribe",
   unsubscribeSuccess:
-    "You're unsubscribed from Trove deals. You can still shop anytime at trove-us.com.",
+    "Done — you won't receive promotional emails from Trove anymore. You can still shop anytime.",
 } as const;

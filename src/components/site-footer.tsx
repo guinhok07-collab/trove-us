@@ -103,7 +103,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link href="/unsubscribe" className="hover:text-[#4d7366]">
-                Unsubscribe from deals
+                Deals & email signup
               </Link>
             </li>
           </ul>
