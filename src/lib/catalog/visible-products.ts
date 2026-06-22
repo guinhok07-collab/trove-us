@@ -3,6 +3,11 @@ import { getVisibilityOverrides } from "@/lib/catalog/visibility-store";
 import { resolveVisible } from "@/lib/catalog/visibility";
 import type { Product, StoreCategory } from "@/types/product";
 
+/** Cheapest first — keeps browse pages approachable for impulse buys. */
+export function sortProductsByPriceAsc(list: Product[]): Product[] {
+  return [...list].sort((a, b) => a.price - b.price || a.name.localeCompare(b.name));
+}
+
 export function isProductVisibleSync(
   product: Product,
   overrides: Record<string, boolean> = {},
@@ -28,7 +33,7 @@ export async function getVisibleProductsByStore(
   store: StoreCategory,
 ): Promise<Product[]> {
   const list = await getVisibleProducts();
-  return list.filter((p) => p.store === store);
+  return sortProductsByPriceAsc(list.filter((p) => p.store === store));
 }
 
 export async function getVisibleBestsellersByStore(

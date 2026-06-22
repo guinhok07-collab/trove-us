@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
 import { storeLabels } from "@/data/products";
-import { getVisibleProducts } from "@/lib/catalog/visible-products";
+import { getVisibleProducts, sortProductsByPriceAsc } from "@/lib/catalog/visible-products";
 import { storeList } from "@/data/stores";
 import { StoreCategory } from "@/types/product";
 
@@ -31,6 +31,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         p.tags.some((t) => t.includes(query)),
     );
   }
+
+  filtered = sortProductsByPriceAsc(filtered);
 
   const title = store
     ? storeLabels[store]
