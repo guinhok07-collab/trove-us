@@ -1,5 +1,6 @@
 import { products } from "@/data/products";
 import { getVisibleProductBySlug } from "@/lib/catalog/visible-products";
+import { applyVariant, findVariant } from "@/lib/catalog/variants";
 import type { CreateStoreOrderItem, CreateStoreOrderRequest } from "@/lib/cj/types";
 
 export const FREE_SHIPPING_MIN = 35;
@@ -8,9 +9,9 @@ export const FLAT_SHIPPING = 4.99;
 export interface OrderLineInput {
   productId?: string;
   slug?: string;
+  variantId?: string;
   quantity: number;
 }
-
 export class OrderPricingError extends Error {
   constructor(message: string) {
     super(message);
@@ -67,18 +68,24 @@ export async function resolveOrderItems(
     }
 
     const product = await resolveProduct(input);
+    const variant = findVariant(product, input.variantId);
+    const line = applyVariant(product, variant?.id);
+
+    if (!line.cjVid?.trim()) {
+      throw new OrderPricingError(`${product.name} is temporarily unavailable.`);
+    }
 
     items.push({
-      productId: product.id,
-      slug: product.slug,
-      name: product.name,
+      productId: line.id,
+      slug: line.slug,
+      name: variant ? `${line.name} — ${variant.label}` : line.name,
       quantity,
-      price: product.price,
-      image: product.image,
-      cjVid: product.cjVid,
-      cjSku: product.cjSku,
-    });
-  }
+      price: line.price,
+      image: line.image,
+      cjVid: line.cjVid,
+      cjSku: line.cjSku,
+      variantId: variant?.id,
+    });  }
 
   return items;
 }
@@ -101,10 +108,10 @@ export async function validateStoreOrder(
     order.items.map((item) => ({
       productId: item.productId,
       slug: item.slug,
+      variantId: item.variantId,
       quantity: item.quantity,
     })),
-  );
-  const totals = calculateOrderTotals(items);
+  );  const totals = calculateOrderTotals(items);
 
   return {
     ...order,

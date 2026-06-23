@@ -8,15 +8,22 @@ import { trackMetaAddToCart } from "@/lib/meta-pixel";
 
 interface AddToCartButtonProps {
   product: Product;
+  variantId?: string;
+  variantLabel?: string;
   className?: string;
 }
 
-export function AddToCartButton({ product, className = "" }: AddToCartButtonProps) {
+export function AddToCartButton({
+  product,
+  variantId,
+  variantLabel,
+  className = "",
+}: AddToCartButtonProps) {
   const { addItem } = useCart();
   const [added, setAdded] = useState(false);
 
   function handleClick() {
-    addItem(product);
+    addItem(product, { quantity: 1, variantId, variantLabel });
     trackEvent(product.store, "add_to_cart", product.id);
     trackMetaAddToCart({
       id: product.id,

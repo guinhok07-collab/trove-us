@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { ProductCard } from "@/components/product-card";
+import { ProductGrid } from "@/components/product-grid";
+import {
+  ProductPagination,
+  buildProductsHrefBase,
+  paginate,
+} from "@/components/product-pagination";
 import { storeLabels } from "@/data/products";
 import { getVisibleProducts, sortProductsByPriceAsc } from "@/lib/catalog/visible-products";
 import { storeList } from "@/data/stores";
@@ -8,13 +13,14 @@ import { StoreCategory } from "@/types/product";
 export const dynamic = "force-dynamic";
 
 interface ProductsPageProps {
-  searchParams: Promise<{ store?: string; q?: string }>;
+  searchParams: Promise<{ store?: string; q?: string; page?: string }>;
 }
 
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
   const params = await searchParams;
   const store = params.store as StoreCategory | undefined;
   const query = params.q?.toLowerCase().trim();
+  const pageNum = Math.max(1, Number(params.page) || 1);
 
   let filtered = await getVisibleProducts();
 
@@ -34,6 +40,13 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
 
   filtered = sortProductsByPriceAsc(filtered);
 
+  const { items, currentPage, totalPages, perPage, totalItems } = paginate(
+    filtered,
+    pageNum,
+  );
+
+  const hrefBase = buildProductsHrefBase({ store, q: params.q });
+
   const title = store
     ? storeLabels[store]
     : query
@@ -41,12 +54,11 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       : "All Products";
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+    <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 sm:py-10">
       <div className="mb-8">
         <h1 className="section-title text-2xl sm:text-3xl">{title}</h1>
         <p className="section-subtitle mt-2">
-          {filtered.length} product{filtered.length !== 1 ? "s" : ""} · Prices in
-          USD
+          {totalItems} product{totalItems !== 1 ? "s" : ""} · Prices in USD
         </p>
       </div>
 
@@ -87,11 +99,16 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           </Link>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-5">
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <>
+          <ProductGrid products={items} variant="compact" />
+          <ProductPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={totalItems}
+            perPage={perPage}
+            hrefBase={hrefBase}
+          />
+        </>
       )}
     </div>
   );

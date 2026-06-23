@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { brand } from "@/data/brand";
 import { formatUsd } from "@/lib/format";
 import type { ReturnRequestStatus, StoredReturnRequest } from "@/lib/returns/types";
@@ -17,6 +17,9 @@ interface AdminOrder {
   trackingUrl?: string;
   paypalCaptureId?: string;
   cjOrderId?: string;
+  fulfillmentError?: string;
+  needsAction?: boolean;
+  pendingLabel?: string;
   createdAt: string;
   items: { name: string; quantity: number; price: number }[];
 }
@@ -30,6 +33,44 @@ interface CatalogProduct {
   catalogHidden: boolean;
   visible: boolean;
   hasOverride: boolean;
+  mediaIssue: { level: "error" | "warn"; messages: string[] } | null;
+  cjIssue: {
+    level: "error" | "warn";
+    messages: string[];
+    types: string[];
+    cjName?: string;
+    overlap?: number;
+  } | null;
+}
+
+interface CatalogStandards {
+  title: string;
+  summary: string;
+  workflow: string[];
+  scripts: Record<string, string>;
+  rules: Record<string, string | number>;
+  mediaWarnings: Record<string, string>;
+}
+
+interface MediaAuditSummary {
+  auditedAt: string;
+  total: number;
+  ok: number;
+  issueCount: number;
+  errors: number;
+  warnings: number;
+  minImages: number;
+}
+
+interface CjAuditSummary {
+  auditedAt: string;
+  total: number;
+  ok: number;
+  issueCount: number;
+  errors: number;
+  warnings: number;
+  nameMismatch: number;
+  variantGap: number;
 }
 
 type Tab = "returns" | "orders" | "catalog" | "subscribers";
@@ -69,19 +110,26 @@ export function AdminDashboard() {
   const [orders, setOrders] = useState<AdminOrder[]>([]);
   const [catalog, setCatalog] = useState<CatalogProduct[]>([]);
   const [catalogVisibleCount, setCatalogVisibleCount] = useState(0);
-  const [catalogFilter, setCatalogFilter] = useState<"all" | "visible" | "hidden">("all");
+  const [catalogFilter, setCatalogFilter] = useState<"all" | "visible" | "hidden" | "issues">("all");
   const [catalogSearch, setCatalogSearch] = useState("");
   const [catalogToggling, setCatalogToggling] = useState<string | null>(null);
+  const [catalogStandards, setCatalogStandards] = useState<CatalogStandards | null>(null);
+  const [mediaAudit, setMediaAudit] = useState<MediaAuditSummary | null>(null);
+  const [cjAudit, setCjAudit] = useState<CjAuditSummary | null>(null);
+  const [showStandards, setShowStandards] = useState(false);
   const [subscribers, setSubscribers] = useState<MarketingSubscriberRow[]>([]);
   const [subscriberCount, setSubscriberCount] = useState(0);
   const [mailchimpConnected, setMailchimpConnected] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
+  const [pendingActionCount, setPendingActionCount] = useState(0);
+  const [ordersFilter, setOrdersFilter] = useState<"all" | "pending">("all");
   const [filter, setFilter] = useState<ReturnRequestStatus | "all">("all");
   const [selected, setSelected] = useState<StoredReturnRequest | null>(null);
   const [note, setNote] = useState("");
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const initialPendingTab = useRef(false);
 
   const loadReturns = useCallback(async () => {
     const qs =
@@ -99,14 +147,18 @@ export function AdminDashboard() {
   }, [filter]);
 
   const loadOrders = useCallback(async () => {
-    const res = await fetch("/api/owner/orders?limit=40");
+    const qs = ordersFilter === "pending" ? "?pending=1&limit=40" : "?limit=40";
+    const res = await fetch(`/api/owner/orders${qs}`);
     if (res.status === 401) {
       window.location.reload();
       return;
     }
     const data = await res.json();
-    if (data.ok) setOrders(data.orders);
-  }, []);
+    if (data.ok) {
+      setOrders(data.orders);
+      setPendingActionCount(data.pendingActionCount ?? 0);
+    }
+  }, [ordersFilter]);
 
   const loadCatalog = useCallback(async () => {
     const res = await fetch("/api/owner/catalog");
@@ -118,6 +170,9 @@ export function AdminDashboard() {
     if (data.ok) {
       setCatalog(data.products);
       setCatalogVisibleCount(data.visibleCount ?? 0);
+      setCatalogStandards(data.standards ?? null);
+      setMediaAudit(data.mediaAudit ?? null);
+      setCjAudit(data.cjAudit ?? null);
     }
   }, []);
 
@@ -157,8 +212,46 @@ export function AdminDashboard() {
   }, [refresh]);
 
   useEffect(() => {
+    const timer = window.setInterval(() => {
+      void loadReturns();
+      void loadOrders();
+    }, 30_000);
+    return () => window.clearInterval(timer);
+  }, [loadReturns, loadOrders]);
+
+  useEffect(() => {
+    if (!initialPendingTab.current && pendingActionCount > 0) {
+      setTab("orders");
+      initialPendingTab.current = true;
+    }
+  }, [pendingActionCount]);
+
+  useEffect(() => {
+    if (!loading) void loadOrders();
+  }, [ordersFilter, loadOrders, loading]);
+
+  useEffect(() => {
     if (selected) setNote(selected.ownerNote ?? "");
   }, [selected]);
+
+  async function resolvePendingOrder(orderId: string) {
+    setActionLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/owner/orders/resolve", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderId, action: "resolve" }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || "Falha ao marcar.");
+      await loadOrders();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Falha ao marcar pedido.");
+    } finally {
+      setActionLoading(false);
+    }
+  }
 
   async function updateReturnStatus(status: ReturnRequestStatus) {
     if (!selected) return;
@@ -222,9 +315,14 @@ export function AdminDashboard() {
     const matchesFilter =
       catalogFilter === "all" ||
       (catalogFilter === "visible" && item.visible) ||
-      (catalogFilter === "hidden" && !item.visible);
+      (catalogFilter === "hidden" && !item.visible) ||
+      (catalogFilter === "issues" && (item.mediaIssue || item.cjIssue));
     return matchesSearch && matchesFilter;
   });
+
+  const catalogMediaIssueCount = catalog.filter((item) => item.mediaIssue).length;
+  const catalogCjIssueCount = catalog.filter((item) => item.cjIssue).length;
+  const catalogAnyIssueCount = catalog.filter((item) => item.mediaIssue || item.cjIssue).length;
 
   async function logout() {
     await fetch("/api/owner/auth", { method: "DELETE" });
@@ -264,7 +362,22 @@ export function AdminDashboard() {
         </div>
       </div>
 
-      <div className="mb-6 grid gap-3 sm:grid-cols-3">
+      <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className={`card p-4 ${pendingActionCount > 0 ? "border-amber-300 bg-[#fffbeb]" : ""}`}
+        >
+          <p className="text-xs font-semibold uppercase tracking-wide text-[#a8a29e]">
+            Vendas pendentes
+          </p>
+          <p
+            className={`mt-1 text-2xl font-bold ${pendingActionCount > 0 ? "text-[#92400e]" : "text-[#1c1917]"}`}
+          >
+            {pendingActionCount}
+          </p>
+          <p className="mt-1 text-xs text-[#78716c]">
+            Cliente pagou — você precisa agir no CJ
+          </p>
+        </div>
         <div className="card p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-[#a8a29e]">
             Devoluções pendentes
@@ -287,6 +400,19 @@ export function AdminDashboard() {
           </p>
         </div>
       </div>
+
+      {pendingActionCount > 0 && (
+        <div className="mb-4 rounded-2xl border border-amber-300 bg-[#fffbeb] px-4 py-3 text-sm text-[#92400e]">
+          <p className="font-semibold">
+            ⚠️ {pendingActionCount} venda{pendingActionCount > 1 ? "s" : ""}{" "}
+            pendente{pendingActionCount > 1 ? "s" : ""} — cliente na mão
+          </p>
+          <p className="mt-1 text-[#78716c]">
+            Pagou no PayPal mas o pedido não foi para o CJ. Recarregue a wallet CJ ou
+            envie manual no painel CJ, depois marque como resolvido.
+          </p>
+        </div>
+      )}
 
       <div className="mb-4 flex gap-2 border-b border-[#e7e5e4]">
         <button
@@ -315,6 +441,11 @@ export function AdminDashboard() {
           }`}
         >
           Pedidos
+          {pendingActionCount > 0 && (
+            <span className="ml-2 rounded-full bg-[#fef3c7] px-2 py-0.5 text-xs text-[#92400e]">
+              {pendingActionCount}
+            </span>
+          )}
         </button>
         <button
           type="button"
@@ -544,13 +675,34 @@ export function AdminDashboard() {
         </div>
       ) : tab === "orders" ? (
         <div className="space-y-3">
+          <div className="flex flex-wrap gap-2">
+            {(["all", "pending"] as const).map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setOrdersFilter(f)}
+                className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                  ordersFilter === f
+                    ? "bg-[#5f8a7a] text-white"
+                    : "bg-[#f5f5f4] text-[#57534e]"
+                }`}
+              >
+                {f === "all" ? "Todos" : `Pendentes (${pendingActionCount})`}
+              </button>
+            ))}
+          </div>
           {orders.length === 0 ? (
             <div className="card p-8 text-center text-sm text-[#78716c]">
-              Nenhum pedido salvo ainda. Novos pedidos aparecem aqui após checkout.
+              {ordersFilter === "pending"
+                ? "Nenhuma venda pendente — tudo em dia."
+                : "Nenhum pedido salvo ainda. Novos pedidos aparecem aqui após checkout."}
             </div>
           ) : (
             orders.map((o) => (
-              <div key={o.orderId} className="card p-4">
+              <div
+                key={o.orderId}
+                className={`card p-4 ${o.needsAction ? "border-amber-300 bg-[#fffbeb]" : ""}`}
+              >
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="font-semibold text-[#1c1917]">{o.orderId}</p>
@@ -558,6 +710,14 @@ export function AdminDashboard() {
                       {o.fullName} · {o.email}
                     </p>
                     <p className="mt-1 text-xs text-[#78716c]">{o.statusLabel}</p>
+                    {o.needsAction && o.pendingLabel && (
+                      <p className="mt-2 inline-block rounded-full bg-[#fef3c7] px-2 py-0.5 text-xs font-semibold text-[#92400e]">
+                        {o.pendingLabel}
+                      </p>
+                    )}
+                    {o.fulfillmentError && (
+                      <p className="mt-2 text-xs text-[#991b1b]">{o.fulfillmentError}</p>
+                    )}
                   </div>
                   <div className="text-right">
                     <p className="font-semibold text-[#1c1917]">{formatUsd(o.total)}</p>
@@ -572,6 +732,26 @@ export function AdminDashboard() {
                   ))}
                 </ul>
                 <div className="mt-3 flex flex-wrap gap-3 text-xs">
+                  {o.needsAction && (
+                    <>
+                      <a
+                        href="https://cjdropshipping.com/myCJ.html#/orderList"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-[#92400e] hover:underline"
+                      >
+                        Abrir CJ →
+                      </a>
+                      <button
+                        type="button"
+                        disabled={actionLoading}
+                        onClick={() => void resolvePendingOrder(o.orderId)}
+                        className="font-semibold text-[#4d7366] hover:underline disabled:opacity-60"
+                      >
+                        Marcar resolvido
+                      </button>
+                    </>
+                  )}
                   {o.trackingUrl && (
                     <a
                       href={o.trackingUrl}
@@ -595,15 +775,105 @@ export function AdminDashboard() {
         </div>
       ) : tab === "catalog" ? (
         <div className="space-y-4">
-          <div className="card p-4">
+          <div className="card p-4 space-y-3">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="font-semibold text-[#1c1917]">
+                  {catalogStandards?.title ?? "Padrão CJ — Trove"}
+                </p>
+                <p className="mt-1 text-sm text-[#57534e]">
+                  {catalogStandards?.summary ??
+                    "Todo produto novo segue o fluxo CJ: fotos, variantes, vídeo e preço Trove."}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowStandards((v) => !v)}
+                className="rounded-full border border-[#e7e5e4] px-3 py-1.5 text-xs font-semibold text-[#57534e] hover:border-[#5f8a7a]"
+              >
+                {showStandards ? "Ocultar regras" : "Ver regras CJ"}
+              </button>
+            </div>
+
+            {(mediaAudit || cjAudit) && (
+              <div className="flex flex-wrap gap-2 text-xs">
+                {cjAudit && (
+                  <>
+                    <span className="rounded-full bg-[#f5f5f4] px-2.5 py-1 font-semibold text-[#57534e]">
+                      CJ: {cjAudit.ok}/{cjAudit.total} OK
+                    </span>
+                    {cjAudit.nameMismatch > 0 && (
+                      <span className="rounded-full bg-[#fee2e2] px-2.5 py-1 font-semibold text-[#991b1b]">
+                        {cjAudit.nameMismatch} produto CJ errado
+                      </span>
+                    )}
+                    {cjAudit.variantGap > 0 && (
+                      <span className="rounded-full bg-[#fef3c7] px-2.5 py-1 font-semibold text-[#92400e]">
+                        {cjAudit.variantGap} sem variantes
+                      </span>
+                    )}
+                  </>
+                )}
+                {mediaAudit && mediaAudit.errors > 0 && (
+                  <span className="rounded-full bg-[#fee2e2] px-2.5 py-1 font-semibold text-[#991b1b]">
+                    {mediaAudit.errors} erro(s) de mídia
+                  </span>
+                )}
+                {mediaAudit && mediaAudit.warnings > 0 && (
+                  <span className="rounded-full bg-[#fef3c7] px-2.5 py-1 font-semibold text-[#92400e]">
+                    {mediaAudit.warnings} aviso(s) mídia
+                  </span>
+                )}
+                {catalogAnyIssueCount === 0 && (
+                  <span className="rounded-full bg-[#dcfce7] px-2.5 py-1 font-semibold text-[#166534]">
+                    Catálogo CJ OK
+                  </span>
+                )}
+              </div>
+            )}
+
+            {showStandards && catalogStandards && (
+              <div className="rounded-xl border border-[#e7e5e4] bg-[#fafaf9] p-4 text-sm text-[#57534e] space-y-3">
+                <div>
+                  <p className="font-semibold text-[#1c1917]">Fluxo ao adicionar produto</p>
+                  <ol className="mt-2 list-decimal space-y-1 pl-5">
+                    {catalogStandards.workflow.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ol>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#1c1917]">Scripts</p>
+                  <ul className="mt-2 space-y-1 font-mono text-xs">
+                    {Object.entries(catalogStandards.scripts).map(([key, cmd]) => (
+                      <li key={key}>
+                        <span className="text-[#78716c]">{key}:</span> {cmd}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#1c1917]">Avisos de mídia</p>
+                  <ul className="mt-2 space-y-1">
+                    {Object.entries(catalogStandards.mediaWarnings).map(([key, msg]) => (
+                      <li key={key}>
+                        <span className="font-semibold">{key}:</span> {msg}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
             <p className="text-sm text-[#57534e]">
-              Oculte produtos caros ou fora de estoque temporariamente. O padrão
-              já esconde 8 itens; você pode desocultar quando quiser.
+              Audit CJ automático: nome vs fornecedor, variantes, preços. Problemas
+              aparecem abaixo — rode{" "}
+              <code className="text-xs">fix-catalog-cj.mjs</code> após adicionar produtos.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {(["all", "visible", "hidden"] as const).map((f) => (
+            {(["all", "visible", "hidden", "issues"] as const).map((f) => (
               <button
                 key={f}
                 type="button"
@@ -614,7 +884,13 @@ export function AdminDashboard() {
                     : "bg-[#f5f5f4] text-[#57534e]"
                 }`}
               >
-                {f === "all" ? "Todos" : f === "visible" ? "Visíveis" : "Ocultos"}
+                {f === "all"
+                  ? "Todos"
+                  : f === "visible"
+                    ? "Visíveis"
+                    : f === "hidden"
+                      ? "Ocultos"
+                      : `Problemas (${catalogAnyIssueCount})`}
               </button>
             ))}
           </div>
@@ -663,7 +939,48 @@ export function AdminDashboard() {
                           Override admin
                         </span>
                       )}
+                      {item.mediaIssue && (
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                            item.mediaIssue.level === "error"
+                              ? "bg-[#fee2e2] text-[#991b1b]"
+                              : "bg-[#fef3c7] text-[#92400e]"
+                          }`}
+                          title={item.mediaIssue.messages.join(" · ")}
+                        >
+                          {item.mediaIssue.level === "error"
+                            ? "Mídia — erro"
+                            : "Mídia — aviso"}
+                        </span>
+                      )}
+                      {item.cjIssue && (
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                            item.cjIssue.level === "error"
+                              ? "bg-[#fee2e2] text-[#991b1b]"
+                              : "bg-[#fef3c7] text-[#92400e]"
+                          }`}
+                          title={item.cjIssue.messages.join(" · ")}
+                        >
+                          {item.cjIssue.types?.includes("name_mismatch")
+                            ? "CJ errado"
+                            : "CJ — aviso"}
+                        </span>
+                      )}
                     </div>
+                    {(item.mediaIssue || item.cjIssue) && (
+                      <p className="mt-1 text-xs text-[#92400e]">
+                        {[
+                          ...(item.cjIssue?.messages ?? []),
+                          ...(item.mediaIssue?.messages ?? []),
+                        ].join(" · ")}
+                      </p>
+                    )}
+                    {item.cjIssue?.cjName && (
+                      <p className="mt-0.5 text-xs text-[#a8a29e]">
+                        CJ: {item.cjIssue.cjName}
+                      </p>
+                    )}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {item.visible && (

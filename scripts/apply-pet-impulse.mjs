@@ -152,7 +152,7 @@ function buildBlock(entry, id) {
 
 async function cjFetch(path) {
   const res = await fetch(`${API}${path}`, {
-    headers: { CJ-Access-Token: key },
+    headers: { "CJ-Access-Token": key },
     cache: "no-store",
   });
   const json = await res.json();

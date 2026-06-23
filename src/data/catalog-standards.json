@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "updated": "2026-06-23",
+  "title": "Padrão CJ — Trove",
+  "summary": "Todo produto novo segue este fluxo automaticamente. Copy em inglês, preço Trove, CJ só no pedido.",
+  "workflow": [
+    "Buscar no CJ (US warehouse, orderBy=vendas)",
+    "Validar nome CJ com must + ban (produto certo)",
+    "Mínimo 4 fotos na ordem do fornecedor (productImageSet)",
+    "Todas as variantes (cores/tamanhos) + preço por variante",
+    "Vídeo CJ se existir",
+    "Copy Trove em inglês — sem mencionar CJ/fornecedor",
+    "sync-all-variants.mjs após adicionar",
+    "audit-catalog-media.mjs — avisos vão pro Admin"
+  ],
+  "scripts": {
+    "addProducts": "node --env-file=.env.local scripts/apply-expand-stores.mjs",
+    "syncVariants": "node --env-file=.env.local scripts/sync-all-variants.mjs",
+    "auditCj": "node --env-file=.env.local scripts/audit-catalog-cj.mjs",
+    "fixCatalogCj": "node --env-file=.env.local scripts/fix-catalog-cj.mjs",
+    "auditMedia": "node --env-file=.env.local scripts/audit-catalog-media.mjs",
+    "checkDuplicates": "node --env-file=.env.local scripts/check-duplicates.mjs"
+  },
+  "rules": {
+    "minImages": 4,
+    "maxRetailUsd": 39.99,
+    "margin": "20% + PayPal 3.4%",
+    "warehouse": "US",
+    "galleryDisplay": "object-contain (sem crop)",
+    "variantPicker": "Agrupado estilo CJ — Color (swatch) + Connector/Size/Length",
+    "variantLabels": "Usar variantKey CJ (ex: Black · Apple interface · 20cm) — nunca SKU",
+    "orderFulfillment": "cjVid + cjSku da variante escolhida (server-side)"
+  },
+  "mediaWarnings": {
+    "lowImages": "Menos de 4 fotos — produto pode ficar feio ou incompleto",
+    "pngHeavy": "Muitas PNG/trans — preview pode parecer cortada",
+    "noVariants": "Variantes não sincronizadas — cliente não escolhe cor",
+    "supplierName": "Nome CJ cru — reescrever antes de publicar"
+  }
+}

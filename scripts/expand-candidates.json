@@ -1,0 +1,77 @@
+{
+  "collapsible-colander": {
+    "slug": "collapsible-colander",
+    "store": "home",
+    "q": "collapsible silicone colander",
+    "must": [
+      "colander"
+    ],
+    "ban": [
+      "ladle only"
+    ],
+    "pid": "1389086444198432768",
+    "name": "Wheat Straw Long-Handled Dual-Use Large Soup Ladle Colander Thickened Hot Pot Scoop Plastic Porridge Spoon Hot Pot Soup Spoon",
+    "imgs": 9,
+    "vid": "1389086445544804352",
+    "sku": "CJCJ111054201AZ",
+    "cost": 0.18,
+    "listed": 62
+  },
+  "over-sink-dish-rack": {
+    "slug": "over-sink-dish-rack",
+    "store": "home",
+    "q": "roll up dish drying rack sink",
+    "must": [
+      "dish",
+      "rack"
+    ],
+    "ban": [
+      "cabinet"
+    ],
+    "pid": "2057741404649218050",
+    "name": "Kitchen Sink Rack Sponge Holder Soap Dish Drain Storage Organizer Brush Holder",
+    "imgs": 11,
+    "vid": "2057741404842156033",
+    "sku": "CJCF290036901AZ",
+    "cost": 10.5,
+    "listed": 13
+  },
+  "phone-ring-holder": {
+    "slug": "phone-ring-holder",
+    "store": "tech",
+    "q": "phone ring holder grip stand",
+    "must": [
+      "ring"
+    ],
+    "ban": [
+      "ring light",
+      "selfie"
+    ],
+    "pid": "B0F48B0D-4275-496B-9ADE-7141DB1E5E9A",
+    "name": "New Design Adjustable 26 Initial Letter Ring Fashion Jewelry For Women Simple Elegant Jewelry",
+    "imgs": 81,
+    "vid": "0671B2F4-E439-41A8-8284-FFEC01DAD526",
+    "sku": "CJZBLXLX12557-Gold-J",
+    "cost": 0.4,
+    "listed": 6342
+  },
+  "acupressure-mat-pillow": {
+    "slug": "acupressure-mat-pillow",
+    "store": "wellness",
+    "q": "acupressure mat pillow set",
+    "must": [
+      "acupressure",
+      "mat"
+    ],
+    "ban": [
+      "yoga mat only"
+    ],
+    "pid": "1983796636859277313",
+    "name": "Advanced Version 1 Set Full Body Electric Massage Mat With Neck Foot Massage Head Pillow And Cloth Lumbar Pillow Timer Anti-Slip Bottom Earplugs",
+    "imgs": 14,
+    "vid": "1983796637161267201",
+    "sku": "CJAM257435601AZ",
+    "cost": 89.99,
+    "listed": 18
+  }
+}

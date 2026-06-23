@@ -78,36 +78,38 @@ export function BundleCard({ bundle }: BundleCardProps) {
           ))}
         </ul>
 
-        <div className="mt-4 border-t border-[#f5f5f4] pt-4 text-sm">
-          <div className="flex justify-between text-[#78716c]">
-            <span>Kit subtotal</span>
-            <span>{formatUsd(subtotal)}</span>
+        <div className="mt-auto w-full pt-4">
+          <div className="border-t border-[#f5f5f4] pt-4 text-sm">
+            <div className="flex justify-between text-[#78716c]">
+              <span>Kit subtotal</span>
+              <span>{formatUsd(subtotal)}</span>
+            </div>
+            <div className="mt-1 flex justify-between text-[#78716c]">
+              <span>Shipping</span>
+              <span>{shipping === 0 ? "Free" : formatUsd(shipping)}</span>
+            </div>
+            <div className="mt-2 flex justify-between font-semibold text-[#1c1917]">
+              <span>Total</span>
+              <span>{formatUsd(total)}</span>
+            </div>
           </div>
-          <div className="mt-1 flex justify-between text-[#78716c]">
-            <span>Shipping</span>
-            <span>{shipping === 0 ? "Free" : formatUsd(shipping)}</span>
-          </div>
-          <div className="mt-2 flex justify-between font-semibold text-[#1c1917]">
-            <span>Total</span>
-            <span>{formatUsd(total)}</span>
-          </div>
-        </div>
 
-        {bundle.highlight && (
-          <p
-            className={`mt-3 text-xs font-medium ${freeShipping ? "text-[#4d7366]" : "text-[#78716c]"}`}
+          {bundle.highlight && (
+            <p
+              className={`mt-3 min-h-[2.5rem] text-xs font-medium ${freeShipping ? "text-[#4d7366]" : "text-[#78716c]"}`}
+            >
+              {freeShipping ? "✓ Free shipping on this kit" : bundle.highlight}
+            </p>
+          )}
+
+          <button
+            type="button"
+            onClick={handleAddAll}
+            className="btn-primary mt-5 w-full py-3"
           >
-            {freeShipping ? "✓ Free shipping on this kit" : bundle.highlight}
-          </p>
-        )}
-
-        <button
-          type="button"
-          onClick={handleAddAll}
-          className="btn-primary mt-5 w-full py-3"
-        >
-          {added ? "Added to cart ✓" : "Add kit to cart"}
-        </button>
+            {added ? "Added to cart ✓" : "Add kit to cart"}
+          </button>
+        </div>
       </div>
     </article>
   );

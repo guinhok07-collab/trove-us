@@ -63,6 +63,7 @@ export async function persistPaidOrder(
     cjOrderId?: string;
     cjStatus?: string;
     fulfillmentMode?: string;
+    fulfillmentError?: string;
   },
 ): Promise<StoredOrder> {
   const now = new Date().toISOString();
@@ -84,6 +85,7 @@ export async function persistPaidOrder(
     paypalCaptureId: meta.paypalCaptureId,
     cjOrderId: meta.cjOrderId,
     cjStatus: meta.cjStatus,
+    fulfillmentError: meta.fulfillmentError?.trim() || undefined,
     confirmationEmailSent: false,
     shippedEmailSent: false,
     createdAt: now,

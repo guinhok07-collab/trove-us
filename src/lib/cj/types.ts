@@ -69,6 +69,7 @@ export interface CreateStoreOrderItem {
   image: string;
   cjVid?: string;
   cjSku?: string;
+  variantId?: string;
 }
 
 export interface CreateStoreOrderRequest {

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { copy } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
+import { cartLineKey } from "@/lib/catalog/variants";
 import { formatUsd } from "@/lib/format";
 import { calculateShipping, FREE_SHIPPING_MIN } from "@/lib/pricing";
 
@@ -42,14 +43,16 @@ export default function CartPage() {
 
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="space-y-4 lg:col-span-2">
-          {items.map(({ product, quantity }) => (
-            <div key={product.id} className="card flex gap-4 p-4">
+          {items.map(({ product, quantity, variantId, variantLabel }) => {
+            const lineKey = cartLineKey(product.id, variantId ?? product.cjVid);
+            return (
+            <div key={lineKey} className="card flex gap-4 p-4">
               <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-[#f5f5f4]">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-contain p-1"
                   sizes="96px"
                 />
               </div>
@@ -60,12 +63,15 @@ export default function CartPage() {
                 >
                   {product.name}
                 </Link>
+                {variantLabel && (
+                  <p className="mt-1 text-xs text-[#78716c]">{variantLabel}</p>
+                )}
                 <p className="price-current mt-2">{formatUsd(product.price)}</p>
                 <div className="mt-auto flex items-center gap-4 pt-3">
                   <div className="flex items-center rounded-full border border-[#e7e5e4]">
                     <button
                       type="button"
-                      onClick={() => updateQuantity(product.id, quantity - 1)}
+                      onClick={() => updateQuantity(lineKey, quantity - 1)}
                       className="px-3 py-1.5 text-[#78716c] hover:text-[#1c1917]"
                     >
                       −
@@ -75,7 +81,7 @@ export default function CartPage() {
                     </span>
                     <button
                       type="button"
-                      onClick={() => updateQuantity(product.id, quantity + 1)}
+                      onClick={() => updateQuantity(lineKey, quantity + 1)}
                       className="px-3 py-1.5 text-[#78716c] hover:text-[#1c1917]"
                     >
                       +
@@ -83,7 +89,7 @@ export default function CartPage() {
                   </div>
                   <button
                     type="button"
-                    onClick={() => removeItem(product.id)}
+                    onClick={() => removeItem(lineKey)}
                     className="text-sm text-[#a8a29e] hover:text-[#57534e]"
                   >
                     Remove
@@ -91,7 +97,8 @@ export default function CartPage() {
                 </div>
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
 
         <div className="card h-fit p-6">

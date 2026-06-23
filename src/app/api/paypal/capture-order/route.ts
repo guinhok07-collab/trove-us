@@ -73,6 +73,7 @@ export async function POST(request: Request) {
       cjOrderId: cjResult.cjOrderId,
       cjStatus: cjResult.cjStatus,
       fulfillmentMode: cjResult.fulfillmentMode,
+      fulfillmentError: cjError,
     }).catch((err) => {
       console.error("[capture-order] persist/email failed:", err);
     });

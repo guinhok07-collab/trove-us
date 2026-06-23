@@ -1,4 +1,5 @@
 import { Redis } from "@upstash/redis";
+import { orderNeedsSellerAction } from "./action";
 import type { StoredOrder } from "./types";
 
 const ORDER_PREFIX = "trove:order:";
@@ -68,6 +69,16 @@ export async function listRecentOrders(limit = 40): Promise<StoredOrder[]> {
   const keys = ids.map((id) => orderKey(String(id)));
   const rows = await redis.mget<StoredOrder[]>(...keys);
   return rows.filter((o): o is StoredOrder => Boolean(o));
+}
+
+export async function countPendingActionOrders(limit = 200): Promise<number> {
+  const orders = await listRecentOrders(limit);
+  return orders.filter(orderNeedsSellerAction).length;
+}
+
+export async function listPendingActionOrders(limit = 40): Promise<StoredOrder[]> {
+  const orders = await listRecentOrders(limit);
+  return orders.filter(orderNeedsSellerAction);
 }
 
 export async function getOrder(orderId: string): Promise<StoredOrder | null> {

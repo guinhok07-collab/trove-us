@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { brand, copy } from "@/data/brand";
-import { ProductCard } from "@/components/product-card";
+import { ProductGrid } from "@/components/product-grid";
+import { ProductPagination, paginate } from "@/components/product-pagination";
 import { StoreIcon } from "@/components/icons";
 import { TrackStoreView } from "@/components/track-analytics";
 import { getVisibleProductsByStore } from "@/lib/catalog/visible-products";
@@ -12,19 +13,26 @@ export const dynamic = "force-dynamic";
 
 interface StorePageProps {
   params: Promise<{ store: string }>;
+  searchParams: Promise<{ page?: string }>;
 }
 
 export function generateStaticParams() {
   return storeList.map((s) => ({ store: s.id }));
 }
 
-export default async function StorePage({ params }: StorePageProps) {
+export default async function StorePage({ params, searchParams }: StorePageProps) {
   const { store: storeId } = await params;
+  const sp = await searchParams;
+  const pageNum = Math.max(1, Number(sp.page) || 1);
 
   if (!storeList.some((s) => s.id === storeId)) notFound();
 
   const store = getStore(storeId as StoreCategory);
   const storeProducts = await getVisibleProductsByStore(store.id);
+  const { items, currentPage, totalPages, perPage, totalItems } = paginate(
+    storeProducts,
+    pageNum,
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
@@ -51,15 +59,18 @@ export default async function StorePage({ params }: StorePageProps) {
           {store.description}
         </p>
         <p className="mt-4 text-sm font-medium text-[#78716c]">
-          {storeProducts.length} products · {copy.productDelivery}
+          {totalItems} products · {copy.productDelivery}
         </p>
       </section>
 
-      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-5">
-        {storeProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      <ProductGrid products={items} variant="compact" className="mt-10" />
+      <ProductPagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        totalItems={totalItems}
+        perPage={perPage}
+        hrefBase={`/stores/${store.id}`}
+      />
 
       <div className="mt-12 text-center">
         <Link

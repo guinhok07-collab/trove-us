@@ -31,6 +31,10 @@ export interface StoredOrder {
   trackingStatus?: number;
   confirmationEmailSent: boolean;
   shippedEmailSent: boolean;
+  /** Set when CJ auto-fulfill failed — seller must pay/ship manually. */
+  fulfillmentError?: string;
+  /** Seller marked the pending order as handled in /admin. */
+  ownerResolvedAt?: string;
   createdAt: string;
   updatedAt: string;
 }

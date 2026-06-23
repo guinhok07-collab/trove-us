@@ -11,6 +11,7 @@ import { createOrderId, ORDER_STORAGE_KEY } from "@/lib/orders";
 import type { CreateStoreOrderRequest } from "@/lib/cj/types";
 import { formatUsd } from "@/lib/format";
 import { calculateShipping } from "@/lib/pricing";
+import { cartLineKey } from "@/lib/catalog/variants";
 import { toUserErrorMessage } from "@/lib/user-errors";
 import { trackMetaInitiateCheckout } from "@/lib/meta-pixel";
 
@@ -132,7 +133,7 @@ export default function CheckoutPage() {
       subtotal,
       shipping,
       total,
-      items: items.map(({ product, quantity }) => ({
+      items: items.map(({ product, quantity, variantId }) => ({
         productId: product.id,
         slug: product.slug,
         name: product.name,
@@ -141,6 +142,7 @@ export default function CheckoutPage() {
         image: product.image,
         cjVid: product.cjVid,
         cjSku: product.cjSku,
+        variantId: variantId ?? product.cjVid,
       })),
       marketingOptIn,
     };
@@ -375,14 +377,14 @@ export default function CheckoutPage() {
             Order Summary
           </h2>
           <ul className="mt-4 space-y-3">
-            {items.map(({ product, quantity }) => (
-              <li key={product.id} className="flex gap-3">
+            {items.map(({ product, quantity, variantId, variantLabel }) => (
+              <li key={cartLineKey(product.id, variantId ?? product.cjVid)} className="flex gap-3">
                 <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-[#f5f5f4]">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover"
+                    className="object-contain p-0.5"
                     sizes="56px"
                   />
                 </div>
@@ -390,6 +392,9 @@ export default function CheckoutPage() {
                   <p className="line-clamp-2 font-medium text-[#1c1917]">
                     {product.name}
                   </p>
+                  {variantLabel && (
+                    <p className="text-xs text-[#a8a29e]">{variantLabel}</p>
+                  )}
                   <p className="text-[#78716c]">Qty {quantity}</p>
                 </div>
                 <p className="text-sm font-medium text-[#1c1917]">

@@ -1,11 +1,13 @@
 export type TelegramAlertKind =
   | "sale"
+  | "pending_sale"
   | "return"
   | "order_issue"
   | "system";
 
 const SUBJECT: Record<TelegramAlertKind, string> = {
   sale: "🛒 Nova venda",
+  pending_sale: "⚠️ VENDA PENDENTE — ação necessária",
   return: "↩️ Devolução / problema na compra",
   order_issue: "⚠️ Problema no pedido",
   system: "ℹ️ Trove — aviso",

@@ -1,5 +1,6 @@
 import { brand } from "@/data/brand";
 import { formatUsd } from "@/lib/format";
+import { orderNeedsSellerAction } from "@/lib/orders/action";
 import { siteUrl } from "@/lib/site";
 import type { StoredOrder } from "@/lib/orders/types";
 import {
@@ -15,6 +16,20 @@ function buildSaleMessage(order: StoredOrder): string {
 
   const adminUrl = `${siteUrl}/admin`;
   const trackUrl = `${siteUrl}/track?order=${encodeURIComponent(order.orderId)}&email=${encodeURIComponent(order.email)}`;
+  const pending = orderNeedsSellerAction(order);
+
+  const statusBlock = pending
+    ? [
+        "",
+        "⚠️ CLIENTE PAGOU — PEDIDO NÃO FOI PRO CJ",
+        order.fulfillmentError
+          ? `Motivo: ${order.fulfillmentError}`
+          : "Verifique saldo na wallet CJ ou envie manual no painel CJ.",
+        "Abra o admin → Pedidos → venda pendente.",
+      ]
+    : order.cjOrderId
+      ? ["", "✅ CJ: pedido enviado automaticamente.", `ID CJ: ${order.cjOrderId}`]
+      : ["", "✅ Pagamento confirmado — preparando envio."];
 
   return [
     `Pedido: ${order.orderId}`,
@@ -22,6 +37,7 @@ function buildSaleMessage(order: StoredOrder): string {
     `E-mail: ${order.email}`,
     `Total: ${formatUsd(order.total)}`,
     `Horário: ${formatAlertTime(order.createdAt)}`,
+    ...statusBlock,
     "",
     "Produtos:",
     ...lines,
@@ -65,9 +81,13 @@ export async function notifyNewSale(order: StoredOrder): Promise<void> {
   if (!isSaleNotifyConfigured()) return;
 
   const message = buildSaleMessage(order);
+  const pending = orderNeedsSellerAction(order);
+  const kind = pending ? "pending_sale" : "sale";
 
   await Promise.all([
-    sendTelegramAlert("sale", message, brand.name),
-    sendWhatsAppCallMeBot(`🛒 Nova venda — ${brand.name}\n\n${message}`),
+    sendTelegramAlert(kind, message, brand.name),
+    sendWhatsAppCallMeBot(
+      `${pending ? "⚠️ VENDA PENDENTE" : "🛒 Nova venda"} — ${brand.name}\n\n${message}`,
+    ),
   ]);
 }

@@ -1,0 +1,216 @@
+{
+  "summary": {
+    "auditedAt": "2026-06-23T19:11:41.029Z",
+    "total": 91,
+    "ok": 71,
+    "issueCount": 20,
+    "errors": 5,
+    "warnings": 15,
+    "minImages": 4
+  },
+  "issues": [
+    {
+      "slug": "orthopedic-dog-bed",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Orthopedic Memory Foam Dog Bed",
+      "imageCount": 7,
+      "variantCount": 6
+    },
+    {
+      "slug": "dog-chew-toy-durable",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Durable Dog Chew Toy",
+      "imageCount": 8,
+      "variantCount": 20
+    },
+    {
+      "slug": "cat-scratching-post",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Cat Scratching Post",
+      "imageCount": 8,
+      "variantCount": 1
+    },
+    {
+      "slug": "cat-litter-mat",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Cat Litter Catching Mat",
+      "imageCount": 7,
+      "variantCount": 9
+    },
+    {
+      "slug": "closet-organizer-6-shelf",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "6-Shelf Hanging Closet Organizer",
+      "imageCount": 6,
+      "variantCount": 3
+    },
+    {
+      "slug": "kitchen-sink-organizer",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Folding Kitchen Sink Drain Rack",
+      "imageCount": 8,
+      "variantCount": 31
+    },
+    {
+      "slug": "led-motion-night-light",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Folding Kitchen Sink Drain Rack",
+      "imageCount": 8,
+      "variantCount": 26
+    },
+    {
+      "slug": "sleep-eye-mask",
+      "level": "error",
+      "messages": [
+        "Poucas fotos (1/4) — revisar no CJ"
+      ],
+      "name": "Contoured Sleep Eye Mask",
+      "imageCount": 1,
+      "variantCount": 2
+    },
+    {
+      "slug": "yoga-mat-thick",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Thick Non-Slip Yoga Mat",
+      "imageCount": 8,
+      "variantCount": 13
+    },
+    {
+      "slug": "mini-bluetooth-speaker",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Mini Bluetooth Speaker",
+      "imageCount": 8,
+      "variantCount": 1
+    },
+    {
+      "slug": "magsafe-car-mount",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "MagSafe Car Phone Mount",
+      "imageCount": 6,
+      "variantCount": 2
+    },
+    {
+      "slug": "gaming-mouse-pad-large",
+      "level": "error",
+      "messages": [
+        "Poucas fotos (1/4) — revisar no CJ",
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Large Gaming Mouse Pad",
+      "imageCount": 1,
+      "variantCount": 1
+    },
+    {
+      "slug": "sd-card-reader-usb",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "USB SD Card Reader",
+      "imageCount": 6,
+      "variantCount": 1
+    },
+    {
+      "slug": "car-charger-usb-c",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "USB SD Card Reader",
+      "imageCount": 6,
+      "variantCount": 43
+    },
+    {
+      "slug": "smartwatch-band-silicone",
+      "level": "error",
+      "messages": [
+        "Poucas fotos (3/4) — revisar no CJ",
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Silicone Smartwatch Band",
+      "imageCount": 3,
+      "variantCount": 2
+    },
+    {
+      "slug": "cable-management-box",
+      "level": "error",
+      "messages": [
+        "Poucas fotos (3/4) — revisar no CJ",
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Silicone Smartwatch Band",
+      "imageCount": 3,
+      "variantCount": 55
+    },
+    {
+      "slug": "tablet-stand-adjustable",
+      "level": "warn",
+      "messages": [
+        "Variantes não sincronizadas — rodar sync-all-variants"
+      ],
+      "name": "Adjustable Tablet Stand",
+      "imageCount": 8,
+      "variantCount": 0
+    },
+    {
+      "slug": "ice-cube-tray-silicone",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Silicone Ice Cube Tray with Lid",
+      "imageCount": 8,
+      "variantCount": 8
+    },
+    {
+      "slug": "silicone-stove-gap-cover",
+      "level": "error",
+      "messages": [
+        "Poucas fotos (3/4) — revisar no CJ"
+      ],
+      "name": "Silicone Stove Gap Cover",
+      "imageCount": 3,
+      "variantCount": 3
+    },
+    {
+      "slug": "lazy-susan-turntable",
+      "level": "warn",
+      "messages": [
+        "Muitas imagens PNG/trans — podem não encaixar bem na galeria"
+      ],
+      "name": "Lazy Susan Turntable",
+      "imageCount": 6,
+      "variantCount": 4
+    }
+  ]
+}

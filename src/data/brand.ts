@@ -97,6 +97,8 @@ export const copy = {
     "Useful products for real life — your home, your pets, your health, and your daily routine. One checkout, one team, one promise to take care of you.",
   bestSellers: "Customer Favorites",
   bestSellersSub: "Most-loved picks this season",
+  shopMoreTitle: "Shop more picks",
+  shopMoreSub: "Everyday essentials at impulse-friendly prices — scroll and add to cart",
   emptyCart: "Your cart is waiting — find something you'll love.",
   productDelivery: "Delivery in 3–5 business days",
   productShipsUs: "Ships anywhere in the US",

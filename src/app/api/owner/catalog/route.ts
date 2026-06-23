@@ -1,5 +1,8 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { NextResponse } from "next/server";
 import { products, storeLabels } from "@/data/products";
+import catalogStandards from "@/data/catalog-standards.json";
 import { getCatalogVisibilityMap } from "@/lib/catalog/visible-products";
 import {
   getVisibilityOverrides,
@@ -7,6 +10,68 @@ import {
   setProductVisibility,
 } from "@/lib/catalog/visibility-store";
 import { requireOwnerAuth } from "@/lib/require-owner-auth";
+
+type MediaAuditIssue = {
+  slug: string;
+  level: "error" | "warn";
+  messages: string[];
+  name?: string;
+  imageCount?: number;
+  variantCount?: number;
+};
+
+function loadMediaAudit() {
+  try {
+    const raw = readFileSync(
+      join(process.cwd(), "src/data/catalog-media-audit.json"),
+      "utf8",
+    );
+    return JSON.parse(raw) as {
+      summary: {
+        auditedAt: string;
+        total: number;
+        ok: number;
+        issueCount: number;
+        errors: number;
+        warnings: number;
+        minImages: number;
+      };
+      issues: MediaAuditIssue[];
+    };
+  } catch {
+    return null;
+  }
+}
+function loadCjAudit() {
+  try {
+    const raw = readFileSync(
+      join(process.cwd(), "src/data/catalog-cj-audit.json"),
+      "utf8",
+    );
+    return JSON.parse(raw) as {
+      summary: {
+        auditedAt: string;
+        total: number;
+        ok: number;
+        issueCount: number;
+        errors: number;
+        warnings: number;
+        nameMismatch: number;
+        variantGap: number;
+      };
+      issues: Array<{
+        slug: string;
+        level: "error" | "warn";
+        messages: string[];
+        types?: string[];
+        cjName?: string;
+        overlap?: number;
+      }>;
+    };
+  } catch {
+    return null;
+  }
+}
 
 export async function GET() {
   const auth = await requireOwnerAuth();
@@ -17,16 +82,39 @@ export async function GET() {
     getVisibilityOverrides(),
   ]);
 
-  const catalog = products.map((product) => ({
-    slug: product.slug,
-    name: product.name,
-    price: product.price,
-    store: product.store,
-    storeLabel: storeLabels[product.store],
-    catalogHidden: Boolean(product.catalogHidden),
-    visible: visibility[product.slug],
-    hasOverride: product.slug in overrides,
-  }));
+  const mediaAudit = loadMediaAudit();
+  const cjAudit = loadCjAudit();
+  const mediaBySlug = new Map(
+    (mediaAudit?.issues ?? []).map((issue) => [issue.slug, issue]),
+  );
+  const cjBySlug = new Map((cjAudit?.issues ?? []).map((issue) => [issue.slug, issue]));
+
+  const catalog = products.map((product) => {
+    const mediaIssue = mediaBySlug.get(product.slug);
+    const cjIssue = cjBySlug.get(product.slug);
+    return {
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+      store: product.store,
+      storeLabel: storeLabels[product.store],
+      catalogHidden: Boolean(product.catalogHidden),
+      visible: visibility[product.slug],
+      hasOverride: product.slug in overrides,
+      mediaIssue: mediaIssue
+        ? { level: mediaIssue.level, messages: mediaIssue.messages }
+        : null,
+      cjIssue: cjIssue
+        ? {
+            level: cjIssue.level,
+            messages: cjIssue.messages,
+            types: cjIssue.types ?? [],
+            cjName: cjIssue.cjName,
+            overlap: cjIssue.overlap,
+          }
+        : null,
+    };
+  });
 
   const visibleCount = catalog.filter((entry) => entry.visible).length;
 
@@ -36,6 +124,11 @@ export async function GET() {
     visibleCount,
     hiddenCount: catalog.length - visibleCount,
     products: catalog,
+    standards: catalogStandards,
+    mediaAudit: mediaAudit?.summary ?? null,
+    mediaIssues: mediaAudit?.issues ?? [],
+    cjAudit: cjAudit?.summary ?? null,
+    cjIssues: cjAudit?.issues ?? [],
   });
 }
 
