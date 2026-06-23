@@ -487,29 +487,30 @@ export const products: Product[] = [
   {
     id: "pet-15",
     slug: "pet-deshedding-tool",
-    name: "Pet Paw Cleaner Cup",
-    description: "Silicone bristle cup rinses muddy paws quickly before they track dirt inside.",
+    name: "Pet Deshedding Tool",
+    description: "Stainless edge removes loose undercoat and cuts down on fur around the house.",
     longDescription:
-      "Clean paws after walks, hikes, and yard time without wrestling a towel. Soft interior bristles gently scrub between toes while water flushes mud away. Portable cup design works at the door, in the car, or at the campsite. Ships from our US warehouse in 3–5 business days.",
-    price: 7.99,
-    compareAtPrice: 8.99,
+      "Reach deep undercoat without damaging top fur on dogs and cats that shed seasonally. The ergonomic handle makes long grooming sessions comfortable for you and your pet. Regular use helps reduce hair on furniture, floors, and clothing. Ships from our US warehouse in 3–5 business days.",
+    price: 6.99,
+    compareAtPrice: 7.99,
     store: "pet",
-    image: "https://cf.cjdropshipping.com/82239fff-b59c-42ca-b5be-3e92276f9e7f.jpg",
+    image: "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg",
     images: [
-      "https://cf.cjdropshipping.com/82239fff-b59c-42ca-b5be-3e92276f9e7f.jpg",
-      "https://cf.cjdropshipping.com/405f13fe-da77-4609-be3d-7325c91270c8.jpg",
-      "https://cf.cjdropshipping.com/55fccf4a-91a0-4128-9aca-1425266a60fe.jpg",
-      "https://cf.cjdropshipping.com/7436e262-5d41-42a8-86ff-03da36ad9f54.jpg",
-      "https://cf.cjdropshipping.com/3227af1c-bc2b-4725-a5b3-8fcea3fe0c7a.jpg",
-      "https://cf.cjdropshipping.com/a117a735-2299-4f0d-ac35-12f14439f43b.jpg",
-      "https://cf.cjdropshipping.com/db9cdf84-cd35-43ef-ad7e-b3721c345fd5.jpg",
-      "https://cf.cjdropshipping.com/93bb936f-b879-46e3-bd10-0145ab7f131b.jpg",
-      "https://cf.cjdropshipping.com/ffac22a8-6a12-4eb1-9bc5-9c77e36a03a0.jpg",
-      "https://cf.cjdropshipping.com/a8ef6252-34be-4e5e-af27-ecd2df4d8777.jpg",
-      "https://cf.cjdropshipping.com/764f2b16-9300-497a-80fd-a56a22afa38f.jpg",
-      "https://cf.cjdropshipping.com/e94d1edd-6d3c-4e21-9a3d-72bcc4ba2e01.jpg",
-      "https://cf.cjdropshipping.com/c1495f39-9a0d-4153-8b73-b8b1ea2826f3.jpg",
-      "https://cf.cjdropshipping.com/00a30323-f3cd-4777-a7a1-22267b869a5d.jpg"
+      "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
+      "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
+      "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
+      "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
+      "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
       ],
     rating: 4.4,
     reviews: 12,
@@ -518,10 +519,10 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: ["bestseller"],
-    features: ["Soft silicone bristles","Quick rinse-and-go design","Fits most paw sizes","Easy to disassemble"],
-    supplierSku: "CJGY1765347",
-    cjVid: "1661977360045969408",
-    cjSku: "CJGY176534701AZ"
+    features: ["Stainless deshedding edge","Ergonomic comfort grip","Safe on topcoat fur","Reduces household shedding"],
+    supplierSku: "CJGY1919307",
+    cjVid: "1734496117838061568",
+    cjSku: "CJGY191930702BY"
   },
     {
     id: "pet-17",
@@ -867,23 +868,23 @@ export const products: Product[] = [
   {
     id: "home-11",
     slug: "foldable-laundry-hamper",
-    name: "Adhesive Cable Clips",
-    description: "Stick-on clips route cords neatly along desks, walls, and nightstands.",
+    name: "Foldable Laundry Hamper",
+    description: "Collapsible hamper holds a full load and folds flat when not in use.",
     longDescription:
-      "Tame charging cables and headphone wires with clips that mount in seconds on smooth surfaces. Strong adhesive holds cords in place without drilling or permanent damage. Reusable design works on desks, entertainment centers, and bedside tables. Ships from our US warehouse in 3–5 business days.",
-    price: 17.99,
-    compareAtPrice: 19.99,
+      "Keep dirty clothes contained with a lightweight hamper that pops open in seconds. Reinforced handles make trips to the laundry room comfortable even when the bin is full. Folds flat for dorm rooms, closets, and small apartments. Ships from our US warehouse in 3–5 business days.",
+    price: 37.99,
+    compareAtPrice: 41.99,
     store: "home",
-    image: "https://cf.cjdropshipping.com/76604221-b954-48b3-a5a8-9f2a046d0d05.jpg",
+    image: "https://cf.cjdropshipping.com/8c179f95-9d04-4acb-b653-7c34f69dd325.jpg",
     images: [
-      "https://cf.cjdropshipping.com/76604221-b954-48b3-a5a8-9f2a046d0d05.jpg",
-      "https://cf.cjdropshipping.com/c4475771-2591-44e1-a9e2-b12428a2687c.jpg",
-      "https://cf.cjdropshipping.com/a6b60a6e-77a8-4f95-9712-73e5f478bc35.jpg",
-      "https://cf.cjdropshipping.com/9e3c4555-b4a6-4f94-bbc7-a3c40748f2ac.jpg",
-      "https://cf.cjdropshipping.com/eec9be04-cd21-456b-9161-22c1a1340bf8.jpg",
-      "https://cf.cjdropshipping.com/3e80c150-4526-42c1-9c0f-51d8f57ceedb.jpg",
-      "https://cf.cjdropshipping.com/ae0971c1-e3d1-4367-bfd3-691abea1d20a.jpg",
-      "https://cf.cjdropshipping.com/ba8834fe-16c5-4d42-bb14-15649d1688a4.jpg"
+      "https://cf.cjdropshipping.com/8c179f95-9d04-4acb-b653-7c34f69dd325.jpg",
+      "https://cf.cjdropshipping.com/355ab421-a49c-49c9-bd42-79cb7fd02721.jpg",
+      "https://cf.cjdropshipping.com/16b45355-1b85-4382-ba20-2b1facc8efc6.jpg",
+      "https://cf.cjdropshipping.com/a86229fd-7250-4483-8456-ff7542cb8a89.jpg",
+      "https://cf.cjdropshipping.com/7196ebb3-8d67-468a-a00a-c4a3b60d5a9f.jpg",
+      "https://cf.cjdropshipping.com/d83978c7-9b10-4457-a6fb-aa139cba3ef7.jpg",
+      "https://cf.cjdropshipping.com/8c81c5e8-9c56-40bf-b36c-433f446ed10b.jpg",
+      "https://cf.cjdropshipping.com/599eee20-a5dd-4938-945d-09f61ede5c5b.jpg"
       ],
     rating: 4.8,
     reviews: 6,
@@ -892,10 +893,10 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["Strong adhesive backing","No-drill installation","Fits most cable sizes","Neat desk and wall routing"],
-    supplierSku: "CJJT2525664",
-    cjVid: "1965621057040715778",
-    cjSku: "CJJT252566401AZ"
+    features: ["Collapsible frame design","Reinforced carry handles","Breathable fabric body","Folds flat for storage"],
+    supplierSku: "CJYS2435935",
+    cjVid: "1947204011159232514",
+    cjSku: "CJYS243593501AZ"
   },
     {
     id: "home-13",
@@ -933,25 +934,22 @@ export const products: Product[] = [
   {
     id: "home-14",
     slug: "garbage-bag-holder",
-    name: "Over the Door Hook Rack",
-    description: "Over-door rack adds hooks for coats, bags, and towels without hardware.",
+    name: "Portable Pet Waste Bag Holder",
+    description: "Clip-on holder keeps pet waste bags ready on walks, hikes, and travel.",
     longDescription:
-      "Create instant storage behind bedroom, bathroom, or closet doors in under a minute. Multiple hooks hold jackets, robes, backpacks, and tote bags off the floor. Padded backing protects door finishes from scuffs and scratches. Ships from our US warehouse in 3–5 business days.",
-    price: 29.99,
-    compareAtPrice: 32.99,
+      "Carry waste bags wherever you go with a compact dispenser that clips to leashes and bags. The secure lid opens quickly when you need a bag on busy sidewalks or trails. Durable shell protects rolls from moisture and everyday wear. Ships from our US warehouse in 3–5 business days.",
+    price: 5.99,
+    compareAtPrice: 6.99,
     store: "home",
-    image: "https://cf.cjdropshipping.com/4a8a0702-f2b2-411d-ba6d-765fad9103c9.jpg",
+    image: "https://cf.cjdropshipping.com/20200917/3936955088484.png",
     images: [
-      "https://cf.cjdropshipping.com/4a8a0702-f2b2-411d-ba6d-765fad9103c9.jpg",
-      "https://cf.cjdropshipping.com/805c93c7-18d4-46c1-88d5-e01c3cfb01e9.jpg",
-      "https://cf.cjdropshipping.com/438244d3-9b65-4397-bffa-442de7bac658.jpg",
-      "https://cf.cjdropshipping.com/36c1cc5f-7813-4da4-8674-581c6bdac79f.jpg",
-      "https://cf.cjdropshipping.com/24d2e364-68de-4456-9004-1ad4f7535c49.jpg",
-      "https://cf.cjdropshipping.com/ac6e24d2-9252-4610-a686-c17509720215.jpg",
-      "https://cf.cjdropshipping.com/f6496988-1a61-450d-a596-be212feb4cfc.jpg",
-      "https://cf.cjdropshipping.com/4768627e-a8d9-4a1a-8f63-f31c1b22a870.jpg",
-      "https://cf.cjdropshipping.com/9326ad08-b125-470c-bb3e-f0572bbcabb1.jpg",
-      "https://cf.cjdropshipping.com/7a089760-c7ae-4861-b459-f00526056a90.jpg"
+      "https://cf.cjdropshipping.com/20200917/3936955088484.png",
+      "https://cf.cjdropshipping.com/20200917/926008177640.jpg",
+      "https://cf.cjdropshipping.com/20200917/177642081239.jpg",
+      "https://cf.cjdropshipping.com/20200917/2758007154668.jpg",
+      "https://cf.cjdropshipping.com/20200917/5414436924127.jpg",
+      "https://cf.cjdropshipping.com/20200917/789970640698.jpg",
+      "https://cf.cjdropshipping.com/20200917/721881400384.jpg"
       ],
     rating: 4.6,
     reviews: 9,
@@ -961,10 +959,10 @@ export const products: Product[] = [
     warehouse: "US",
     catalogHidden: true,
     tags: ["bestseller"],
-    features: ["Tool-free over-door fit","Multiple sturdy hooks","Padded anti-scratch backing","Fits standard interior doors"],
-    supplierSku: "CJYS2555337",
-    cjVid: "1976916875110416386",
-    cjSku: "CJYS255533701AZ"
+    features: ["Leash and bag clip","Fits standard roll bags","Quick-access lid","Compact travel-ready size"],
+    supplierSku: "CJJJCWGY03039",
+    cjVid: "435F678A-1EA2-4379-9191-5149E704FCF2",
+    cjSku: "CJJJCWGY03039-Blue white"
   },
     {
     id: "home-16",
@@ -1039,21 +1037,22 @@ export const products: Product[] = [
   {
     id: "home-19",
     slug: "kitchen-sink-organizer",
-    name: "LED Motion Sensor Night Light",
-    description: "Auto-on night light guides you safely through hallways and bathrooms at night.",
+    name: "Folding Kitchen Sink Drain Rack",
+    description: "Collapsible rack sits over the sink to dry dishes, produce, and utensils.",
     longDescription:
-      "Soft LED light turns on when motion is detected and shuts off to save power. Plug it into any outlet for instant coverage in hallways, nurseries, and guest rooms. Warm glow is easy on tired eyes without waking the whole house. Ships from our US warehouse in 3–5 business days.",
-    price: 26.99,
-    compareAtPrice: 29.99,
+      "Expand counter space with a drain rack that folds out over your sink when you need it. Raised bars let water drip away while plates, cups, and veggies air dry. Rolls up compact for drawer storage when the sink is free. Ships from our US warehouse in 3–5 business days.",
+    price: 25.99,
+    compareAtPrice: 28.99,
     store: "home",
-    image: "https://cf.cjdropshipping.com/17691264/66e6a7d4-9b99-414b-bfc4-7d289264ec31.jpg",
+    image: "https://cf.cjdropshipping.com/946f8e98-e3cc-4f7f-85d2-dab95825a2d3.jpg",
     images: [
-      "https://cf.cjdropshipping.com/17691264/66e6a7d4-9b99-414b-bfc4-7d289264ec31.jpg",
-      "https://cf.cjdropshipping.com/17691264/cf1f6a35-f1b6-4427-8242-7e30c99a9ba6.jpg",
-      "https://cf.cjdropshipping.com/17691264/bb0c93a8-582b-4f86-b2f9-6a6d093cafd0.jpg",
-      "https://cf.cjdropshipping.com/17691264/8b79add3-7442-4ded-9edf-fe973bcb4c79.jpg",
-      "https://cf.cjdropshipping.com/17691264/2481fbc0-01a5-4ecd-9b2e-26047ae1e53e.jpg",
-      "https://cf.cjdropshipping.com/17691264/b51894a8-aa0a-4b3d-949c-5e40f3079f9a.jpg"
+      "https://cf.cjdropshipping.com/946f8e98-e3cc-4f7f-85d2-dab95825a2d3.jpg",
+      "https://cf.cjdropshipping.com/57077517-aec2-43cd-a467-98ed3d153b7d.jpg",
+      "https://cf.cjdropshipping.com/aa8487d0-453d-48e1-8634-4711ded694ae.jpg",
+      "https://cf.cjdropshipping.com/0a68d81a-806b-4f2f-b609-590b142a9123.jpg",
+      "https://cf.cjdropshipping.com/581379a0-eba8-4871-a275-20489ce9d735.jpg",
+      "https://cf.cjdropshipping.com/27abe7a9-fe99-46d1-b4d8-9981d8f61bb1.jpg",
+      "https://cf.cjdropshipping.com/34bc7899-ab60-46dc-abc1-fffc85cf5087.jpg"
       ],
     rating: 4.9,
     reviews: 13,
@@ -1062,18 +1061,18 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: ["bestseller"],
-    features: ["Motion-activated sensor","Plug-in outlet design","Soft warm LED glow","Energy-saving auto shutoff"],
-    supplierSku: "CJSN2740463",
-    cjVid: "2014635212674207746",
-    cjSku: "CJSN27404630001"
+    features: ["Fold-over sink design","Fast air-dry drainage","Rolls up for storage","Heat-resistant silicone bars"],
+    supplierSku: "CJJT2457727",
+    cjVid: "1956541096894005249",
+    cjSku: "CJJT245772701AZ"
   },
-    {
+  {
     id: "home-4",
     slug: "led-motion-night-light",
-    name: "Vacuum Storage Bags",
-    description: "Space-saving bags compress clothes and bedding to free closet and suitcase room.",
+    name: "LED Motion Sensor Night Light",
+    description: "Auto-on night light guides you safely through hallways and bathrooms at night.",
     longDescription:
-      "Shrink bulky seasonal items with bags that seal tight and compress with a household vacuum. Protect fabrics from dust, moisture, and pests while you store off-season gear. Reusable design works for closets, under-bed storage, and travel packing. Ships from our US warehouse in 3–5 business days.",
+      "Soft LED light turns on when motion is detected and shuts off to save power. Plug it into any outlet for instant coverage in hallways, nurseries, and guest rooms. Warm glow is easy on tired eyes without waking the whole house. Ships from our US warehouse in 3–5 business days.",
     price: 25.99,
     compareAtPrice: 28.99,
     store: "home",
@@ -1093,7 +1092,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: ["bestseller", "free-shipping"],
-    features: ["Vacuum-compression seal","Dust and moisture barrier","Reusable multi-pack set","Fits clothes and bedding"],
+    features: ["Motion-activated sensor","Plug-in outlet design","Soft warm LED glow","Energy-saving auto shutoff"],
     supplierSku: "CJSN2740463",
     cjVid: "2014635212674207746",
     cjSku: "CJSN27404630001"
@@ -1497,6 +1496,44 @@ export const products: Product[] = [
   {
     id: "well-2",
     slug: "posture-corrector-brace",
+    name: "Adjustable Posture Corrector Brace",
+    description: "Lightweight brace pulls shoulders back to encourage better alignment all day.",
+    longDescription:
+      "Support healthier posture during desk work, commuting, and everyday movement. Breathable straps adjust to your frame for a snug fit under or over clothing. Discreet design helps you stand taller without bulky hardware. Ships from our US warehouse in 3–5 business days.",
+    price: 10.99,
+    compareAtPrice: 12.99,
+    store: "wellness",
+    image: "https://cf.cjdropshipping.com/20200108/2265966782259.jpg",
+    images: [
+      "https://cf.cjdropshipping.com/20200108/2265966782259.jpg",
+      "https://cf.cjdropshipping.com/20200108/420054185893.png",
+      "https://cf.cjdropshipping.com/20200108/901645954085.jpg",
+      "https://cf.cjdropshipping.com/20200108/12213090276917.jpg",
+      "https://cf.cjdropshipping.com/20200108/559376802124.jpg",
+      "https://cf.cjdropshipping.com/20200108/227169314563.jpg",
+      "https://cf.cjdropshipping.com/20200108/358165997494.jpg",
+      "https://oss-cf.cjdropshipping.com/product/2026/04/05/02/0c5ca0ff-0ff7-4357-8ca7-0e1682aec6f9.jpg",
+      "https://cf.cjdropshipping.com/20200108/377343376763.jpg"
+      ],
+    rating: 4.6,
+    reviews: 18,
+    sold: 65,
+    inStock: true,
+    shippingDays: "3–5 days",
+    warehouse: "US",
+    tags: ["bestseller"],
+    features: ["Adjustable shoulder support","Breathable lightweight straps","Discreet under-clothing fit","Encourages upright alignment"],
+    supplierSku: "CJYDQTJM00362",
+    cjVid: "1AB2D817-4789-44FA-8195-44F51D8A3BB0",
+    cjSku: "CJYDQTJM00362-Black-4XL"
+  },
+  
+  
+  
+  
+  {
+    id: "well-7",
+    slug: "essential-oil-diffuser",
     name: "Ultrasonic Essential Oil Diffuser",
     description: "Ultrasonic diffuser adds fine mist and aroma to bedrooms, offices, and living rooms.",
     longDescription:
@@ -1514,42 +1551,6 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/17634240/067f7a91-a886-460b-be77-0466396ecf60.jpg"
       ],
     rating: 4.6,
-    reviews: 18,
-    sold: 65,
-    inStock: true,
-    shippingDays: "3–5 days",
-    warehouse: "US",
-    tags: ["bestseller"],
-    features: ["Ultrasonic fine mist","Quiet bedroom-friendly operation","Soft ambient LED light","Auto shutoff when empty"],
-    supplierSku: "CJKD2600489",
-    cjVid: "1990603731669540866",
-    cjSku: "CJKD26004890001"
-  },
-  
-  
-  
-  
-  {
-    id: "well-7",
-    slug: "essential-oil-diffuser",
-    name: "Ultrasonic Essential Oil Diffuser",
-    description: "Ultrasonic diffuser adds fine mist and aroma to bedrooms, offices, and living rooms.",
-    longDescription:
-      "Fill your space with gentle fragrance using quiet ultrasonic mist that won't overheat oils. Soft LED lighting and timer options make evenings and work sessions more relaxing. Compact footprint fits nightstands, desks, and bathroom counters with ease. Ships from our US warehouse in 3–5 business days.",
-    price: 27.99,
-    compareAtPrice: 30.99,
-    store: "wellness",
-    image: "https://oss-cf.cjdropshipping.com/product/2023/12/21/10/e7d2f183-e5a9-48b3-abd7-df07881e0a14.jpg",
-    images: [
-      "https://oss-cf.cjdropshipping.com/product/2023/12/21/10/e7d2f183-e5a9-48b3-abd7-df07881e0a14.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2023/12/21/10/fd10ef96-e1b8-4371-84e0-a304a3cb5536.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2024/04/17/09/18160df9-775e-41eb-9669-b6216ba82525.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2024/04/17/09/68f3861e-c193-43cb-bf56-3ed9125afe60.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2023/12/21/10/3cf1123a-0de1-4b77-bf18-2bc1c34d9c93.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2023/12/21/10/2ff23983-a007-4000-9f34-529fab83cfe9.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2023/12/21/10/eff90ec0-cdf9-4710-ad3f-cb3ee491a2be.jpg"
-      ],
-    rating: 4.6,
     reviews: 11,
     sold: 72,
     inStock: true,
@@ -1557,9 +1558,9 @@ export const products: Product[] = [
     warehouse: "US",
     tags: ["free-shipping"],
     features: ["Ultrasonic fine mist","Quiet bedroom-friendly operation","Soft ambient LED light","Auto shutoff when empty"],
-    supplierSku: "CJJT1926655",
-    cjVid: "1737779611557175296",
-    cjSku: "CJJT192665501AZ"
+    supplierSku: "CJKD2600489",
+    cjVid: "1990603731669540866",
+    cjSku: "CJKD26004890001"
   },
   {
     id: "well-8",
@@ -1789,19 +1790,17 @@ export const products: Product[] = [
     description: "Desktop stand holds phones at the perfect angle for video calls and scrolling.",
     longDescription:
       "Prop your phone upright for FaceTime, recipes, and desk notifications without picking it up. Adjustable tilt works in portrait or landscape for videos and typing. Non-slip base stays put on nightstands, kitchen counters, and work desks. Ships from our US warehouse in 3–5 business days.",
-    price: 6.99,
-    compareAtPrice: 7.99,
+    price: 12.99,
+    compareAtPrice: 14.99,
     store: "tech",
-    image: "https://cf.cjdropshipping.com/15139872/2105404712819.jpg",
+    image: "https://cf.cjdropshipping.com/4d431db6-1620-45b9-9302-137716c5a5bf.png",
     images: [
-      "https://cf.cjdropshipping.com/15139872/2105404712819.jpg",
-      "https://cf.cjdropshipping.com/15139872/1133894694913.jpg",
-      "https://cf.cjdropshipping.com/15139872/2336467600987.jpg",
-      "https://cf.cjdropshipping.com/15139872/4587341175564.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2024/06/07/07/1c24d7fc-13e0-4625-93a9-a7292cd77c38.jpg",
-      "https://cf.cjdropshipping.com/15139872/1290266577162.jpg",
-      "https://cf.cjdropshipping.com/15139872/305513534996.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2024/06/07/07/2763a6e0-bb8f-4db5-8f4a-77df2d7ed3f1.jpg"
+      "https://cf.cjdropshipping.com/4d431db6-1620-45b9-9302-137716c5a5bf.png",
+      "https://cf.cjdropshipping.com/2bbc9524-8d75-4535-add9-92f6fd895ef1.png",
+      "https://cf.cjdropshipping.com/e64b8bb1-98a9-467f-b49f-7251100f4685.png",
+      "https://cf.cjdropshipping.com/03a03822-bc48-4b2a-b0c0-dcc0ac84faf3.png",
+      "https://cf.cjdropshipping.com/c19f5d3b-fbba-4c2c-b339-71544573b4f6.png",
+      "https://cf.cjdropshipping.com/71a22ebc-dbef-48dd-ba3f-ba9c44ea5bed.png"
       ],
     rating: 4.4,
     reviews: 13,
@@ -1811,9 +1810,9 @@ export const products: Product[] = [
     warehouse: "US",
     tags: [],
     features: ["Adjustable viewing angle","Portrait and landscape hold","Non-slip stable base","Works with most phones"],
-    supplierSku: "CJSJSJSJ00008",
-    cjVid: "170D9F7D-7071-4E4A-A73E-CC5A3B66F020",
-    cjSku: "CJSJSJSJ00008-Black"
+    supplierSku: "CJSJ2422949",
+    cjVid: "1941792734394417154",
+    cjSku: "CJSJ242294901AZ"
   },
   {
     id: "tech-9",
@@ -2164,19 +2163,16 @@ export const products: Product[] = [
     description: "Hands-free viewing for recipes, video calls, and streaming.",
     longDescription:
       "Prop tablets at the perfect angle on desks, kitchen counters, and nightstands. Adjustable hinge holds position for typing, drawing, or watching shows. Non-slip base keeps the stand steady on smooth surfaces. Ships from our US warehouse in 3–5 business days.",
-    price: 6.99,
-    compareAtPrice: 7.99,
+    price: 16.99,
+    compareAtPrice: 18.99,
     store: "tech",
-    image: "https://cf.cjdropshipping.com/15139872/2105404712819.jpg",
+    image: "https://cf.cjdropshipping.com/3a9f71e1-9e6c-4be2-9e3e-f3624bd809f4.png",
     images: [
-      "https://cf.cjdropshipping.com/15139872/2105404712819.jpg",
-      "https://cf.cjdropshipping.com/15139872/1133894694913.jpg",
-      "https://cf.cjdropshipping.com/15139872/2336467600987.jpg",
-      "https://cf.cjdropshipping.com/15139872/4587341175564.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2024/06/07/07/1c24d7fc-13e0-4625-93a9-a7292cd77c38.jpg",
-      "https://cf.cjdropshipping.com/15139872/1290266577162.jpg",
-      "https://cf.cjdropshipping.com/15139872/305513534996.jpg",
-      "https://oss-cf.cjdropshipping.com/product/2024/06/07/07/2763a6e0-bb8f-4db5-8f4a-77df2d7ed3f1.jpg"
+      "https://cf.cjdropshipping.com/3a9f71e1-9e6c-4be2-9e3e-f3624bd809f4.png",
+      "https://cf.cjdropshipping.com/ec9c12bd-08c8-434e-b3b8-c34b01f6ebf9.jpg",
+      "https://cf.cjdropshipping.com/b4c7d1bf-a46f-48e2-b3cb-539cb9dd3977.png",
+      "https://cf.cjdropshipping.com/f010003e-5a55-40c4-8256-5502470bd453.png",
+      "https://cf.cjdropshipping.com/6f7d801a-ceef-4737-8e4a-428943ed8462.jpg"
       ],
     rating: 4.9,
     reviews: 36,
@@ -2186,9 +2182,9 @@ export const products: Product[] = [
     warehouse: "US",
     tags: [],
     features: ["Adjustable viewing angle","Non-slip base","Fits most tablet sizes","Foldable portable design"],
-    supplierSku: "CJSJSJSJ00008",
-    cjVid: "170D9F7D-7071-4E4A-A73E-CC5A3B66F020",
-    cjSku: "CJSJSJSJ00008-Black"
+    supplierSku: "CJPB2874895",
+    cjVid: "2052681419690512386",
+    cjSku: "CJPB287489501AZ"
   },
   {
     id: "pet-21",
@@ -3903,20 +3899,16 @@ export const products: Product[] = [
     description: "Quality everyday essential — ships fast from our US warehouse.",
     longDescription:
       "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
-    price: 37.99,
-    compareAtPrice: 41.99,
+    price: 28.99,
+    compareAtPrice: 31.99,
     store: "home",
-    image: "https://cf.cjdropshipping.com/b1d833a8-2c2f-49fb-a90b-3abfd487a14e.jpg",
+    image: "https://cf.cjdropshipping.com/7af4a97f-cd2a-4b2b-9d69-fb2dbbea7614.jpg",
     images: [
-      "https://cf.cjdropshipping.com/b1d833a8-2c2f-49fb-a90b-3abfd487a14e.jpg",
-      "https://cf.cjdropshipping.com/04e66cc8-1fd9-47e3-b4c8-391f1e3ed475.jpg",
-      "https://cf.cjdropshipping.com/3d9144de-4e17-4b68-9f81-2b80c0e774b0.jpg",
-      "https://cf.cjdropshipping.com/99bfeed7-1d5a-4bfc-9b59-461cb05651c5.jpg",
-      "https://cf.cjdropshipping.com/2abc4a1c-6db2-462f-9746-eafa40426034.jpg",
-      "https://cf.cjdropshipping.com/43577c9d-5f15-4011-9c58-6558ea327959.jpg",
-      "https://cf.cjdropshipping.com/2408e18c-d2c3-48c1-a315-2ab89e67f572.jpg",
-      "https://cf.cjdropshipping.com/360aab70-9b4c-4bbb-83a1-7f42738f5807.jpg",
-      "https://cf.cjdropshipping.com/20b763ef-ef81-4b42-8386-6533281bcf5d.jpg"
+      "https://cf.cjdropshipping.com/7af4a97f-cd2a-4b2b-9d69-fb2dbbea7614.jpg",
+      "https://cf.cjdropshipping.com/7259c62f-c9c5-44f7-b95c-018342fc70bb.jpg",
+      "https://cf.cjdropshipping.com/090d5f20-59d4-4159-ab1a-aa8d6b211a52.jpg",
+      "https://cf.cjdropshipping.com/00ab499c-ab78-401e-a1f0-d1e0197c9a80.jpg",
+      "https://cf.cjdropshipping.com/753b6e3e-8599-4eea-8aa3-8d9c890cc8d0.jpg"
       ],
     rating: 4.3,
     reviews: 12,
@@ -3926,9 +3918,9 @@ export const products: Product[] = [
     warehouse: "US",
     tags: [],
     features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
-    supplierSku: "over-sink-dish-rack",
-    cjVid: "1947183733635379201",
-    cjSku: "CJCF243581801AZ"
+    supplierSku: "CJCJ2754953",
+    cjVid: "2019311077070319620",
+    cjSku: "CJCJ275495303CX"
   },
   {
     id: "well-29",

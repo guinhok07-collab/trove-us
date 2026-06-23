@@ -135,10 +135,10 @@ export function extractProductBlock(source, slug) {
   const idx = source.indexOf(needle);
   if (idx < 0) return null;
 
+  // Only space indentation — \s+ would swallow blank lines and attach the wrong `{`.
   let start = -1;
-  for (const m of source.slice(0, idx).matchAll(/\r?\n(\s+)\{/g)) {
-    const indent = m[1].length;
-    if (indent >= 2 && indent <= 8) start = m.index;
+  for (const m of source.slice(0, idx).matchAll(/\r?\n([ ]{2,8})\{/g)) {
+    start = m.index;
   }
   if (start < 0) return null;
 

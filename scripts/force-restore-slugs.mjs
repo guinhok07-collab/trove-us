@@ -12,12 +12,24 @@ const copyPath = resolve(__dirname, "product-copy.json");
 
 const copy = JSON.parse(readFileSync(copyPath, "utf8"));
 const SLUGS = [
+  "pet-deshedding-tool",
+  "pet-paw-cleaner-cup",
+  "foldable-laundry-hamper",
+  "cable-clips-adhesive",
+  "garbage-bag-holder",
+  "over-door-hook-rack",
+  "kitchen-sink-organizer",
+  "led-motion-night-light",
+  "vacuum-storage-bags",
+  "posture-corrector-brace",
+  "essential-oil-diffuser",
+  "adjustable-phone-stand",
+  "over-sink-dish-rack",
+  "silicone-utensil-rest",
   "back-posture-trainer",
   "sd-card-reader-usb",
   "smartwatch-band-silicone",
   "cable-management-box",
-  "vacuum-storage-bags",
-  "essential-oil-diffuser",
 ];
 
 let source = readFileSync(productsPath, "utf8");
