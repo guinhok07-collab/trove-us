@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { brand } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
+import { Icon } from "@/components/icons";
 import { storeList, storeShortNames } from "@/data/stores";
 
 export function SiteHeader() {
@@ -75,10 +76,10 @@ export function SiteHeader() {
       </div>
 
       <div className="border-t border-[#e7e5e4]/60 bg-white/60">
-        <div className="mx-auto flex max-w-7xl snap-x snap-mandatory gap-1.5 overflow-x-auto scroll-pl-3 px-3 py-1.5 pr-6 scrollbar-none sm:gap-2 sm:scroll-pl-0 sm:px-4 sm:py-2 sm:pr-4">
+        <div className="mx-auto flex max-w-7xl snap-x snap-mandatory gap-2.5 overflow-x-auto scroll-pl-3 px-3 py-2.5 pr-5 scrollbar-none sm:gap-2 sm:scroll-pl-0 sm:px-4 sm:py-2 sm:pr-4">
           <Link
             href="/products"
-            className="shrink-0 snap-start rounded-full bg-[#1c1917] px-2.5 py-1 text-[11px] font-semibold text-white sm:px-3 sm:py-1.5 sm:text-xs"
+            className="inline-flex min-h-11 shrink-0 snap-start items-center rounded-full bg-[#1c1917] px-4 py-2.5 text-sm font-semibold text-white sm:min-h-0 sm:px-3 sm:py-2 sm:text-xs"
           >
             All
           </Link>
@@ -86,8 +87,9 @@ export function SiteHeader() {
             <Link
               key={store.id}
               href={`/stores/${store.id}`}
-              className="shrink-0 snap-start rounded-full border border-[#e7e5e4] bg-white px-2.5 py-1 text-[11px] font-medium text-[#57534e] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366] sm:px-3 sm:py-1.5 sm:text-xs"
+              className="inline-flex min-h-11 shrink-0 snap-start items-center gap-2 rounded-full border border-[#e7e5e4] bg-white px-4 py-2.5 text-sm font-semibold text-[#44403c] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366] sm:min-h-0 sm:gap-1.5 sm:px-3 sm:py-2 sm:text-xs sm:font-medium"
             >
+              <Icon name={store.id} size={16} className="text-[#5f8a7a]" />
               <span className="sm:hidden">{storeShortNames[store.id]}</span>
               <span className="hidden sm:inline">{store.name}</span>
             </Link>

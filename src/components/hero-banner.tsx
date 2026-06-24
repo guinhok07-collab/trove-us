@@ -89,10 +89,10 @@ export function StoreQuickNav() {
   return (
     <section className="mt-4 sm:mt-8">
       <div>
-        <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-0.5 pr-3 scrollbar-none sm:pr-0">
+        <div className="flex snap-x snap-mandatory gap-2.5 overflow-x-auto pb-1 pr-3 scrollbar-none sm:gap-2 sm:pr-0">
           <Link
             href="/products"
-            className="shrink-0 snap-start rounded-full bg-[#1c1917] px-3 py-1.5 text-xs font-semibold text-white sm:px-4 sm:py-2 sm:text-sm"
+            className="inline-flex min-h-11 shrink-0 snap-start items-center rounded-full bg-[#1c1917] px-4 py-2.5 text-sm font-semibold text-white sm:min-h-0 sm:px-4 sm:py-2 sm:text-sm"
           >
             Shop All
           </Link>
@@ -100,9 +100,9 @@ export function StoreQuickNav() {
             <Link
               key={store.id}
               href={`/stores/${store.id}`}
-              className="inline-flex shrink-0 snap-start items-center gap-1.5 rounded-full border border-[#e7e5e4] bg-white px-3 py-1.5 text-xs font-medium text-[#57534e] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
+              className="inline-flex min-h-11 shrink-0 snap-start items-center gap-2 rounded-full border border-[#e7e5e4] bg-white px-4 py-2.5 text-sm font-semibold text-[#44403c] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366] sm:min-h-0 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-medium"
             >
-              <Icon name={store.id} size={14} className="text-[#78716c]" />
+              <Icon name={store.id} size={16} className="text-[#5f8a7a]" />
               <span className="sm:hidden">{storeShortNames[store.id]}</span>
               <span className="hidden sm:inline">{store.name}</span>
             </Link>

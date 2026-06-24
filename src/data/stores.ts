@@ -43,10 +43,10 @@ export const storeList: Store[] = Object.values(stores);
 
 /** Short labels for mobile header / chips */
 export const storeShortNames: Record<StoreCategory, string> = {
-  pet: "Pet",
+  pet: "Pets",
   home: "Home",
   wellness: "Wellness",
-  tech: "Desk",
+  tech: "Desk & Tech",
 };
 
 export function getStore(id: StoreCategory): Store {
