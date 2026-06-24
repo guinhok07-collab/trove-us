@@ -1,0 +1,32 @@
+{
+  "ergonomic-keyboard-wrist-rest": {
+    "pid": "1680750386820427776",
+    "cjName": "Cloud Keyboard Hand Wrist Rest Memory Foam Silicone Leather Mouse Pad Wristband Pad",
+    "cost": 3.23,
+    "imgs": 15
+  },
+  "usb-wall-charger-fast": {
+    "pid": "BA7AB938-49F7-4B32-9CC3-A8D9BED899AD",
+    "cjName": "Smart Home Dual USB Port Wall Charger Adapter Charging 2A Wall Charger Adapter EU Plug Socket Power Outlet Panel",
+    "cost": 4.9,
+    "imgs": 8
+  },
+  "laptop-cooling-pad": {
+    "pid": "2001928008850780161",
+    "cjName": "10 -15 Laptop Cooling Pad 1 USB Powered Fan Notebook Cooler Stand Tray Silent",
+    "cost": 8.26,
+    "imgs": 8
+  },
+  "capacitive-stylus-pen": {
+    "pid": "1376140956608368640",
+    "cjName": "Compatible with Apple, Compatible with Apple , Spot Wholesale Suction Cup Touch Capacitive Pen For Android Apple Ipad Tablet Stylus Touch Screen Stylus",
+    "cost": 2.35,
+    "imgs": 6
+  },
+  "bluetooth-usb-adapter-pc": {
+    "pid": "0BB6DC25-E462-4DB0-9C6E-5AE2F8CE1FF6",
+    "cjName": "Bluetooth Receiver Dongle Stereo Music Audio Receiver Wireless USB Adapter for Car",
+    "cost": 0.95,
+    "imgs": 6
+  }
+}

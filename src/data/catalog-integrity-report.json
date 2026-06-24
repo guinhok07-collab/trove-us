@@ -1,165 +1,938 @@
 {
-  "updatedAt": "2026-06-24T20:00:00.000Z",
-  "policy": "Nunca vender produto com CJ errado. Sem PID verificado → catalogHidden: true. Proibido relabel só para fingir match.",
+  "updatedAt": "2026-06-24T20:35:38.183Z",
+  "policy": "Somente produtos visíveis sem erro CJ entram na loja. Sem PID verificado → oculto.",
   "summary": {
-    "totalProducts": 127,
-    "visibleProducts": 116,
-    "hiddenProducts": 11,
-    "cjRelinked": 6,
-    "copyRestored": 36,
-    "hiddenNoMatch": 2
+    "totalProducts": 134,
+    "verifiedLive": 100,
+    "liveWithMinorWarnings": 23,
+    "hidden": 11,
+    "visibleErrors": 0,
+    "byStore": {
+      "pet": 37,
+      "home": 29,
+      "wellness": 26,
+      "tech": 31
+    }
   },
-  "corrections": [
+  "verifiedProducts": [
     {
-      "slug": "bluetooth-keyboard-mini",
-      "action": "relink",
-      "date": "2026-06-24",
-      "was": "Minimalistic Non-Slip Protector Felt Desk Pad (imagem de mouse pad)",
-      "now": "Ultra-portable Wireless Keyboard (PID 1990607329773793281)",
-      "status": "live"
+      "slug": "orthopedic-dog-bed",
+      "name": "Orthopedic Memory Foam Dog Bed",
+      "store": "pet",
+      "cjSku": "CJPN239866402BY",
+      "status": "verified"
     },
     {
-      "slug": "portable-blender-bottle",
-      "action": "relink",
-      "date": "2026-06-24",
-      "was": "4-in-1 Makeup Brush Cleaner",
-      "now": "350ML Electric Juicer Blender USB (PID 1392009095543918592)",
-      "troveName": "Portable USB Smoothie Blender",
-      "status": "live"
+      "slug": "no-pull-dog-harness",
+      "name": "No-Pull Front Clip Dog Harness",
+      "store": "pet",
+      "cjSku": "CJPH216125001AZ",
+      "status": "verified"
     },
     {
-      "slug": "jump-rope-weighted",
-      "action": "relink",
-      "date": "2026-06-24",
-      "was": "Smart Bluetooth Skipping Rope",
-      "now": "Training Jump Rope Set (PID 1680142560670928896)",
-      "troveName": "Adjustable Speed Jump Rope",
-      "status": "live"
+      "slug": "pet-water-fountain",
+      "name": "Automatic Pet Water Fountain",
+      "store": "pet",
+      "cjSku": "CJMY174605301AZ",
+      "status": "verified"
     },
     {
-      "slug": "silicone-utensil-rest",
-      "action": "relink",
-      "date": "2026-06-24",
-      "was": "2-Tier Dish Drying Rack",
-      "now": "Stainless Steel Spoon Rest (PID E94267B1-13A3-430A-B115-24054FB706B3)",
-      "troveName": "Stainless Steel Spoon Rest",
-      "status": "live"
+      "slug": "slow-feeder-dog-bowl",
+      "name": "Slow Feeder Dog Bowl",
+      "store": "pet",
+      "cjSku": "CJPB252551701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "dog-chew-toy-durable",
+      "name": "Durable Dog Chew Toy",
+      "store": "pet",
+      "cjSku": "CJYD181667901AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "dog-cooling-mat",
+      "name": "Self-Cooling Dog Mat",
+      "store": "pet",
+      "cjSku": "CJYD177061601AZ",
+      "status": "verified"
     },
     {
       "slug": "interactive-cat-toy",
-      "action": "relink",
-      "date": "2026-06-24",
-      "was": "Produto CJ sem relação com brinquedo interativo",
-      "now": "Pet New Cat Wicked Ball / Smart Rotating Ball (PID 1593481438610075648)",
-      "troveName": "Smart Rotating Cat Ball Toy",
-      "status": "live"
+      "name": "Smart Rotating Cat Ball Toy",
+      "store": "pet",
+      "cjSku": "CJMY161542601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "dog-seat-belt-harness",
+      "name": "Dog Seat Belt Harness",
+      "store": "pet",
+      "cjSku": "CJPL243566501AZ",
+      "status": "verified"
     },
     {
       "slug": "pet-deshedding-tool",
-      "action": "relink",
-      "date": "2026-06-24",
-      "was": "Produto CJ sem relação com deshedding",
-      "now": "7pcs Pet Grooming Kit (PID 2003003597865926657)",
-      "troveName": "7-Piece Pet Grooming Kit",
-      "status": "live"
+      "name": "7-Piece Pet Grooming Kit",
+      "store": "pet",
+      "cjSku": "CJHR266567001AZ",
+      "status": "verified"
     },
     {
-      "slug": "mason-jar-storage-lids",
-      "action": "hidden",
-      "date": "2026-06-24",
-      "reason": "Sem PID de tampas pour/storage lids no CJ. SKU atual = anéis de canning (produto diferente).",
-      "cjLinked": "24 Pcs Canning Jar Metal Rings",
-      "status": "catalogHidden"
+      "slug": "pet-paw-cleaner-cup",
+      "name": "Pet Paw Cleaner Cup",
+      "store": "pet",
+      "cjSku": "CJGY176534701AZ",
+      "status": "verified"
     },
     {
-      "slug": "over-sink-dish-rack",
-      "action": "hidden",
-      "date": "2026-06-24",
-      "reason": "Sem PID de rack roll-up sobre a pia. SKU atual = escorredor de bancada duplo.",
-      "cjLinked": "Double Tier Countertop Dish Draining Rack",
-      "status": "catalogHidden"
+      "slug": "dog-poop-bag-dispenser",
+      "name": "Dog Poop Bag Dispenser",
+      "store": "pet",
+      "cjSku": "CJJT170504001AZ",
+      "status": "verified"
     },
     {
-      "slug": "placeholder-copy-batch",
-      "action": "copy_restore",
-      "date": "2026-06-24",
-      "count": 31,
-      "note": "Nomes/descrições genéricos restaurados via restore-placeholder-copy.mjs + product-copy.json",
-      "status": "live"
+      "slug": "under-bed-storage-bags",
+      "name": "Under Bed Storage Bags",
+      "store": "home",
+      "cjSku": "CJSB272648201AZ",
+      "status": "verified"
     },
     {
-      "slug": "remaining-copy-batch",
-      "action": "copy_restore",
-      "date": "2026-06-24",
-      "count": 5,
-      "note": "Últimos placeholders corrigidos via fix-remaining-copy.mjs",
-      "status": "live"
+      "slug": "shower-caddy-organizer",
+      "name": "Shower Caddy Organizer",
+      "store": "home",
+      "cjSku": "CJYS227337901AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "spice-rack-organizer",
+      "name": "Spice Rack Organizer",
+      "store": "home",
+      "cjSku": "CJCF27764360001",
+      "status": "verified"
+    },
+    {
+      "slug": "foldable-laundry-hamper",
+      "name": "Foldable Laundry Hamper",
+      "store": "home",
+      "cjSku": "CJYS243593501AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "cable-clips-adhesive",
+      "name": "Adhesive Cable Clips",
+      "store": "home",
+      "cjSku": "CJJT252566401AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "over-door-hook-rack",
+      "name": "Over the Door Hook Rack",
+      "store": "home",
+      "cjSku": "CJYS255533701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "kitchen-sink-organizer",
+      "name": "Folding Kitchen Sink Drain Rack",
+      "store": "home",
+      "cjSku": "CJJT245772701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "led-motion-night-light",
+      "name": "LED Motion Sensor Night Light",
+      "store": "home",
+      "cjSku": "CJSN27404630001",
+      "status": "verified"
+    },
+    {
+      "slug": "vacuum-storage-bags",
+      "name": "Vacuum Storage Bags",
+      "store": "home",
+      "cjSku": "CJJT231089801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "sleep-eye-mask",
+      "name": "Contoured Sleep Eye Mask",
+      "store": "wellness",
+      "cjSku": "CJCS148046301AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "neck-shoulder-massager",
+      "name": "Six-Wheel Neck and Shoulder Roller",
+      "store": "wellness",
+      "cjSku": "CJAM130816101AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "compression-socks-pair",
+      "name": "Compression Socks Pair",
+      "store": "wellness",
+      "cjSku": "CJYDQXZQ00002-Pink-S M",
+      "status": "verified"
+    },
+    {
+      "slug": "yoga-mat-thick",
+      "name": "Thick Non-Slip Yoga Mat",
+      "store": "wellness",
+      "cjSku": "CJYDQTJM00081-Blue6mm",
+      "status": "verified"
+    },
+    {
+      "slug": "back-posture-trainer",
+      "name": "Back Posture Trainer",
+      "store": "wellness",
+      "cjSku": "CJST112861601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "hand-grip-strengthener",
+      "name": "Adjustable Hand Grip Strengthener",
+      "store": "wellness",
+      "cjSku": "CJJM245645801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "ice-roller-face",
+      "name": "Facial Ice Roller",
+      "store": "wellness",
+      "cjSku": "CJMJ208085401AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "percussion-massage-gun",
+      "name": "Percussion Massage Gun",
+      "store": "wellness",
+      "cjSku": "CJAM136267301AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "posture-corrector-brace",
+      "name": "Adjustable Posture Corrector Brace",
+      "store": "wellness",
+      "cjSku": "CJYDQTJM00362-Black-4XL",
+      "status": "verified"
+    },
+    {
+      "slug": "essential-oil-diffuser",
+      "name": "Ultrasonic Essential Oil Diffuser",
+      "store": "wellness",
+      "cjSku": "CJKD26004890001",
+      "status": "verified"
+    },
+    {
+      "slug": "yoga-resistance-bands",
+      "name": "Yoga Resistance Bands Set",
+      "store": "wellness",
+      "cjSku": "CJYDQTJM00353-5 colors setA",
+      "status": "verified"
+    },
+    {
+      "slug": "ergonomic-laptop-stand",
+      "name": "Ergonomic Aluminum Laptop Stand",
+      "store": "tech",
+      "cjSku": "CJJSBGBG00898-Black-280x280x25.5mm",
+      "status": "verified"
+    },
+    {
+      "slug": "wireless-earbuds-pro",
+      "name": "True Wireless Earbuds",
+      "store": "tech",
+      "cjSku": "CJEJ151918601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "magsafe-car-mount",
+      "name": "MagSafe Car Phone Mount",
+      "store": "tech",
+      "cjSku": "CJSJ179397501AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "adjustable-phone-stand",
+      "name": "Adjustable Phone Stand",
+      "store": "tech",
+      "cjSku": "CJSJ242294901AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "power-bank-10000",
+      "name": "10000mAh Portable Power Bank",
+      "store": "tech",
+      "cjSku": "CJCD253451601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "usb-c-charging-cable",
+      "name": "USB-C Fast Charging Cable",
+      "store": "tech",
+      "cjSku": "CJJT142795501AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "wireless-charger-pad",
+      "name": "Qi Wireless Charger Pad",
+      "store": "tech",
+      "cjSku": "CJJT161368201AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "ring-light-phone",
+      "name": "Clip-On Phone Ring Light",
+      "store": "tech",
+      "cjSku": "CJSJSJSJ01056-Black withBar code",
+      "status": "verified"
+    },
+    {
+      "slug": "gaming-mouse-pad-large",
+      "name": "Large Gaming Mouse Pad",
+      "store": "tech",
+      "cjSku": "CJJT242094201AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "hdmi-cable-4k",
+      "name": "4K HDMI Cable",
+      "store": "tech",
+      "cjSku": "CJSJSJSJ00269-Black IOS+Android-2M",
+      "status": "verified"
+    },
+    {
+      "slug": "sd-card-reader-usb",
+      "name": "USB SD Card Reader",
+      "store": "tech",
+      "cjSku": "CJBG242215001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "car-charger-usb-c",
+      "name": "Dual Port USB-C Car Charger",
+      "store": "tech",
+      "cjSku": "CJYD180232701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "smartwatch-band-silicone",
+      "name": "Silicone Smartwatch Band",
+      "store": "tech",
+      "cjSku": "CJLX245577801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "cable-management-box",
+      "name": "Cable Management Box",
+      "store": "tech",
+      "cjSku": "CJYD198234801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "tablet-stand-adjustable",
+      "name": "Adjustable Tablet Stand",
+      "store": "tech",
+      "cjSku": "CJPB287489501AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "cat-window-perch",
+      "name": "Cat Window Perch (Suction Mount)",
+      "store": "pet",
+      "cjSku": "CJMY125332901AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "door-draft-stopper",
+      "name": "Under-Door Draft Stopper Seal",
+      "store": "home",
+      "cjSku": "CJJJJTJT11870-White",
+      "status": "verified"
+    },
+    {
+      "slug": "over-door-shoe-organizer",
+      "name": "Over-Door Shoe Organizer (24 Pockets)",
+      "store": "home",
+      "cjSku": "CJJJJTFZ00777-White",
+      "status": "verified"
+    },
+    {
+      "slug": "meditation-cushion",
+      "name": "Floor Meditation Cushion",
+      "store": "wellness",
+      "cjSku": "CJJT110087101AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "jade-roller-gua-sha",
+      "name": "Jade Facial Roller",
+      "store": "wellness",
+      "cjSku": "CJAM125622401AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "muscle-roller-stick",
+      "name": "Muscle Roller Stick",
+      "store": "wellness",
+      "cjSku": "CJBJPFST00590-2pcs 1Style",
+      "status": "verified"
+    },
+    {
+      "slug": "webcam-cover-slide",
+      "name": "Webcam Privacy Cover (Slide)",
+      "store": "tech",
+      "cjSku": "CJJSBJBJ00015-5pcs",
+      "status": "verified"
+    },
+    {
+      "slug": "monitor-light-bar",
+      "name": "Monitor Light Bar",
+      "store": "tech",
+      "cjSku": "CJSN114251001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "lazy-susan-turntable",
+      "name": "Lazy Susan Turntable",
+      "store": "home",
+      "cjSku": "CJFU26606690001",
+      "status": "verified"
+    },
+    {
+      "slug": "fridge-produce-containers",
+      "name": "Fridge Produce Storage Containers",
+      "store": "home",
+      "cjSku": "CJCC122381301AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "pot-lid-organizer-rack",
+      "name": "Expandable Pot & Lid Rack",
+      "store": "home",
+      "cjSku": "CJCF286388201AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "automatic-soap-dispenser",
+      "name": "Automatic Soap Dispenser",
+      "store": "home",
+      "cjSku": "CJJT168983901AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "portable-pet-water-bottle",
+      "name": "Portable Dog Walk Cup",
+      "store": "pet",
+      "cjSku": "CJMY179795801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "pet-stainless-bowl-set",
+      "name": "Stainless Double Pet Bowl",
+      "store": "pet",
+      "cjSku": "CJJJCWGY04133-Wine Red-L",
+      "status": "verified"
+    },
+    {
+      "slug": "dog-dental-chew-rope",
+      "name": "Dog Rope Chew Toy",
+      "store": "pet",
+      "cjSku": "CJMY210441601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "pet-safety-light-clip",
+      "name": "Pet Safety Light Clip",
+      "store": "pet",
+      "cjSku": "CJJJCWGY04213-Ice Blue",
+      "status": "verified"
+    },
+    {
+      "slug": "pet-comb-flea",
+      "name": "Pet Flea Comb",
+      "store": "pet",
+      "cjSku": "CJMY209900901AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "pet-waste-bag-refills",
+      "name": "Dog Poop Bag Rolls — 270 Count",
+      "store": "pet",
+      "cjSku": "CJFU26521920001",
+      "status": "verified"
+    },
+    {
+      "slug": "dog-treat-pouch",
+      "name": "Dog Training Treat Pouch",
+      "store": "pet",
+      "cjSku": "CJPC26582960001",
+      "status": "verified"
+    },
+    {
+      "slug": "scalp-massager-brush",
+      "name": "Silicone Scalp Massager Brush",
+      "store": "wellness",
+      "cjSku": "CJJT153827201AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "screen-cleaner-kit",
+      "name": "Screen Cleaner Kit",
+      "store": "tech",
+      "cjSku": "CJJT110380101AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "massage-ball-set",
+      "name": "Trigger Point Massage Ball Set",
+      "store": "wellness",
+      "cjSku": "CJJM109597106FU",
+      "status": "verified"
+    },
+    {
+      "slug": "ear-plugs-sleep",
+      "name": "Soft Foam Ear Plugs — Sleep & Travel",
+      "store": "wellness",
+      "cjSku": "CJXFBXEJ01169-Grey",
+      "status": "verified"
+    },
+    {
+      "slug": "digital-kitchen-scale",
+      "name": "Digital Kitchen Food Scale",
+      "store": "wellness",
+      "cjSku": "CJYD164583701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "resistance-loop-bands",
+      "name": "Fabric Resistance Loop Bands — Set of 3",
+      "store": "wellness",
+      "cjSku": "CJBJPFST00536-Purple",
+      "status": "verified"
+    },
+    {
+      "slug": "refrigerator-organizer-bins",
+      "name": "Fridge Organizer Bins — Clear Set",
+      "store": "home",
+      "cjSku": "CJYL226911801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "bluetooth-item-finder",
+      "name": "Bluetooth Item Finder Tag",
+      "store": "tech",
+      "cjSku": "CJJSAQJK00001-mix colors 3pcs",
+      "status": "verified"
+    },
+    {
+      "slug": "jump-rope-weighted",
+      "name": "Adjustable Speed Jump Rope",
+      "store": "wellness",
+      "cjSku": "CJJM1800810-Blue",
+      "status": "verified"
+    },
+    {
+      "slug": "cooling-towel-sports",
+      "name": "Instant Cooling Sports Towel",
+      "store": "wellness",
+      "cjSku": "CJYD279453001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "dog-squeaky-plush-toy",
+      "name": "Squeaky Plush Dog Toy",
+      "store": "pet",
+      "cjSku": "CJCT226955801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "cat-tunnel-toy",
+      "name": "Collapsible Cat Play Tunnel",
+      "store": "pet",
+      "cjSku": "CJJT262120201AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "kitchen-sink-sponge-holder",
+      "name": "Kitchen Sink Sponge & Soap Holder",
+      "store": "home",
+      "cjSku": "CJCF290036901AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "cat-laser-toy",
+      "name": "Rechargeable Cat Laser Toy",
+      "store": "pet",
+      "cjSku": "CJJJCWMY00142-blue",
+      "status": "verified"
+    },
+    {
+      "slug": "automatic-pet-feeder",
+      "name": "Automatic Pet Feeder — Timer",
+      "store": "pet",
+      "cjSku": "CJMY163699601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "pet-stairs-steps",
+      "name": "Foam Pet Stairs — Couch & Bed",
+      "store": "pet",
+      "cjSku": "CJJT170188001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "pet-nail-grinder",
+      "name": "Electric Pet Nail Grinder",
+      "store": "pet",
+      "cjSku": "CJNP245076701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "weighted-sleep-mask",
+      "name": "Weighted Sleep Mask",
+      "store": "wellness",
+      "cjSku": "CJMB212996401AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "portable-blender-bottle",
+      "name": "Portable USB Smoothie Blender",
+      "store": "wellness",
+      "cjSku": "CJJD112318801AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "wireless-mouse-silent",
+      "name": "Silent Wireless Mouse",
+      "store": "tech",
+      "cjSku": "CJJJJTJT35740-Grey",
+      "status": "verified"
+    },
+    {
+      "slug": "phone-ring-holder",
+      "name": "Phone Ring Holder & Stand",
+      "store": "tech",
+      "cjSku": "CJJT122916401AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "collapsible-colander",
+      "name": "Collapsible Silicone Colander",
+      "store": "home",
+      "cjSku": "CJCF255658301AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "drawer-divider-expandable",
+      "name": "Expandable Drawer Dividers",
+      "store": "home",
+      "cjSku": "CJSB243768101AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "acupressure-mat-pillow",
+      "name": "Acupressure Mat & Pillow Set",
+      "store": "wellness",
+      "cjSku": "CJBJMRAM00074-Purple2-9cm",
+      "status": "verified"
+    },
+    {
+      "slug": "foam-roller-recovery",
+      "name": "EVA Foam Roller — Muscle Recovery",
+      "store": "wellness",
+      "cjSku": "CJYD136360101AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "balance-pad-foam",
+      "name": "Foam Balance Pad",
+      "store": "wellness",
+      "cjSku": "CJYD206770001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "laptop-sleeve-13",
+      "name": "Neoprene Laptop Sleeve — 13–14\\",
+      "store": "tech",
+      "cjSku": "CJYD179153202BY",
+      "status": "verified"
+    },
+    {
+      "slug": "portable-ssd-enclosure",
+      "name": "NVMe SSD Enclosure — USB-C",
+      "store": "tech",
+      "cjSku": "CJJT106313601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "ergonomic-keyboard-wrist-rest",
+      "name": "Ergonomic Keyboard Wrist Rest",
+      "store": "tech",
+      "cjSku": "CJYD180142701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "laptop-cooling-pad",
+      "name": "USB Laptop Cooling Pad",
+      "store": "tech",
+      "cjSku": "CJFU266194001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "capacitive-stylus-pen",
+      "name": "Capacitive Touch Stylus Pen",
+      "store": "tech",
+      "cjSku": "CJSJ105788201AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "bluetooth-usb-adapter-pc",
+      "name": "Bluetooth USB Adapter for PC",
+      "store": "tech",
+      "cjSku": "CJXFLPSM00031-White",
+      "status": "verified"
+    },
+    {
+      "slug": "phone-tablet-stand",
+      "name": "Adjustable Phone & Tablet Stand",
+      "store": "tech",
+      "cjSku": "CJSJSJSJ00008-Black",
+      "status": "verified"
+    },
+    {
+      "slug": "usb-hub-4port",
+      "name": "4-Port USB 3.0 Hub",
+      "store": "tech",
+      "cjSku": "CJJY128637701AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "metal-phone-stand-desk",
+      "name": "Metal Desk Phone Stand",
+      "store": "tech",
+      "cjSku": "CJSJ192138601AZ",
+      "status": "verified"
     }
   ],
-  "hiddenCatalog": [
+  "liveWithWarnings": [
+    {
+      "slug": "pet-hair-remover-roller",
+      "name": "Reusable Pet Hair Remover Roller",
+      "store": "pet",
+      "warning": "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.47)"
+    },
+    {
+      "slug": "pet-grooming-brush-set",
+      "name": "Pet Grooming Brush Set",
+      "store": "pet",
+      "warning": "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.53)"
+    },
+    {
+      "slug": "retractable-dog-leash",
+      "name": "Retractable Dog Leash",
+      "store": "pet",
+      "warning": "Preço loja $8.99 vs esperado $9.99 (custo CJ $2.91)"
+    },
+    {
+      "slug": "pet-nail-clipper",
+      "name": "Pet Nail Clipper",
+      "store": "pet",
+      "warning": "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.36)"
+    },
+    {
+      "slug": "cat-litter-mat",
+      "name": "Cat Litter Catching Mat",
+      "store": "pet",
+      "warning": "Preço loja $8.99 vs esperado $9.99 (custo CJ $3.13)"
+    },
+    {
+      "slug": "portable-pet-carrier",
+      "name": "Portable Pet Carrier Bag",
+      "store": "pet",
+      "warning": "Preço loja $11.99 vs esperado $13.99 (custo CJ $6.3)"
+    },
+    {
+      "slug": "cordless-cabinet-light",
+      "name": "Cordless LED Cabinet Light",
+      "store": "home",
+      "warning": "Preço loja $9.99 vs esperado $10.99 (custo CJ $4.14)"
+    },
+    {
+      "slug": "ice-cube-tray-silicone",
+      "name": "Silicone Ice Cube Tray with Lid",
+      "store": "home",
+      "warning": "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.45)"
+    },
+    {
+      "slug": "silicone-food-storage-bags",
+      "name": "Reusable Silicone Food Storage Bags",
+      "store": "home",
+      "warning": "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.86)"
+    },
+    {
+      "slug": "silicone-stove-gap-cover",
+      "name": "Silicone Stove Gap Cover",
+      "store": "home",
+      "warning": "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.39)"
+    },
+    {
+      "slug": "sink-splash-guard-mat",
+      "name": "Sink Splash Guard Mat",
+      "store": "home",
+      "warning": "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.56)"
+    },
+    {
+      "slug": "handheld-bag-sealer",
+      "name": "Handheld Bag Sealer",
+      "store": "home",
+      "warning": "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.76)"
+    },
+    {
+      "slug": "kitchen-drawer-organizer",
+      "name": "Kitchen Drawer Organizer Tray",
+      "store": "home",
+      "warning": "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.67)"
+    },
+    {
+      "slug": "silicone-dish-drying-mat",
+      "name": "Silicone Dish Drying Mat",
+      "store": "home",
+      "warning": "1 variante(s) com label ruim (SKU/Default/As picture)"
+    },
+    {
+      "slug": "cat-feather-teaser",
+      "name": "Cat Feather Teaser Wand",
+      "store": "pet",
+      "warning": "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.57)"
+    },
+    {
+      "slug": "pet-grooming-gloves",
+      "name": "Pet Grooming Gloves",
+      "store": "pet",
+      "warning": "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.64)"
+    },
+    {
+      "slug": "dog-bandana-set",
+      "name": "Cooling Dog Bandana",
+      "store": "pet",
+      "warning": "Preço loja $8.99 vs esperado $9.99 (custo CJ $3.06)"
+    },
+    {
+      "slug": "cat-scratching-mat",
+      "name": "Flat Cat Scratching Mat",
+      "store": "pet",
+      "warning": "Preço loja $9.99 vs esperado $10.99 (custo CJ $4.05)"
+    },
+    {
+      "slug": "pet-bowl-mat-silicone",
+      "name": "Silicone Pet Bowl Mat",
+      "store": "pet",
+      "warning": "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.56)"
+    },
+    {
+      "slug": "pet-toothbrush-kit",
+      "name": "Pet Dental Care Kit",
+      "store": "pet",
+      "warning": "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.58)"
+    },
+    {
+      "slug": "bed-sheet-organizer",
+      "name": "Bed Sheet Organizer Set",
+      "store": "home",
+      "warning": "1 variante(s) com label ruim (SKU/Default/As picture)"
+    },
+    {
+      "slug": "bluetooth-keyboard-mini",
+      "name": "Mini Bluetooth Keyboard",
+      "store": "tech",
+      "warning": "Revise se CJ bate com anúncio (overlap 15%)"
+    },
+    {
+      "slug": "silicone-utensil-rest",
+      "name": "Stainless Steel Spoon Rest",
+      "store": "home",
+      "warning": "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.6)"
+    }
+  ],
+  "hiddenProducts": [
+    {
+      "slug": "cat-scratching-post",
+      "name": "Cat Scratching Post",
+      "store": "pet",
+      "reason": "catalogHidden / sem match CJ"
+    },
     {
       "slug": "pet-food-storage-container",
-      "reason": "CJ mismatch / sem match confiável"
+      "name": "Airtight Pet Food Storage Container",
+      "store": "pet",
+      "reason": "catalogHidden / sem match CJ"
     },
     {
       "slug": "closet-organizer-6-shelf",
-      "reason": "CJ mismatch / sem match confiável"
-    },
-    {
-      "slug": "cat-scratching-post",
-      "reason": "CJ mismatch / sem match confiável"
+      "name": "6-Shelf Hanging Closet Organizer",
+      "store": "home",
+      "reason": "catalogHidden / sem match CJ"
     },
     {
       "slug": "under-sink-organizer",
-      "reason": "CJ mismatch / sem match confiável"
-    },
-    {
-      "slug": "adhesive-wall-hooks",
-      "reason": "CJ mismatch / sem match confiável"
-    },
-    {
-      "slug": "heating-pad-electric",
-      "reason": "CJ mismatch / sem match confiável"
-    },
-    {
-      "slug": "mini-bluetooth-speaker",
-      "reason": "CJ mismatch / sem match confiável"
-    },
-    {
-      "slug": "usb-c-hub-7in1",
-      "reason": "CJ mismatch / sem match confiável"
+      "name": "Under Sink Organizer Rack",
+      "store": "home",
+      "reason": "catalogHidden / sem match CJ"
     },
     {
       "slug": "garbage-bag-holder",
-      "reason": "Listagem não batia com CJ (dispenser vs outro item)"
+      "name": "Portable Pet Waste Bag Holder",
+      "store": "home",
+      "reason": "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.73)"
     },
     {
-      "slug": "mason-jar-storage-lids",
-      "reason": "Sem PID honesto — anéis de canning ≠ tampas pour"
+      "slug": "adhesive-wall-hooks",
+      "name": "Adhesive Wall Hooks",
+      "store": "home",
+      "reason": "catalogHidden / sem match CJ"
+    },
+    {
+      "slug": "heating-pad-electric",
+      "name": "Electric Heating Pad",
+      "store": "wellness",
+      "reason": "catalogHidden / sem match CJ"
+    },
+    {
+      "slug": "usb-c-hub-7in1",
+      "name": "7-in-1 USB-C Hub",
+      "store": "tech",
+      "reason": "catalogHidden / sem match CJ"
+    },
+    {
+      "slug": "mini-bluetooth-speaker",
+      "name": "Mini Bluetooth Speaker",
+      "store": "tech",
+      "reason": "catalogHidden / sem match CJ"
     },
     {
       "slug": "over-sink-dish-rack",
-      "reason": "Sem PID honesto — bancada ≠ rack sobre a pia"
+      "name": "Double-Tier Dish Drying Rack",
+      "store": "home",
+      "reason": "catalogHidden / sem match CJ"
+    },
+    {
+      "slug": "mason-jar-storage-lids",
+      "name": "Mason Jar Ring Replacement Pack",
+      "store": "home",
+      "reason": "catalogHidden / sem match CJ"
     }
   ],
-  "forbidden": [
-    "relink-audit-mismatches.mjs com okName solto (já causou links errados em massa)",
-    "refresh-placeholder-products.mjs (deletado — matching frouxo)",
-    "relabel-only para vender produto diferente do anúncio",
-    "expand-trust-catalog.mjs PIDs antigos sem revalidar queryPid"
+  "deployGate": [
+    "npm run catalog:check",
+    "npm run catalog:audit",
+    "npm run catalog:integrity",
+    "npm run build"
   ],
-  "requiredWorkflow": [
-    "1. Copy em scripts/product-copy.json",
-    "2. node --env-file=.env.local scripts/relink-product-cj.mjs <slug> <pid> [ship]",
-    "3. node --env-file=.env.local scripts/audit-catalog-cj.mjs",
-    "4. npm run catalog:check && npm run catalog:integrity",
-    "5. npm run build && git push"
-  ],
-  "scripts": {
-    "relink": "scripts/relink-product-cj.mjs",
-    "audit": "scripts/audit-catalog-cj.mjs",
-    "fixByPid": "scripts/fix-cj-by-pid.mjs",
-    "hide": "scripts/mark-catalog-hidden.mjs",
-    "gate": "npm run catalog:integrity"
-  }
+  "addProductWorkflow": [
+    "node --env-file=.env.local scripts/hunt-tech-pids.mjs  (ou PID manual)",
+    "node --env-file=.env.local scripts/expand-tech-catalog.mjs",
+    "node scripts/generate-verified-catalog-report.mjs"
+  ]
 }
