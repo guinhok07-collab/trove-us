@@ -3164,10 +3164,10 @@ export const products: Product[] = [
   {
     id: "well-22",
     slug: "scalp-massager-brush",
-    name: "Scalp Massager Brush",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Silicone Scalp Massager Brush",
+    description: "Gentle scalp massage during shampoo — relaxes and cleanses roots.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Turn shower time into a mini spa with soft silicone bristles that massage the scalp while you lather shampoo. Helps distribute product and feels great after a long day. Waterproof and easy to rinse — fits in a shower caddy. Ships from our US warehouse in 3–5 business days.",
     price: 7.99,
     compareAtPrice: 8.99,
     store: "wellness",
@@ -3196,7 +3196,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Soft silicone bristles","Shower safe","Ergonomic grip","All hair types"],
     supplierSku: "scalp-massager-brush",
     cjVid: "1555107261511643136",
     cjSku: "CJJT153827201AZ"
@@ -3205,9 +3205,9 @@ export const products: Product[] = [
     id: "tech-22",
     slug: "screen-cleaner-kit",
     name: "Screen Cleaner Kit",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    description: "Spray + cloth kit for phones, laptops, and monitors.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Remove fingerprints and smudges from screens without streaks or harsh chemicals. Includes a fine-mist spray and large microfiber cloth safe for phones, tablets, glasses, and monitors. Keep one at your desk and one in a travel pouch. Ships from our US warehouse in 3–5 business days.",
     price: 5.99,
     compareAtPrice: 6.99,
     store: "tech",
@@ -3236,7 +3236,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Streak-free formula","Large microfiber cloth","Safe for coated screens","Travel size bottle"],
     supplierSku: "screen-cleaner-kit",
     cjVid: "1387288750782025728",
     cjSku: "CJJT110380101AZ"
@@ -3244,10 +3244,10 @@ export const products: Product[] = [
   {
     id: "well-23",
     slug: "massage-ball-set",
-    name: "Massage Ball Set",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Trigger Point Massage Ball Set",
+    description: "Target knots in feet, glutes, and shoulders with firm massage balls.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Reach spots a foam roller misses with compact balls that dig into trigger points along the spine, feet, and hips. Includes single and peanut-style shapes for different muscle groups. Toss in a gym bag for post-run relief. Ships from our US warehouse in 3–5 business days.",
     price: 7.99,
     compareAtPrice: 8.99,
     store: "wellness",
@@ -3271,7 +3271,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Single + peanut shape","Deep tissue pressure","Portable","Durable rubber"],
     supplierSku: "massage-ball-set",
     cjVid: "1385561840561557504",
     cjSku: "CJJM109597106FU"
@@ -3279,10 +3279,10 @@ export const products: Product[] = [
   {
     id: "well-24",
     slug: "ear-plugs-sleep",
-    name: "Ear Plugs Sleep",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Soft Foam Ear Plugs — Sleep & Travel",
+    description: "Block snoring and street noise for quieter sleep.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Moldable foam ear plugs expand to fit most ear canals and cut down on partner snoring, traffic, and hotel noise. Reusable carry case keeps pairs clean in a nightstand or travel pouch. A simple upgrade for light sleepers and frequent travelers. Ships from our US warehouse in 3–5 business days.",
     price: 7.99,
     compareAtPrice: 8.99,
     store: "wellness",
@@ -3302,7 +3302,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Noise reduction","Soft slow-expand foam","Carry case","Multi-pair pack"],
     supplierSku: "CJXFBXEJ01169-",
     cjVid: "1BDEDF2D-0492-46E0-85DA-DB4416221B48",
     cjSku: "CJXFBXEJ01169-Grey"
@@ -3310,10 +3310,10 @@ export const products: Product[] = [
   {
     id: "well-25",
     slug: "digital-kitchen-scale",
-    name: "Digital Kitchen Scale",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Digital Kitchen Food Scale",
+    description: "Weigh portions for meal prep, baking, and macro tracking.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Hit your nutrition goals with a slim digital scale that switches between grams and ounces in one tap. Tempered glass surface wipes clean and the tare function zeroes out bowls and containers. Compact enough to leave on the counter. Ships from our US warehouse in 3–5 business days.",
     price: 6.99,
     compareAtPrice: 7.99,
     store: "wellness",
@@ -3342,7 +3342,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Gram & oz modes","Tare function","Tempered glass top","Slim profile"],
     supplierSku: "digital-kitchen-scale",
     cjVid: "1605844768699985920",
     cjSku: "CJYD164583701AZ"
@@ -3350,10 +3350,10 @@ export const products: Product[] = [
   {
     id: "well-26",
     slug: "resistance-loop-bands",
-    name: "Resistance Loop Bands",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Fabric Resistance Loop Bands — Set of 3",
+    description: "Glute and leg bands for home workouts — no rolling or pinching.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Train hips, glutes, and thighs with fabric loop bands that stay put better than rubber alone. Three resistance levels scale from rehab to strength work. Folds into a pouch for travel and fits under a desk for quick movement breaks. Ships from our US warehouse in 3–5 business days.",
     price: 5.99,
     compareAtPrice: 6.99,
     store: "wellness",
@@ -3382,7 +3382,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["3 resistance levels","Fabric non-slip","Glute & leg focus","Travel pouch"],
     supplierSku: "CJBJPFST00536-",
     cjVid: "0CA7EFBE-B2EA-462D-911B-FFAA14B6DBF0",
     cjSku: "CJBJPFST00536-Purple"
@@ -3390,10 +3390,10 @@ export const products: Product[] = [
   {
     id: "home-33",
     slug: "refrigerator-organizer-bins",
-    name: "Refrigerator Organizer Bins",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Fridge Organizer Bins — Clear Set",
+    description: "Clear bins group snacks, drinks, and produce for a tidy fridge.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "See everything at a glance with stackable clear bins that corral yogurt cups, soda cans, and produce drawers. Built-in handles slide out for quick grabs during meal prep. A simple organization upgrade that cuts food waste from forgotten items. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
     compareAtPrice: 43.99,
     store: "home",
@@ -3417,7 +3417,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Clear stackable bins","Built-in handles","Multiple sizes","Easy wipe clean"],
     supplierSku: "refrigerator-organizer-bins",
     cjVid: "1878633880326144001",
     cjSku: "CJYL226911801AZ"
@@ -3425,10 +3425,10 @@ export const products: Product[] = [
   {
     id: "tech-23",
     slug: "bluetooth-item-finder",
-    name: "Bluetooth Item Finder",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Bluetooth Item Finder Tag",
+    description: "Ring your keys or wallet from your phone when they're misplaced.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Attach a slim Bluetooth tag to keys, bags, or remotes and ping them from a phone app when something goes missing. Replaceable battery lasts months of daily use. Affordable peace of mind for busy households. Ships from our US warehouse in 3–5 business days.",
     price: 7.99,
     compareAtPrice: 8.99,
     store: "tech",
@@ -3457,7 +3457,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Phone app ping","Replaceable battery","Slim tag design","Multi-item support"],
     supplierSku: "CJJSAQJK00001-mix co",
     cjVid: "1357991904075190272",
     cjSku: "CJJSAQJK00001-mix colors 3pcs"
@@ -3465,10 +3465,10 @@ export const products: Product[] = [
   {
     id: "pet-32",
     slug: "cat-scratching-mat",
-    name: "Cat Scratching Mat",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Flat Cat Scratching Mat",
+    description: "Sisal mat protects furniture and satisfies scratching instincts.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Give cats a dedicated scratching zone with a flat sisal mat that slides under a couch or leans against a wall. Saves sofas and door frames while keeping claws healthy. Lightweight and easy to move between rooms. Ships from our US warehouse in 3–5 business days.",
     price: 9.99,
     compareAtPrice: 10.99,
     store: "pet",
@@ -3497,7 +3497,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Natural sisal","Flat space-saving","Furniture saver","Non-slip base"],
     supplierSku: "cat-scratching-mat",
     cjVid: "2406150242231629500",
     cjSku: "CJYD206079201AZ"
@@ -3505,10 +3505,10 @@ export const products: Product[] = [
   {
     id: "well-27",
     slug: "jump-rope-weighted",
-    name: "Jump Rope Weighted",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Adjustable Speed Jump Rope",
+    description: "Cardio anywhere — adjustable length for HIIT, boxing, and home workouts.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Burn calories in small spaces with a tangle-free jump rope built for fast spins and daily training. Foam grips stay comfortable during longer sessions and the length adjusts for different heights. Fits in a gym bag for travel workouts. Ships from our US warehouse in 3–5 business days.",
     price: 11.99,
     compareAtPrice: 13.99,
     store: "wellness",
@@ -3528,7 +3528,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Ball-bearing handles","Adjustable length","Foam grips","Tangle-resistant cord"],
     supplierSku: "CJYD2291239",
     cjVid: "2502140221331606000",
     cjSku: "CJYD229123901AZ"
@@ -3536,10 +3536,10 @@ export const products: Product[] = [
   {
     id: "well-28",
     slug: "cooling-towel-sports",
-    name: "Cooling Towel Sports",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Instant Cooling Sports Towel",
+    description: "Wet, snap, and cool down fast after workouts or hot days.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Beat heat during runs, yard work, or gym sessions with a microfiber towel that stays cool for hours after a quick soak and snap. Re-wet anytime to refresh. Clips to a gym bag or golf cart — a summer essential. Ships from our US warehouse in 3–5 business days.",
     price: 10.99,
     compareAtPrice: 12.99,
     store: "wellness",
@@ -3568,7 +3568,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Instant chill tech","Reusable microfiber","Carabiner clip","Machine washable"],
     supplierSku: "CJYD2794530",
     cjVid: "2034552607763894274",
     cjSku: "CJYD279453001AZ"
@@ -3576,10 +3576,10 @@ export const products: Product[] = [
   {
     id: "pet-33",
     slug: "dog-squeaky-plush-toy",
-    name: "Dog Squeaky Plush Toy",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Squeaky Plush Dog Toy",
+    description: "Soft squeaker toy for fetch, cuddles, and solo play.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Keep dogs entertained with a plush toy that squeaks during fetch and couch time. Reinforced stitching handles moderate chewers and the size fits small to medium breeds. An affordable add-on to any pet order. Ships from our US warehouse in 3–5 business days.",
     price: 19.99,
     compareAtPrice: 21.99,
     store: "pet",
@@ -3599,7 +3599,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Built-in squeaker","Soft plush","Reinforced seams","Fetch friendly"],
     supplierSku: "dog-squeaky-plush-toy",
     cjVid: "1878724591782612994",
     cjSku: "CJCT226955801AZ"
@@ -3607,10 +3607,10 @@ export const products: Product[] = [
   {
     id: "pet-34",
     slug: "cat-tunnel-toy",
-    name: "Cat Tunnel Toy",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Collapsible Cat Play Tunnel",
+    description: "Crinkle tunnel for hide-and-pounce indoor play.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Indoor cats love darting through a collapsible tunnel with crinkle sounds and peek holes for ambush play. Folds flat for storage and pops open in seconds for daily enrichment. Great paired with feather toys for exercise. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
     compareAtPrice: 43.99,
     store: "pet",
@@ -3639,7 +3639,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Collapsible tube","Crinkle material","Peek holes","Indoor enrichment"],
     supplierSku: "cat-tunnel-toy",
     cjVid: "1993555922908913666",
     cjSku: "CJJT262120201AZ"
@@ -3647,10 +3647,10 @@ export const products: Product[] = [
   {
     id: "pet-35",
     slug: "pet-bowl-mat-silicone",
-    name: "Pet Bowl Mat Silicone",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Silicone Pet Bowl Mat",
+    description: "Waterproof mat catches spills around food and water bowls.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Protect floors from kibble crumbs and water splashes with a raised-edge silicone mat that stays put under bowls. Wipe clean after every meal or toss in the dishwasher. Fits double bowls and single feeders alike. Ships from our US warehouse in 3–5 business days.",
     price: 7.99,
     compareAtPrice: 8.99,
     store: "pet",
@@ -3675,7 +3675,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Raised edges","Non-slip silicone","Dishwasher safe","Fits double bowls"],
     supplierSku: "pet-bowl-mat-silicone",
     cjVid: "1387639464595165184",
     cjSku: "CJGY110563101AZ"
@@ -3683,10 +3683,10 @@ export const products: Product[] = [
   {
     id: "home-34",
     slug: "kitchen-sink-sponge-holder",
-    name: "Kitchen Sink Sponge Holder",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Kitchen Sink Sponge & Soap Holder",
+    description: "Drain rack keeps sponges, soap, and brushes tidy by the sink.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Clear counter clutter with a sink-side caddy that drains water away from sponges and dish soap. Holds brushes and scrubbers in one spot for faster cleanup after meals. Rust-resistant finish suits everyday kitchen use. Ships from our US warehouse in 3–5 business days.",
     price: 18.99,
     compareAtPrice: 20.99,
     store: "home",
@@ -3711,7 +3711,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Drain tray design","Sponge & soap slots","Rust resistant","Compact sink fit"],
     supplierSku: "kitchen-sink-sponge-holder",
     cjVid: "2057741404842156033",
     cjSku: "CJCF290036901AZ"
@@ -3719,10 +3719,10 @@ export const products: Product[] = [
   {
     id: "pet-36",
     slug: "pet-toothbrush-kit",
-    name: "Pet Toothbrush Kit",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Pet Dental Care Kit",
+    description: "Finger brushes and tools for at-home pet dental hygiene.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Support fresher breath and healthier gums with a compact dental kit designed for dogs and cats. Soft finger brushes slip on for gentle gum massage during short daily sessions. Rinse clean and store in the included case between uses. Ships from our US warehouse in 3–5 business days.",
     price: 6.99,
     compareAtPrice: 7.99,
     store: "pet",
@@ -3745,7 +3745,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Finger brush fit","Soft bristles","Storage case","Dogs and cats"],
     supplierSku: "pet-toothbrush-kit",
     cjVid: "2410170228541608500",
     cjSku: "CJYD216237201AZ"
@@ -3753,10 +3753,10 @@ export const products: Product[] = [
   {
     id: "pet-37",
     slug: "cat-laser-toy",
-    name: "Cat Laser Toy",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Rechargeable Cat Laser Toy",
+    description: "Interactive laser pointer for indoor chase and exercise.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Help indoor cats burn energy with a pocket laser toy built for daily play sessions. Rechargeable battery means no disposable cells — point, chase, repeat. Great for apartments and rainy days when outdoor time is limited. Ships from our US warehouse in 3–5 business days.",
     price: 8.99,
     compareAtPrice: 9.99,
     store: "pet",
@@ -3785,7 +3785,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["USB rechargeable","Pocket size","Indoor exercise","One-button use"],
     supplierSku: "CJJJCWMY00142-",
     cjVid: "09ADECBC-0793-42DC-88FA-BDB580E8F4C7",
     cjSku: "CJJJCWMY00142-blue"
@@ -3793,10 +3793,10 @@ export const products: Product[] = [
   {
     id: "pet-38",
     slug: "automatic-pet-feeder",
-    name: "Automatic Pet Feeder",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Automatic Pet Feeder — Timer",
+    description: "Scheduled meals for cats and dogs when you're away.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Dispense kibble on a timer so pets eat on schedule during workdays and short trips. Portion control helps with weight management and the hopper holds several days of dry food. Easy to program and disassemble for cleaning. Ships from our US warehouse in 3–5 business days.",
     price: 12.99,
     compareAtPrice: 14.99,
     store: "pet",
@@ -3821,7 +3821,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Programmable timer","Portion control","Dry food hopper","Easy clean tray"],
     supplierSku: "automatic-pet-feeder",
     cjVid: "1602564551311110144",
     cjSku: "CJMY163699601AZ"
@@ -3829,10 +3829,10 @@ export const products: Product[] = [
   {
     id: "pet-39",
     slug: "pet-stairs-steps",
-    name: "Pet Stairs Steps",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Foam Pet Stairs — Couch & Bed",
+    description: "Gentle steps help small and senior pets reach furniture safely.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Give older or small pets a boost onto the couch or bed without risky jumps. High-density foam steps support paws with a non-slip cover that removes for washing. Lightweight enough to move between rooms. Ships from our US warehouse in 3–5 business days.",
     price: 14.99,
     compareAtPrice: 16.99,
     store: "pet",
@@ -3853,7 +3853,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["High-density foam","Non-slip cover","Removable washable","Senior-pet friendly"],
     supplierSku: "pet-stairs-steps",
     cjVid: "1633666286842556416",
     cjSku: "CJJT170188001AZ"
@@ -3861,10 +3861,10 @@ export const products: Product[] = [
   {
     id: "pet-40",
     slug: "pet-nail-grinder",
-    name: "Pet Nail Grinder",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Electric Pet Nail Grinder",
+    description: "Quiet grinder trims nails smoothly without sharp clipper cuts.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Smooth rough nail edges with a low-noise rotary grinder that many pets tolerate better than clippers. Multiple grit heads handle small and large paws with a USB-rechargeable base. Work slowly at home between professional groomer visits. Ships from our US warehouse in 3–5 business days.",
     price: 35.99,
     compareAtPrice: 39.99,
     store: "pet",
@@ -3888,7 +3888,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Low-noise motor","USB rechargeable","Multiple heads","Smooth finish"],
     supplierSku: "pet-nail-grinder",
     cjVid: "1953669366388772865",
     cjSku: "CJNP245076701AZ"
@@ -3896,10 +3896,10 @@ export const products: Product[] = [
   {
     id: "home-35",
     slug: "over-sink-dish-rack",
-    name: "Over Sink Dish Rack",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Over-Sink Roll-Up Dish Drying Rack",
+    description: "Rolls out over the sink for extra drying space — stores flat.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Small kitchen? Roll this rack over the sink to air-dry plates and glasses without a bulky dish drainer on the counter. Silicone-coated steel bars support heavy pots and roll up for drawer storage when guests arrive. Ships from our US warehouse in 3–5 business days.",
     price: 28.99,
     compareAtPrice: 31.99,
     store: "home",
@@ -3918,7 +3918,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Roll-up design","Over-sink fit","Heat resistant bars","Space saving"],
     supplierSku: "CJCJ2754953",
     cjVid: "2019311077070319620",
     cjSku: "CJCJ275495303CX"
@@ -3927,9 +3927,9 @@ export const products: Product[] = [
     id: "well-29",
     slug: "weighted-sleep-mask",
     name: "Weighted Sleep Mask",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    description: "Gentle weight blocks light and eases tension for deeper sleep.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Fall asleep faster with a blackout mask that adds light pressure around the eyes — like a calm hug for your face. Soft fabric and an adjustable strap fit most head sizes without pulling hair. Great for travel, naps, and light-sensitive sleepers. Ships from our US warehouse in 3–5 business days.",
     price: 17.99,
     compareAtPrice: 19.99,
     store: "wellness",
@@ -3949,7 +3949,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Blackout coverage","Gentle weighted feel","Adjustable strap","Travel friendly"],
     supplierSku: "weighted-sleep-mask",
     cjVid: "1831926378460499968",
     cjSku: "CJMB212996401AZ"
@@ -3957,10 +3957,10 @@ export const products: Product[] = [
   {
     id: "well-30",
     slug: "portable-blender-bottle",
-    name: "Portable Blender Bottle",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Portable USB Smoothie Blender",
+    description: "Rechargeable personal blender for protein shakes on the go.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Blend smoothies at the gym, office, or hotel with a compact USB-rechargeable cup blender. BPA-free jar rinses clean fast and the six-blade base handles frozen fruit and protein powder. One-button operation — no countertop space needed. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
     compareAtPrice: 43.99,
     store: "wellness",
@@ -3989,7 +3989,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["USB rechargeable","BPA-free cup","6-blade base","Travel size"],
     supplierSku: "CJHZ2440326",
     cjVid: "1949000008291082241",
     cjSku: "CJHZ244032601AZ"
@@ -3997,10 +3997,10 @@ export const products: Product[] = [
   {
     id: "tech-24",
     slug: "wireless-mouse-silent",
-    name: "Wireless Mouse Silent",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Silent Wireless Mouse",
+    description: "Quiet clicks and smooth tracking for office and travel.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Work in cafes and shared spaces without loud click sounds. Ergonomic shape supports all-day use and the USB receiver stores inside the mouse for travel. Plug-and-play on Windows and Mac — no driver hunt required. Ships from our US warehouse in 3–5 business days.",
     price: 6.99,
     compareAtPrice: 7.99,
     store: "tech",
@@ -4024,7 +4024,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Silent clicks","USB receiver storage","Ergonomic shape","Plug and play"],
     supplierSku: "CJJJJTJT35740-",
     cjVid: "12F1AE35-16B7-4810-940B-E9CE49B5B88A",
     cjSku: "CJJJJTJT35740-Grey"
@@ -4032,10 +4032,10 @@ export const products: Product[] = [
   {
     id: "tech-25",
     slug: "phone-ring-holder",
-    name: "Phone Ring Holder",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Phone Ring Holder & Stand",
+    description: "Secure grip and kickstand for one-handed texting and video.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Reduce drop anxiety with a metal ring that rotates into a stand for recipes, FaceTime, and scrolling. Strong adhesive attaches to most phone cases and can be repositioned once. A low-cost upgrade that makes big phones easier to hold. Ships from our US warehouse in 3–5 business days.",
     price: 6.99,
     compareAtPrice: 7.99,
     store: "tech",
@@ -4064,7 +4064,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["360° rotation","Kickstand mode","Strong adhesive","Slim profile"],
     supplierSku: "phone-ring-holder",
     cjVid: "1419918806616248320",
     cjSku: "CJJT122916401AZ"
@@ -4072,10 +4072,10 @@ export const products: Product[] = [
   {
     id: "home-36",
     slug: "bed-sheet-organizer",
-    name: "Bed Sheet Organizer",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Bed Sheet Organizer Set",
+    description: "Keep matching sheet sets together — no more lost pillowcases.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Label and store folded sheet sets in breathable organizers so you grab the right size without digging through the linen closet. Fits standard queen and full sets and stacks neatly on shelves. A small change that makes laundry day faster. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
     compareAtPrice: 43.99,
     store: "home",
@@ -4099,7 +4099,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Labeled pockets","Breathable fabric","Closet stackable","Set of 3"],
     supplierSku: "bed-sheet-organizer",
     cjVid: "2046065106245685250",
     cjSku: "CJFU28436250001"
@@ -4107,10 +4107,10 @@ export const products: Product[] = [
   {
     id: "home-37",
     slug: "mason-jar-storage-lids",
-    name: "Mason Jar Storage Lids",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Mason Jar Storage Lid Set",
+    description: "Turn jars into pantry pour spouts and shaker lids.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Repurpose mason jars for rice, pasta, spices, and snacks with leak-resistant lids that pour or shake without removing the ring. BPA-free plastic fits regular-mouth jars you already own. Less plastic waste and a cleaner pantry look. Ships from our US warehouse in 3–5 business days.",
     price: 26.99,
     compareAtPrice: 29.99,
     store: "home",
@@ -4130,7 +4130,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Pour & shaker lids","Regular-mouth fit","BPA-free","Multi-pack"],
     supplierSku: "CJCJ2595720",
     cjVid: "1990409914466742274",
     cjSku: "CJCJ25957200001"
@@ -4138,10 +4138,10 @@ export const products: Product[] = [
   {
     id: "home-38",
     slug: "collapsible-colander",
-    name: "Collapsible Colander",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Collapsible Silicone Colander",
+    description: "Drain pasta and rinse produce — folds flat for small kitchens.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Save drawer space with a silicone colander that expands over the sink and collapses when you're done. Heat-resistant for hot pasta water and flexible enough to squeeze into tight cabinets. Dishwasher safe for everyday cooking. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
     compareAtPrice: 43.99,
     store: "home",
@@ -4163,7 +4163,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Collapsible design","Heat-resistant silicone","Over-sink handles","Dishwasher safe"],
     supplierSku: "collapsible-colander",
     cjVid: "1977578567161643010",
     cjSku: "CJCF255658301AZ"
@@ -4171,10 +4171,10 @@ export const products: Product[] = [
   {
     id: "home-39",
     slug: "drawer-divider-expandable",
-    name: "Drawer Divider Expandable",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Expandable Drawer Dividers",
+    description: "Adjustable dividers tame junk drawers and utensil chaos.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Custom-fit dividers expand to separate utensils, junk drawer gadgets, and office supplies without tools. Spring-loaded ends grip drawer walls and stay put when you pull items out. Set of 4 covers most kitchen and desk drawers. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
     compareAtPrice: 43.99,
     store: "home",
@@ -4197,7 +4197,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Spring-loaded grip","No tools needed","Set of 4","Bamboo or plastic options"],
     supplierSku: "drawer-divider-expandable",
     cjVid: "1947923536370823169",
     cjSku: "CJSB243768101AZ"
@@ -4205,10 +4205,10 @@ export const products: Product[] = [
   {
     id: "well-31",
     slug: "acupressure-mat-pillow",
-    name: "Acupressure Mat Pillow",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Acupressure Mat & Pillow Set",
+    description: "Spike mat and pillow release back and neck tension in minutes.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Lie down on thousands of gentle pressure points that help loosen tight muscles after desk work or workouts. Includes a matching neck pillow for shoulder and upper-back relief. Comes with a carry bag for storage. Start with a thin shirt and build up to 10–20 minutes per session. Ships from our US warehouse in 3–5 business days.",
     price: 5.99,
     compareAtPrice: 6.99,
     store: "wellness",
@@ -4237,7 +4237,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Mat + neck pillow","Carry bag included","Eco foam base","Beginner friendly"],
     supplierSku: "CJBJMRAM00074-Purple",
     cjVid: "08BCC8FF-F3BB-431C-91E2-B91777A9FD81",
     cjSku: "CJBJMRAM00074-Purple2-9cm"
@@ -4245,24 +4245,21 @@ export const products: Product[] = [
   {
     id: "tech-26",
     slug: "bluetooth-keyboard-mini",
-    name: "Bluetooth Keyboard Mini",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Mini Bluetooth Keyboard",
+    description: "Slim wireless keyboard for tablet, TV, and travel setups.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+      "Type comfortably on an iPad, Fire TV, or phone with a rechargeable Bluetooth keyboard that pairs in seconds. Quiet keys won't disturb roommates and the slim profile fits in a laptop sleeve pocket. One keyboard for couch browsing and hotel work sessions. Ships from our US warehouse in 3–5 business days.",
+    price: 39.99,
+    compareAtPrice: 43.99,
     store: "tech",
-    image: "https://cf.cjdropshipping.com/fcbfafb5-81b4-4258-b86b-be36fd45b107.jpg",
+    image: "https://cf.cjdropshipping.com/17634240/a4090746-213f-4c59-9017-e7b47b95c82b.jpg",
     images: [
-      "https://cf.cjdropshipping.com/fcbfafb5-81b4-4258-b86b-be36fd45b107.jpg",
-      "https://cf.cjdropshipping.com/dda6f437-87dd-4f4a-970c-8482dbd491b4.jpg",
-      "https://cf.cjdropshipping.com/ad6331d0-5c06-42eb-b22b-eb47212ae59d.jpg",
-      "https://cf.cjdropshipping.com/baa7eff6-9df3-4393-96fe-7927eca8532b.jpg",
-      "https://cf.cjdropshipping.com/2e953016-f7c4-4364-95ef-7bbca6ffc030.jpg",
-      "https://cf.cjdropshipping.com/3da473fa-f0db-443f-94a2-0b11f36e1665.jpg",
-      "https://cf.cjdropshipping.com/1d05b0ee-2f4d-4b60-8f37-1f3c6b18ba6a.jpg",
-      "https://cf.cjdropshipping.com/dbd37dc0-f42b-41ed-b08e-0b84b921ebfb.jpg",
-      "https://cf.cjdropshipping.com/1548e64c-b2dc-4e5b-9243-ced794fa0b75.jpg"
+      "https://cf.cjdropshipping.com/17634240/a4090746-213f-4c59-9017-e7b47b95c82b.jpg",
+      "https://cf.cjdropshipping.com/17634240/c042c23d-3138-4f45-85dd-6dab53a34e11.jpg",
+      "https://cf.cjdropshipping.com/17634240/24e80f1f-65b8-4e2c-ae15-a29f2dd4592c.jpg",
+      "https://cf.cjdropshipping.com/17634240/64be8af4-5341-4d53-974d-2b44a8a766aa.jpg",
+      "https://cf.cjdropshipping.com/17634240/1b614eab-93bb-43cf-86db-2a0801fc3abd.jpg",
+      "https://cf.cjdropshipping.com/17634240/3682e773-bc0b-4401-9239-45c2406737c0.jpg"
       ],
     rating: 4.7,
     reviews: 6,
@@ -4271,18 +4268,18 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
-    supplierSku: "bluetooth-keyboard-mini",
-    cjVid: "1925836332172611585",
-    cjSku: "CJCP238389201AZ"
+    features: ["Bluetooth pairing","Rechargeable battery","Quiet keys","Travel slim profile"],
+    supplierSku: "CJSM2600586",
+    cjVid: "1990607329845096450",
+    cjSku: "CJSM26005860001"
   },
   {
     id: "home-40",
     slug: "silicone-utensil-rest",
-    name: "Silicone Utensil Rest",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Silicone Spoon Rest",
+    description: "Keeps counters clean while cooking — holds ladles and spatulas.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Stop sauce drips on the counter with a heat-resistant spoon rest that sits beside the stove. Wide cradle fits ladles, tongs, and spatulas during busy meal prep. Dishwasher safe silicone rinses clean in seconds. Ships from our US warehouse in 3–5 business days.",
     price: 37.99,
     compareAtPrice: 41.99,
     store: "home",
@@ -4305,7 +4302,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Heat resistant","Wide cradle","Non-slip base","Dishwasher safe"],
     supplierSku: "CJCF2435818",
     cjVid: "1947183733635379201",
     cjSku: "CJCF243581801AZ"
@@ -4313,10 +4310,10 @@ export const products: Product[] = [
   {
     id: "well-32",
     slug: "foam-roller-recovery",
-    name: "Foam Roller Recovery",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "EVA Foam Roller — Muscle Recovery",
+    description: "Roll out sore legs, back, and IT band after workouts.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Speed up recovery with a firm EVA foam roller that targets quads, hamstrings, and upper back without a gym appointment. Textured surface grips the floor while you control pressure. Lightweight enough to stash by the couch or in a gym bag. Ships from our US warehouse in 3–5 business days.",
     price: 6.99,
     compareAtPrice: 7.99,
     store: "wellness",
@@ -4341,7 +4338,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["High-density EVA","Full-body use","Non-slip texture","Lightweight"],
     supplierSku: "foam-roller-recovery",
     cjVid: "1464113928169721856",
     cjSku: "CJYD136360101AZ"
@@ -4349,10 +4346,10 @@ export const products: Product[] = [
   {
     id: "well-33",
     slug: "balance-pad-foam",
-    name: "Balance Pad Foam",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Foam Balance Pad",
+    description: "Improve stability for rehab, yoga, and standing desk breaks.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Add an unstable surface to squats, single-leg stands, and physical therapy exercises without bulky equipment. Closed-cell foam is waterproof and wipes clean after sweat sessions. Great for ankle rehab and core activation at home. Ships from our US warehouse in 3–5 business days.",
     price: 8.99,
     compareAtPrice: 9.99,
     store: "wellness",
@@ -4380,7 +4377,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Closed-cell foam","Non-slip bottom","Rehab friendly","Easy to clean"],
     supplierSku: "balance-pad-foam",
     cjVid: "2406240928281612500",
     cjSku: "CJYD206770001AZ"
@@ -4388,10 +4385,10 @@ export const products: Product[] = [
   {
     id: "tech-27",
     slug: "laptop-sleeve-13",
-    name: "Laptop Sleeve 13",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "Neoprene Laptop Sleeve — 13–14\"",
+    description: "Slim scratch protection for MacBook and ultrabooks.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Slide your laptop into a padded neoprene sleeve before tossing it in a tote or backpack. Soft interior prevents scratches and the zipper opens wide for quick airport security checks. Fits most 13–14 inch laptops and tablets with keyboards. Ships from our US warehouse in 3–5 business days.",
     price: 13.99,
     compareAtPrice: 15.99,
     store: "tech",
@@ -4420,7 +4417,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["Neoprene padding","Scratch protection","Wide zipper","13–14 inch fit"],
     supplierSku: "laptop-sleeve-13",
     cjVid: "1675374281557028864",
     cjSku: "CJYD179153202BY"
@@ -4428,10 +4425,10 @@ export const products: Product[] = [
   {
     id: "tech-28",
     slug: "portable-ssd-enclosure",
-    name: "Portable Ssd Enclosure",
-    description: "Quality everyday essential — ships fast from our US warehouse.",
+    name: "NVMe SSD Enclosure — USB-C",
+    description: "Turn an M.2 drive into fast portable USB storage.",
     longDescription:
-      "A practical pick for daily use with reliable quality and fast US shipping. Ships from our US warehouse in 3–5 business days.",
+      "Repurpose an NVMe SSD as an external drive for photo backups and video edits on the go. Tool-free tray and aluminum housing help manage heat during large transfers. USB-C connection up to 10Gbps when paired with a fast drive. Ships from our US warehouse in 3–5 business days.",
     price: 11.99,
     compareAtPrice: 13.99,
     store: "tech",
@@ -4450,7 +4447,7 @@ export const products: Product[] = [
     shippingDays: "3–5 days",
     warehouse: "US",
     tags: [],
-    features: ["US warehouse","Fast shipping","Quality build","Everyday use"],
+    features: ["NVMe M.2 fit","USB-C 10Gbps","Tool-free install","Aluminum heat sink"],
     supplierSku: "portable-ssd-enclosure",
     cjVid: "1377829111665397760",
     cjSku: "CJJT106313601AZ"

@@ -30365,33 +30365,26 @@
     ]
   },
   "bluetooth-keyboard-mini": {
-    "defaultVariantId": "1925836332172611585",
+    "defaultVariantId": "1990607329845096450",
     "variants": [
       {
-        "id": "1925836332172611585",
-        "label": "Black gray · Length 80cm Width 40cm",
-        "cjVid": "1925836332172611585",
-        "cjSku": "CJCP238389201AZ",
-        "price": 9.99,
-        "compareAtPrice": 10.99,
-        "image": "https://cf.cjdropshipping.com/fcbfafb5-81b4-4258-b86b-be36fd45b107.jpg",
+        "id": "1990607329845096450",
+        "label": "Silver",
+        "cjVid": "1990607329845096450",
+        "cjSku": "CJSM26005860001",
+        "price": 39.99,
+        "compareAtPrice": 43.99,
+        "image": "https://cf.cjdropshipping.com/17634240/a4090746-213f-4c59-9017-e7b47b95c82b.jpg",
         "images": [
-          "https://cf.cjdropshipping.com/fcbfafb5-81b4-4258-b86b-be36fd45b107.jpg",
-          "https://cf.cjdropshipping.com/dda6f437-87dd-4f4a-970c-8482dbd491b4.jpg",
-          "https://cf.cjdropshipping.com/ad6331d0-5c06-42eb-b22b-eb47212ae59d.jpg",
-          "https://cf.cjdropshipping.com/baa7eff6-9df3-4393-96fe-7927eca8532b.jpg",
-          "https://cf.cjdropshipping.com/2e953016-f7c4-4364-95ef-7bbca6ffc030.jpg",
-          "https://cf.cjdropshipping.com/3da473fa-f0db-443f-94a2-0b11f36e1665.jpg",
-          "https://cf.cjdropshipping.com/1d05b0ee-2f4d-4b60-8f37-1f3c6b18ba6a.jpg",
-          "https://cf.cjdropshipping.com/dbd37dc0-f42b-41ed-b08e-0b84b921ebfb.jpg",
-          "https://cf.cjdropshipping.com/1548e64c-b2dc-4e5b-9243-ced794fa0b75.jpg"
+          "https://cf.cjdropshipping.com/17634240/a4090746-213f-4c59-9017-e7b47b95c82b.jpg",
+          "https://cf.cjdropshipping.com/17634240/c042c23d-3138-4f45-85dd-6dab53a34e11.jpg",
+          "https://cf.cjdropshipping.com/17634240/24e80f1f-65b8-4e2c-ae15-a29f2dd4592c.jpg",
+          "https://cf.cjdropshipping.com/17634240/64be8af4-5341-4d53-974d-2b44a8a766aa.jpg",
+          "https://cf.cjdropshipping.com/17634240/1b614eab-93bb-43cf-86db-2a0801fc3abd.jpg",
+          "https://cf.cjdropshipping.com/17634240/3682e773-bc0b-4401-9239-45c2406737c0.jpg"
         ],
         "inStock": true,
-        "variantKey": "Black gray-Length 80cm Width 40cm",
-        "optionValues": {
-          "Color": "Black gray",
-          "Length": "Length 80cm Width 40cm"
-        }
+        "variantKey": "Silver"
       }
     ]
   },
