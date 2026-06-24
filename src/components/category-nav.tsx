@@ -2,10 +2,36 @@ import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { storeList, storeShortNames } from "@/data/stores";
 
-/** Mobile — 2×2 grid, all categories visible without horizontal scroll */
-export function MobileCategoryGrid() {
+/** Mobile sticky header — one compact row, does not cover the product grid */
+export function MobileCategoryPills() {
   return (
-    <div className="border-t border-[#e7e5e4]/60 bg-[#fafaf9] px-3 py-3 md:hidden">
+    <div className="border-t border-[#e7e5e4]/60 bg-[#fafaf9] md:hidden">
+      <div className="flex gap-2 overflow-x-auto px-3 py-2 scrollbar-none">
+        <Link
+          href="/products"
+          className="inline-flex min-h-10 shrink-0 snap-start items-center rounded-full bg-[#1c1917] px-3.5 py-2 text-xs font-semibold text-white"
+        >
+          All
+        </Link>
+        {storeList.map((store) => (
+          <Link
+            key={store.id}
+            href={`/stores/${store.id}`}
+            className="inline-flex min-h-10 shrink-0 snap-start items-center gap-1.5 rounded-full border border-[#e7e5e4] bg-white px-3.5 py-2 text-xs font-semibold text-[#44403c] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366]"
+          >
+            <Icon name={store.id} size={15} className="text-[#5f8a7a]" />
+            {storeShortNames[store.id]}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/** Mobile homepage — 2×2 grid, scrolls with page content */
+export function MobileCategoryGrid({ className = "" }: { className?: string }) {
+  return (
+    <div className={`rounded-xl border border-[#e7e5e4]/60 bg-[#fafaf9] px-3 py-3 md:hidden ${className}`}>
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-[#a8a29e]">
         Shop by category
       </p>

@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { brand } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
-import { DesktopCategoryPills, MobileCategoryGrid } from "@/components/category-nav";
+import { DesktopCategoryPills, MobileCategoryPills } from "@/components/category-nav";
 
 export function SiteHeader() {
   const { itemCount } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e7e5e4]/80 bg-[#faf9f7] sm:bg-[#faf9f7]/95 sm:backdrop-blur-md">
+    <header className="sticky top-0 z-50 isolate border-b border-[#e7e5e4]/80 bg-[#faf9f7] shadow-[0_1px_0_0_rgb(231_229_228_/0.8)] sm:bg-[#faf9f7]/95 sm:shadow-none sm:backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-2 sm:gap-4 sm:px-6 sm:py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#5f8a7a] font-display text-sm font-semibold text-white sm:h-10 sm:w-10 sm:rounded-2xl sm:text-base">
@@ -87,7 +87,7 @@ export function SiteHeader() {
         />
       </form>
 
-      <MobileCategoryGrid />
+      <MobileCategoryPills />
       <DesktopCategoryPills />
     </header>
   );
