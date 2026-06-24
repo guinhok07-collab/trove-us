@@ -29,7 +29,15 @@ export function findVariant(
 ): ProductVariant | undefined {
   const variants = getProductVariants(product);
   if (!variants.length) return undefined;
-  const id = variantId?.trim() || getDefaultVariantId(product);
+
+  const requested = variantId?.trim();
+  if (requested) {
+    const match = variants.find((v) => v.id === requested);
+    if (match) return match;
+    return undefined;
+  }
+
+  const id = getDefaultVariantId(product);
   return variants.find((v) => v.id === id) ?? variants[0];
 }
 
@@ -61,4 +69,10 @@ export function variantPriceLabel(price: number): string {
 
 export function hasMultipleVariants(product: Product): boolean {
   return getProductVariants(product).length > 1;
+}
+
+/** Listing / browse price — always match checkout default option */
+export function withDefaultVariant(product: Product): Product {
+  const id = getDefaultVariantId(product);
+  return applyVariant(product, id);
 }

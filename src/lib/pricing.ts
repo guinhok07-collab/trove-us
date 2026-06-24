@@ -99,6 +99,11 @@ export async function resolveOrderItems(
 
     const product = await resolveProduct(input);
     const variant = findVariant(product, input.variantId);
+    if (input.variantId?.trim() && !variant) {
+      throw new OrderPricingError(
+        `${product.name}: selected option is no longer available.`,
+      );
+    }
     const line = applyVariant(product, variant?.id);
 
     if (!line.cjVid?.trim()) {

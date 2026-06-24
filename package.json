@@ -12,6 +12,8 @@
     "catalog:check:cj": "node --env-file=.env.local scripts/catalog-check.mjs --cj",
     "catalog:duplicates": "node scripts/find-duplicate-products.mjs",
     "catalog:audit-prices": "node --env-file=.env.local scripts/audit-variant-pricing.mjs",
+    "catalog:sync-defaults": "node scripts/sync-default-variant-to-products.mjs --write",
+    "store:audit": "node scripts/store-financial-audit.mjs",
     "tiktok:ads": "node scripts/record-tiktok-ad.mjs all",
     "tiktok:ads:batch2": "node scripts/record-tiktok-ad.mjs batch2",
     "tiktok:ads:pet": "node scripts/record-tiktok-ad.mjs pet",

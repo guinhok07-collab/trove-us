@@ -1,7 +1,12 @@
 import { products } from "@/data/products";
 import { getVisibilityOverrides } from "@/lib/catalog/visibility-store";
 import { resolveVisible } from "@/lib/catalog/visibility";
+import { withDefaultVariant } from "@/lib/catalog/variants";
 import type { Product, StoreCategory } from "@/types/product";
+
+function resolveProduct(product: Product): Product {
+  return withDefaultVariant(product);
+}
 
 /** Cheapest first — keeps browse pages approachable for impulse buys. */
 export function sortProductsByPriceAsc(list: Product[]): Product[] {
@@ -26,7 +31,9 @@ export async function getCatalogVisibilityMap(): Promise<Record<string, boolean>
 
 export async function getVisibleProducts(): Promise<Product[]> {
   const overrides = await getVisibilityOverrides();
-  return products.filter((p) => isProductVisibleSync(p, overrides));
+  return products
+    .filter((p) => isProductVisibleSync(p, overrides))
+    .map(resolveProduct);
 }
 
 export async function getVisibleProductsByStore(
@@ -52,11 +59,13 @@ export async function getVisibleProductBySlug(
   if (!product) return undefined;
   const overrides = await getVisibilityOverrides();
   if (!isProductVisibleSync(product, overrides)) return undefined;
-  return product;
+  return resolveProduct(product);
 }
 
 export function getVisibleProductsSync(
   overrides: Record<string, boolean> = {},
 ): Product[] {
-  return products.filter((p) => isProductVisibleSync(p, overrides));
+  return products
+    .filter((p) => isProductVisibleSync(p, overrides))
+    .map(resolveProduct);
 }

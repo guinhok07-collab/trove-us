@@ -10,6 +10,7 @@ import {
 } from "react";
 import { CartItem, Product } from "@/types/product";
 import { cartLineKey } from "@/lib/catalog/variants";
+import { roundUsd } from "@/lib/pricing";
 
 interface AddItemOptions {
   quantity?: number;
@@ -117,7 +118,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   );
 
   const subtotal = useMemo(
-    () => items.reduce((sum, i) => sum + i.product.price * i.quantity, 0),
+    () =>
+      roundUsd(
+        items.reduce((sum, i) => sum + i.product.price * i.quantity, 0),
+      ),
     [items],
   );
 
