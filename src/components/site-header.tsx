@@ -9,6 +9,7 @@ export function SiteHeader() {
   const { itemCount } = useCart();
 
   return (
+    <>
     <header className="sticky top-0 z-50 isolate border-b border-[#e7e5e4]/80 bg-[#faf9f7] shadow-[0_1px_0_0_rgb(231_229_228_/0.8)] sm:bg-[#faf9f7]/95 sm:shadow-none sm:backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-2 sm:gap-4 sm:px-6 sm:py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
@@ -87,9 +88,11 @@ export function SiteHeader() {
         />
       </form>
 
-      <MobileCategoryPills />
       <DesktopCategoryPills />
     </header>
+  {/* Compact grid scrolls with the page — all categories visible, no swipe needed */}
+  <MobileCategoryPills />
+    </>
   );
 }
 

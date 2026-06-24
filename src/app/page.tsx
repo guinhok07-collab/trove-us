@@ -2,7 +2,6 @@ import Link from "next/link";
 import { brand, copy } from "@/data/brand";
 import { AboutSection, GuaranteeBanner } from "@/components/about-section";
 import { BundleCard } from "@/components/bundle-card";
-import { MobileCategoryGrid } from "@/components/category-nav";
 import { HeroBanner, StoreQuickNav, TrustBadges } from "@/components/hero-banner";
 import { PromoBanner } from "@/components/promo-banner";
 import { ProductGrid } from "@/components/product-grid";
@@ -54,9 +53,7 @@ export default async function HomePage() {
     <div className="mx-auto max-w-[1400px] px-3 py-3 sm:px-6 sm:py-10">
       <HeroBanner heroTiles={heroTiles} />
 
-      <MobileCategoryGrid className="mt-4 md:hidden" />
-
-      <section id="bestsellers" className="mt-4 scroll-mt-36 sm:mt-8 sm:scroll-mt-32">
+      <section id="bestsellers" className="mt-4 scroll-mt-32 sm:mt-8 sm:scroll-mt-32">
         <div className="mb-3 flex items-end justify-between gap-3 sm:mb-5">
           <div>
             <h2 className="section-title">{copy.bestSellers}</h2>

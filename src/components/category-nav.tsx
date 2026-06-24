@@ -2,56 +2,27 @@ import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { storeList, storeShortNames } from "@/data/stores";
 
-/** Mobile sticky header — one compact row, does not cover the product grid */
+/** Mobile — compact 2×2 grid below header, scrolls with page */
 export function MobileCategoryPills() {
   return (
-    <div className="border-t border-[#e7e5e4]/60 bg-[#fafaf9] md:hidden">
-      <div className="flex gap-2 overflow-x-auto px-3 py-2 scrollbar-none">
-        <Link
-          href="/products"
-          className="inline-flex min-h-10 shrink-0 snap-start items-center rounded-full bg-[#1c1917] px-3.5 py-2 text-xs font-semibold text-white"
-        >
-          All
-        </Link>
-        {storeList.map((store) => (
-          <Link
-            key={store.id}
-            href={`/stores/${store.id}`}
-            className="inline-flex min-h-10 shrink-0 snap-start items-center gap-1.5 rounded-full border border-[#e7e5e4] bg-white px-3.5 py-2 text-xs font-semibold text-[#44403c] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366]"
-          >
-            <Icon name={store.id} size={15} className="text-[#5f8a7a]" />
-            {storeShortNames[store.id]}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/** Mobile homepage — 2×2 grid, scrolls with page content */
-export function MobileCategoryGrid({ className = "" }: { className?: string }) {
-  return (
-    <div className={`rounded-xl border border-[#e7e5e4]/60 bg-[#fafaf9] px-3 py-3 md:hidden ${className}`}>
-      <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-[#a8a29e]">
-        Shop by category
-      </p>
+    <div className="border-b border-[#e7e5e4]/60 bg-[#fafaf9] px-3 py-2 md:hidden">
       <Link
         href="/products"
-        className="mb-2 flex min-h-11 items-center justify-center rounded-xl bg-[#1c1917] text-sm font-semibold text-white"
+        className="mb-1.5 flex min-h-9 items-center justify-center rounded-lg bg-[#1c1917] text-xs font-semibold text-white"
       >
         All products
       </Link>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-1.5">
         {storeList.map((store) => (
           <Link
             key={store.id}
             href={`/stores/${store.id}`}
-            className={`flex min-h-[3.25rem] items-center gap-2.5 rounded-xl border border-[#e7e5e4]/80 bg-gradient-to-br p-3 ${store.bgGradient}`}
+            className={`flex min-h-9 items-center gap-2 rounded-lg border border-[#e7e5e4]/80 bg-gradient-to-br px-2.5 py-2 ${store.bgGradient}`}
           >
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/85 shadow-sm">
-              <Icon name={store.id} size={18} className="text-[#4d7366]" />
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white/85 shadow-sm">
+              <Icon name={store.id} size={14} className="text-[#4d7366]" />
             </span>
-            <span className="text-sm font-semibold leading-tight text-[#1c1917]">
+            <span className="text-xs font-semibold leading-tight text-[#1c1917]">
               {storeShortNames[store.id]}
             </span>
           </Link>
