@@ -1,5 +1,6 @@
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { MobileBottomNav } from "@/components/mobile-bottom-nav";
 import { TrustStrip } from "@/components/trust-strip";
 import { MetaPixel } from "@/components/meta-pixel";
 import { BrowseScrollRestore } from "@/components/browse-scroll-restore";
@@ -61,8 +62,11 @@ export default function RootLayout({
           </Suspense>
           <SiteHeader />
           <TrustStrip className="hidden sm:block" />
-          <main className="flex-1 pb-[max(1rem,env(safe-area-inset-bottom))]">{children}</main>
+          <main className="flex-1 pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-[max(1rem,env(safe-area-inset-bottom))]">
+            {children}
+          </main>
           <SiteFooter />
+          <MobileBottomNav />
         </CartProvider>
       </body>
     </html>

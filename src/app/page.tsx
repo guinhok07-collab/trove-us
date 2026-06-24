@@ -3,6 +3,7 @@ import { brand, copy } from "@/data/brand";
 import { AboutSection, GuaranteeBanner } from "@/components/about-section";
 import { BundleCard } from "@/components/bundle-card";
 import { HeroBanner, StoreQuickNav, TrustBadges } from "@/components/hero-banner";
+import { MobileCategoryGrid } from "@/components/category-nav";
 import { PromoBanner } from "@/components/promo-banner";
 import { ProductGrid } from "@/components/product-grid";
 import { bundles } from "@/data/bundles";
@@ -52,6 +53,10 @@ export default async function HomePage() {
   return (
     <div className="mx-auto max-w-[1400px] px-3 py-3 sm:px-6 sm:py-10">
       <HeroBanner heroTiles={heroTiles} />
+
+      <div id="categories" className="scroll-mt-24 md:hidden">
+        <MobileCategoryGrid />
+      </div>
 
       <section id="bestsellers" className="mt-4 scroll-mt-28 sm:mt-8 sm:scroll-mt-32">
         <div className="mb-3 flex items-end justify-between gap-3 sm:mb-5">
