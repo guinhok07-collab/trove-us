@@ -1,124 +1,16 @@
 {
   "summary": {
-    "auditedAt": "2026-06-23T20:43:37.808Z",
+    "auditedAt": "2026-06-24T19:48:50.968Z",
     "total": 127,
-    "ok": 89,
-    "issueCount": 38,
-    "errors": 9,
-    "warnings": 29,
-    "nameMismatch": 9,
+    "ok": 121,
+    "issueCount": 6,
+    "errors": 2,
+    "warnings": 4,
+    "nameMismatch": 2,
     "variantGap": 0,
-    "autoFixable": 28
+    "autoFixable": 3
   },
   "issues": [
-    {
-      "slug": "orthopedic-dog-bed",
-      "name": "Orthopedic Memory Foam Dog Bed",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 35,
-      "cjName": "Large Dog Orthopedic Dog Sofa Supportive Foam Pet Mattress Washable And Removable Cover Egg Cell Foam Waterproof Lining ",
-      "cjPid": "1932639907792334849",
-      "cjVariants": 6,
-      "catalogVariants": 6,
-      "messages": [
-        "Preço loja $63.99 vs esperado $39.99 (custo CJ $42.75)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "no-pull-dog-harness",
-      "name": "No-Pull Front Clip Dog Harness",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 11,
-      "cjName": "Pet Harness Luxury Dog Leash Set Chest Dog  Nylon Camouflage Dog Harness",
-      "cjPid": "1846398052585066496",
-      "cjVariants": 16,
-      "catalogVariants": 16,
-      "messages": [
-        "Preço loja $31.99 vs esperado $39.99 (custo CJ $28.06)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "pet-water-fountain",
-      "name": "Automatic Pet Water Fountain",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 26,
-      "cjName": "Pet Cat Dog Stainless Steel Automatic Circulation Water Dispenser Intelligent Fountain Pets Accessories",
-      "cjPid": "1651788214971146240",
-      "cjVariants": 25,
-      "catalogVariants": 25,
-      "messages": [
-        "Preço loja $19.99 vs esperado $17.99 (custo CJ $10.22)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "retractable-dog-leash",
-      "name": "Retractable Dog Leash",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 7,
-      "cjName": "Pet Double Handle Pull Leash",
-      "cjPid": "38F8EECC-A06A-460E-BF95-2D51929DF2C6",
-      "cjVariants": 5,
-      "catalogVariants": 5,
-      "messages": [
-        "Preço loja $9.99 vs esperado $8.99 (custo CJ $2.91)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "cat-scratching-post",
-      "name": "Cat Scratching Post",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 18,
-      "cjName": "Small 4-in-1 Cat Tree Tower With Self-grooming Brush And Natural Sisal Scratching Post, Soft Plush Cat Bed And Hanging B",
-      "cjPid": "1932709742870048770",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Preço loja $45.99 vs esperado $39.99 (custo CJ $28.99)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "dog-cooling-mat",
-      "name": "Self-Cooling Dog Mat",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 11,
-      "cjName": "Air Conditioner Air Cooler Fan Water Cooling Fan Air Conditioning For Room Office Portable Air Conditioner Cars",
-      "cjPid": "1665166365889662976",
-      "cjVariants": 2,
-      "catalogVariants": 2,
-      "messages": [
-        "Preço loja $9.99 vs esperado $14.99 (custo CJ $7.89)"
-      ],
-      "autoFix": true
-    },
     {
       "slug": "interactive-cat-toy",
       "name": "Interactive Cat Toy",
@@ -141,23 +33,23 @@
     },
     {
       "slug": "pet-deshedding-tool",
-      "name": "Pet Paw Cleaner Cup",
+      "name": "Pet Deshedding Tool",
       "store": "pet",
-      "level": "warn",
+      "level": "error",
       "types": [
-        "price_drift"
+        "name_mismatch"
       ],
-      "overlap": 21,
-      "cjName": "2 In 1 Dog Paw Cleaner Cup Soft Pet Dog Foot Cleaning Washer Brush Cup Portable Pet Foot Washer Paw Clean Brush Foot Cle",
-      "cjPid": "1661977359978860544",
-      "cjVariants": 8,
-      "catalogVariants": 8,
+      "overlap": 10,
+      "cjName": "7pcs Pet Grooming Kit, Self-Cleaning Brush Shedding Kit With Nail Clipper, Flea Comb, Shampoo Bath Brush, Finger Toothbr",
+      "cjPid": "2003003597865926657",
+      "cjVariants": 1,
+      "catalogVariants": 1,
       "messages": [
-        "Revise se CJ bate com anúncio (overlap 21%)",
-        "CJ: 2 In 1 Dog Paw Cleaner Cup Soft Pet Dog Foot Cleaning Washer Brush Cup Portable ",
-        "Preço loja $7.99 vs esperado $6.99 (custo CJ $1.86)"
+        "Produto CJ provavelmente errado (slug match 0%)",
+        "Trove: Pet Deshedding Tool",
+        "CJ: 7pcs Pet Grooming Kit, Self-Cleaning Brush Shedding Kit With Nail Clipper, Flea Comb, Sham"
       ],
-      "autoFix": true
+      "autoFix": false
     },
     {
       "slug": "pet-paw-cleaner-cup",
@@ -174,410 +66,6 @@
       "catalogVariants": 8,
       "messages": [
         "Preço loja $7.99 vs esperado $6.99 (custo CJ $1.86)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "dog-poop-bag-dispenser",
-      "name": "Dog Poop Bag Dispenser",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 17,
-      "cjName": "Portable Lightweight Dog Pooper Scooper With Built-in Poop Bag Dispenser Eight-claw Shovel For Pet Toilet Picker Pet Pro",
-      "cjPid": "1635137291716931584",
-      "cjVariants": 18,
-      "catalogVariants": 18,
-      "messages": [
-        "Preço loja $12.99 vs esperado $11.99 (custo CJ $5.24)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "cat-litter-mat",
-      "name": "Cat Litter Catching Mat",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 13,
-      "cjName": "Cat Litter Pad Honeycomb Cat Pad Waterproof Urine Proof Pad Pet Supplies",
-      "cjPid": "F8335938-4CF7-4D82-9FFD-C9F168EA1E49",
-      "cjVariants": 9,
-      "catalogVariants": 9,
-      "messages": [
-        "Preço loja $9.99 vs esperado $8.99 (custo CJ $3.13)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "portable-pet-carrier",
-      "name": "Portable Pet Carrier Bag",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 17,
-      "cjName": "Portable Pet Cat Bag Breathable Dog Carrier Backpack Large Capacity Travel Pet Handbag For Puppy Kitten Pets Outdoor Sup",
-      "cjPid": "1392428662283964416",
-      "cjVariants": 6,
-      "catalogVariants": 6,
-      "messages": [
-        "Preço loja $13.99 vs esperado $11.99 (custo CJ $5.61)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "under-sink-organizer",
-      "name": "Under Sink Organizer Rack",
-      "store": "home",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 14,
-      "cjName": "1Pc 2Tier Pull Out Under Sink Organizer Cabinet Organizer With Sliding Drawer Tray L Shaped Slide Out Storage Shelves Fo",
-      "cjPid": "1977570834089803777",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Preço loja $40.99 vs esperado $32.99 (custo CJ $21.49)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "foldable-laundry-hamper",
-      "name": "Adhesive Cable Clips",
-      "store": "home",
-      "level": "warn",
-      "types": [],
-      "overlap": 20,
-      "cjName": "6 Pack Magnetic Cable Clips Magnetic Cord Organizer Adhesive Wire Holder For Home Office Car Desk Nightstand Wall",
-      "cjPid": "1965621056973606913",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Revise se CJ bate com anúncio (overlap 20%)",
-        "CJ: 6 Pack Magnetic Cable Clips Magnetic Cord Organizer Adhesive Wire Holder For Hom"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "over-door-hook-rack",
-      "name": "Over the Door Hook Rack",
-      "store": "home",
-      "level": "error",
-      "types": [
-        "name_mismatch",
-        "price_drift"
-      ],
-      "overlap": 0,
-      "cjName": "Flower Pot Net Bag Beige Cotton Rope Indoor Plant Hanger Hanging Basket Sling",
-      "cjPid": "8FF360C0-D945-444E-9A39-E6D9698072E6",
-      "cjVariants": 40,
-      "catalogVariants": 40,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 25%)",
-        "Trove: Over the Door Hook Rack",
-        "CJ: Flower Pot Net Bag Beige Cotton Rope Indoor Plant Hanger Hanging Basket Sling",
-        "Preço loja $35.99 vs esperado $7.99 (custo CJ $2.21)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "kitchen-sink-organizer",
-      "name": "LED Motion Sensor Night Light",
-      "store": "home",
-      "level": "warn",
-      "types": [],
-      "overlap": 20,
-      "cjName": "LED Motion Sensor Night Light, 7 Colors Rechargeable Battery Stair Light, Wireless Magnetic Wall Lamp, Cordless LED Wall",
-      "cjPid": "2014635212539990018",
-      "cjVariants": 4,
-      "catalogVariants": 4,
-      "messages": [
-        "Revise se CJ bate com anúncio (overlap 20%)",
-        "CJ: LED Motion Sensor Night Light, 7 Colors Rechargeable Battery Stair Light, Wirele"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "led-motion-night-light",
-      "name": "LED Motion Sensor Night Light",
-      "store": "home",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 14,
-      "cjName": "LED sensor light bar",
-      "cjPid": "10A2E8CF-227C-49D0-AF4E-FAE2945E2D3D",
-      "cjVariants": 20,
-      "catalogVariants": 20,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 33%)",
-        "Trove: LED Motion Sensor Night Light",
-        "CJ: LED sensor light bar"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "vacuum-storage-bags",
-      "name": "LED Motion Sensor Night Light",
-      "store": "home",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 9,
-      "cjName": "LED sensor light bar",
-      "cjPid": "10A2E8CF-227C-49D0-AF4E-FAE2945E2D3D",
-      "cjVariants": 20,
-      "catalogVariants": 20,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 0%)",
-        "Trove: LED Motion Sensor Night Light",
-        "CJ: LED sensor light bar"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "neck-shoulder-massager",
-      "name": "Six-Wheel Neck and Shoulder Roller",
-      "store": "wellness",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 33,
-      "cjName": "Multifunctional Manual Six-wheel Neck Massager Massage Relieve Roller Massage Tool",
-      "cjPid": "1444929719182168064",
-      "cjVariants": 29,
-      "catalogVariants": 29,
-      "messages": [
-        "Preço loja $7.99 vs esperado $5.99 (custo CJ $0.76)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "heating-pad-electric",
-      "name": "Electric Heating Pad",
-      "store": "wellness",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 25,
-      "cjName": "1Pc 36.6x22in Electric Heating Wrap For Neck Shoulder Fast Heating Pad Mat Heated Neck Wrap For Back Pain Relief With 6 ",
-      "cjPid": "1962460263617413122",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Preço loja $54.99 vs esperado $39.99 (custo CJ $37.34)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "yoga-mat-thick",
-      "name": "Thick Non-Slip Yoga Mat",
-      "store": "wellness",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 9,
-      "cjName": "Super Soft  EVA Fitness Composite Mat Yoga Mat 4mm 6mm",
-      "cjPid": "44F0BA9F-726E-4AF4-A2C4-212850B865D6",
-      "cjVariants": 13,
-      "catalogVariants": 13,
-      "messages": [
-        "Preço loja $10.99 vs esperado $7.99 (custo CJ $2.43)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "percussion-massage-gun",
-      "name": "Percussion Massage Gun",
-      "store": "wellness",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 21,
-      "cjName": "Muscle Massage Mini Pocket Electric Fascia Massage Back Neck Massager Gun For Body Deep Relief Pain Slimming Fascial Too",
-      "cjPid": "1463778127867154432",
-      "cjVariants": 9,
-      "catalogVariants": 9,
-      "messages": [
-        "Preço loja $9.99 vs esperado $8.99 (custo CJ $2.81)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "essential-oil-diffuser",
-      "name": "Adjustable Posture Corrector Brace",
-      "store": "wellness",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 13,
-      "cjName": "Adjustable Anglel Smart Posture Corrector For Adults Children Correct Hunchback Clavicle Support Trainer Upper Back Brac",
-      "cjPid": "1357500854936145920",
-      "cjVariants": 6,
-      "catalogVariants": 6,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 0%)",
-        "Trove: Adjustable Posture Corrector Brace",
-        "CJ: Adjustable Anglel Smart Posture Corrector For Adults Children Correct Hunchback Clavicle S"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "ergonomic-laptop-stand",
-      "name": "Ergonomic Aluminum Laptop Stand",
-      "store": "tech",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 15,
-      "cjName": "New Laptop Stand Multifunctional Folding Lift Portable Laptop Stand Monitor Increase Rack Aluminum Alloy Base",
-      "cjPid": "DCB495CC-80F8-4ED9-B5BD-26E39B751776",
-      "cjVariants": 2,
-      "catalogVariants": 2,
-      "messages": [
-        "Preço loja $21.99 vs esperado $19.99 (custo CJ $11.82)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "mini-bluetooth-speaker",
-      "name": "Mini Bluetooth Speaker",
-      "store": "tech",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 16,
-      "cjName": "Cyboris S18 2 In 1 Magnetic Split Bluetooth Speaker, Color Blocking Waterproof Dual Splittable Portable Wireless Speaker",
-      "cjPid": "1995343483956674562",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Preço loja $54.99 vs esperado $39.99 (custo CJ $38.32)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "cable-management-box",
-      "name": "Cable Management Box",
-      "store": "tech",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 8,
-      "cjName": "Sewing Needle Wear-free Cable Box",
-      "cjPid": "1764994457562259456",
-      "cjVariants": 3,
-      "catalogVariants": 3,
-      "messages": [
-        "Preço loja $6.99 vs esperado $5.99 (custo CJ $0.73)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "cat-window-perch",
-      "name": "Cat Window Perch (Suction Mount)",
-      "store": "pet",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 14,
-      "cjName": "Window cat hammock with suction cup, foldable bed",
-      "cjPid": "1427158310251008000",
-      "cjVariants": 2,
-      "catalogVariants": 2,
-      "messages": [
-        "Preço loja $21.99 vs esperado $19.99 (custo CJ $11.69)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "over-door-shoe-organizer",
-      "name": "Over-Door Shoe Organizer (24 Pockets)",
-      "store": "home",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 30,
-      "cjName": "24 Pocket Shoe Space Door Hanging Storage Rack",
-      "cjPid": "1F462F53-3E4B-4CC5-A837-54003BFF480A",
-      "cjVariants": 3,
-      "catalogVariants": 3,
-      "messages": [
-        "Preço loja $16.99 vs esperado $13.99 (custo CJ $6.77)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "silicone-food-storage-bags",
-      "name": "Reusable Silicone Food Storage Bags",
-      "store": "home",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 18,
-      "cjName": "Food Storage Bag Zero Waste Reusable Ziplock Bags Cup Shape Silicone Bag Stand Up For Kitchen Cookie Candy Snack Baked F",
-      "cjPid": "1435808620456579072",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Preço loja $6.99 vs esperado $5.99 (custo CJ $0.86)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "meditation-cushion",
-      "name": "Floor Meditation Cushion",
-      "store": "wellness",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 35,
-      "cjName": "Futon Cushion Floor Japanese Tatami Carpet Floor Bay Window Household Seat Meditation Round Thickening Removable And Was",
-      "cjPid": "1386865820080148480",
-      "cjVariants": 92,
-      "catalogVariants": 92,
-      "messages": [
-        "Preço loja $8.99 vs esperado $6.99 (custo CJ $1.78)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "kitchen-drawer-organizer",
-      "name": "Kitchen Drawer Organizer Tray",
-      "store": "home",
-      "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 32,
-      "cjName": "Kitchen Cabinet Divider Shelf Drawer Organizer Utensil Holder Under Desk Hanging Storage Box Fork Spoon Tray Kitchen Sto",
-      "cjPid": "BB9C2683-C089-4FBE-B6EB-CE8217C40E31",
-      "cjVariants": 3,
-      "catalogVariants": 3,
-      "messages": [
-        "Preço loja $7.99 vs esperado $6.99 (custo CJ $1.67)"
       ],
       "autoFix": true
     },
@@ -600,48 +88,8 @@
       "autoFix": true
     },
     {
-      "slug": "jump-rope-weighted",
-      "name": "Jump Rope Weighted",
-      "store": "wellness",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 8,
-      "cjName": "Smart Bluetooth Skipping Rope With CounterFitness Weight Bearing Ball",
-      "cjPid": "2502140221331605800",
-      "cjVariants": 3,
-      "catalogVariants": 3,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 33%)",
-        "Trove: Jump Rope Weighted",
-        "CJ: Smart Bluetooth Skipping Rope With CounterFitness Weight Bearing Ball"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "portable-blender-bottle",
-      "name": "Portable Blender Bottle",
-      "store": "wellness",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 9,
-      "cjName": "4 In 1 Electric Makeup Brush Cleaner USB Powered Automatic Brush Blender Machine With Timer Digital Display Cleaning Dry",
-      "cjPid": "1949000008198807554",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 33%)",
-        "Trove: Portable Blender Bottle",
-        "CJ: 4 In 1 Electric Makeup Brush Cleaner USB Powered Automatic Brush Blender Machine With Time"
-      ],
-      "autoFix": false
-    },
-    {
       "slug": "bed-sheet-organizer",
-      "name": "Bed Sheet Organizer",
+      "name": "Bed Sheet Organizer Set",
       "store": "home",
       "level": "warn",
       "types": [
@@ -658,60 +106,19 @@
       "autoFix": true
     },
     {
-      "slug": "mason-jar-storage-lids",
-      "name": "Mason Jar Storage Lids",
-      "store": "home",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 8,
-      "cjName": "24 Pcs Regular Mouth Canning Jar Metal Rings Split-Type Jar Bands Replacement",
-      "cjPid": "1990409914315747329",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 0%)",
-        "Trove: Mason Jar Storage Lids",
-        "CJ: 24 Pcs Regular Mouth Canning Jar Metal Rings Split-Type Jar Bands Replacement"
-      ],
-      "autoFix": false
-    },
-    {
       "slug": "bluetooth-keyboard-mini",
-      "name": "Bluetooth Keyboard Mini",
+      "name": "Mini Bluetooth Keyboard",
       "store": "tech",
       "level": "warn",
-      "types": [
-        "price_drift"
-      ],
-      "overlap": 9,
-      "cjName": "Minimalistic Non-Slip Protector Felt Desk Pad Extended Mouse Keyboard Laptop Gaming PC Accessories C",
-      "cjPid": "1925836332113891330",
+      "types": [],
+      "overlap": 15,
+      "cjName": "Ultra-portable Wireless Keyboard With Built-in Stand For KOCASO MX1080 And INova EX1080 In Silver",
+      "cjPid": "1990607329773793281",
       "cjVariants": 1,
       "catalogVariants": 1,
       "messages": [
-        "Preço loja $10.99 vs esperado $9.99 (custo CJ $4)"
-      ],
-      "autoFix": true
-    },
-    {
-      "slug": "silicone-utensil-rest",
-      "name": "Silicone Utensil Rest",
-      "store": "home",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 9,
-      "cjName": "1Pc  2-Tier Dish Drying Rack For Kitchen Counter Space Saving Rustproof Dish Rack With Drainboard Detachable Kitchen Dra",
-      "cjPid": "1947183733404692481",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 33%)",
-        "Trove: Silicone Utensil Rest",
-        "CJ: 1Pc  2-Tier Dish Drying Rack For Kitchen Counter Space Saving Rustproof Dish Rack With Dra"
+        "Revise se CJ bate com anúncio (overlap 15%)",
+        "CJ: Ultra-portable Wireless Keyboard With Built-in Stand For KOCASO MX1080 And INova"
       ],
       "autoFix": false
     }

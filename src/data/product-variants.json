@@ -3395,557 +3395,34 @@
         "variantKey": "Black-2Pc",
         "optionValues": {
           "Color": "Black",
-          "Option 2": "2Pc"
+          "Pack size": "2Pc"
         }
       }
     ]
   },
   "pet-deshedding-tool": {
-    "defaultVariantId": "1734496117838061568",
+    "defaultVariantId": "2003003598646067201",
     "variants": [
       {
-        "id": "1734496117838061568",
-        "label": "Milk Brown · USB",
-        "cjVid": "1734496117838061568",
-        "cjSku": "CJGY191930702BY",
-        "price": 6.99,
-        "compareAtPrice": 7.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg",
+        "id": "2003003598646067201",
+        "label": "Blue",
+        "cjVid": "2003003598646067201",
+        "cjSku": "CJHR266567001AZ",
+        "price": 29.99,
+        "compareAtPrice": 32.99,
+        "image": "https://cf.cjdropshipping.com/cce44566-bde0-4cb0-9ef2-ce6e87f61286.jpg",
         "images": [
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
+          "https://cf.cjdropshipping.com/cce44566-bde0-4cb0-9ef2-ce6e87f61286.jpg",
+          "https://cf.cjdropshipping.com/b428f4ed-1adf-4d1a-8ac9-c785ded73b4f.jpg",
+          "https://cf.cjdropshipping.com/c44b5c7f-bca6-4648-a76b-8ee2e94149b9.jpg",
+          "https://cf.cjdropshipping.com/ea00064d-db4c-4ea5-b029-d20bc7f073f0.jpg",
+          "https://cf.cjdropshipping.com/f97555d1-1dd9-4ac5-8596-9db99f5ded64.jpg",
+          "https://cf.cjdropshipping.com/d8da63ab-c0d7-4073-b732-664982905999.jpg",
+          "https://cf.cjdropshipping.com/d4c9afd1-dcd6-46f7-b4a7-084b2b1f746e.jpg",
+          "https://cf.cjdropshipping.com/8f399ef1-5900-446e-84c6-aaac14c4c394.png"
         ],
         "inStock": true,
-        "variantKey": "Milk Brown-USB",
-        "optionValues": {
-          "Style": "Milk Brown",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "1734496118001639424",
-        "label": "Porcelain White · USB",
-        "cjVid": "1734496118001639424",
-        "cjSku": "CJGY191930703CX",
-        "price": 6.99,
-        "compareAtPrice": 7.99,
-        "image": "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-        "images": [
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Porcelain White-USB",
-        "optionValues": {
-          "Style": "Porcelain White",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "1768089112881410048",
-        "label": "Set · USB",
-        "cjVid": "1768089112881410048",
-        "cjSku": "CJGY191930701AZ",
-        "price": 12.99,
-        "compareAtPrice": 14.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/7165df38-bfc9-42c1-99a3-6d2e4d645b25.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/7165df38-bfc9-42c1-99a3-6d2e4d645b25.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set-USB",
-        "optionValues": {
-          "Style": "Set",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "1768485693233303552",
-        "label": "Milk Brown set · USB",
-        "cjVid": "1768485693233303552",
-        "cjSku": "CJGY191930704DW",
-        "price": 13.99,
-        "compareAtPrice": 15.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Milk Brown set-USB",
-        "optionValues": {
-          "Style": "Milk Brown set",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "1768485693287829504",
-        "label": "Porcelain White set · USB",
-        "cjVid": "1768485693287829504",
-        "cjSku": "CJGY191930705EV",
-        "price": 13.99,
-        "compareAtPrice": 15.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/81e135e6-371c-4757-92a2-1b9cb1b4a4e5.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/81e135e6-371c-4757-92a2-1b9cb1b4a4e5.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Porcelain White set-USB",
-        "optionValues": {
-          "Style": "Porcelain White set",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2409230147571610900",
-        "label": "Purple · USB",
-        "cjVid": "2409230147571610900",
-        "cjSku": "CJGY191930706FU",
-        "price": 6.99,
-        "compareAtPrice": 7.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2024/09/23/01/f5887d64-1257-4036-8cfe-877542e0592c.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2024/09/23/01/f5887d64-1257-4036-8cfe-877542e0592c.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Purple-USB",
-        "optionValues": {
-          "Style": "Purple",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2412070313181625600",
-        "label": "Milk Brown2pcs · USB",
-        "cjVid": "2412070313181625600",
-        "cjSku": "CJGY191930707GT",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Milk Brown2pcs-USB",
-        "optionValues": {
-          "Style": "Milk Brown2pcs",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2507300115041613800",
-        "label": "Light Purple · USB",
-        "cjVid": "2507300115041613800",
-        "cjSku": "CJGY191930709IR",
-        "price": 6.99,
-        "compareAtPrice": 7.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Light Purple-USB",
-        "optionValues": {
-          "Style": "Light Purple",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2603310320211615800",
-        "label": "Set4 · USB",
-        "cjVid": "2603310320211615800",
-        "cjSku": "CJGY191930713MN",
-        "price": 8.99,
-        "compareAtPrice": 9.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/aa0f8513-b98e-4fe7-be86-186c0e3ec7c8.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/aa0f8513-b98e-4fe7-be86-186c0e3ec7c8.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set4-USB",
-        "optionValues": {
-          "Style": "Set4",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2603310320211616100",
-        "label": "Set5 · USB",
-        "cjVid": "2603310320211616100",
-        "cjSku": "CJGY191930714NM",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set5-USB",
-        "optionValues": {
-          "Style": "Set5",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2604210802361626400",
-        "label": "White  Set · USB",
-        "cjVid": "2604210802361626400",
-        "cjSku": "CJGY191930715OL",
-        "price": 8.99,
-        "compareAtPrice": 9.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/04/21/08/ec71a31c-bc8c-4699-9aba-1c76ed1514bb.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/04/21/08/ec71a31c-bc8c-4699-9aba-1c76ed1514bb.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "White  Set-USB",
-        "optionValues": {
-          "Style": "White  Set",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2605151009161615900",
-        "label": "Set6 · USB",
-        "cjVid": "2605151009161615900",
-        "cjSku": "CJGY191930716PK",
-        "price": 9.99,
-        "compareAtPrice": 10.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set6-USB",
-        "optionValues": {
-          "Style": "Set6",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2605151009161616800",
-        "label": "Set7 · USB",
-        "cjVid": "2605151009161616800",
-        "cjSku": "CJGY191930717QJ",
-        "price": 9.99,
-        "compareAtPrice": 10.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/c9bdc6e6-557e-4af1-bf63-99c853270359.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/c9bdc6e6-557e-4af1-bf63-99c853270359.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set7-USB",
-        "optionValues": {
-          "Style": "Set7",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2605151009161617700",
-        "label": "Set8 · USB",
-        "cjVid": "2605151009161617700",
-        "cjSku": "CJGY191930718RI",
-        "price": 9.99,
-        "compareAtPrice": 10.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/7c22c2c1-4150-4033-8b39-0c954d2ee3e4.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/7c22c2c1-4150-4033-8b39-0c954d2ee3e4.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set8-USB",
-        "optionValues": {
-          "Style": "Set8",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2605180336491613100",
-        "label": "Milk coffee · USB",
-        "cjVid": "2605180336491613100",
-        "cjSku": "CJGY191930719SH",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/19/01/f5b55d05-8bad-4e64-bf2d-4c825667852c.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Milk coffee-USB",
-        "optionValues": {
-          "Style": "Milk coffee",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2605250556291615500",
-        "label": "Set9 · USB",
-        "cjVid": "2605250556291615500",
-        "cjSku": "CJGY191930720TG",
-        "price": 8.99,
-        "compareAtPrice": 9.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/05/25/05/932da882-1660-4bfc-b66e-c63639c7ca63.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/05/25/05/932da882-1660-4bfc-b66e-c63639c7ca63.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set9-USB",
-        "optionValues": {
-          "Style": "Set9",
-          "Option 2": "USB"
-        }
-      },
-      {
-        "id": "2606190358501620700",
-        "label": "Set10 · USB",
-        "cjVid": "2606190358501620700",
-        "cjSku": "CJGY191930721UF",
-        "price": 9.99,
-        "compareAtPrice": 10.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2026/06/19/03/feef19d1-4e8d-466e-b4ed-03326816decc.jpg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2026/06/19/03/feef19d1-4e8d-466e-b4ed-03326816decc.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/c7cb594b-1c7d-4dd5-9418-b2ae79a63e99_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/09/12/f7b3d027-04d5-408a-a11f-35cc17838399.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/12/08/e4ea290f-8e54-412c-9abe-24cd760cb4c6_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2023/12/29/07/3947208a-48e1-4f0f-bda0-2eae6591cd4e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/eb9825a4-f00d-4de2-9f45-d29d1e9b121e.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/03/15/03/4d4f5086-660f-4427-acdb-95b0a2ee61a2.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/8800db0d-3d15-448b-a54a-74f33aae4ccf.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2025/07/30/01/fb30acba-c96b-46c6-b20f-14c7731434aa.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/18/03/06f2e0da-d7a5-48cd-a693-4862060de5bb_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/6725c8e0-9ca8-49e6-88d0-d74f7e323431.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/03/31/03/418f40f6-40a0-4463-9703-dcba05bc0e0d.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2026/05/15/10/22f11f75-992b-47b7-b7dd-763385236ca3.jpg",
-          "https://cf.cjdropshipping.com/quick/product/9f0d1bcc-113c-4b7e-a0ee-db2fddfaf824.jpg",
-          "https://oss-cf.cjdropshipping.com/product/2024/01/02/06/2aaf053d-98bf-49d0-89c9-cafe6ef0849a.jpg"
-        ],
-        "inStock": true,
-        "variantKey": "Set10-USB",
-        "optionValues": {
-          "Style": "Set10",
-          "Option 2": "USB"
-        }
+        "variantKey": "Blue"
       }
     ]
   },
@@ -3957,8 +3434,8 @@
         "label": "Blue · S",
         "cjVid": "1661977360045969408",
         "cjSku": "CJGY176534701AZ",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
+        "price": 6.99,
+        "compareAtPrice": 7.99,
         "image": "https://cf.cjdropshipping.com/82239fff-b59c-42ca-b5be-3e92276f9e7f.jpg",
         "images": [
           "https://cf.cjdropshipping.com/82239fff-b59c-42ca-b5be-3e92276f9e7f.jpg",
@@ -3988,8 +3465,8 @@
         "label": "Blue · L",
         "cjVid": "1661977360138244096",
         "cjSku": "CJGY176534702BY",
-        "price": 8.99,
-        "compareAtPrice": 9.99,
+        "price": 7.99,
+        "compareAtPrice": 8.99,
         "image": "https://cf.cjdropshipping.com/ffac22a8-6a12-4eb1-9bc5-9c77e36a03a0.jpg",
         "images": [
           "https://cf.cjdropshipping.com/ffac22a8-6a12-4eb1-9bc5-9c77e36a03a0.jpg",
@@ -4019,8 +3496,8 @@
         "label": "Navy Blue · S",
         "cjVid": "1661977360184381440",
         "cjSku": "CJGY176534703CX",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
+        "price": 6.99,
+        "compareAtPrice": 7.99,
         "image": "https://cf.cjdropshipping.com/764f2b16-9300-497a-80fd-a56a22afa38f.jpg",
         "images": [
           "https://cf.cjdropshipping.com/764f2b16-9300-497a-80fd-a56a22afa38f.jpg",
@@ -4050,8 +3527,8 @@
         "label": "Navy Blue · L",
         "cjVid": "1661977360234713088",
         "cjSku": "CJGY176534704DW",
-        "price": 8.99,
-        "compareAtPrice": 9.99,
+        "price": 7.99,
+        "compareAtPrice": 8.99,
         "image": "https://cf.cjdropshipping.com/55fccf4a-91a0-4128-9aca-1425266a60fe.jpg",
         "images": [
           "https://cf.cjdropshipping.com/55fccf4a-91a0-4128-9aca-1425266a60fe.jpg",
@@ -4081,8 +3558,8 @@
         "label": "Pink · S",
         "cjVid": "1661977360280850432",
         "cjSku": "CJGY176534705EV",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
+        "price": 6.99,
+        "compareAtPrice": 7.99,
         "image": "https://cf.cjdropshipping.com/93bb936f-b879-46e3-bd10-0145ab7f131b.jpg",
         "images": [
           "https://cf.cjdropshipping.com/93bb936f-b879-46e3-bd10-0145ab7f131b.jpg",
@@ -4112,8 +3589,8 @@
         "label": "Pink · L",
         "cjVid": "1661977360326987776",
         "cjSku": "CJGY176534706FU",
-        "price": 8.99,
-        "compareAtPrice": 9.99,
+        "price": 7.99,
+        "compareAtPrice": 8.99,
         "image": "https://cf.cjdropshipping.com/a117a735-2299-4f0d-ac35-12f14439f43b.jpg",
         "images": [
           "https://cf.cjdropshipping.com/a117a735-2299-4f0d-ac35-12f14439f43b.jpg",
@@ -4143,8 +3620,8 @@
         "label": "Purple · S",
         "cjVid": "1661977360377319424",
         "cjSku": "CJGY176534707GT",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
+        "price": 6.99,
+        "compareAtPrice": 7.99,
         "image": "https://cf.cjdropshipping.com/e94d1edd-6d3c-4e21-9a3d-72bcc4ba2e01.jpg",
         "images": [
           "https://cf.cjdropshipping.com/e94d1edd-6d3c-4e21-9a3d-72bcc4ba2e01.jpg",
@@ -4174,8 +3651,8 @@
         "label": "Purple · L",
         "cjVid": "1661977360423456768",
         "cjSku": "CJGY176534708HS",
-        "price": 8.99,
-        "compareAtPrice": 9.99,
+        "price": 7.99,
+        "compareAtPrice": 8.99,
         "image": "https://cf.cjdropshipping.com/db9cdf84-cd35-43ef-ad7e-b3721c345fd5.jpg",
         "images": [
           "https://cf.cjdropshipping.com/db9cdf84-cd35-43ef-ad7e-b3721c345fd5.jpg",
@@ -4965,8 +4442,8 @@
         "label": "Grey · S",
         "cjVid": "1392428663953297408",
         "cjSku": "CJMY112580401AZ",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
+        "price": 12.99,
+        "compareAtPrice": 14.99,
         "image": "https://cf.cjdropshipping.com/1620815516942.jpg",
         "images": [
           "https://cf.cjdropshipping.com/1620815516942.jpg",
@@ -4989,8 +4466,8 @@
         "label": "Grey · L",
         "cjVid": "1392428663970074624",
         "cjSku": "CJMY112580402BY",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
+        "price": 12.99,
+        "compareAtPrice": 14.99,
         "image": "https://cf.cjdropshipping.com/1620815516942.jpg",
         "images": [
           "https://cf.cjdropshipping.com/1620815516942.jpg",
@@ -5013,8 +4490,8 @@
         "label": "Pink · S",
         "cjVid": "1392428663982657536",
         "cjSku": "CJMY112580403CX",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
+        "price": 12.99,
+        "compareAtPrice": 14.99,
         "image": "https://cf.cjdropshipping.com/1620815516939.jpg",
         "images": [
           "https://cf.cjdropshipping.com/1620815516939.jpg",
@@ -5037,8 +4514,8 @@
         "label": "Pink · L",
         "cjVid": "1392428663991046144",
         "cjSku": "CJMY112580404DW",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
+        "price": 12.99,
+        "compareAtPrice": 14.99,
         "image": "https://cf.cjdropshipping.com/1620815516939.jpg",
         "images": [
           "https://cf.cjdropshipping.com/1620815516939.jpg",
@@ -5061,8 +4538,8 @@
         "label": "Blue · S",
         "cjVid": "1392428663999434752",
         "cjSku": "CJMY112580405EV",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
+        "price": 12.99,
+        "compareAtPrice": 14.99,
         "image": "https://cf.cjdropshipping.com/1620815516929.jpg",
         "images": [
           "https://cf.cjdropshipping.com/1620815516929.jpg",
@@ -5085,8 +4562,8 @@
         "label": "Blue · L",
         "cjVid": "1392428664007823360",
         "cjSku": "CJMY112580406FU",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
+        "price": 12.99,
+        "compareAtPrice": 14.99,
         "image": "https://cf.cjdropshipping.com/1620815516929.jpg",
         "images": [
           "https://cf.cjdropshipping.com/1620815516929.jpg",
@@ -5257,8 +4734,8 @@
         "label": "Grey · 1Pc",
         "cjVid": "1947204011159232514",
         "cjSku": "CJYS243593501AZ",
-        "price": 37.99,
-        "compareAtPrice": 41.99,
+        "price": 35.99,
+        "compareAtPrice": 39.99,
         "image": "https://cf.cjdropshipping.com/8c179f95-9d04-4acb-b653-7c34f69dd325.jpg",
         "images": [
           "https://cf.cjdropshipping.com/8c179f95-9d04-4acb-b653-7c34f69dd325.jpg",
@@ -5274,7 +4751,7 @@
         "variantKey": "Grey-1Pc",
         "optionValues": {
           "Color": "Grey",
-          "Option 2": "1Pc"
+          "Pack size": "1Pc"
         }
       },
       {
@@ -5282,8 +4759,8 @@
         "label": "Brown · 1Pc",
         "cjVid": "1947204011159232515",
         "cjSku": "CJYS243593502BY",
-        "price": 37.99,
-        "compareAtPrice": 41.99,
+        "price": 35.99,
+        "compareAtPrice": 39.99,
         "image": "https://cf.cjdropshipping.com/d83978c7-9b10-4457-a6fb-aa139cba3ef7.jpg",
         "images": [
           "https://cf.cjdropshipping.com/d83978c7-9b10-4457-a6fb-aa139cba3ef7.jpg",
@@ -5299,7 +4776,7 @@
         "variantKey": "Brown-1Pc",
         "optionValues": {
           "Color": "Brown",
-          "Option 2": "1Pc"
+          "Pack size": "1Pc"
         }
       }
     ]
@@ -5628,8 +5105,8 @@
         "label": "Transparent",
         "cjVid": "1895322443625172993",
         "cjSku": "CJJT231089801AZ",
-        "price": 29.99,
-        "compareAtPrice": 32.99,
+        "price": 28.99,
+        "compareAtPrice": 31.99,
         "image": "https://cf.cjdropshipping.com/77a26be1-8771-4459-a1ac-ba030dc129eb.jpg",
         "images": [
           "https://cf.cjdropshipping.com/77a26be1-8771-4459-a1ac-ba030dc129eb.jpg",
@@ -10590,9 +10067,9 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Pink One"
@@ -10618,9 +10095,9 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Light Pink"
@@ -10646,9 +10123,9 @@
           "https://cf.cjdropshipping.com/quick/product/e6dc36ba-b95e-42c9-b098-1c12aa3732bd.jpg",
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Light Blue"
@@ -10674,9 +10151,9 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Light Purple"
@@ -10702,9 +10179,9 @@
           "https://cf.cjdropshipping.com/quick/product/e6dc36ba-b95e-42c9-b098-1c12aa3732bd.jpg",
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Green"
@@ -10731,8 +10208,8 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
-          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
+          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg"
         ],
         "inStock": true,
         "variantKey": "Pink Boxed"
@@ -10758,9 +10235,9 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Light Pink Boxed"
@@ -10786,9 +10263,9 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Light Blue Boxed"
@@ -10814,9 +10291,9 @@
           "https://cf.cjdropshipping.com/quick/product/e6dc36ba-b95e-42c9-b098-1c12aa3732bd.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Green Boxed"
@@ -10842,9 +10319,9 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
           "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Pink And Scrapping Plate"
@@ -10871,8 +10348,8 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
         ],
         "inStock": true,
         "variantKey": "Light Pink And Scrapping Plate"
@@ -10899,8 +10376,8 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
-          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
+          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg"
         ],
         "inStock": true,
         "variantKey": "Light Blue And Scrapping Plate"
@@ -10927,11 +10404,67 @@
           "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
           "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
           "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
-          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
-          "https://cf.cjdropshipping.com/quick/product/6618de32-686d-4e2f-b8df-cebf0437689c.jpg"
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
+          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg"
         ],
         "inStock": true,
         "variantKey": "Green And Scrapping Plate"
+      },
+      {
+        "id": "2606240953101607600",
+        "label": "Set",
+        "cjVid": "2606240953101607600",
+        "cjSku": "CJMJ208085414NM",
+        "price": 6.99,
+        "compareAtPrice": 7.99,
+        "image": "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
+        "images": [
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
+          "https://cf.cjdropshipping.com/quick/product/8a6e8022-7d89-45e0-884f-4c8a0fcc19b1.jpg",
+          "https://cf.cjdropshipping.com/quick/product/aec84b5f-cdc5-477c-ab15-db236c203535.jpg",
+          "https://cf.cjdropshipping.com/quick/product/47d3e607-a4ba-4f63-8160-2dc801351410.jpg",
+          "https://cf.cjdropshipping.com/quick/product/b3b7c13b-cbc0-4cdd-84c0-34c16e5b4293.jpg",
+          "https://cf.cjdropshipping.com/quick/product/343ee412-47c6-417c-b3d8-0c0c0ce50a9a.jpg",
+          "https://cf.cjdropshipping.com/quick/product/413e2852-1082-4a95-b74a-a281587ef132.jpg",
+          "https://cf.cjdropshipping.com/quick/product/1c9d0b5b-178f-4382-a996-fa41b7212b33.jpg",
+          "https://cf.cjdropshipping.com/quick/product/9a35ab3c-f79b-4c96-99d8-9a672003419f.jpg",
+          "https://cf.cjdropshipping.com/quick/product/e6dc36ba-b95e-42c9-b098-1c12aa3732bd.jpg",
+          "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
+          "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
+          "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
+          "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "Set"
+      },
+      {
+        "id": "2606240953101608100",
+        "label": "Set1",
+        "cjVid": "2606240953101608100",
+        "cjSku": "CJMJ208085415OL",
+        "price": 9.99,
+        "compareAtPrice": 10.99,
+        "image": "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/0cc2acab-e6b0-4e34-a36c-a5ccf410b3a9.jpg",
+        "images": [
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/0cc2acab-e6b0-4e34-a36c-a5ccf410b3a9.jpg",
+          "https://cf.cjdropshipping.com/quick/product/8a6e8022-7d89-45e0-884f-4c8a0fcc19b1.jpg",
+          "https://cf.cjdropshipping.com/quick/product/aec84b5f-cdc5-477c-ab15-db236c203535.jpg",
+          "https://cf.cjdropshipping.com/quick/product/47d3e607-a4ba-4f63-8160-2dc801351410.jpg",
+          "https://cf.cjdropshipping.com/quick/product/b3b7c13b-cbc0-4cdd-84c0-34c16e5b4293.jpg",
+          "https://cf.cjdropshipping.com/quick/product/343ee412-47c6-417c-b3d8-0c0c0ce50a9a.jpg",
+          "https://cf.cjdropshipping.com/quick/product/413e2852-1082-4a95-b74a-a281587ef132.jpg",
+          "https://cf.cjdropshipping.com/quick/product/1c9d0b5b-178f-4382-a996-fa41b7212b33.jpg",
+          "https://cf.cjdropshipping.com/quick/product/9a35ab3c-f79b-4c96-99d8-9a672003419f.jpg",
+          "https://cf.cjdropshipping.com/quick/product/e6dc36ba-b95e-42c9-b098-1c12aa3732bd.jpg",
+          "https://cf.cjdropshipping.com/quick/product/76382d26-7ba6-4ab5-bfda-2a52895cdb96.jpg",
+          "https://cf.cjdropshipping.com/quick/product/1944159d-f4d4-4158-97af-05a4706c1e40.jpg",
+          "https://cf.cjdropshipping.com/quick/product/a17c4026-ceca-4c93-8cb5-8a721b25705a.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2026/06/24/09/380ab02b-6647-4269-936c-4566aed96a72.jpg",
+          "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "Set1"
       }
     ]
   },
@@ -15870,8 +15403,8 @@
         "label": "Glacier White Large Size",
         "cjVid": "1777174523633213440",
         "cjSku": "CJYD200577702BY",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
+        "price": 6.99,
+        "compareAtPrice": 7.99,
         "image": "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/92dc464c-87c5-4d07-940c-9831ae73bb1e_trans.jpeg",
         "images": [
           "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/92dc464c-87c5-4d07-940c-9831ae73bb1e_trans.jpeg",
@@ -15920,8 +15453,8 @@
         "label": "Lilac Purple Large",
         "cjVid": "1777174523759042560",
         "cjSku": "CJYD200577704DW",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
+        "price": 6.99,
+        "compareAtPrice": 7.99,
         "image": "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/4bfe3a95-5623-4346-9aeb-b0524ef436c7_trans.jpeg",
         "images": [
           "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/4bfe3a95-5623-4346-9aeb-b0524ef436c7_trans.jpeg",
@@ -15970,8 +15503,8 @@
         "label": "Matcha Green Large",
         "cjVid": "1777174523889065984",
         "cjSku": "CJYD200577706FU",
-        "price": 7.99,
-        "compareAtPrice": 8.99,
+        "price": 6.99,
+        "compareAtPrice": 7.99,
         "image": "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/5377b6b5-ae74-4abb-90a1-b070d15fd8b5_trans.jpeg",
         "images": [
           "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/5377b6b5-ae74-4abb-90a1-b070d15fd8b5_trans.jpeg",
@@ -19909,7 +19442,7 @@
         "variantKey": "Black-1PCS",
         "optionValues": {
           "Color": "Black",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       },
       {
@@ -19936,7 +19469,7 @@
         "variantKey": "White-1PCS",
         "optionValues": {
           "Color": "White",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       },
       {
@@ -19963,7 +19496,7 @@
         "variantKey": "Grey-1PCS",
         "optionValues": {
           "Color": "Grey",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       },
       {
@@ -19990,7 +19523,7 @@
         "variantKey": "Orange-1PCS",
         "optionValues": {
           "Color": "Orange",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       },
       {
@@ -20017,7 +19550,7 @@
         "variantKey": "Black-2PCS",
         "optionValues": {
           "Color": "Black",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -20044,7 +19577,7 @@
         "variantKey": "Grey-2PCS",
         "optionValues": {
           "Color": "Grey",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -20071,7 +19604,7 @@
         "variantKey": "Orange-2PCS",
         "optionValues": {
           "Color": "Orange",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -20098,7 +19631,7 @@
         "variantKey": "White-2PCS",
         "optionValues": {
           "Color": "White",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       }
     ]
@@ -20393,7 +19926,7 @@
         "variantKey": "White-1PC",
         "optionValues": {
           "Color": "White",
-          "Option 2": "1PC"
+          "Pack size": "1PC"
         }
       },
       {
@@ -20417,7 +19950,7 @@
         "variantKey": "Black-1PC",
         "optionValues": {
           "Color": "Black",
-          "Option 2": "1PC"
+          "Pack size": "1PC"
         }
       },
       {
@@ -20441,7 +19974,7 @@
         "variantKey": "Black-2PCS",
         "optionValues": {
           "Color": "Black",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -20465,7 +19998,7 @@
         "variantKey": "White-2PCS",
         "optionValues": {
           "Color": "White",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       }
     ]
@@ -20647,7 +20180,7 @@
         "variantKey": "Hair Removal Gloves-1PCS",
         "optionValues": {
           "Color": "Hair Removal Gloves",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       },
       {
@@ -20679,7 +20212,7 @@
         "variantKey": "Hair Removal Gloves-2PCS",
         "optionValues": {
           "Color": "Hair Removal Gloves",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -20711,7 +20244,7 @@
         "variantKey": "Hair Removal Gloves-3PCS",
         "optionValues": {
           "Color": "Hair Removal Gloves",
-          "Option 2": "3PCS"
+          "Pack size": "3PCS"
         }
       },
       {
@@ -20743,7 +20276,7 @@
         "variantKey": "Light Brown-1PCS",
         "optionValues": {
           "Color": "Light Brown",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       },
       {
@@ -20775,7 +20308,7 @@
         "variantKey": "Dark brown-1PCS",
         "optionValues": {
           "Color": "Dark brown",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       },
       {
@@ -20807,7 +20340,7 @@
         "variantKey": "Hair Removal Gloves-4PCS",
         "optionValues": {
           "Color": "Hair Removal Gloves",
-          "Option 2": "4PCS"
+          "Pack size": "4PCS"
         }
       },
       {
@@ -20839,7 +20372,7 @@
         "variantKey": "Hair Removal Gloves-6PCS",
         "optionValues": {
           "Color": "Hair Removal Gloves",
-          "Option 2": "6PCS"
+          "Pack size": "6PCS"
         }
       },
       {
@@ -20871,7 +20404,7 @@
         "variantKey": "Dark brown-2PCS",
         "optionValues": {
           "Color": "Dark brown",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -20903,7 +20436,7 @@
         "variantKey": "Dark brown-3PCS",
         "optionValues": {
           "Color": "Dark brown",
-          "Option 2": "3PCS"
+          "Pack size": "3PCS"
         }
       },
       {
@@ -20935,7 +20468,7 @@
         "variantKey": "Light Brown-2PCS",
         "optionValues": {
           "Color": "Light Brown",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -20967,7 +20500,7 @@
         "variantKey": "Light Brown-3PCS",
         "optionValues": {
           "Color": "Light Brown",
-          "Option 2": "3PCS"
+          "Pack size": "3PCS"
         }
       },
       {
@@ -20999,7 +20532,7 @@
         "variantKey": "Dark brown-4PCS",
         "optionValues": {
           "Color": "Dark brown",
-          "Option 2": "4PCS"
+          "Pack size": "4PCS"
         }
       },
       {
@@ -21031,7 +20564,7 @@
         "variantKey": "Light Brown-4PCS",
         "optionValues": {
           "Color": "Light Brown",
-          "Option 2": "4PCS"
+          "Pack size": "4PCS"
         }
       },
       {
@@ -21063,7 +20596,7 @@
         "variantKey": "Hair Removal Gloves-10PCS",
         "optionValues": {
           "Color": "Hair Removal Gloves",
-          "Option 2": "10PCS"
+          "Pack size": "10PCS"
         }
       },
       {
@@ -21095,7 +20628,7 @@
         "variantKey": "Black-1PCS",
         "optionValues": {
           "Color": "Black",
-          "Option 2": "1PCS"
+          "Pack size": "1PCS"
         }
       }
     ]
@@ -26583,64 +26116,57 @@
     ]
   },
   "jump-rope-weighted": {
-    "defaultVariantId": "2502140221331606000",
+    "defaultVariantId": "1680142560708677632",
     "variants": [
       {
-        "id": "2502140221331606000",
-        "label": "A8 Black Bluetooth English",
-        "cjVid": "2502140221331606000",
-        "cjSku": "CJYD229123901AZ",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/32b1b9c6-8308-47a2-a285-14163b4b43a0_trans.jpeg",
+        "id": "1680142560708677632",
+        "label": "Blue",
+        "cjVid": "1680142560708677632",
+        "cjSku": "CJJM1800810-Blue",
+        "price": 15.99,
+        "compareAtPrice": 17.99,
+        "image": "https://cf.cjdropshipping.com/d0556328-3435-40bf-8af6-3a68b1cdf1c1.jpg",
         "images": [
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/32b1b9c6-8308-47a2-a285-14163b4b43a0_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/1f8cb862-44a6-4afb-9adb-25319e8c5b61_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/a46c661b-affa-4a8a-a4b4-1f93cdbb80dd_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/603daa6d-be26-41b6-be52-95b084d23bc4_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/82ba4b57-8db5-4ced-ae80-d6201c7adfd0_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/06/ac08db7d-b38e-4f96-b638-55e5e16e1f27_fine.jpeg"
+          "https://cf.cjdropshipping.com/d0556328-3435-40bf-8af6-3a68b1cdf1c1.jpg",
+          "https://cf.cjdropshipping.com/05d5f368-a675-4b7a-98ac-b669e2f7b57d.jpg",
+          "https://cf.cjdropshipping.com/5b21d6e9-3aa7-49d9-a0e5-f815369b1993.jpg",
+          "https://cf.cjdropshipping.com/c531856f-d806-4c94-931e-bb7208dd91fa.jpg",
+          "https://cf.cjdropshipping.com/1e3ae012-92ae-4406-a06c-52a5f75cace0.jpg",
+          "https://cf.cjdropshipping.com/65533515-9fe2-4ca4-a2a1-f94eecfdd2ba.jpg",
+          "https://cf.cjdropshipping.com/21c93621-a729-4dc7-9fb8-dffa8a163e68.jpg",
+          "https://cf.cjdropshipping.com/d836d87f-156c-473b-9195-d35ebfc125f8.jpg",
+          "https://cf.cjdropshipping.com/8a80aabd-aae7-47a0-ad73-ea0615574889.jpg",
+          "https://cf.cjdropshipping.com/7218d25a-b6ed-4fa4-982c-459aad702386.jpg",
+          "https://cf.cjdropshipping.com/a0b1b617-886c-40b1-8fc6-9ed03ab22614.jpg",
+          "https://cf.cjdropshipping.com/4e7f72df-5bf9-435c-b605-1c1d12466ce6.jpg"
         ],
         "inStock": true,
-        "variantKey": "A8 Black Bluetooth English"
+        "variantKey": "Blue"
       },
       {
-        "id": "2502140221331606100",
-        "label": "A8 White Bluetooth English",
-        "cjVid": "2502140221331606100",
-        "cjSku": "CJYD229123902BY",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/a46c661b-affa-4a8a-a4b4-1f93cdbb80dd_trans.jpeg",
+        "id": "1680142560708677633",
+        "label": "Pink",
+        "cjVid": "1680142560708677633",
+        "cjSku": "CJJM1800810-Pink",
+        "price": 15.99,
+        "compareAtPrice": 17.99,
+        "image": "https://cf.cjdropshipping.com/7218d25a-b6ed-4fa4-982c-459aad702386.jpg",
         "images": [
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/a46c661b-affa-4a8a-a4b4-1f93cdbb80dd_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/1f8cb862-44a6-4afb-9adb-25319e8c5b61_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/32b1b9c6-8308-47a2-a285-14163b4b43a0_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/603daa6d-be26-41b6-be52-95b084d23bc4_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/82ba4b57-8db5-4ced-ae80-d6201c7adfd0_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/06/ac08db7d-b38e-4f96-b638-55e5e16e1f27_fine.jpeg"
+          "https://cf.cjdropshipping.com/7218d25a-b6ed-4fa4-982c-459aad702386.jpg",
+          "https://cf.cjdropshipping.com/05d5f368-a675-4b7a-98ac-b669e2f7b57d.jpg",
+          "https://cf.cjdropshipping.com/5b21d6e9-3aa7-49d9-a0e5-f815369b1993.jpg",
+          "https://cf.cjdropshipping.com/c531856f-d806-4c94-931e-bb7208dd91fa.jpg",
+          "https://cf.cjdropshipping.com/1e3ae012-92ae-4406-a06c-52a5f75cace0.jpg",
+          "https://cf.cjdropshipping.com/d0556328-3435-40bf-8af6-3a68b1cdf1c1.jpg",
+          "https://cf.cjdropshipping.com/65533515-9fe2-4ca4-a2a1-f94eecfdd2ba.jpg",
+          "https://cf.cjdropshipping.com/21c93621-a729-4dc7-9fb8-dffa8a163e68.jpg",
+          "https://cf.cjdropshipping.com/d836d87f-156c-473b-9195-d35ebfc125f8.jpg",
+          "https://cf.cjdropshipping.com/8a80aabd-aae7-47a0-ad73-ea0615574889.jpg",
+          "https://cf.cjdropshipping.com/a0b1b617-886c-40b1-8fc6-9ed03ab22614.jpg",
+          "https://cf.cjdropshipping.com/4e7f72df-5bf9-435c-b605-1c1d12466ce6.jpg"
         ],
         "inStock": true,
-        "variantKey": "A8 White Bluetooth English"
-      },
-      {
-        "id": "2502140221331606300",
-        "label": "A8 Powder Bluetooth English",
-        "cjVid": "2502140221331606300",
-        "cjSku": "CJYD229123903CX",
-        "price": 11.99,
-        "compareAtPrice": 13.99,
-        "image": "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/1f8cb862-44a6-4afb-9adb-25319e8c5b61_trans.jpeg",
-        "images": [
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/1f8cb862-44a6-4afb-9adb-25319e8c5b61_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/a46c661b-affa-4a8a-a4b4-1f93cdbb80dd_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/32b1b9c6-8308-47a2-a285-14163b4b43a0_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/603daa6d-be26-41b6-be52-95b084d23bc4_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/02/82ba4b57-8db5-4ced-ae80-d6201c7adfd0_trans.jpeg",
-          "https://oss-cf.cjdropshipping.com/product/2025/02/14/06/ac08db7d-b38e-4f96-b638-55e5e16e1f27_fine.jpeg"
-        ],
-        "inStock": true,
-        "variantKey": "A8 Powder Bluetooth English"
+        "variantKey": "Pink"
       }
     ]
   },
@@ -27494,7 +27020,7 @@
         "variantKey": "Pet Toothbrush Pens 1pack-1PC",
         "optionValues": {
           "Style": "Pet Toothbrush Pens 1pack",
-          "Option 2": "1PC"
+          "Pack size": "1PC"
         }
       },
       {
@@ -27520,7 +27046,7 @@
         "variantKey": "Pet Toothbrush Pens 1pack-2PCS",
         "optionValues": {
           "Style": "Pet Toothbrush Pens 1pack",
-          "Option 2": "2PCS"
+          "Pack size": "2PCS"
         }
       },
       {
@@ -27546,7 +27072,7 @@
         "variantKey": "Pet Toothbrush Pens 1pack-3PCS",
         "optionValues": {
           "Style": "Pet Toothbrush Pens 1pack",
-          "Option 2": "3PCS"
+          "Pack size": "3PCS"
         }
       }
     ]
@@ -28146,8 +27672,8 @@
         "label": "33.5inch",
         "cjVid": "2019311077070319620",
         "cjSku": "CJCJ275495303CX",
-        "price": 28.99,
-        "compareAtPrice": 31.99,
+        "price": 27.99,
+        "compareAtPrice": 30.99,
         "image": "https://cf.cjdropshipping.com/7af4a97f-cd2a-4b2b-9d69-fb2dbbea7614.jpg",
         "images": [
           "https://cf.cjdropshipping.com/7af4a97f-cd2a-4b2b-9d69-fb2dbbea7614.jpg",
@@ -28182,8 +27708,8 @@
         "label": "41.3inch",
         "cjVid": "2019311077070319622",
         "cjSku": "CJCJ275495305EV",
-        "price": 30.99,
-        "compareAtPrice": 34.99,
+        "price": 29.99,
+        "compareAtPrice": 32.99,
         "image": "https://cf.cjdropshipping.com/7af4a97f-cd2a-4b2b-9d69-fb2dbbea7614.jpg",
         "images": [
           "https://cf.cjdropshipping.com/7af4a97f-cd2a-4b2b-9d69-fb2dbbea7614.jpg",
@@ -28222,35 +27748,287 @@
     ]
   },
   "portable-blender-bottle": {
-    "defaultVariantId": "1949000008291082241",
+    "defaultVariantId": "1392009096881901568",
     "variants": [
       {
-        "id": "1949000008291082241",
+        "id": "1392009096881901568",
         "label": "White",
-        "cjVid": "1949000008291082241",
-        "cjSku": "CJHZ244032601AZ",
-        "price": 39.99,
-        "compareAtPrice": 43.99,
-        "image": "https://cf.cjdropshipping.com/104cf0fb-8492-4375-b086-9c7fe96e596c.jpg",
+        "cjVid": "1392009096881901568",
+        "cjSku": "CJJD112318801AZ",
+        "price": 21.99,
+        "compareAtPrice": 24.99,
+        "image": "https://cf.cjdropshipping.com/1620715713618.jpg",
         "images": [
-          "https://cf.cjdropshipping.com/104cf0fb-8492-4375-b086-9c7fe96e596c.jpg",
-          "https://cf.cjdropshipping.com/2a9b7cd4-91c7-475e-b368-c7d2f57daffb.jpg",
-          "https://cf.cjdropshipping.com/9ad2e3db-d3e5-49fe-875c-916d0efcd43e.jpg",
-          "https://cf.cjdropshipping.com/e4672a62-4212-4180-bf36-f6c89755f1c1.jpg",
-          "https://cf.cjdropshipping.com/228459bc-2158-4eab-aba7-840b73be2fe0.jpg",
-          "https://cf.cjdropshipping.com/8d71a915-f917-411a-866a-5c5f3e218ad3.jpg",
-          "https://cf.cjdropshipping.com/9b8501e1-6f44-446f-a125-d0347836b4f4.jpg",
-          "https://cf.cjdropshipping.com/d386e450-5c91-4061-badb-cf6e875be220.jpg",
-          "https://cf.cjdropshipping.com/eb6e9c2f-8cc3-47fd-949d-e86caacbe307.jpg",
-          "https://cf.cjdropshipping.com/91a9a116-2b87-41e4-87a2-a290837f8415.jpg",
-          "https://cf.cjdropshipping.com/4b4d612c-e6c7-443d-a93e-4c7160d1109b.jpg",
-          "https://cf.cjdropshipping.com/cf038e0e-dbd1-4596-a961-a6da0944d545.jpg",
-          "https://cf.cjdropshipping.com/b2a613e2-aa4f-49eb-9427-eab45322bcab.jpg",
-          "https://cf.cjdropshipping.com/bcaaf4dc-ab6f-4ebc-a275-1f106ed69503.jpg",
-          "https://cf.cjdropshipping.com/2a8c29ce-8f0d-4c6b-ae89-7cfead4d872b.jpg"
+          "https://cf.cjdropshipping.com/1620715713618.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png"
         ],
         "inStock": true,
         "variantKey": "White"
+      },
+      {
+        "id": "1392009096907067392",
+        "label": "Pink",
+        "cjVid": "1392009096907067392",
+        "cjSku": "CJJD112318803CX",
+        "price": 21.99,
+        "compareAtPrice": 24.99,
+        "image": "https://cf.cjdropshipping.com/1620715713630.jpg",
+        "images": [
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png",
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "Pink"
+      },
+      {
+        "id": "1432603757165809664",
+        "label": "White pink",
+        "cjVid": "1432603757165809664",
+        "cjSku": "CJJD112318804DW",
+        "price": 37.99,
+        "compareAtPrice": 41.99,
+        "image": "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+        "images": [
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png",
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "White pink"
+      },
+      {
+        "id": "1434870849416073216",
+        "label": "2pcs White",
+        "cjVid": "1434870849416073216",
+        "cjSku": "CJJD112318805EV",
+        "price": 37.99,
+        "compareAtPrice": 41.99,
+        "image": "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+        "images": [
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png",
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "2pcs White"
+      },
+      {
+        "id": "1436889474071138304",
+        "label": "2pcs Pink",
+        "cjVid": "1436889474071138304",
+        "cjSku": "CJJD112318810JQ",
+        "price": 37.99,
+        "compareAtPrice": 41.99,
+        "image": "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+        "images": [
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png",
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "2pcs Pink"
+      },
+      {
+        "id": "1535165853111693312",
+        "label": "Pink Simple Packaging",
+        "cjVid": "1535165853111693312",
+        "cjSku": "CJJD112318812LO",
+        "price": 19.99,
+        "compareAtPrice": 21.99,
+        "image": "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+        "images": [
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png",
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "Pink Simple Packaging"
+      },
+      {
+        "id": "1535165853115887616",
+        "label": "White Simple Packaging",
+        "cjVid": "1535165853115887616",
+        "cjSku": "CJJD112318813MN",
+        "price": 24.99,
+        "compareAtPrice": 27.99,
+        "image": "https://cf.cjdropshipping.com/711b95c4-e2a6-4841-910e-798f9857c86c.jpg",
+        "images": [
+          "https://cf.cjdropshipping.com/711b95c4-e2a6-4841-910e-798f9857c86c.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png"
+        ],
+        "inStock": true,
+        "variantKey": "White Simple Packaging"
+      },
+      {
+        "id": "2407080820001605200",
+        "label": "Blue 380ml",
+        "cjVid": "2407080820001605200",
+        "cjSku": "CJJD112318814NM",
+        "price": 6.99,
+        "compareAtPrice": 7.99,
+        "image": "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg",
+        "images": [
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png"
+        ],
+        "inStock": true,
+        "variantKey": "Blue 380ml"
+      },
+      {
+        "id": "2407080820001605400",
+        "label": "Blue 420ml",
+        "cjVid": "2407080820001605400",
+        "cjSku": "CJJD112318815OL",
+        "price": 6.99,
+        "compareAtPrice": 7.99,
+        "image": "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/36a8a593-9177-45c8-af41-90e8b886a5e3.jpg",
+        "images": [
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/36a8a593-9177-45c8-af41-90e8b886a5e3.jpg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png"
+        ],
+        "inStock": true,
+        "variantKey": "Blue 420ml"
+      },
+      {
+        "id": "2502080519331610700",
+        "label": "Black",
+        "cjVid": "2502080519331610700",
+        "cjSku": "CJJD112318816PK",
+        "price": 39.99,
+        "compareAtPrice": 43.99,
+        "image": "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+        "images": [
+          "https://oss-cf.cjdropshipping.com/product/2025/02/08/05/2a8104e1-f676-42d5-93ae-e3a2fb1f5a96_trans.jpeg",
+          "https://cf.cjdropshipping.com/237d3727-aa0a-46f4-bb0b-1aa7570a4c14.jpg",
+          "https://cf.cjdropshipping.com/c9026ba9-2b1b-40b7-a864-5c953d0740f9.png",
+          "https://cf.cjdropshipping.com/3a286ae8-4639-4cc2-8bcd-95e237708e78.jpg",
+          "https://cf.cjdropshipping.com/d6917aea-b42d-4f58-9b72-69aea89935f3.jpg",
+          "https://cf.cjdropshipping.com/1620715713630.jpg",
+          "https://cf.cjdropshipping.com/23d656cd-20b8-4a5d-bfe5-4fb8ff85a9b4.jpg",
+          "https://cf.cjdropshipping.com/9d231c49-93be-4e03-bade-ba13ace9096b.jpg",
+          "https://cf.cjdropshipping.com/1620715713635.jpg",
+          "https://cf.cjdropshipping.com/2a624766-8956-401b-a839-d1de14ba8854.jpg",
+          "https://cf.cjdropshipping.com/790fcba7-a60d-43f5-991d-9800eeca4e12.jpg",
+          "https://cf.cjdropshipping.com/1620715713634.jpg",
+          "https://cf.cjdropshipping.com/1620715713632.jpg",
+          "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png",
+          "https://oss-cf.cjdropshipping.com/product/2024/07/08/08/0667feff-9b58-49b4-9e61-51f8d3fff4b7.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "Black"
       }
     ]
   },
@@ -30389,29 +30167,57 @@
     ]
   },
   "silicone-utensil-rest": {
-    "defaultVariantId": "1947183733635379201",
+    "defaultVariantId": "0D2B5A1B-3980-4E97-8096-C1815A00E781",
     "variants": [
       {
-        "id": "1947183733635379201",
-        "label": "Black",
-        "cjVid": "1947183733635379201",
-        "cjSku": "CJCF243581801AZ",
-        "price": 37.99,
-        "compareAtPrice": 41.99,
-        "image": "https://cf.cjdropshipping.com/b1d833a8-2c2f-49fb-a90b-3abfd487a14e.jpg",
+        "id": "0D2B5A1B-3980-4E97-8096-C1815A00E781",
+        "label": "Red · 1pcs",
+        "cjVid": "0D2B5A1B-3980-4E97-8096-C1815A00E781",
+        "cjSku": "CJJJJTCF02880-Red-1pcs",
+        "price": 5.99,
+        "compareAtPrice": 6.99,
+        "image": "https://cf.cjdropshipping.com/203006/195226114178.png",
         "images": [
-          "https://cf.cjdropshipping.com/b1d833a8-2c2f-49fb-a90b-3abfd487a14e.jpg",
-          "https://cf.cjdropshipping.com/04e66cc8-1fd9-47e3-b4c8-391f1e3ed475.jpg",
-          "https://cf.cjdropshipping.com/3d9144de-4e17-4b68-9f81-2b80c0e774b0.jpg",
-          "https://cf.cjdropshipping.com/99bfeed7-1d5a-4bfc-9b59-461cb05651c5.jpg",
-          "https://cf.cjdropshipping.com/2abc4a1c-6db2-462f-9746-eafa40426034.jpg",
-          "https://cf.cjdropshipping.com/43577c9d-5f15-4011-9c58-6558ea327959.jpg",
-          "https://cf.cjdropshipping.com/2408e18c-d2c3-48c1-a315-2ab89e67f572.jpg",
-          "https://cf.cjdropshipping.com/360aab70-9b4c-4bbb-83a1-7f42738f5807.jpg",
-          "https://cf.cjdropshipping.com/20b763ef-ef81-4b42-8386-6533281bcf5d.jpg"
+          "https://cf.cjdropshipping.com/203006/195226114178.png",
+          "https://cf.cjdropshipping.com/203006/331896998598.jpg",
+          "https://cf.cjdropshipping.com/203006/1748953986730.jpg",
+          "https://cf.cjdropshipping.com/203006/3249969428863.jpg",
+          "https://cf.cjdropshipping.com/16018272/309255527300.jpg",
+          "https://cf.cjdropshipping.com/203006/4467924625930.jpg",
+          "https://cf.cjdropshipping.com/203006/4635984141697.jpg",
+          "https://cf.cjdropshipping.com/203006/259095564555.jpg"
         ],
         "inStock": true,
-        "variantKey": "Black"
+        "variantKey": "Red-1pcs",
+        "optionValues": {
+          "Color": "Red",
+          "Pack size": "1pcs"
+        }
+      },
+      {
+        "id": "A42AD661-919B-4EA8-A5DF-0496067F3B9C",
+        "label": "Black · 1pcs",
+        "cjVid": "A42AD661-919B-4EA8-A5DF-0496067F3B9C",
+        "cjSku": "CJJJJTCF02880-Black-1pcs",
+        "price": 5.99,
+        "compareAtPrice": 6.99,
+        "image": "https://cf.cjdropshipping.com/203006/317137422138.png",
+        "images": [
+          "https://cf.cjdropshipping.com/203006/317137422138.png",
+          "https://cf.cjdropshipping.com/203006/331896998598.jpg",
+          "https://cf.cjdropshipping.com/203006/1748953986730.jpg",
+          "https://cf.cjdropshipping.com/203006/3249969428863.jpg",
+          "https://cf.cjdropshipping.com/16018272/309255527300.jpg",
+          "https://cf.cjdropshipping.com/203006/4467924625930.jpg",
+          "https://cf.cjdropshipping.com/203006/4635984141697.jpg",
+          "https://cf.cjdropshipping.com/203006/259095564555.jpg"
+        ],
+        "inStock": true,
+        "variantKey": "Black-1pcs",
+        "optionValues": {
+          "Color": "Black",
+          "Pack size": "1pcs"
+        }
       }
     ]
   },
