@@ -87,3 +87,13 @@ for (let i = 0; i < products.length; i++) {
     }
   }
 }
+
+const critical =
+  slugDups.length ||
+  groupBy((p) => p.cjVid).length ||
+  groupBy((p) => p.cjSku).length;
+
+if (critical) {
+  console.error("\nFAILED — duplicate CJ IDs found. Run catalog:check before deploy.");
+  process.exit(1);
+}

@@ -1,0 +1,47 @@
+---
+description: Trove CJ catalog standards — pricing, variants, duplicates, deploy gate
+globs: "{src/data/products.ts,src/data/product-variants.json,scripts/**/*.mjs,src/components/product-variant-picker.tsx,src/lib/pricing.ts}"
+alwaysApply: true
+---
+
+# Trove catalog (never skip for new/changed products)
+
+## Pricing formula (every variant)
+- `retail = ceil((cjCost + cjShip) / (1 - 0.20 - 0.034)) - 0.01`, cap `$39.99`
+- `compareAt = ceil(retail * 1.1) - 0.01`
+- Bundle variants (`2pcs`, `2set`, `Set4`) use **that variant's CJ cost**, not 2× unit price
+- Cart qty 2 = `price × 2`; server recalculates via `validateStoreOrder` — never trust client prices
+- PayPal `create-order` must pass **`variantId`** + slug + quantity
+
+## CJ ship defaults
+- pet `4`, home `4`, wellness `3.5`, tech `3.5` (override per product when CJ differs)
+
+## Adding / relinking a product
+1. Copy in `scripts/product-copy.json` for the slug
+2. `node --env-file=.env.local scripts/relink-product-cj.mjs <slug> <pid> [ship]`
+3. Verify with `grep` on `products.ts` (name + cjSku match listing)
+4. **`npm run catalog:check`** before commit — must pass
+5. Build + deploy + push
+
+## Scripts (always use these)
+| Command | Purpose |
+|---------|---------|
+| `npm run catalog:check` | Gate: blocks, variants, duplicate cjVid/cjSku |
+| `npm run catalog:check:cj` | Above + full CJ price audit (127 products) |
+| `npm run catalog:duplicates` | Human-readable duplicate report |
+| `node scripts/sync-all-variants.mjs` | Refresh variants (only after parser fix verified) |
+
+## Parser safety
+- Use `extractProductBlock` / `replaceProductBlock` from `scripts/lib/cj-catalog-lib.mjs` only
+- Never parse products with fragile `indexOf("\n  }")` — breaks on bad indent / blank lines
+- Product blocks must start with `\n  {` (2 spaces), not `    {`
+
+## Variant UI
+- Uniform grid in `product-variant-picker.tsx` — equal square thumbnails, labels below
+- Show per-variant `$` when prices differ
+
+## Pre-deploy checklist
+```
+npm run catalog:check && npm run build && npm run deploy
+git push origin main
+```
