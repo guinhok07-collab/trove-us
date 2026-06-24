@@ -85,9 +85,9 @@ export function HeroBanner({ heroTiles }: HeroBannerProps) {
   );
 }
 
-export function StoreQuickNav() {
+export function StoreQuickNav({ className = "" }: { className?: string }) {
   return (
-    <section className="mt-4 sm:mt-8">
+    <section className={`mt-4 sm:mt-8 ${className}`}>
       <div>
         <div className="flex snap-x snap-mandatory gap-2.5 overflow-x-auto pb-1 pr-3 scrollbar-none sm:gap-2 sm:pr-0">
           <Link

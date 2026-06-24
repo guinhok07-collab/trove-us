@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { brand } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
-import { Icon } from "@/components/icons";
-import { storeList, storeShortNames } from "@/data/stores";
+import { DesktopCategoryPills, MobileCategoryGrid } from "@/components/category-nav";
 
 export function SiteHeader() {
   const { itemCount } = useCart();
@@ -75,39 +74,21 @@ export function SiteHeader() {
         </nav>
       </div>
 
-      <div className="border-t border-[#e7e5e4]/60 bg-white/60">
-        <div className="mx-auto flex max-w-7xl snap-x snap-mandatory gap-2.5 overflow-x-auto scroll-pl-3 px-3 py-2.5 pr-5 scrollbar-none sm:gap-2 sm:scroll-pl-0 sm:px-4 sm:py-2 sm:pr-4">
-          <Link
-            href="/products"
-            className="inline-flex min-h-11 shrink-0 snap-start items-center rounded-full bg-[#1c1917] px-4 py-2.5 text-sm font-semibold text-white sm:min-h-0 sm:px-3 sm:py-2 sm:text-xs"
-          >
-            All
-          </Link>
-          {storeList.map((store) => (
-            <Link
-              key={store.id}
-              href={`/stores/${store.id}`}
-              className="inline-flex min-h-11 shrink-0 snap-start items-center gap-2 rounded-full border border-[#e7e5e4] bg-white px-4 py-2.5 text-sm font-semibold text-[#44403c] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366] sm:min-h-0 sm:gap-1.5 sm:px-3 sm:py-2 sm:text-xs sm:font-medium"
-            >
-              <Icon name={store.id} size={16} className="text-[#5f8a7a]" />
-              <span className="sm:hidden">{storeShortNames[store.id]}</span>
-              <span className="hidden sm:inline">{store.name}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
       <form
         action="/products"
-        className="border-t border-[#e7e5e4]/60 px-3 py-1.5 md:hidden"
+        className="border-t border-[#e7e5e4]/60 px-3 py-2 md:hidden"
+        role="search"
       >
         <input
           type="search"
           name="q"
           placeholder="Search products..."
-          className="w-full rounded-lg border border-[#e7e5e4] bg-white px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-[#eef4f1]"
+          className="w-full rounded-xl border border-[#e7e5e4] bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-[#eef4f1]"
         />
       </form>
+
+      <MobileCategoryGrid />
+      <DesktopCategoryPills />
     </header>
   );
 }

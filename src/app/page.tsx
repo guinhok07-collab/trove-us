@@ -71,7 +71,7 @@ export default async function HomePage() {
         <ProductGrid products={globalBestsellers} variant="compact" />
       </section>
 
-      <StoreQuickNav />
+      <StoreQuickNav className="hidden md:block" />
 
       <section className="mt-5 sm:mt-10">
         <div className="mb-3 flex items-end justify-between gap-3 sm:mb-5">
