@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { brand } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
-import { DesktopCategoryPills } from "@/components/category-nav";
+import { DesktopCategoryPills, MobileCategoryGrid } from "@/components/category-nav";
 
 export function SiteHeader() {
   const { itemCount } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e7e5e4]/80 bg-[#faf9f7] pt-[env(safe-area-inset-top)] sm:bg-[#faf9f7]/95 sm:backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#e7e5e4]/80 bg-[#faf9f7] sm:bg-[#faf9f7]/95 sm:backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-2 sm:gap-4 sm:px-6 sm:py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#5f8a7a] font-display text-sm font-semibold text-white sm:h-10 sm:w-10 sm:rounded-2xl sm:text-base">
@@ -27,7 +27,7 @@ export function SiteHeader() {
 
         <form
           action="/products"
-          className="hidden min-w-0 flex-1 md:block"
+          className="hidden flex-1 md:block"
           role="search"
         >
           <div className="relative max-w-xl">
@@ -46,43 +46,66 @@ export function SiteHeader() {
           </div>
         </form>
 
-        <form action="/products" className="min-w-0 flex-1 md:hidden" role="search">
-          <input
-            type="search"
-            name="q"
-            placeholder="Search..."
-            className="w-full rounded-xl border border-[#e7e5e4] bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#eef4f1]"
-          />
-        </form>
-
-        <nav className="hidden shrink-0 items-center gap-1 sm:flex">
+        <nav className="ml-auto flex items-center gap-0.5 sm:gap-1">
           <Link
             href="/about"
-            className="rounded-full px-3 py-2 text-sm font-medium text-[#57534e] hover:bg-white hover:text-[#1c1917]"
+            className="hidden rounded-full px-3 py-2 text-sm font-medium text-[#57534e] hover:bg-white hover:text-[#1c1917] sm:inline-flex"
           >
             About
           </Link>
           <Link
             href="/products"
-            className="rounded-full px-3 py-2 text-sm font-medium text-[#57534e] hover:bg-white hover:text-[#1c1917]"
+            className="rounded-full px-2 py-1.5 text-xs font-medium text-[#57534e] hover:bg-white hover:text-[#1c1917] sm:px-3 sm:py-2 sm:text-sm"
           >
             Shop
           </Link>
           <Link
             href="/cart"
-            className="relative flex items-center gap-2 rounded-full bg-[#5f8a7a] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#4d7366]"
+            className="ml-0.5 flex items-center gap-1 rounded-full bg-[#5f8a7a] px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-[#4d7366] sm:ml-1 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
           >
-            Cart
-            {itemCount > 0 ? (
-              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#1c1917] px-1 text-[10px] font-bold">
+            <CartIcon />
+            <span className="hidden sm:inline">Cart</span>
+            {itemCount > 0 && (
+              <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-[#1c1917] px-1 text-[9px] font-bold leading-none sm:h-5 sm:min-w-5 sm:text-[10px]">
                 {itemCount}
               </span>
-            ) : null}
+            )}
           </Link>
         </nav>
       </div>
 
+      <form
+        action="/products"
+        className="border-t border-[#e7e5e4]/60 px-3 py-2 md:hidden"
+        role="search"
+      >
+        <input
+          type="search"
+          name="q"
+          placeholder="Search products..."
+          className="w-full rounded-xl border border-[#e7e5e4] bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-[#eef4f1]"
+        />
+      </form>
+
+      <MobileCategoryGrid />
       <DesktopCategoryPills />
     </header>
+  );
+}
+
+function CartIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      className="h-4 w-4"
+    >
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <path d="M16 10a4 4 0 0 1-8 0" />
+    </svg>
   );
 }

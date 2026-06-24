@@ -2,31 +2,15 @@ import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { storeList, storeShortNames } from "@/data/stores";
 
-interface MobileCategoryGridProps {
-  embedded?: boolean;
-  onNavigate?: () => void;
-}
-
-/** Mobile — 2×2 grid; use in bottom sheet or homepage section */
-export function MobileCategoryGrid({ embedded = false, onNavigate }: MobileCategoryGridProps) {
-  const linkProps = onNavigate ? { onClick: onNavigate } : {};
-
+/** Mobile — 2×2 grid, all categories visible without horizontal scroll */
+export function MobileCategoryGrid() {
   return (
-    <div
-      className={
-        embedded
-          ? "px-2 pb-2"
-          : "border-t border-[#e7e5e4]/60 bg-[#fafaf9] px-3 py-3 md:hidden"
-      }
-    >
-      {!embedded ? (
-        <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-[#a8a29e]">
-          Shop by category
-        </p>
-      ) : null}
+    <div className="border-t border-[#e7e5e4]/60 bg-[#fafaf9] px-3 py-3 md:hidden">
+      <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-[#a8a29e]">
+        Shop by category
+      </p>
       <Link
         href="/products"
-        {...linkProps}
         className="mb-2 flex min-h-11 items-center justify-center rounded-xl bg-[#1c1917] text-sm font-semibold text-white"
       >
         All products
@@ -36,7 +20,6 @@ export function MobileCategoryGrid({ embedded = false, onNavigate }: MobileCateg
           <Link
             key={store.id}
             href={`/stores/${store.id}`}
-            {...linkProps}
             className={`flex min-h-[3.25rem] items-center gap-2.5 rounded-xl border border-[#e7e5e4]/80 bg-gradient-to-br p-3 ${store.bgGradient}`}
           >
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/85 shadow-sm">
