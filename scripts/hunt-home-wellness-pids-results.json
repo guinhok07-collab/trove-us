@@ -1,0 +1,182 @@
+{
+  "bamboo-cutting-board": {
+    "store": "home",
+    "slug": "bamboo-cutting-board",
+    "q": "bamboo cutting board kitchen chopping",
+    "name": "Bamboo Cutting Board",
+    "desc": "Durable bamboo board for everyday chopping and meal prep.",
+    "features": [
+      "Natural bamboo",
+      "Knife friendly",
+      "Juice groove",
+      "Easy to clean"
+    ],
+    "ship": 4,
+    "pid": "0CE2033A-DAC8-4F3B-8857-F56271E2D86A",
+    "cjName": "Vegetable Kitchen Cutting Board With Trays Storage Box Smooth Multifunction Practical Fruit Meat Bamboo Food Chopping Board",
+    "cost": 12.88,
+    "imgs": 12
+  },
+  "silicone-oven-mitts": {
+    "store": "home",
+    "slug": "silicone-oven-mitts",
+    "q": "silicone oven mitts heat resistant pair",
+    "name": "Silicone Oven Mitts — Pair",
+    "desc": "Heat-resistant mitts protect hands when baking and grilling.",
+    "features": [
+      "Heat resistant",
+      "Non-slip grip",
+      "Hanging loop",
+      "Pair set"
+    ],
+    "ship": 4,
+    "pid": "1654681047189573632",
+    "cjName": "Anti-Scalding Microwave Cotton Non-Slip Insulation Gloves Oven Mitts  Kitchen Heat Resistant Thickened Cotton Heat Insulation Microwave Oven Oven Anti Scalding Household Gloves Baking Tools",
+    "cost": 7.341,
+    "imgs": 15
+  },
+  "cascading-clothes-hangers": {
+    "store": "home",
+    "slug": "cascading-clothes-hangers",
+    "q": "cascading clothes hanger space saver",
+    "name": "Cascading Closet Hangers — 5 Pack",
+    "desc": "Hang five shirts vertically in the space of one rod hook.",
+    "features": [
+      "Space saving",
+      "5-pack set",
+      "Sturdy hooks",
+      "Closet organizer"
+    ],
+    "ship": 4,
+    "pid": "629B2B82-FD37-4A97-8052-0FB8AAFD8C52",
+    "cjName": "Hanger Rack Clothes Space Saver Folding Hanger Multifunctional Magic Clothes Rack for Clothes Closet Organizer Minimalist style",
+    "cost": 17.66,
+    "imgs": 8
+  },
+  "wall-toothbrush-holder": {
+    "store": "home",
+    "slug": "wall-toothbrush-holder",
+    "q": "wall mounted toothbrush holder bathroom",
+    "name": "Wall-Mount Toothbrush Holder",
+    "desc": "Keeps brushes and toothpaste tidy beside the bathroom sink.",
+    "features": [
+      "Wall mount",
+      "Drain slots",
+      "Family capacity",
+      "Rust resistant"
+    ],
+    "ship": 4,
+    "pid": "1757654250022244352",
+    "cjName": "Wall Mounted Toothbrush Holder Smart Toothbrush UV Sterilizer Holder Toothpaste Dispenser Squeezer For Bathroom Accessories",
+    "cost": 11.28,
+    "imgs": 11
+  },
+  "countertop-dish-drying-rack": {
+    "store": "home",
+    "slug": "countertop-dish-drying-rack",
+    "q": "countertop dish drying rack compact",
+    "name": "Compact Countertop Dish Rack",
+    "desc": "Small rack air-dries plates and cups beside your sink.",
+    "features": [
+      "Countertop fit",
+      "Open drain",
+      "Utensil holder",
+      "Space saving"
+    ],
+    "ship": 4,
+    "pid": "1358750392682418176",
+    "cjName": "Folding Kitchen Dish Drainer Drying Rack Tableware Plate Holder Dinnerware Shelf Storage Organizer Kitchen Accessories",
+    "cost": 2.3,
+    "imgs": 6
+  },
+  "ab-roller-wheel": {
+    "store": "wellness",
+    "slug": "ab-roller-wheel",
+    "q": "ab roller wheel abdominal exercise",
+    "name": "Ab Roller Wheel",
+    "desc": "Core trainer for abs and stability at home.",
+    "features": [
+      "Dual wheel design",
+      "Knee pad included",
+      "Non-slip grip",
+      "Home core workout"
+    ],
+    "ship": 4,
+    "pid": "1628271820526858240",
+    "cjName": "Double Wheel Abdominal Exerciser Women Men Automatic Rebound Ab Wheel Roller Waist Trainer Gym Sports Home Exercise Devices",
+    "cost": 2.84,
+    "imgs": 15
+  },
+  "pilates-ring": {
+    "store": "wellness",
+    "slug": "pilates-ring",
+    "q": "pilates ring fitness magic circle",
+    "name": "Pilates Resistance Ring",
+    "desc": "Adds light resistance to thighs, arms, and core exercises.",
+    "features": [
+      "Foam padded grips",
+      "Flexible ring",
+      "Pilates & yoga",
+      "Home gym"
+    ],
+    "ship": 3.5,
+    "pid": "C1CAE65E-4991-4F6D-9FB3-F5F4D3296DD6",
+    "cjName": "Yoga Fitness Pilates Ring Women Girls Circle Magic Dual Exercise Home Gym Workout Sports Lose Weight Body Resistance",
+    "cost": 3.81,
+    "imgs": 15
+  },
+  "time-marker-water-bottle": {
+    "store": "wellness",
+    "slug": "time-marker-water-bottle",
+    "q": "water bottle time marker motivational fitness",
+    "name": "Time-Marker Water Bottle",
+    "desc": "Hourly markings remind you to stay hydrated all day.",
+    "features": [
+      "Time markers",
+      "BPA-free bottle",
+      "Leak-proof lid",
+      "Gym & desk"
+    ],
+    "ship": 4,
+    "pid": "1385064085623803904",
+    "cjName": "1L Tritan Water Bottle With Time Marker Bounce Cover Motivational Water Bottle Cycling Leakproof Cup For Sports Fitness Bottles",
+    "cost": 6.48,
+    "imgs": 15
+  },
+  "fabric-hip-resistance-band": {
+    "store": "wellness",
+    "slug": "fabric-hip-resistance-band",
+    "q": "fabric hip resistance band booty glute",
+    "name": "Fabric Hip Resistance Band",
+    "desc": "Non-slip band for glute activation and leg day warmups.",
+    "features": [
+      "Fabric non-slip",
+      "Glute activation",
+      "3 resistance levels",
+      "Squat friendly"
+    ],
+    "ship": 3.5,
+    "pid": "60542CED-A3E4-4519-BFDB-5D31E833DC1B",
+    "cjName": "Resistance Bands Sealing Elastic Booty Sport Bodybuilding Rubber Band For Fitness Gym Leagues Equipment Sports Mini Yoga",
+    "cost": 0.75,
+    "imgs": 15
+  },
+  "yoga-stretching-strap": {
+    "store": "wellness",
+    "slug": "yoga-stretching-strap",
+    "q": "yoga stretching strap flexibility exercise",
+    "name": "Yoga Stretching Strap",
+    "desc": "Helps deepen stretches and improve flexibility safely.",
+    "features": [
+      "D-ring buckle",
+      "Cotton webbing",
+      "Assist stretches",
+      "Beginner friendly"
+    ],
+    "ship": 3.5,
+    "pid": "2046A69E-F5E5-4330-A12D-5E5EEE10341F",
+    "cjName": "Yoga Ligament Stretching Belt Foot Drop Stroke Hemiplegia Rehabilitation Strap Leg Training Foot Ankle Joint Correction Braces",
+    "cost": 4.45,
+    "imgs": 10
+  }
+}

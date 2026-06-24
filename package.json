@@ -14,6 +14,7 @@
     "catalog:integrity": "node scripts/catalog-integrity-gate.mjs",
     "catalog:report": "node scripts/generate-verified-catalog-report.mjs",
     "catalog:expand:tech": "node --env-file=.env.local scripts/expand-tech-catalog.mjs",
+    "catalog:expand:home-wellness": "node --env-file=.env.local scripts/expand-home-wellness-catalog.mjs",
     "catalog:duplicates": "node scripts/find-duplicate-products.mjs",
     "catalog:audit-prices": "node --env-file=.env.local scripts/audit-variant-pricing.mjs",
     "catalog:sync-defaults": "node scripts/sync-default-variant-to-products.mjs --write",

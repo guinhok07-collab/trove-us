@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-06-24T20:35:38.183Z",
+  "updatedAt": "2026-06-24T20:51:23.434Z",
   "policy": "Somente produtos visíveis sem erro CJ entram na loja. Sem PID verificado → oculto.",
   "summary": {
-    "totalProducts": 134,
-    "verifiedLive": 100,
+    "totalProducts": 143,
+    "verifiedLive": 109,
     "liveWithMinorWarnings": 23,
     "hidden": 11,
     "visibleErrors": 0,
     "byStore": {
       "pet": 37,
-      "home": 29,
-      "wellness": 26,
+      "home": 34,
+      "wellness": 30,
       "tech": 31
     }
   },
@@ -713,6 +713,69 @@
       "name": "Metal Desk Phone Stand",
       "store": "tech",
       "cjSku": "CJSJ192138601AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "bamboo-cutting-board",
+      "name": "Bamboo Cutting Board",
+      "store": "home",
+      "cjSku": "CJJJCFCJ00782-Cutting board",
+      "status": "verified"
+    },
+    {
+      "slug": "silicone-oven-mitts",
+      "name": "Silicone Oven Mitts — Pair",
+      "store": "home",
+      "cjSku": "CJCJ1751373-White-Left",
+      "status": "verified"
+    },
+    {
+      "slug": "cascading-clothes-hangers",
+      "name": "Cascading Closet Hangers — 5 Pack",
+      "store": "home",
+      "cjSku": "CJJJJTFZ00072-24 pcs",
+      "status": "verified"
+    },
+    {
+      "slug": "wall-toothbrush-holder",
+      "name": "UV Toothbrush Holder & Dispenser",
+      "store": "home",
+      "cjSku": "CJYD196843301AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "countertop-dish-drying-rack",
+      "name": "Compact Countertop Dish Rack",
+      "store": "home",
+      "cjSku": "CJCF100991401AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "ab-roller-wheel",
+      "name": "Ab Roller Wheel",
+      "store": "wellness",
+      "cjSku": "CJJM169017001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "pilates-ring",
+      "name": "Pilates Resistance Ring",
+      "store": "wellness",
+      "cjSku": "CJYDQTJM00315-Pink2sets",
+      "status": "verified"
+    },
+    {
+      "slug": "time-marker-water-bottle",
+      "name": "Time-Marker Water Bottle",
+      "store": "wellness",
+      "cjSku": "CJHS109247001AZ",
+      "status": "verified"
+    },
+    {
+      "slug": "yoga-stretching-strap",
+      "name": "Yoga Stretching Strap",
+      "store": "wellness",
+      "cjSku": "CJYDQTJM00537-Black-Set B",
       "status": "verified"
     }
   ],
