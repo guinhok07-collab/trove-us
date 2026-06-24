@@ -100,7 +100,7 @@ export const copy = {
     },
     {
       q: "Do you offer free shipping?",
-      a: "Yes — standard shipping is free on orders of $35 or more. Orders under $35 have a flat $4.99 shipping rate at checkout.",
+      a: "Yes — standard shipping is free on orders of $35 or more. Single-item orders under $10 ship for $3.19; other orders under $35 are $4.99 flat at checkout.",
     },
     {
       q: "Where do you ship?",

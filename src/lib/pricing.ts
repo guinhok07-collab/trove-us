@@ -5,6 +5,9 @@ import type { CreateStoreOrderItem, CreateStoreOrderRequest } from "@/lib/cj/typ
 
 export const FREE_SHIPPING_MIN = 35;
 export const FLAT_SHIPPING = 4.99;
+/** Single cheap item — keeps total under ~$9.20 (~R$50 via PayPal). */
+export const ECONOMY_SHIPPING = 3.19;
+export const ECONOMY_SHIPPING_MAX = 10;
 export const TARGET_MARGIN = 0.2;
 export const PAYPAL_RATE = 0.034;
 export const MAX_RETAIL = 39.99;
@@ -54,7 +57,9 @@ export function roundUsd(value: number): number {
 }
 
 export function calculateShipping(subtotal: number): number {
-  return subtotal >= FREE_SHIPPING_MIN ? 0 : FLAT_SHIPPING;
+  if (subtotal >= FREE_SHIPPING_MIN) return 0;
+  if (subtotal > 0 && subtotal < ECONOMY_SHIPPING_MAX) return ECONOMY_SHIPPING;
+  return FLAT_SHIPPING;
 }
 
 async function resolveProduct(input: OrderLineInput) {
