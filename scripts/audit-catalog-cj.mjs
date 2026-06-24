@@ -23,6 +23,8 @@ const productsPath = resolve(__dirname, "../src/data/products.ts");
 const variantsPath = resolve(__dirname, "../src/data/product-variants.json");
 const outPath = resolve(__dirname, "../src/data/catalog-cj-audit.json");
 
+const SHIP_BY_STORE = { pet: 4, home: 4, wellness: 3.5, tech: 3.5 };
+
 const STOP = new Set([
   "the", "and", "for", "with", "from", "your", "our", "that", "this", "into",
   "set", "kit", "pack", "pair", "size", "inch", "free", "new", "best", "pro",
@@ -68,6 +70,7 @@ function parseProducts(source) {
       name: grab(/name: "([^"]+)"/),
       description: grab(/description: "([^"]+)"/),
       store: grab(/store: "([^"]+)"/),
+      catalogHidden: /catalogHidden:\s*true/.test(block),
       price: Number(grab(/price: ([\d.]+)/)),
       cjSku: grab(/cjSku: "([^"]+)"/),
       cjVid: grab(/cjVid: "([^"]+)"/),
@@ -107,6 +110,7 @@ for (const p of products) {
   const msgs = [];
   const level = { critical: false, error: false, warn: false };
   const catalogVariants = variantCatalog[p.slug]?.variants ?? [];
+  const shipDefault = SHIP_BY_STORE[p.store] ?? 3.5;
 
   if (!p.cjSku) {
     issues.push({
@@ -185,7 +189,7 @@ for (const p of products) {
 
   if (variantOnCj) {
     const cost = Number(variantOnCj.variantSellPrice ?? data.sellPrice ?? 0);
-    const expected = retailPrice(cost, 3.5);
+    const expected = retailPrice(cost, shipDefault);
     if (Math.abs(p.price - expected) > 0.02 && Math.abs(p.price - expected) / expected > 0.08) {
       level.warn = true;
       msgs.push(`Preço loja $${p.price} vs esperado $${expected.toFixed(2)} (custo CJ $${cost})`);
@@ -214,6 +218,7 @@ for (const p of products) {
       slug: p.slug,
       name: p.name,
       store: p.store,
+      catalogHidden: Boolean(p.catalogHidden),
       level: level.critical || level.error ? "error" : "warn",
       types,
       overlap: Math.round(score * 100),
@@ -241,6 +246,8 @@ const summary = {
   nameMismatch: issues.filter((i) => i.types?.includes("name_mismatch")).length,
   variantGap: issues.filter((i) => i.types?.includes("variant_gap")).length,
   autoFixable: issues.filter((i) => i.autoFix).length,
+  visibleErrors: issues.filter((i) => i.level === "error" && !i.catalogHidden).length,
+  visibleWarnings: issues.filter((i) => i.level === "warn" && !i.catalogHidden).length,
 };
 
 writeFileSync(outPath, JSON.stringify({ summary, issues }, null, 2));

@@ -10,6 +10,8 @@
     "margins": "node scripts/margins.mjs",
     "catalog:check": "node scripts/catalog-check.mjs",
     "catalog:check:cj": "node --env-file=.env.local scripts/catalog-check.mjs --cj",
+    "catalog:audit": "node --env-file=.env.local scripts/audit-catalog-cj.mjs",
+    "catalog:integrity": "node scripts/catalog-integrity-gate.mjs",
     "catalog:duplicates": "node scripts/find-duplicate-products.mjs",
     "catalog:audit-prices": "node --env-file=.env.local scripts/audit-variant-pricing.mjs",
     "catalog:sync-defaults": "node scripts/sync-default-variant-to-products.mjs --write",

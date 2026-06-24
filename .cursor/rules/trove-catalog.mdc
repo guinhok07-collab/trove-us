@@ -21,13 +21,22 @@ alwaysApply: true
 2. `node --env-file=.env.local scripts/relink-product-cj.mjs <slug> <pid> [ship]`
 3. Verify with `grep` on `products.ts` (name + cjSku match listing)
 4. **`npm run catalog:check`** before commit — must pass
-5. Build + deploy + push
+5. **`npm run catalog:audit`** + **`npm run catalog:integrity`** — zero visible CJ errors
+6. Build + deploy + push
+
+## Integrity (never sell wrong CJ item)
+- **Proibido** relabel-only: se não achou PID honesto → `catalogHidden: true` (ver `scripts/mark-catalog-hidden.mjs`)
+- Relatório vivo: `src/data/catalog-integrity-report.json` (correções + hidden + scripts proibidos)
+- Sem PID verificado = não publica. Não usar `relink-audit-mismatches.mjs` com match frouxo
+- Scripts deletados/banidos: `refresh-placeholder-products.mjs`
 
 ## Scripts (always use these)
 | Command | Purpose |
 |---------|---------|
 | `npm run catalog:check` | Gate: blocks, variants, duplicate cjVid/cjSku |
 | `npm run catalog:check:cj` | Above + full CJ price audit (127 products) |
+| `npm run catalog:audit` | Full CJ name/variant/price audit → `catalog-cj-audit.json` |
+| `npm run catalog:integrity` | Fail if any **visible** product has CJ audit error |
 | `npm run catalog:duplicates` | Human-readable duplicate report |
 | `node scripts/sync-all-variants.mjs` | Refresh variants (only after parser fix verified) |
 
@@ -43,6 +52,6 @@ alwaysApply: true
 
 ## Pre-deploy checklist
 ```
-npm run catalog:check && npm run build && npm run deploy
+npm run catalog:check && npm run catalog:audit && npm run catalog:integrity && npm run build && npm run deploy
 git push origin main
 ```

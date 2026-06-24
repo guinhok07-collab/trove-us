@@ -12,6 +12,9 @@ const HIDDEN = [
   "heating-pad-electric",
   "mini-bluetooth-speaker",
   "usb-c-hub-7in1",
+  "garbage-bag-holder",
+  "mason-jar-storage-lids",
+  "over-sink-dish-rack",
 ];
 
 const path = resolve(__dirname, "../src/data/products.ts");

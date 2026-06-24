@@ -55,30 +55,6 @@ const FIXES = [
       features: ["Heat resistant", "Wide cradle", "Stable base", "Easy to clean"],
     },
   },
-  {
-    slug: "mason-jar-storage-lids",
-    pid: null,
-    relabelOnly: true,
-    copy: {
-      name: "Mason Jar Ring Replacement Pack",
-      description: "Replacement metal rings for regular-mouth canning jars.",
-      longDescription:
-        "Keep your mason jars sealed with spare split-type metal rings for pantry storage and canning. Fits regular-mouth jars you already own — handy backup when rings warp or go missing. Ships from our US warehouse in 3–5 business days.",
-      features: ["Regular-mouth fit", "Metal sealing rings", "Multi-pack value", "Pantry backup"],
-    },
-  },
-  {
-    slug: "over-sink-dish-rack",
-    pid: null,
-    relabelOnly: true,
-    copy: {
-      name: "Double-Tier Dish Drying Rack",
-      description: "Countertop rack adds two levels of drying space beside your sink.",
-      longDescription:
-        "Air-dry plates, bowls, and utensils on a compact two-tier rack that sits on the counter next to your sink. Open design helps water drain fast and keeps everyday dishes within reach. Ships from our US warehouse in 3–5 business days.",
-      features: ["Two-tier drying", "Countertop fit", "Open drain design", "Everyday dish storage"],
-    },
-  },
 ];
 
 const productsPath = resolve(__dirname, "../src/data/products.ts");

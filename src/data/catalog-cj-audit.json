@@ -1,71 +1,281 @@
 {
   "summary": {
-    "auditedAt": "2026-06-24T19:48:50.968Z",
+    "auditedAt": "2026-06-24T20:11:48.681Z",
     "total": 127,
-    "ok": 121,
-    "issueCount": 6,
-    "errors": 2,
-    "warnings": 4,
-    "nameMismatch": 2,
+    "ok": 103,
+    "issueCount": 24,
+    "errors": 0,
+    "warnings": 24,
+    "nameMismatch": 0,
     "variantGap": 0,
-    "autoFixable": 3
+    "autoFixable": 23,
+    "visibleErrors": 0,
+    "visibleWarnings": 23
   },
   "issues": [
     {
-      "slug": "interactive-cat-toy",
-      "name": "Interactive Cat Toy",
+      "slug": "pet-hair-remover-roller",
+      "name": "Reusable Pet Hair Remover Roller",
       "store": "pet",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 14,
-      "cjName": "Pet New Cat Wicked Ball Toy Intelligent Ball USB Cat Toys Self Rotating Ball Automatic Rotation Ball",
-      "cjPid": "1593481438610075648",
-      "cjVariants": 13,
-      "catalogVariants": 13,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 0%)",
-        "Trove: Interactive Cat Toy",
-        "CJ: Pet New Cat Wicked Ball Toy Intelligent Ball USB Cat Toys Self Rotating Ball Automatic Rot"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "pet-deshedding-tool",
-      "name": "Pet Deshedding Tool",
-      "store": "pet",
-      "level": "error",
-      "types": [
-        "name_mismatch"
-      ],
-      "overlap": 10,
-      "cjName": "7pcs Pet Grooming Kit, Self-Cleaning Brush Shedding Kit With Nail Clipper, Flea Comb, Shampoo Bath Brush, Finger Toothbr",
-      "cjPid": "2003003597865926657",
-      "cjVariants": 1,
-      "catalogVariants": 1,
-      "messages": [
-        "Produto CJ provavelmente errado (slug match 0%)",
-        "Trove: Pet Deshedding Tool",
-        "CJ: 7pcs Pet Grooming Kit, Self-Cleaning Brush Shedding Kit With Nail Clipper, Flea Comb, Sham"
-      ],
-      "autoFix": false
-    },
-    {
-      "slug": "pet-paw-cleaner-cup",
-      "name": "Pet Paw Cleaner Cup",
-      "store": "pet",
+      "catalogHidden": false,
       "level": "warn",
       "types": [
         "price_drift"
       ],
-      "overlap": 23,
-      "cjName": "2 In 1 Dog Paw Cleaner Cup Soft Pet Dog Foot Cleaning Washer Brush Cup Portable Pet Foot Washer Paw Clean Brush Foot Cle",
-      "cjPid": "1661977359978860544",
+      "overlap": 25,
+      "cjName": "2-1 Reusable Pet Hair Remover Brush Lint Roller Portable Effective Self Cleaning Tool for Cat Dog Fur Hair Dust Removal ",
+      "cjPid": "1368888013161107456",
+      "cjVariants": 24,
+      "catalogVariants": 24,
+      "messages": [
+        "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.47)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "pet-grooming-brush-set",
+      "name": "Pet Grooming Brush Set",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 24,
+      "cjName": "Pet Slicker Grooming Brush Comb For Cats Small Middle Sized Dogs Must Buy in Fur Shedding Season Easy Clean",
+      "cjPid": "1377182883625701376",
+      "cjVariants": 3,
+      "catalogVariants": 3,
+      "messages": [
+        "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.53)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "retractable-dog-leash",
+      "name": "Retractable Dog Leash",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 7,
+      "cjName": "Pet Double Handle Pull Leash",
+      "cjPid": "38F8EECC-A06A-460E-BF95-2D51929DF2C6",
+      "cjVariants": 5,
+      "catalogVariants": 5,
+      "messages": [
+        "Preço loja $8.99 vs esperado $9.99 (custo CJ $2.91)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "pet-nail-clipper",
+      "name": "Pet Nail Clipper",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 19,
+      "cjName": "Pet dog nail clippers",
+      "cjPid": "9DD89C6C-65EF-4BBD-A90F-4B9BB659D16F",
+      "cjVariants": 3,
+      "catalogVariants": 3,
+      "messages": [
+        "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.36)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "cat-litter-mat",
+      "name": "Cat Litter Catching Mat",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 13,
+      "cjName": "Cat Litter Pad Honeycomb Cat Pad Waterproof Urine Proof Pad Pet Supplies",
+      "cjPid": "F8335938-4CF7-4D82-9FFD-C9F168EA1E49",
+      "cjVariants": 9,
+      "catalogVariants": 9,
+      "messages": [
+        "Preço loja $8.99 vs esperado $9.99 (custo CJ $3.13)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "portable-pet-carrier",
+      "name": "Portable Pet Carrier Bag",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 17,
+      "cjName": "Portable Pet Cat Bag Breathable Dog Carrier Backpack Large Capacity Travel Pet Handbag For Puppy Kitten Pets Outdoor Sup",
+      "cjPid": "1392428662283964416",
+      "cjVariants": 6,
+      "catalogVariants": 6,
+      "messages": [
+        "Preço loja $11.99 vs esperado $13.99 (custo CJ $6.3)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "garbage-bag-holder",
+      "name": "Portable Pet Waste Bag Holder",
+      "store": "home",
+      "catalogHidden": true,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 26,
+      "cjName": "Portable Cats Dogs Garbage Bag Holder Pet Poop Bags Carrier Dispenser",
+      "cjPid": "B6FFB024-6B6D-47E3-A3D4-3FD9926F2D73",
+      "cjVariants": 5,
+      "catalogVariants": 5,
+      "messages": [
+        "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.73)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "cordless-cabinet-light",
+      "name": "Cordless LED Cabinet Light",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 19,
+      "cjName": "Auto LED USB Magnetic Wireless Night Light Corridors Porch Lights PIR Motion Sensor Wall Light Cabinet Lamp",
+      "cjPid": "842B5DB4-E59C-42FC-BEAB-01893C169776",
+      "cjVariants": 12,
+      "catalogVariants": 12,
+      "messages": [
+        "Preço loja $9.99 vs esperado $10.99 (custo CJ $4.14)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "ice-cube-tray-silicone",
+      "name": "Silicone Ice Cube Tray with Lid",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 25,
+      "cjName": "32 Grid Silicone Ice Cube Tray Mould With Lid Shovel Storage Box Remove With One Click Ice Maker DIY Whiskey Cocktail To",
+      "cjPid": "1777174523490607104",
       "cjVariants": 8,
       "catalogVariants": 8,
       "messages": [
-        "Preço loja $7.99 vs esperado $6.99 (custo CJ $1.86)"
+        "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.45)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "silicone-food-storage-bags",
+      "name": "Reusable Silicone Food Storage Bags",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 18,
+      "cjName": "Food Storage Bag Zero Waste Reusable Ziplock Bags Cup Shape Silicone Bag Stand Up For Kitchen Cookie Candy Snack Baked F",
+      "cjPid": "1435808620456579072",
+      "cjVariants": 1,
+      "catalogVariants": 1,
+      "messages": [
+        "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.86)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "silicone-stove-gap-cover",
+      "name": "Silicone Stove Gap Cover",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 22,
+      "cjName": "Silicone Stove Counter Gap Cover",
+      "cjPid": "97EC8D74-CB0F-4516-B2F0-6865C7453621",
+      "cjVariants": 3,
+      "catalogVariants": 3,
+      "messages": [
+        "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.39)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "sink-splash-guard-mat",
+      "name": "Sink Splash Guard Mat",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 39,
+      "cjName": "Silicone Faucet Mat Absorbent Mat Sink Splash Guard Washable Backsplash Guard For Kitchen Bathroom Faucet Water Catcher ",
+      "cjPid": "1538428019357003776",
+      "cjVariants": 8,
+      "catalogVariants": 8,
+      "messages": [
+        "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.56)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "handheld-bag-sealer",
+      "name": "Handheld Bag Sealer",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 30,
+      "cjName": "Chip Bag Sea Vacuum Sealing Machine Handheld Heat Vacumn Sealer Portable Heat Sealer USB Rechargeable For Food Storage C",
+      "cjPid": "1718960813723103232",
+      "cjVariants": 3,
+      "catalogVariants": 3,
+      "messages": [
+        "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.76)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "kitchen-drawer-organizer",
+      "name": "Kitchen Drawer Organizer Tray",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 32,
+      "cjName": "Kitchen Cabinet Divider Shelf Drawer Organizer Utensil Holder Under Desk Hanging Storage Box Fork Spoon Tray Kitchen Sto",
+      "cjPid": "BB9C2683-C089-4FBE-B6EB-CE8217C40E31",
+      "cjVariants": 3,
+      "catalogVariants": 3,
+      "messages": [
+        "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.67)"
       ],
       "autoFix": true
     },
@@ -73,6 +283,7 @@
       "slug": "silicone-dish-drying-mat",
       "name": "Silicone Dish Drying Mat",
       "store": "home",
+      "catalogHidden": false,
       "level": "warn",
       "types": [
         "bad_labels"
@@ -88,9 +299,124 @@
       "autoFix": true
     },
     {
+      "slug": "cat-feather-teaser",
+      "name": "Cat Feather Teaser Wand",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 47,
+      "cjName": "Cat Interactive Toy Funny Tumbler Toy Kitten Exercise Catching Leaky Food Ball Teaser Feather Wand Toys For Cat Accessor",
+      "cjPid": "1782621495156547584",
+      "cjVariants": 5,
+      "catalogVariants": 5,
+      "messages": [
+        "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.57)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "pet-grooming-gloves",
+      "name": "Pet Grooming Gloves",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 12,
+      "cjName": "Pet Hair Remover Mitt Pet Hair Remover Gloves Deshedding Brush Glove For Dog Cat Rabbit With Long Short Curly Hair",
+      "cjPid": "2503191148021601200",
+      "cjVariants": 15,
+      "catalogVariants": 15,
+      "messages": [
+        "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.64)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "dog-bandana-set",
+      "name": "Cooling Dog Bandana",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 40,
+      "cjName": "New Instant Cooling Pet Bandana Dog Scarf Summer Cooling Towel Wrap Dog Collar",
+      "cjPid": "FEA700D2-3974-4878-8F44-327B9943457C",
+      "cjVariants": 6,
+      "catalogVariants": 6,
+      "messages": [
+        "Preço loja $8.99 vs esperado $9.99 (custo CJ $3.06)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "cat-scratching-mat",
+      "name": "Flat Cat Scratching Mat",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 19,
+      "cjName": "Creative Sisal Mat That Won't Shed Crumbs Cat Scratch Board",
+      "cjPid": "2406150242231629300",
+      "cjVariants": 26,
+      "catalogVariants": 26,
+      "messages": [
+        "Preço loja $9.99 vs esperado $10.99 (custo CJ $4.05)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "pet-bowl-mat-silicone",
+      "name": "Silicone Pet Bowl Mat",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 17,
+      "cjName": "Spot Pet Mat, Waterproof And Easy To Clean Silicone Dog Mat, Cat Mat, Square Pet Placemat, Pet Supplies",
+      "cjPid": "1387639463303319552",
+      "cjVariants": 15,
+      "catalogVariants": 15,
+      "messages": [
+        "Preço loja $7.99 vs esperado $8.99 (custo CJ $2.56)"
+      ],
+      "autoFix": true
+    },
+    {
+      "slug": "pet-toothbrush-kit",
+      "name": "Pet Dental Care Kit",
+      "store": "pet",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 19,
+      "cjName": "Pet Toothbrush Pen Teeth Cleaning Tools Breath Pet",
+      "cjPid": "2410170228541608200",
+      "cjVariants": 3,
+      "catalogVariants": 3,
+      "messages": [
+        "Preço loja $6.99 vs esperado $7.99 (custo CJ $1.58)"
+      ],
+      "autoFix": true
+    },
+    {
       "slug": "bed-sheet-organizer",
       "name": "Bed Sheet Organizer Set",
       "store": "home",
+      "catalogHidden": false,
       "level": "warn",
       "types": [
         "bad_labels"
@@ -109,6 +435,7 @@
       "slug": "bluetooth-keyboard-mini",
       "name": "Mini Bluetooth Keyboard",
       "store": "tech",
+      "catalogHidden": false,
       "level": "warn",
       "types": [],
       "overlap": 15,
@@ -121,6 +448,25 @@
         "CJ: Ultra-portable Wireless Keyboard With Built-in Stand For KOCASO MX1080 And INova"
       ],
       "autoFix": false
+    },
+    {
+      "slug": "silicone-utensil-rest",
+      "name": "Stainless Steel Spoon Rest",
+      "store": "home",
+      "catalogHidden": false,
+      "level": "warn",
+      "types": [
+        "price_drift"
+      ],
+      "overlap": 24,
+      "cjName": "Stainless Steel Heat-resistant Spoon Rest Spatula Holder",
+      "cjPid": "E94267B1-13A3-430A-B115-24054FB706B3",
+      "cjVariants": 2,
+      "catalogVariants": 2,
+      "messages": [
+        "Preço loja $5.99 vs esperado $6.99 (custo CJ $0.6)"
+      ],
+      "autoFix": true
     }
   ]
 }

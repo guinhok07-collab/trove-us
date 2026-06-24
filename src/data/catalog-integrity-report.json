@@ -1,0 +1,165 @@
+{
+  "updatedAt": "2026-06-24T20:00:00.000Z",
+  "policy": "Nunca vender produto com CJ errado. Sem PID verificado → catalogHidden: true. Proibido relabel só para fingir match.",
+  "summary": {
+    "totalProducts": 127,
+    "visibleProducts": 116,
+    "hiddenProducts": 11,
+    "cjRelinked": 6,
+    "copyRestored": 36,
+    "hiddenNoMatch": 2
+  },
+  "corrections": [
+    {
+      "slug": "bluetooth-keyboard-mini",
+      "action": "relink",
+      "date": "2026-06-24",
+      "was": "Minimalistic Non-Slip Protector Felt Desk Pad (imagem de mouse pad)",
+      "now": "Ultra-portable Wireless Keyboard (PID 1990607329773793281)",
+      "status": "live"
+    },
+    {
+      "slug": "portable-blender-bottle",
+      "action": "relink",
+      "date": "2026-06-24",
+      "was": "4-in-1 Makeup Brush Cleaner",
+      "now": "350ML Electric Juicer Blender USB (PID 1392009095543918592)",
+      "troveName": "Portable USB Smoothie Blender",
+      "status": "live"
+    },
+    {
+      "slug": "jump-rope-weighted",
+      "action": "relink",
+      "date": "2026-06-24",
+      "was": "Smart Bluetooth Skipping Rope",
+      "now": "Training Jump Rope Set (PID 1680142560670928896)",
+      "troveName": "Adjustable Speed Jump Rope",
+      "status": "live"
+    },
+    {
+      "slug": "silicone-utensil-rest",
+      "action": "relink",
+      "date": "2026-06-24",
+      "was": "2-Tier Dish Drying Rack",
+      "now": "Stainless Steel Spoon Rest (PID E94267B1-13A3-430A-B115-24054FB706B3)",
+      "troveName": "Stainless Steel Spoon Rest",
+      "status": "live"
+    },
+    {
+      "slug": "interactive-cat-toy",
+      "action": "relink",
+      "date": "2026-06-24",
+      "was": "Produto CJ sem relação com brinquedo interativo",
+      "now": "Pet New Cat Wicked Ball / Smart Rotating Ball (PID 1593481438610075648)",
+      "troveName": "Smart Rotating Cat Ball Toy",
+      "status": "live"
+    },
+    {
+      "slug": "pet-deshedding-tool",
+      "action": "relink",
+      "date": "2026-06-24",
+      "was": "Produto CJ sem relação com deshedding",
+      "now": "7pcs Pet Grooming Kit (PID 2003003597865926657)",
+      "troveName": "7-Piece Pet Grooming Kit",
+      "status": "live"
+    },
+    {
+      "slug": "mason-jar-storage-lids",
+      "action": "hidden",
+      "date": "2026-06-24",
+      "reason": "Sem PID de tampas pour/storage lids no CJ. SKU atual = anéis de canning (produto diferente).",
+      "cjLinked": "24 Pcs Canning Jar Metal Rings",
+      "status": "catalogHidden"
+    },
+    {
+      "slug": "over-sink-dish-rack",
+      "action": "hidden",
+      "date": "2026-06-24",
+      "reason": "Sem PID de rack roll-up sobre a pia. SKU atual = escorredor de bancada duplo.",
+      "cjLinked": "Double Tier Countertop Dish Draining Rack",
+      "status": "catalogHidden"
+    },
+    {
+      "slug": "placeholder-copy-batch",
+      "action": "copy_restore",
+      "date": "2026-06-24",
+      "count": 31,
+      "note": "Nomes/descrições genéricos restaurados via restore-placeholder-copy.mjs + product-copy.json",
+      "status": "live"
+    },
+    {
+      "slug": "remaining-copy-batch",
+      "action": "copy_restore",
+      "date": "2026-06-24",
+      "count": 5,
+      "note": "Últimos placeholders corrigidos via fix-remaining-copy.mjs",
+      "status": "live"
+    }
+  ],
+  "hiddenCatalog": [
+    {
+      "slug": "pet-food-storage-container",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "closet-organizer-6-shelf",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "cat-scratching-post",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "under-sink-organizer",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "adhesive-wall-hooks",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "heating-pad-electric",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "mini-bluetooth-speaker",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "usb-c-hub-7in1",
+      "reason": "CJ mismatch / sem match confiável"
+    },
+    {
+      "slug": "garbage-bag-holder",
+      "reason": "Listagem não batia com CJ (dispenser vs outro item)"
+    },
+    {
+      "slug": "mason-jar-storage-lids",
+      "reason": "Sem PID honesto — anéis de canning ≠ tampas pour"
+    },
+    {
+      "slug": "over-sink-dish-rack",
+      "reason": "Sem PID honesto — bancada ≠ rack sobre a pia"
+    }
+  ],
+  "forbidden": [
+    "relink-audit-mismatches.mjs com okName solto (já causou links errados em massa)",
+    "refresh-placeholder-products.mjs (deletado — matching frouxo)",
+    "relabel-only para vender produto diferente do anúncio",
+    "expand-trust-catalog.mjs PIDs antigos sem revalidar queryPid"
+  ],
+  "requiredWorkflow": [
+    "1. Copy em scripts/product-copy.json",
+    "2. node --env-file=.env.local scripts/relink-product-cj.mjs <slug> <pid> [ship]",
+    "3. node --env-file=.env.local scripts/audit-catalog-cj.mjs",
+    "4. npm run catalog:check && npm run catalog:integrity",
+    "5. npm run build && git push"
+  ],
+  "scripts": {
+    "relink": "scripts/relink-product-cj.mjs",
+    "audit": "scripts/audit-catalog-cj.mjs",
+    "fixByPid": "scripts/fix-cj-by-pid.mjs",
+    "hide": "scripts/mark-catalog-hidden.mjs",
+    "gate": "npm run catalog:integrity"
+  }
+}
