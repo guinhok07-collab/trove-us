@@ -92,6 +92,49 @@ export const copy = {
   contactHelpIntro:
     "We're here to help with orders, shipping, and returns.",
   contactHelpResponse: "We aim to respond within one business day.",
+  aboutFaqTitle: "Frequently asked questions",
+  aboutFaq: [
+    {
+      q: "How long does delivery take?",
+      a: "Most orders ship from our US warehouse and arrive in 3–5 business days. You'll get a tracking link by email as soon as your package is on the way.",
+    },
+    {
+      q: "Do you offer free shipping?",
+      a: "Yes — standard shipping is free on orders of $35 or more. Orders under $35 have a flat $4.99 shipping rate at checkout.",
+    },
+    {
+      q: "Where do you ship?",
+      a: "We deliver to all 50 US states. Every product page shows estimated delivery so you know what to expect before you buy.",
+    },
+    {
+      q: "How do returns work?",
+      a: "You have 30 days from delivery to request a return or exchange. Items should be unused and in original packaging. Start at our Returns page or email us with your order number — refunds are processed within 5–7 business days after approval.",
+    },
+    {
+      q: "What payment methods do you accept?",
+      a: "We accept PayPal, major credit and debit cards, and Pay in 4 on eligible orders of $30 or more. All prices are in USD with no hidden fees at checkout.",
+    },
+    {
+      q: "How do I track my order?",
+      a: "After your order ships, we email a tracking number and link. You can also use our Track Order page with your order number and email.",
+    },
+    {
+      q: "Is checkout secure?",
+      a: "Yes. Checkout is SSL-encrypted and processed through PayPal's secure payment system. We never store your full card details on our servers.",
+    },
+    {
+      q: "What if my item arrives damaged or wrong?",
+      a: "Email us at orders@trove-us.com with your order number and a photo. We'll send a replacement or issue a full refund — whichever you prefer.",
+    },
+    {
+      q: "How fast do you reply to support emails?",
+      a: "Real humans read every message — no bots. We aim to respond within one business day, often sooner.",
+    },
+    {
+      q: "Why Trove instead of a big marketplace?",
+      a: "We curate useful everyday products at fair prices — pets, home, wellness, and desk gear in one place, with transparent pricing and support you can actually reach.",
+    },
+  ],
   promiseTitle: "Shop with confidence",
   promiseText:
     "Useful products for real life — your home, your pets, your health, and your daily routine. One checkout, one team, one promise to take care of you.",
