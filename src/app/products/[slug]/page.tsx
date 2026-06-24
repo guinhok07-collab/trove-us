@@ -39,7 +39,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) notFound();
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+    <div className="mx-auto max-w-7xl px-3 py-4 pb-20 sm:px-6 sm:py-8 sm:pb-10 lg:pb-10">
       <TrackProductView
         store={product.store}
         productId={product.id}
@@ -53,7 +53,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         fallbackLabel={`Back to ${storeLabels[product.store]}`}
       />
 
-      <nav className="mb-6 text-sm text-[#a8a29e]">
+      <nav className="mb-3 hidden text-sm text-[#a8a29e] sm:mb-6 sm:block">
         <Link href="/" className="hover:text-[#4d7366]">
           {brand.name}
         </Link>
@@ -65,7 +65,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           {storeLabels[product.store]}
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-[#57534e]">{product.name}</span>
+        <span className="line-clamp-1 text-[#57534e]">{product.name}</span>
       </nav>
 
       <ProductDetailClient product={product} />

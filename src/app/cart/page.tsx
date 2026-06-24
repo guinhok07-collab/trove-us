@@ -29,9 +29,9 @@ export default function CartPage() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-10">
-      <div className="mb-8 flex items-center justify-between">
-        <h1 className="section-title text-2xl">Shopping Cart</h1>
+    <div className="mx-auto max-w-4xl px-3 py-4 sm:px-6 sm:py-10">
+      <div className="mb-4 flex items-center justify-between sm:mb-8">
+        <h1 className="section-title text-xl sm:text-2xl">Shopping Cart</h1>
         <button
           type="button"
           onClick={clearCart}
@@ -46,8 +46,8 @@ export default function CartPage() {
           {items.map(({ product, quantity, variantId, variantLabel }) => {
             const lineKey = cartLineKey(product.id, variantId ?? product.cjVid);
             return (
-            <div key={lineKey} className="card flex gap-4 p-4">
-              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-[#f5f5f4]">
+            <div key={lineKey} className="card flex gap-3 p-3 sm:gap-4 sm:p-4">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-[#f5f5f4] sm:h-24 sm:w-24 sm:rounded-xl">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -101,7 +101,7 @@ export default function CartPage() {
           })}
         </div>
 
-        <div className="card h-fit p-6">
+        <div className="card h-fit p-4 sm:p-6">
           <h2 className="text-base font-semibold text-[#1c1917]">
             Order Summary
           </h2>

@@ -26,13 +26,13 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
       id={`browse-${product.slug}`}
       href={`/products/${product.slug}`}
       onClick={() => saveBrowseReturn(product.slug)}
-      className={`group flex flex-col overflow-hidden border border-[#e7e5e4] bg-white transition duration-200 hover:border-[#d6d3d1] hover:shadow-[0_4px_20px_rgb(28_25_23_/6%)] scroll-mt-28 ${
-        compact ? "rounded-xl" : "rounded-2xl hover:shadow-[0_8px_30px_rgb(28_25_23_/6%)]"
+      className={`group flex flex-col overflow-hidden border border-[#e7e5e4] bg-white transition duration-200 hover:border-[#d6d3d1] hover:shadow-[0_4px_20px_rgb(28_25_23_/6%)] scroll-mt-20 sm:scroll-mt-28 ${
+        compact ? "rounded-xl" : "rounded-xl sm:rounded-2xl hover:shadow-[0_8px_30px_rgb(28_25_23_/6%)]"
       }`}
     >
       <div
         className={`relative overflow-hidden bg-[#f5f5f4] ${
-          compact ? "aspect-square" : "aspect-[4/5]"
+          compact ? "aspect-square" : "aspect-square sm:aspect-[4/5]"
         }`}
       >
         <Image
@@ -68,7 +68,7 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
           </span>
         )}
       </div>
-      <div className={compact ? "flex flex-1 flex-col p-2.5 sm:p-3" : "flex flex-1 flex-col p-4"}>
+      <div className={compact ? "flex flex-1 flex-col p-2 sm:p-3" : "flex flex-1 flex-col p-2.5 sm:p-4"}>
         {!compact && (
           <p className="text-[11px] font-medium uppercase tracking-wider text-[#a8a29e]">
             {storeLabels[product.store]}
@@ -76,7 +76,7 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
         )}
         <h3
           className={`line-clamp-2 font-medium leading-snug text-[#1c1917] group-hover:text-[#4d7366] ${
-            compact ? "mt-0 text-xs sm:text-[13px]" : "mt-1.5 text-sm"
+            compact ? "mt-0 text-xs sm:text-[13px]" : "mt-1 text-xs sm:mt-1.5 sm:text-sm"
           }`}
         >
           {product.name}

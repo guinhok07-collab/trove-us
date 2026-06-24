@@ -108,6 +108,20 @@ h4 {
   letter-spacing: -0.025em;
 }
 
+@media (max-width: 639px) {
+  body {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 1.125rem;
+  }
+
+  .card {
+    border-radius: 0.75rem;
+  }
+}
+
 .section-subtitle {
   font-size: 0.9375rem;
   color: var(--muted);

@@ -54,18 +54,18 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       : "All Products";
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 sm:py-10">
-      <div className="mb-8">
-        <h1 className="section-title text-2xl sm:text-3xl">{title}</h1>
-        <p className="section-subtitle mt-2">
+    <div className="mx-auto max-w-[1400px] px-3 py-4 sm:px-6 sm:py-10">
+      <div className="mb-4 sm:mb-8">
+        <h1 className="section-title text-xl sm:text-2xl lg:text-3xl">{title}</h1>
+        <p className="section-subtitle mt-1 sm:mt-2">
           {totalItems} product{totalItems !== 1 ? "s" : ""} · Prices in USD
         </p>
       </div>
 
-      <div className="mb-8 flex flex-wrap gap-2">
+      <div className="mb-4 flex gap-1.5 overflow-x-auto pb-1 sm:mb-8 sm:flex-wrap sm:gap-2">
         <Link
           href="/products"
-          className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+          className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
             !store
               ? "bg-[#1c1917] text-white"
               : "border border-[#e7e5e4] bg-white text-[#57534e] hover:border-[#5f8a7a]/40"
@@ -77,7 +77,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           <Link
             key={s.id}
             href={`/products?store=${s.id}`}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+            className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
               store === s.id
                 ? "bg-[#5f8a7a] text-white"
                 : "border border-[#e7e5e4] bg-white text-[#57534e] hover:border-[#5f8a7a]/40"

@@ -28,7 +28,7 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
 
   return (
     <div className="space-y-3">
-      <div className="relative aspect-square overflow-hidden rounded-3xl bg-[#f5f5f4]">
+      <div className="relative aspect-square max-h-[min(70vh,480px)] overflow-hidden rounded-2xl bg-[#f5f5f4] sm:max-h-none sm:rounded-3xl">
         {showVideo && hasVideo ? (
           <video
             src={video}
@@ -60,7 +60,7 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
           <button
             type="button"
             onClick={() => setShowVideo((v) => !v)}
-            className={`inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border text-xs font-semibold transition ${
+            className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border text-xs font-semibold transition sm:h-16 sm:w-16 sm:rounded-xl ${
               showVideo
                 ? "border-[#5f8a7a] bg-[#eef4f1] text-[#4d7366]"
                 : "border-[#e7e5e4] bg-white text-[#57534e] hover:border-[#5f8a7a]/40"
@@ -78,7 +78,7 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
               setShowVideo(false);
               setActive(i);
             }}
-            className={`relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 bg-[#f5f5f4] transition ${
+            className={`relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border-2 bg-[#f5f5f4] transition sm:h-16 sm:w-16 sm:rounded-xl ${
               !showVideo && safeActive === i
                 ? "border-[#5f8a7a]"
                 : "border-transparent ring-1 ring-[#e7e5e4] hover:ring-[#5f8a7a]/40"

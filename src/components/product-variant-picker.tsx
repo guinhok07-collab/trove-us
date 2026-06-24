@@ -161,7 +161,7 @@ export function ProductVariantPicker({
         <span className="ml-2 font-normal text-[#57534e]">{selected.label}</span>
       </p>
 
-      <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
+      <div className="mt-3 grid grid-cols-3 gap-1.5 sm:grid-cols-3 sm:gap-2 md:grid-cols-4">
         {variants.map((variant) => {
           const active = variant.id === selectedId;
           return (
@@ -171,13 +171,13 @@ export function ProductVariantPicker({
               onClick={() => onSelect(variant.id)}
               disabled={!variant.inStock}
               title={variant.label}
-              className={`flex min-h-[7.5rem] flex-col items-center rounded-lg border-2 p-2 transition ${
+              className={`flex flex-col items-center rounded-lg border-2 p-1.5 transition sm:p-2 ${
                 active
                   ? "border-[#5f8a7a] bg-[#eef4f1] ring-2 ring-[#5f8a7a]/25"
                   : "border-[#e7e5e4] bg-white hover:border-[#5f8a7a]/40"
               } ${!variant.inStock ? "cursor-not-allowed opacity-45" : ""}`}
             >
-              <span className="flex aspect-square w-full max-w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#f5f5f4] ring-1 ring-[#e7e5e4]">
+              <span className="flex aspect-square w-full max-w-[3rem] shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#f5f5f4] ring-1 ring-[#e7e5e4] sm:max-w-[4.5rem]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={variant.image}
@@ -185,7 +185,7 @@ export function ProductVariantPicker({
                   className="h-full w-full object-contain p-1"
                 />
               </span>
-              <span className="mt-1.5 line-clamp-2 min-h-[2.5rem] w-full text-center text-[11px] font-medium leading-tight text-[#57534e]">
+              <span className="mt-1 line-clamp-2 w-full text-center text-[10px] font-medium leading-tight text-[#57534e] sm:mt-1.5 sm:text-[11px]">
                 {variant.label}
               </span>
               {pricesVary ? (

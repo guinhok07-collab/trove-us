@@ -54,7 +54,7 @@ export default function RootLayout({
             <BrowseScrollRestore />
           </Suspense>
           <SiteHeader />
-          <TrustStrip />
+          <TrustStrip className="hidden sm:block" />
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </CartProvider>

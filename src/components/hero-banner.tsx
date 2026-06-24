@@ -16,43 +16,43 @@ interface HeroBannerProps {
 
 export function HeroBanner({ heroTiles }: HeroBannerProps) {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-[#e7e5e4] bg-gradient-to-br from-[#f5f3ef] via-white to-[#eef4f1] px-6 py-10 sm:px-10 sm:py-14 lg:px-12">
-      <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+    <section className="relative overflow-hidden rounded-2xl border border-[#e7e5e4] bg-gradient-to-br from-[#f5f3ef] via-white to-[#eef4f1] px-4 py-6 sm:rounded-3xl sm:px-10 sm:py-14 lg:px-12">
+      <div className="relative z-10 grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <div className="max-w-xl">
-          <p className="text-label mb-4 inline-block rounded-full bg-[#eef4f1] px-4 py-1.5 text-[#4d7366]">
+          <p className="text-label mb-3 inline-block rounded-full bg-[#eef4f1] px-3 py-1 text-[#4d7366] sm:mb-4 sm:px-4 sm:py-1.5">
             {copy.heroBadge}
           </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-[#1c1917] sm:text-[2.75rem] sm:leading-tight">
+          <h1 className="text-2xl font-semibold tracking-tight text-[#1c1917] sm:text-[2.75rem] sm:leading-tight">
             {brand.name}
           </h1>
-          <p className="mt-3 text-base font-normal text-[#78716c]">
+          <p className="mt-2 text-sm font-normal text-[#78716c] sm:mt-3 sm:text-base">
             {brand.tagline}
           </p>
-          <p className="mt-3 text-sm font-medium text-[#5f8a7a]">
+          <p className="mt-2 text-xs font-medium text-[#5f8a7a] sm:mt-3 sm:text-sm">
             {brand.shippingLine}
           </p>
-          <p className="mt-1 text-sm text-[#78716c]">
+          <p className="mt-0.5 text-xs text-[#78716c] sm:mt-1 sm:text-sm">
             {brand.deliveryLine} · {brand.supportLine}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="#departments" className="btn-primary px-6 py-3 shadow-sm">
+          <div className="mt-5 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
+            <Link href="#departments" className="btn-primary w-full px-5 py-2.5 shadow-sm sm:w-auto sm:px-6 sm:py-3">
               {copy.heroCta}
             </Link>
             <Link
               href="#bundles"
-              className="inline-flex items-center rounded-full border border-[#d6d3d1] bg-white px-6 py-3 text-sm font-semibold text-[#44403c] transition hover:border-[#5f8a7a] hover:text-[#4d7366]"
+              className="inline-flex w-full items-center justify-center rounded-full border border-[#d6d3d1] bg-white px-5 py-2.5 text-sm font-semibold text-[#44403c] transition hover:border-[#5f8a7a] hover:text-[#4d7366] sm:w-auto sm:px-6 sm:py-3"
             >
               {copy.heroSecondary}
             </Link>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4">
           {heroTiles.map(({ store, image }) => (
             <Link
               key={store.id}
               href={`/stores/${store.id}`}
-              className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-[#e7e5e4]/80 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+              className="group relative aspect-square overflow-hidden rounded-xl border border-[#e7e5e4]/80 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:aspect-[4/5] sm:rounded-2xl"
             >
               {image ? (
                 <Image
@@ -111,13 +111,13 @@ export function StoreQuickNav() {
 
 export function TrustBadges() {
   return (
-    <section className="mt-14">
-      <div className="mb-6 text-center sm:mb-8">
+    <section className="mt-8 sm:mt-14">
+      <div className="mb-4 text-center sm:mb-8">
         <h2 className="section-title">{copy.whyShopTitle}</h2>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
         {copy.whyShop.map((item) => (
-          <div key={item.title} className="card p-5 sm:p-6">
+          <div key={item.title} className="card p-4 sm:p-6">
             <IconBox name={item.icon} size="md" />
             <p className="mt-4 text-sm font-semibold text-[#1c1917]">
               {item.title}

@@ -40,7 +40,7 @@ export function AddToCartButton({
       type="button"
       onClick={handleClick}
       disabled={!product.inStock}
-      className={`btn-primary px-8 py-3.5 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
+      className={`btn-primary w-full px-6 py-3 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:px-8 sm:py-3.5 ${className}`}
     >
       {added ? "Added to cart ✓" : product.inStock ? "Add to Cart" : "Out of Stock"}
     </button>

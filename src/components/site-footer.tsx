@@ -6,7 +6,7 @@ import { NewsletterSignup } from "@/components/newsletter-signup";
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-[#e7e5e4] bg-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-7xl gap-6 px-3 py-8 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <p className="font-display text-lg font-semibold text-[#1c1917]">
             {brand.name}

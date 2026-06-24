@@ -46,12 +46,12 @@ export default async function HomePage() {
   );
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 sm:py-10">
+    <div className="mx-auto max-w-[1400px] px-3 py-4 sm:px-6 sm:py-10">
       <HeroBanner heroTiles={heroTiles} />
       <PromoBanner />
       <TrustBadges />
 
-      <section id="bundles" className="mt-14 scroll-mt-24">
+      <section id="bundles" className="mt-8 scroll-mt-20 sm:mt-14 sm:scroll-mt-24">
         <div className="mb-6">
           <h2 className="section-title">{copy.bundlesTitle}</h2>
           <p className="section-subtitle mt-1">{copy.bundlesSub}</p>
@@ -63,13 +63,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <div id="departments" className="mt-14">
+      <div id="departments" className="mt-8 sm:mt-14">
         <StorePortalGrid stores={storeList} counts={storeCounts} />
       </div>
 
       <StoreQuickNav />
 
-      <section className="mt-14">
+      <section className="mt-8 sm:mt-14">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <h2 className="section-title">{copy.shopMoreTitle}</h2>
@@ -88,7 +88,7 @@ export default async function HomePage() {
       <AboutSection />
 
       {storeBestsellers.map(({ store, products: bestsellers }) => (
-        <section key={store.id} className="mt-14">
+        <section key={store.id} className="mt-8 sm:mt-14">
           <div className="mb-6 flex items-end justify-between gap-4">
             <div>
               <h2 className="section-title">{store.name}</h2>
@@ -105,7 +105,7 @@ export default async function HomePage() {
         </section>
       ))}
 
-      <section className="card mt-14 p-8">
+      <section className="card mt-8 p-4 sm:mt-14 sm:p-8">
         <h2 className="section-title">{copy.bestSellers}</h2>
         <p className="section-subtitle mt-2">{copy.bestSellersSub}</p>
         <ProductGrid products={globalBestsellers} variant="compact" className="mt-6" />
@@ -113,7 +113,7 @@ export default async function HomePage() {
 
       <GuaranteeBanner />
 
-      <section className="mt-10 mb-4 rounded-3xl border border-[#e7e5e4] bg-white px-8 py-10 text-center">
+      <section className="mt-8 mb-4 rounded-2xl border border-[#e7e5e4] bg-white px-4 py-6 text-center sm:mt-10 sm:rounded-3xl sm:px-8 sm:py-10">
         <h2 className="section-title">{copy.promiseTitle}</h2>
         <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#57534e]">
           {copy.promiseText}
