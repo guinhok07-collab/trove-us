@@ -12,7 +12,12 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { orderId, items } = body as {
       orderId?: string;
-      items?: Array<{ productId?: string; slug?: string; quantity: number }>;
+      items?: Array<{
+        productId?: string;
+        slug?: string;
+        variantId?: string;
+        quantity: number;
+      }>;
     };
 
     if (!orderId || !items?.length) {
@@ -22,7 +27,14 @@ export async function POST(request: Request) {
       );
     }
 
-    const resolvedItems = await resolveOrderItems(items);
+    const resolvedItems = await resolveOrderItems(
+      items.map((item) => ({
+        productId: item.productId,
+        slug: item.slug,
+        variantId: item.variantId,
+        quantity: item.quantity,
+      })),
+    );
     const { shipping, total } = calculateOrderTotals(resolvedItems);
 
     const paypalOrderId = await createPayPalOrder({

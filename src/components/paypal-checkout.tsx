@@ -68,6 +68,7 @@ export function PayPalCheckout({
                 items: orderPayload.items.map((item) => ({
                   productId: item.productId,
                   slug: item.slug,
+                  variantId: item.variantId,
                   quantity: item.quantity,
                 })),
               }),

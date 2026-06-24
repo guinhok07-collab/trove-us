@@ -86,7 +86,7 @@ export function ProductVariantPicker({
               </p>
 
               {isColor ? (
-                <div className="mt-2 flex flex-wrap gap-2">
+                <div className="mt-2 grid grid-cols-5 gap-2 sm:grid-cols-6 md:grid-cols-8">
                   {available.map((value) => {
                     const rep = representativeVariantForOption(
                       variants,
@@ -102,7 +102,7 @@ export function ProductVariantPicker({
                         type="button"
                         title={value}
                         onClick={() => pickOption(dim, value)}
-                        className={`relative h-11 w-11 overflow-hidden rounded-lg border-2 bg-[#fafaf9] transition ${
+                        className={`relative aspect-square w-full overflow-hidden rounded-lg border-2 bg-[#fafaf9] transition ${
                           active
                             ? "border-[#5f8a7a] ring-2 ring-[#5f8a7a]/25"
                             : "border-[#e7e5e4] hover:border-[#5f8a7a]/40"
@@ -152,7 +152,7 @@ export function ProductVariantPicker({
     );
   }
 
-  const compactGrid = variants.length > 8;
+  const pricesVary = new Set(variants.map((v) => v.price)).size > 1;
 
   return (
     <div className="mt-6 border-b border-[#f5f5f4] pb-6">
@@ -161,39 +161,9 @@ export function ProductVariantPicker({
         <span className="ml-2 font-normal text-[#57534e]">{selected.label}</span>
       </p>
 
-      <div
-        className={`mt-3 ${
-          compactGrid
-            ? "grid grid-cols-6 gap-2 sm:grid-cols-8 md:grid-cols-10"
-            : "flex flex-wrap gap-2"
-        }`}
-      >
+      <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
         {variants.map((variant) => {
           const active = variant.id === selectedId;
-          if (compactGrid) {
-            return (
-              <button
-                key={variant.id}
-                type="button"
-                title={variant.label}
-                onClick={() => onSelect(variant.id)}
-                disabled={!variant.inStock}
-                className={`relative aspect-square overflow-hidden rounded-lg border-2 bg-[#fafaf9] transition ${
-                  active
-                    ? "border-[#5f8a7a] ring-2 ring-[#5f8a7a]/25"
-                    : "border-[#e7e5e4] hover:border-[#5f8a7a]/40"
-                } ${!variant.inStock ? "cursor-not-allowed opacity-45" : ""}`}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={variant.image}
-                  alt={variant.label}
-                  className="h-full w-full object-contain p-1"
-                />
-              </button>
-            );
-          }
-
           return (
             <button
               key={variant.id}
@@ -201,21 +171,28 @@ export function ProductVariantPicker({
               onClick={() => onSelect(variant.id)}
               disabled={!variant.inStock}
               title={variant.label}
-              className={`inline-flex max-w-[220px] items-center gap-2 rounded-lg border px-2.5 py-2 text-sm transition ${
+              className={`flex min-h-[7.5rem] flex-col items-center rounded-lg border-2 p-2 transition ${
                 active
-                  ? "border-[#5f8a7a] bg-[#eef4f1] text-[#4d7366]"
-                  : "border-[#e7e5e4] bg-white text-[#57534e] hover:border-[#5f8a7a]/40"
+                  ? "border-[#5f8a7a] bg-[#eef4f1] ring-2 ring-[#5f8a7a]/25"
+                  : "border-[#e7e5e4] bg-white hover:border-[#5f8a7a]/40"
               } ${!variant.inStock ? "cursor-not-allowed opacity-45" : ""}`}
             >
-              <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-md bg-[#f5f5f4] ring-1 ring-[#e7e5e4]">
+              <span className="flex aspect-square w-full max-w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#f5f5f4] ring-1 ring-[#e7e5e4]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={variant.image}
                   alt=""
-                  className="h-full w-full object-contain p-0.5"
+                  className="h-full w-full object-contain p-1"
                 />
               </span>
-              <span className="truncate text-left">{variant.label}</span>
+              <span className="mt-1.5 line-clamp-2 min-h-[2.5rem] w-full text-center text-[11px] font-medium leading-tight text-[#57534e]">
+                {variant.label}
+              </span>
+              {pricesVary ? (
+                <span className="mt-1 text-[11px] font-semibold text-[#1c1917]">
+                  ${variant.price.toFixed(2)}
+                </span>
+              ) : null}
             </button>
           );
         })}

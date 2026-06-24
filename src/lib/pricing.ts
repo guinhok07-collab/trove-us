@@ -5,6 +5,36 @@ import type { CreateStoreOrderItem, CreateStoreOrderRequest } from "@/lib/cj/typ
 
 export const FREE_SHIPPING_MIN = 35;
 export const FLAT_SHIPPING = 4.99;
+export const TARGET_MARGIN = 0.2;
+export const PAYPAL_RATE = 0.034;
+export const MAX_RETAIL = 39.99;
+export const DEFAULT_CJ_SHIPPING = 3.5;
+
+/** Mirror scripts/lib/cj-catalog-lib.mjs — cost + ship + 20% margin + PayPal fee. */
+export function retailPriceFromCost(cost: number, shipping = DEFAULT_CJ_SHIPPING): number {
+  const base = cost + shipping;
+  const raw = base / (1 - TARGET_MARGIN - PAYPAL_RATE);
+  return Math.min(
+    Math.max(Math.ceil(raw) - 0.01, base + 1.5),
+    MAX_RETAIL,
+  );
+}
+
+export function compareAtFromRetail(sell: number): number {
+  return Math.ceil(sell * 1.1) - 0.01;
+}
+
+/** After PayPal fee, approximate net vs product cost (single unit, excl. store shipping). */
+export function estimateUnitEconomics(
+  retail: number,
+  cjCost: number,
+  cjShipping = DEFAULT_CJ_SHIPPING,
+) {
+  const net = retail * (1 - PAYPAL_RATE);
+  const margin = net - cjCost - cjShipping;
+  const marginPct = margin / retail;
+  return { net: roundUsd(net), margin: roundUsd(margin), marginPct };
+}
 
 export interface OrderLineInput {
   productId?: string;
