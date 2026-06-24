@@ -9,7 +9,7 @@ export function SiteHeader() {
   const { itemCount } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e7e5e4]/80 bg-[#faf9f7]/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#e7e5e4]/80 bg-[#faf9f7] sm:bg-[#faf9f7]/95 sm:backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-2 sm:gap-4 sm:px-6 sm:py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#5f8a7a] font-display text-sm font-semibold text-white sm:h-10 sm:w-10 sm:rounded-2xl sm:text-base">
@@ -61,12 +61,12 @@ export function SiteHeader() {
           </Link>
           <Link
             href="/cart"
-            className="relative ml-0.5 flex items-center gap-1.5 rounded-full bg-[#5f8a7a] px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-[#4d7366] sm:ml-1 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
+            className="ml-0.5 flex items-center gap-1 rounded-full bg-[#5f8a7a] px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-[#4d7366] sm:ml-1 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
           >
             <CartIcon />
             <span className="hidden sm:inline">Cart</span>
             {itemCount > 0 && (
-              <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#1c1917] px-0.5 text-[9px] font-bold sm:h-5 sm:min-w-5 sm:text-[10px]">
+              <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-[#1c1917] px-1 text-[9px] font-bold leading-none sm:h-5 sm:min-w-5 sm:text-[10px]">
                 {itemCount}
               </span>
             )}
@@ -74,7 +74,7 @@ export function SiteHeader() {
         </nav>
       </div>
 
-      <div className="scroll-fade-x border-t border-[#e7e5e4]/60 bg-white/60">
+      <div className="border-t border-[#e7e5e4]/60 bg-white/60">
         <div className="mx-auto flex max-w-7xl snap-x snap-mandatory gap-1.5 overflow-x-auto scroll-pl-3 px-3 py-1.5 pr-6 scrollbar-none sm:gap-2 sm:scroll-pl-0 sm:px-4 sm:py-2 sm:pr-4">
           <Link
             href="/products"

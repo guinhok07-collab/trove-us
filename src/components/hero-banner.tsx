@@ -88,8 +88,8 @@ export function HeroBanner({ heroTiles }: HeroBannerProps) {
 export function StoreQuickNav() {
   return (
     <section className="mt-4 sm:mt-8">
-      <div className="scroll-fade-x">
-        <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-0.5 pr-4 scrollbar-none sm:pr-0">
+      <div>
+        <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-0.5 pr-3 scrollbar-none sm:pr-0">
           <Link
             href="/products"
             className="shrink-0 snap-start rounded-full bg-[#1c1917] px-3 py-1.5 text-xs font-semibold text-white sm:px-4 sm:py-2 sm:text-sm"
