@@ -35,10 +35,10 @@ export default async function StorePage({ params, searchParams }: StorePageProps
   );
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+    <div className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-10">
       <TrackStoreView store={store.id} />
 
-      <nav className="mb-6 text-sm text-[#a8a29e]">
+      <nav className="mb-3 text-xs text-[#a8a29e] sm:mb-6 sm:text-sm">
         <Link href="/" className="hover:text-[#4d7366]">
           {brand.name}
         </Link>
@@ -47,23 +47,27 @@ export default async function StorePage({ params, searchParams }: StorePageProps
       </nav>
 
       <section
-        className={`rounded-3xl border border-[#e7e5e4] bg-gradient-to-br ${store.bgGradient} px-6 py-10 sm:px-10`}
+        className={`rounded-xl border border-[#e7e5e4] bg-gradient-to-br ${store.bgGradient} px-4 py-4 sm:rounded-3xl sm:px-10 sm:py-8`}
       >
-        <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/70 shadow-sm">
-          <StoreIcon store={store.id} size="lg" variant="white" />
-        </span>
-        <h1 className="mt-5 text-3xl font-semibold tracking-tight text-[#1c1917] sm:text-4xl">
-          {store.name}
-        </h1>
-        <p className="mt-3 max-w-xl text-base leading-relaxed text-[#57534e]">
-          {store.description}
-        </p>
-        <p className="mt-4 text-sm font-medium text-[#78716c]">
-          {totalItems} products · {copy.productDelivery}
-        </p>
+        <div className="flex items-start gap-3 sm:block">
+          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/70 shadow-sm sm:mt-0 sm:h-14 sm:w-14 sm:rounded-2xl">
+            <StoreIcon store={store.id} size="lg" variant="white" />
+          </span>
+          <div className="min-w-0 flex-1 sm:mt-5">
+            <h1 className="text-xl font-semibold tracking-tight text-[#1c1917] sm:text-4xl">
+              {store.name}
+            </h1>
+            <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-[#57534e] sm:mt-3 sm:line-clamp-none sm:text-base">
+              {store.description}
+            </p>
+            <p className="mt-2 text-xs font-medium text-[#78716c] sm:mt-4 sm:text-sm">
+              {totalItems} products · {copy.productDelivery}
+            </p>
+          </div>
+        </div>
       </section>
 
-      <ProductGrid products={items} variant="compact" className="mt-10" />
+      <ProductGrid products={items} variant="compact" className="mt-4 sm:mt-8" />
       <ProductPagination
         currentPage={currentPage}
         totalPages={totalPages}
@@ -72,7 +76,7 @@ export default async function StorePage({ params, searchParams }: StorePageProps
         hrefBase={`/stores/${store.id}`}
       />
 
-      <div className="mt-12 text-center">
+      <div className="mt-8 text-center sm:mt-12">
         <Link
           href="/"
           className="text-sm font-semibold text-[#5f8a7a] hover:text-[#4d7366]"

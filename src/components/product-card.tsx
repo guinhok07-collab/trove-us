@@ -47,6 +47,17 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
           }
           onError={() => setImageSrc(FALLBACK_IMAGE)}
         />
+        {product.tags.includes("bestseller") && (
+          <span
+            className={`absolute rounded-full bg-[#1c1917]/85 font-semibold text-white ${
+              compact
+                ? "right-2 top-2 px-1.5 py-0.5 text-[9px]"
+                : "right-3 top-3 px-2 py-0.5 text-[10px]"
+            }`}
+          >
+            {compact ? "Hot" : "Best seller"}
+          </span>
+        )}
         {discount > 0 && (
           <span
             className={`absolute left-2 top-2 rounded-full bg-[#fef2f2] font-semibold text-[#b45309] ${
@@ -91,7 +102,11 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
             </span>
           )}
         </div>
-        {!compact && (
+        {compact ? (
+          <p className="mt-1 text-[10px] text-[#a8a29e]">
+            ★ {product.rating} · {product.sold.toLocaleString()} sold
+          </p>
+        ) : (
           <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-[#a8a29e]">
             <span className="flex items-center gap-0.5">
               <span className="text-[#b8956a]">★</span> {product.rating}

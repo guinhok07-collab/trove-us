@@ -25,6 +25,12 @@ const display = Plus_Jakarta_Sans({
 
 import { siteMetadata, siteUrl } from "@/lib/site";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover" as const,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -55,7 +61,7 @@ export default function RootLayout({
           </Suspense>
           <SiteHeader />
           <TrustStrip className="hidden sm:block" />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-[max(1rem,env(safe-area-inset-bottom))]">{children}</main>
           <SiteFooter />
         </CartProvider>
       </body>

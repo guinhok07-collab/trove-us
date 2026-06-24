@@ -3,20 +3,20 @@
 import Link from "next/link";
 import { brand } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
-import { storeList } from "@/data/stores";
+import { storeList, storeShortNames } from "@/data/stores";
 
 export function SiteHeader() {
   const { itemCount } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e7e5e4]/80 bg-[#faf9f7]/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-2.5 sm:gap-4 sm:px-6 sm:py-4">
+    <header className="sticky top-0 z-50 border-b border-[#e7e5e4]/80 bg-[#faf9f7]/95 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-2 sm:gap-4 sm:px-6 sm:py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#5f8a7a] font-display text-sm font-semibold text-white sm:h-10 sm:w-10 sm:rounded-2xl sm:text-base">
             T
           </span>
           <div className="leading-none">
-            <p className="font-display text-lg font-semibold tracking-tight text-[#1c1917] sm:text-xl">
+            <p className="font-display text-base font-semibold tracking-tight text-[#1c1917] sm:text-xl">
               {brand.name}
             </p>
             <p className="mt-0.5 hidden text-xs font-normal text-[#78716c] sm:block">
@@ -55,13 +55,13 @@ export function SiteHeader() {
           </Link>
           <Link
             href="/products"
-            className="rounded-full px-2.5 py-2 text-sm font-medium text-[#57534e] hover:bg-white hover:text-[#1c1917] sm:px-3"
+            className="rounded-full px-2 py-1.5 text-xs font-medium text-[#57534e] hover:bg-white hover:text-[#1c1917] sm:px-3 sm:py-2 sm:text-sm"
           >
             Shop
           </Link>
           <Link
             href="/cart"
-            className="relative ml-0.5 flex items-center gap-1.5 rounded-full bg-[#5f8a7a] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#4d7366] sm:ml-1 sm:gap-2 sm:px-4 sm:py-2.5"
+            className="relative ml-0.5 flex items-center gap-1.5 rounded-full bg-[#5f8a7a] px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-[#4d7366] sm:ml-1 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
           >
             <CartIcon />
             <span className="hidden sm:inline">Cart</span>
@@ -74,15 +74,22 @@ export function SiteHeader() {
         </nav>
       </div>
 
-      <div className="border-t border-[#e7e5e4]/60 bg-white/50 px-3 py-1.5 sm:px-4 sm:py-2.5">
-        <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto scrollbar-none">
+      <div className="scroll-fade-x border-t border-[#e7e5e4]/60 bg-white/60">
+        <div className="mx-auto flex max-w-7xl snap-x snap-mandatory gap-1.5 overflow-x-auto scroll-pl-3 px-3 py-1.5 pr-6 scrollbar-none sm:gap-2 sm:scroll-pl-0 sm:px-4 sm:py-2 sm:pr-4">
+          <Link
+            href="/products"
+            className="shrink-0 snap-start rounded-full bg-[#1c1917] px-2.5 py-1 text-[11px] font-semibold text-white sm:px-3 sm:py-1.5 sm:text-xs"
+          >
+            All
+          </Link>
           {storeList.map((store) => (
             <Link
               key={store.id}
               href={`/stores/${store.id}`}
-              className="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium text-[#78716c] transition hover:bg-[#eef4f1] hover:text-[#4d7366] sm:px-3 sm:py-1.5 sm:text-xs"
+              className="shrink-0 snap-start rounded-full border border-[#e7e5e4] bg-white px-2.5 py-1 text-[11px] font-medium text-[#57534e] transition hover:border-[#5f8a7a]/40 hover:text-[#4d7366] sm:px-3 sm:py-1.5 sm:text-xs"
             >
-              {store.name}
+              <span className="sm:hidden">{storeShortNames[store.id]}</span>
+              <span className="hidden sm:inline">{store.name}</span>
             </Link>
           ))}
         </div>
@@ -90,13 +97,13 @@ export function SiteHeader() {
 
       <form
         action="/products"
-        className="border-t border-[#e7e5e4]/60 px-3 py-2 md:hidden"
+        className="border-t border-[#e7e5e4]/60 px-3 py-1.5 md:hidden"
       >
         <input
           type="search"
           name="q"
-          placeholder="Search..."
-          className="w-full rounded-lg border border-[#e7e5e4] bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#eef4f1]"
+          placeholder="Search products..."
+          className="w-full rounded-lg border border-[#e7e5e4] bg-white px-3 py-1.5 text-sm outline-none focus:ring-2 focus:ring-[#eef4f1]"
         />
       </form>
     </header>
