@@ -34,18 +34,19 @@ export function PayPalCheckout({
 }: PayPalCheckoutProps) {
   const live = mode === "live";
 
+  const scriptOptions = {
+    clientId,
+    currency: "USD",
+    intent: "capture" as const,
+    components: live ? "buttons,messages" : "buttons",
+    locale: "en_US",
+    enableFunding: live ? "card,paylater" : "card,paylater",
+    // buyerCountry is sandbox-only — breaks live SDK with HTTP 400
+    ...(live ? {} : { buyerCountry: "US" }),
+  };
+
   return (
-    <PayPalScriptProvider
-      options={{
-        clientId,
-        currency: "USD",
-        intent: "capture",
-        components: live ? "buttons,messages" : "buttons",
-        locale: "en_US",
-        buyerCountry: "US",
-        enableFunding: live ? "card,venmo,paylater" : "card,paylater",
-      }}
-    >
+    <PayPalScriptProvider options={scriptOptions}>
       <div className={disabled ? "pointer-events-none opacity-50" : ""}>
         {live && total >= 30 && (
           <div className="mb-4 min-h-[24px]">
