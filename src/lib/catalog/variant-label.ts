@@ -5,10 +5,22 @@ const COLOR_WORDS =
 
 const SIZE_PATTERN = /^(\d+(\.\d+)?\s?(cm|mm|in|inch|inches|"))$|^((XXS|XS|S|M|L|XL|XXL|XXXL|2XL|3XL|4XL|5XL))$/i;
 
+const PACK_VALUE = /^\d+\s*pcs?$/i;
+
 export interface VariantDimension {
   name: string;
+  /** Shopper-facing label (e.g. "Pack size" instead of "Option 2") */
+  displayName: string;
   index: number;
   values: string[];
+}
+
+export function looksLikePackValue(value: string): boolean {
+  return PACK_VALUE.test(value.trim());
+}
+
+export function isPackSizeDimension(values: string[]): boolean {
+  return values.length > 0 && values.every(looksLikePackValue);
 }
 
 function looksLikeRawSku(value: string) {
@@ -55,7 +67,28 @@ function inferDimensionName(values: string[], index: number) {
     return "Size";
   }
   if (values.every((v) => /\d+\s?cm/i.test(v))) return "Length";
+  if (isPackSizeDimension(values)) return "Pack size";
   return index === 0 ? "Style" : `Option ${index + 1}`;
+}
+
+function resolveDisplayName(internalName: string, values: string[], index: number): string {
+  if (isPackSizeDimension(values)) return "Pack size";
+  if (/^Option \d+$/i.test(internalName)) {
+    const inferred = inferDimensionName(values, index);
+    if (!/^Option \d+$/i.test(inferred)) return inferred;
+  }
+  return internalName;
+}
+
+function sortDimensionValues(values: string[], displayName: string): string[] {
+  if (displayName === "Pack size") {
+    return [...values].sort((a, b) => {
+      const na = Number(a.match(/(\d+)/)?.[1] ?? 0);
+      const nb = Number(b.match(/(\d+)/)?.[1] ?? 0);
+      return na - nb || a.localeCompare(b);
+    });
+  }
+  return values;
 }
 
 export function getVariantDimensions(variants: ProductVariant[]): VariantDimension[] {
@@ -63,21 +96,26 @@ export function getVariantDimensions(variants: ProductVariant[]): VariantDimensi
     (v) => v.optionValues && Object.keys(v.optionValues).length > 0,
   );
   if (withOptions?.optionValues) {
-    const order = ["Color", "Connector", "Style", "Size", "Length"];
+    const order = ["Color", "Connector", "Style", "Pack size", "Size", "Length"];
     const names = Object.keys(withOptions.optionValues).sort((a, b) => {
       const ai = order.indexOf(a);
       const bi = order.indexOf(b);
       return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
     });
-    return names.map((name, index) => ({
-      name,
-      index,
-      values: [
+    return names.map((name, index) => {
+      const values = [
         ...new Set(
           variants.map((v) => v.optionValues?.[name]).filter((v): v is string => Boolean(v)),
         ),
-      ],
-    }));
+      ];
+      const displayName = resolveDisplayName(name, values, index);
+      return {
+        name,
+        displayName,
+        index,
+        values: sortDimensionValues(values, displayName),
+      };
+    });
   }
 
   const parsed = variants.map((v) => {
@@ -92,10 +130,12 @@ export function getVariantDimensions(variants: ProductVariant[]): VariantDimensi
   for (let i = 0; i < maxLen; i++) {
     const values = [...new Set(parsed.map((p) => p[i]).filter(Boolean))];
     if (!values.length) continue;
+    const displayName = inferDimensionName(values, i);
     dimensions.push({
-      name: inferDimensionName(values, i),
+      name: displayName,
+      displayName,
       index: i,
-      values,
+      values: sortDimensionValues(values, displayName),
     });
   }
   return dimensions;
@@ -152,4 +192,20 @@ export function representativeVariantForOption(
       return getOptionValue(v, d.name, d.index) === sel;
     });
   });
+}
+
+export function optionPricesVary(
+  variants: ProductVariant[],
+  dimensions: VariantDimension[],
+  dim: VariantDimension,
+  selected: Record<string, string>,
+  availableValues: string[],
+): boolean {
+  const prices = availableValues
+    .map(
+      (value) =>
+        representativeVariantForOption(variants, dimensions, dim, value, selected)?.price,
+    )
+    .filter((p): p is number => p != null);
+  return new Set(prices).size > 1;
 }

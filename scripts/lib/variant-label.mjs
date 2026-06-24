@@ -5,6 +5,16 @@ const COLOR_WORDS =
 
 const SIZE_PATTERN = /^(\d+(\.\d+)?\s?(cm|mm|in|inch|inches|"))$|^((XXS|XS|S|M|L|XL|XXL|XXXL|2XL|3XL|4XL|5XL))$/i;
 
+const PACK_VALUE = /^\d+\s*pcs?$/i;
+
+export function looksLikePackValue(value) {
+  return PACK_VALUE.test(String(value).trim());
+}
+
+export function isPackSizeDimension(values) {
+  return values.length > 0 && values.every(looksLikePackValue);
+}
+
 export function formatVariantKey(key) {
   return key
     .split("-")
@@ -103,6 +113,7 @@ function inferDimensionName(values, index) {
     return "Size";
   }
   if (values.every((v) => /\d+\s?cm/i.test(v))) return "Length";
+  if (isPackSizeDimension(values)) return "Pack size";
   return index === 0 ? "Style" : `Option ${index + 1}`;
 }
 
@@ -209,7 +220,7 @@ export function getCatalogDimensions(variants) {
     if (v.optionValues) Object.keys(v.optionValues).forEach((k) => names.add(k));
   }
   if (!names.size) return [];
-  const order = ["Color", "Connector", "Style", "Size", "Length"];
+  const order = ["Color", "Connector", "Style", "Pack size", "Size", "Length"];
   return [...names].sort((a, b) => {
     const ai = order.indexOf(a);
     const bi = order.indexOf(b);

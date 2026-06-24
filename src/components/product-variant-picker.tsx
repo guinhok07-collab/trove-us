@@ -7,9 +7,12 @@ import {
   getAvailableValues,
   getOptionValue,
   getVariantDimensions,
+  looksLikePackValue,
+  optionPricesVary,
   representativeVariantForOption,
   type VariantDimension,
 } from "@/lib/catalog/variant-label";
+import { formatUsd } from "@/lib/format";
 
 interface ProductVariantPickerProps {
   variants: ProductVariant[];
@@ -73,17 +76,31 @@ export function ProductVariantPicker({
           const available = getAvailableValues(variants, dimensions, dim, selectedOptions);
           const current = selectedOptions[dim.name];
           const isColor = dim.name === "Color";
+          const isPack = dim.displayName === "Pack size";
+          const showPrices = optionPricesVary(
+            variants,
+            dimensions,
+            dim,
+            selectedOptions,
+            available,
+          );
 
           return (
             <div key={dim.name}>
               <p className="text-xs font-semibold uppercase tracking-wide text-[#78716c]">
-                {dim.name}
+                {dim.displayName}
                 {current ? (
                   <span className="ml-2 normal-case tracking-normal text-[#57534e]">
                     — {current}
                   </span>
                 ) : null}
               </p>
+
+              {isPack ? (
+                <p className="mt-1 text-[11px] leading-snug text-[#78716c]">
+                  Each option is one pack — use cart quantity to order more.
+                </p>
+              ) : null}
 
               {isColor ? (
                 <div className="mt-2 grid grid-cols-5 gap-2 sm:grid-cols-6 md:grid-cols-8">
@@ -125,21 +142,41 @@ export function ProductVariantPicker({
                   })}
                 </div>
               ) : (
-                <div className="mt-2 flex flex-wrap gap-2">
+                <div className={`mt-2 flex flex-wrap gap-2 ${isPack ? "gap-1.5" : ""}`}>
                   {available.map((value) => {
+                    const rep = representativeVariantForOption(
+                      variants,
+                      dimensions,
+                      dim,
+                      value,
+                      selectedOptions,
+                    );
                     const active = current === value;
                     return (
                       <button
                         key={value}
                         type="button"
                         onClick={() => pickOption(dim, value)}
-                        className={`rounded-lg border px-3 py-1.5 text-sm transition ${
+                        className={`rounded-lg border transition ${
+                          isPack || showPrices
+                            ? "flex min-w-[4.25rem] flex-col items-center px-2.5 py-2"
+                            : "px-3 py-1.5"
+                        } text-sm ${
                           active
                             ? "border-[#5f8a7a] bg-[#eef4f1] font-semibold text-[#4d7366]"
                             : "border-[#e7e5e4] bg-white text-[#57534e] hover:border-[#5f8a7a]/40"
                         }`}
                       >
-                        {value}
+                        <span>{value}</span>
+                        {showPrices && rep ? (
+                          <span
+                            className={`mt-0.5 text-[11px] ${
+                              active ? "font-semibold text-[#4d7366]" : "font-medium text-[#78716c]"
+                            }`}
+                          >
+                            {formatUsd(rep.price)}
+                          </span>
+                        ) : null}
                       </button>
                     );
                   })}
@@ -153,13 +190,25 @@ export function ProductVariantPicker({
   }
 
   const pricesVary = new Set(variants.map((v) => v.price)).size > 1;
+  const hasPackOptions = variants.some((v) => {
+    if (v.optionValues) {
+      return Object.values(v.optionValues).some((val) => looksLikePackValue(String(val)));
+    }
+    return /\d+\s*pcs/i.test(v.label);
+  });
 
   return (
     <div className="mt-6 border-b border-[#f5f5f4] pb-6">
       <p className="text-sm font-semibold text-[#1c1917]">
-        Options
+        {hasPackOptions ? "Pack size" : "Options"}
         <span className="ml-2 font-normal text-[#57534e]">{selected.label}</span>
       </p>
+
+      {hasPackOptions ? (
+        <p className="mt-1 text-[11px] leading-snug text-[#78716c]">
+          Each option is one pack — use cart quantity to order more.
+        </p>
+      ) : null}
 
       <div className="mt-3 grid grid-cols-3 gap-1.5 sm:grid-cols-3 sm:gap-2 md:grid-cols-4">
         {variants.map((variant) => {
@@ -190,7 +239,7 @@ export function ProductVariantPicker({
               </span>
               {pricesVary ? (
                 <span className="mt-1 text-[11px] font-semibold text-[#1c1917]">
-                  ${variant.price.toFixed(2)}
+                  {formatUsd(variant.price)}
                 </span>
               ) : null}
             </button>
