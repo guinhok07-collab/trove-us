@@ -26,7 +26,7 @@ export function HeroBanner({ heroTiles }: HeroBannerProps) {
             {brand.name}
           </h1>
           <p className="mt-1 text-sm text-[#78716c] sm:mt-3 sm:text-base">{brand.tagline}</p>
-          <p className="mt-1 hidden text-xs font-medium text-[#5f8a7a] sm:block sm:mt-3 sm:text-sm">
+          <p className="mt-1 text-xs font-medium text-[#5f8a7a] sm:mt-3 sm:text-sm">
             {brand.shippingLine}
           </p>
           <p className="mt-0.5 hidden text-xs text-[#78716c] sm:mt-1 sm:text-sm">

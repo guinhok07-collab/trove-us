@@ -42,6 +42,17 @@ export const copy = {
     "Ready-made kits for pet walks, desk setup, and recovery — every order ships free.",
   heroCta: "Start Shopping",
   heroSecondary: "Shop kits",
+  freeShippingBannerBadge: "Always included",
+  freeShippingBannerTitle: "Free shipping on every order",
+  freeShippingBannerHighlight: "Every product. Every state. Zero delivery fee.",
+  freeShippingBannerSub:
+    "The price on the page is the price at checkout — delivered to your door with no shipping surprise.",
+  freeShippingBannerCta: "Shop with free delivery",
+  freeShippingBannerPerks: [
+    "All 50 US states",
+    "Ships in 3–5 days",
+    "No hidden fees",
+  ] as const,
   shopDepartments: "Shop by Department",
   shopDepartmentsSub:
     "Home, pets, wellness, and everyday gear — all in one place.",
