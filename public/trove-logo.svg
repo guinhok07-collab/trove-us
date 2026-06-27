@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" fill="#faf9f7"/>
+  <rect x="122" y="122" width="268" height="268" rx="107.2" fill="#5f8a7a"/>
+  <text
+    x="256"
+    y="292"
+    text-anchor="middle"
+    font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif"
+    font-size="107"
+    font-weight="600"
+    fill="#ffffff"
+  >T</text>
+</svg>
