@@ -6,7 +6,7 @@ import { copy } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
 import { cartLineKey } from "@/lib/catalog/variants";
 import { formatUsd } from "@/lib/format";
-import { calculateShipping, FREE_SHIPPING_MIN } from "@/lib/pricing";
+import { calculateShipping } from "@/lib/pricing";
 
 export default function CartPage() {
   const { items, subtotal, updateQuantity, removeItem, clearCart } = useCart();
@@ -118,11 +118,6 @@ export default function CartPage() {
                 {shipping === 0 ? "Free" : formatUsd(shipping)}
               </dd>
             </div>
-            {subtotal < FREE_SHIPPING_MIN && subtotal > 0 && (
-              <p className="text-xs text-[#5f8a7a]">
-                Add {formatUsd(FREE_SHIPPING_MIN - subtotal)} more for free shipping
-              </p>
-            )}
             <div className="flex justify-between border-t border-[#f5f5f4] pt-4">
               <dt className="font-semibold text-[#1c1917]">Total</dt>
               <dd className="text-lg font-semibold text-[#1c1917]">

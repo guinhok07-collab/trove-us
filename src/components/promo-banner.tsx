@@ -6,7 +6,6 @@ import { copy } from "@/data/brand";
 import { getProductBySlug } from "@/data/products";
 import { saveBrowseReturn } from "@/lib/browse-return";
 import { formatUsd } from "@/lib/format";
-import { calculateShipping } from "@/lib/pricing";
 
 export function PromoBanner() {
   const product = getProductBySlug("percussion-massage-gun");
@@ -26,10 +25,7 @@ export function PromoBanner() {
           <p className="mt-2 text-base font-semibold text-[#4d7366] sm:mt-3 sm:text-lg">
             {formatUsd(product.price)}{" "}
             <span className="text-xs font-normal text-[#78716c] sm:text-sm">
-              +{" "}
-              {calculateShipping(product.price) === 0
-                ? "free shipping"
-                : `${formatUsd(calculateShipping(product.price))} shipping`}
+              delivered · free shipping
             </span>
           </p>
           <div className="mt-3 flex flex-wrap gap-2 sm:mt-5 sm:gap-3">

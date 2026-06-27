@@ -3,11 +3,10 @@ import { getVisibleProductBySlug } from "@/lib/catalog/visible-products";
 import { applyVariant, findVariant } from "@/lib/catalog/variants";
 import type { CreateStoreOrderItem, CreateStoreOrderRequest } from "@/lib/cj/types";
 
+/** Legacy threshold — kept for bundle copy; checkout shipping is always $0. */
 export const FREE_SHIPPING_MIN = 35;
-export const FLAT_SHIPPING = 4.99;
-/** Single cheap item — keeps total under ~$9.20 (~R$50 via PayPal). */
-export const ECONOMY_SHIPPING = 3.19;
-export const ECONOMY_SHIPPING_MAX = 10;
+/** @deprecated Shipping is free at checkout; cost baked into sub-$13 item prices. */
+export const FLAT_SHIPPING = 0;
 export const TARGET_MARGIN = 0.2;
 export const PAYPAL_RATE = 0.034;
 export const MAX_RETAIL = 39.99;
@@ -56,10 +55,8 @@ export function roundUsd(value: number): number {
   return Math.round(value * 100) / 100;
 }
 
-export function calculateShipping(subtotal: number): number {
-  if (subtotal >= FREE_SHIPPING_MIN) return 0;
-  if (subtotal > 0 && subtotal < ECONOMY_SHIPPING_MAX) return ECONOMY_SHIPPING;
-  return FLAT_SHIPPING;
+export function calculateShipping(_subtotal: number): number {
+  return 0;
 }
 
 async function resolveProduct(input: OrderLineInput) {

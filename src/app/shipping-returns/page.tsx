@@ -6,7 +6,7 @@ import { RETURN_FRAUD_RULES, RETURN_STEPS } from "@/lib/returns/policy";
 
 export const metadata: Metadata = {
   title: `Shipping & Returns — ${brand.name}`,
-  description: `Shipping times, free shipping threshold, and 30-day return policy at ${brand.name}.`,
+  description: `Shipping times, free delivery on every order, and 30-day return policy at ${brand.name}.`,
 };
 
 export default function ShippingReturnsPage() {
@@ -16,11 +16,10 @@ export default function ShippingReturnsPage() {
         <ul className="mt-2 list-inside list-disc space-y-1.5">
           <li>Ships from US warehouses to all 50 states</li>
           <li>Most orders arrive in 3–5 business days</li>
-          <li>Free standard shipping on orders over $35</li>
+          <li>Free standard shipping on every order — included in the price</li>
           <li>
             You&apos;ll receive a tracking number by email once your order ships
           </li>
-          <li>Shipping cost for orders under $35: $4.99 flat rate</li>
         </ul>
       </PolicySection>
 

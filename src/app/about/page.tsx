@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FaqList, WhyShopGrid } from "@/components/faq-list";
 import { brand, copy } from "@/data/brand";
 import { PolicyLayout, PolicySection } from "@/components/policy-layout";
-import { FLAT_SHIPPING, FREE_SHIPPING_MIN } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: `About — ${brand.name}`,
@@ -19,7 +18,7 @@ export default function AboutPage() {
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         {[
           { label: "Delivery", value: "3–5 business days" },
-          { label: "Free shipping", value: `$${FREE_SHIPPING_MIN}+ orders` },
+          { label: "Free shipping", value: "Every order" },
           { label: "Returns", value: "30-day window" },
           { label: "Coverage", value: "All 50 states" },
         ].map((stat) => (
@@ -55,10 +54,7 @@ export default function AboutPage() {
           </li>
           <li className="flex gap-2">
             <span className="font-semibold text-[#5f8a7a]">✓</span>
-            <span>
-              Free standard shipping on orders over ${FREE_SHIPPING_MIN.toFixed(2)} — $
-              {FLAT_SHIPPING.toFixed(2)} flat rate below that
-            </span>
+            <span>Free standard shipping on every order — no extra fee at checkout</span>
           </li>
           <li className="flex gap-2">
             <span className="font-semibold text-[#5f8a7a]">✓</span>

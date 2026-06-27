@@ -7,7 +7,7 @@ import type { ProductBundle } from "@/data/bundles";
 import { getBundleProducts, getBundleSubtotal } from "@/data/bundles";
 import { useCart } from "@/context/cart-context";
 import { saveBrowseReturn } from "@/lib/browse-return";
-import { calculateShipping, FREE_SHIPPING_MIN } from "@/lib/pricing";
+import { calculateShipping } from "@/lib/pricing";
 import { formatUsd } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
 import { trackMetaAddToCart } from "@/lib/meta-pixel";
@@ -23,7 +23,6 @@ export function BundleCard({ bundle }: BundleCardProps) {
   const subtotal = getBundleSubtotal(bundle);
   const shipping = calculateShipping(subtotal);
   const total = subtotal + shipping;
-  const freeShipping = subtotal >= FREE_SHIPPING_MIN;
 
   if (products.length === 0) return null;
 
@@ -95,10 +94,8 @@ export function BundleCard({ bundle }: BundleCardProps) {
           </div>
 
           {bundle.highlight && (
-            <p
-              className={`mt-3 min-h-[2.5rem] text-xs font-medium ${freeShipping ? "text-[#4d7366]" : "text-[#78716c]"}`}
-            >
-              {freeShipping ? "✓ Free shipping on this kit" : bundle.highlight}
+            <p className="mt-3 min-h-[2.5rem] text-xs font-medium text-[#4d7366]">
+              ✓ Free shipping on this kit
             </p>
           )}
 

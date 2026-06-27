@@ -15,13 +15,13 @@ export const bundles: ProductBundle[] = [
     id: "pet-walk-kit",
     slug: "pet-walk-kit",
     name: "Pet Walk Kit",
-    tagline: "Leash, 270 bag rolls, and walk cup — free shipping unlocked.",
+    tagline: "Leash, 270 bag rolls, and walk cup — ships free.",
     productSlugs: [
       "retractable-dog-leash",
       "pet-waste-bag-refills",
       "portable-pet-water-bottle",
     ],
-    highlight: "Free shipping unlocked",
+    highlight: "Free shipping included",
   },
   {
     id: "recovery-duo",
@@ -29,7 +29,7 @@ export const bundles: ProductBundle[] = [
     name: "Recovery Duo",
     tagline: "Mini massage gun plus resistance bands for post-workout recovery.",
     productSlugs: ["percussion-massage-gun", "yoga-resistance-bands"],
-    highlight: "Under $20 — add one more item for free shipping",
+    highlight: "Ships free — delivered price",
   },
   {
     id: "desk-setup",
@@ -41,7 +41,7 @@ export const bundles: ProductBundle[] = [
       "usb-c-charging-cable",
       "cable-management-box",
     ],
-    highlight: "Free shipping unlocked",
+    highlight: "Free shipping included",
   },
 ];
 

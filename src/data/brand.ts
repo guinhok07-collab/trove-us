@@ -6,7 +6,7 @@ export const brand = {
     "Everyday products for home, pets, wellness, and work — curated with care, delivered fast across the United States.",
   supportEmail: "orders@trove-us.com",
   locationLine: "Delivering to all 50 states",
-  shippingLine: "Ships from US warehouses · Free delivery over $35",
+  shippingLine: "Free US delivery on every order · Ships from US warehouses",
   deliveryLine: "Most orders arrive in 3–5 business days",
   supportLine: "Real support at orders@trove-us.com",
   trustLine: "Secure checkout · Easy 30-day returns · Real human support",
@@ -32,14 +32,14 @@ export const domainGuide = {
 } as const;
 
 export const copy = {
-  heroBadge: "US shipping · Curated essentials · Real support",
+  heroBadge: "Free US delivery · Curated essentials · Real support",
   promoBadge: "This week's pick",
   promoTitle: "Mini massage gun — recovery under $15 delivered",
   promoText:
-    "Deep percussion relief after workouts, without the $60+ price tag. Pair it with our Recovery Duo kit or add any second item to unlock free shipping.",
+    "Deep percussion relief after workouts, without the $60+ price tag. Price includes delivery — no shipping fee at checkout.",
   bundlesTitle: "Curated kits",
   bundlesSub:
-    "Save on shipping with ready-made bundles — pet walks, desk setup, and recovery.",
+    "Ready-made kits for pet walks, desk setup, and recovery — every order ships free.",
   heroCta: "Start Shopping",
   heroSecondary: "Shop kits",
   shopDepartments: "Shop by Department",
@@ -73,7 +73,7 @@ export const copy = {
     { icon: "lock" as const, label: "SSL Secure Checkout" },
     { icon: "credit-card" as const, label: "PayPal & Cards Accepted" },
     { icon: "credit-card" as const, label: "Pay in 4 — orders $30+" },
-    { icon: "package" as const, label: "Free Shipping $35+" },
+    { icon: "package" as const, label: "Free Shipping" },
     { icon: "return" as const, label: "30-Day Returns" },
     { icon: "map-pin" as const, label: "All 50 States" },
   ],
@@ -100,7 +100,7 @@ export const copy = {
     },
     {
       q: "Do you offer free shipping?",
-      a: "Yes — standard shipping is free on orders of $35 or more. Single-item orders under $10 ship for $3.19; other orders under $35 are $4.99 flat at checkout.",
+      a: "Yes — every order includes free standard US delivery. The price you see is what you pay at checkout (no shipping line added).",
     },
     {
       q: "Where do you ship?",

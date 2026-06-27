@@ -6,15 +6,8 @@ import { readFileSync } from "fs";
 import { extractProductBlock } from "./lib/cj-catalog-lib.mjs";
 import { priceMatchesFormula } from "./catalog-ship.mjs";
 
-const FREE_SHIPPING_MIN = 35;
-const FLAT_SHIPPING = 4.99;
-
-function roundUsd(n) {
-  return Math.round(n * 100) / 100;
-}
-
-function calculateShipping(subtotal) {
-  return subtotal >= FREE_SHIPPING_MIN ? 0 : FLAT_SHIPPING;
+function calculateShipping(_subtotal) {
+  return 0;
 }
 
 function calculateOrderTotals(items) {
