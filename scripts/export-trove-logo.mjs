@@ -1,5 +1,5 @@
 /**
- * Export Trove profile logo PNG — pixel match to site-header.tsx logo mark.
+ * Export Trove profile logo PNG — full sage green, no white background.
  * Usage: node scripts/export-trove-logo.mjs
  */
 import { chromium } from "playwright";
@@ -11,11 +11,9 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const out = resolve(root, "public/trove-profile-logo.png");
 
 const size = 1080;
-// site-header.tsx: sm:h-10 sm:w-10 sm:rounded-2xl sm:text-base
-// 40px box, 16px radius (40%), 16px font (40% of box)
-const markSize = Math.round(size * 0.52);
-const cornerRadius = Math.round(markSize * 0.4);
-const fontSize = Math.round(markSize * 0.4);
+// site-header: rounded-2xl on 40px icon = 40% corner radius
+const cornerRadius = Math.round(size * 0.4);
+const fontSize = Math.round(size * 0.4);
 
 const html = `<!DOCTYPE html>
 <html>
@@ -30,19 +28,13 @@ const html = `<!DOCTYPE html>
       body {
         width: ${size}px;
         height: ${size}px;
-        background: #faf9f7;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .mark {
-        width: ${markSize}px;
-        height: ${markSize}px;
-        border-radius: ${cornerRadius}px;
         background: #5f8a7a;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: ${cornerRadius}px;
+      }
+      .t {
         font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
         font-weight: 600;
         font-size: ${fontSize}px;
@@ -53,7 +45,7 @@ const html = `<!DOCTYPE html>
     </style>
   </head>
   <body>
-    <div class="mark">T</div>
+    <span class="t">T</span>
   </body>
 </html>`;
 
