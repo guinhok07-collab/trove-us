@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-
-const FALLBACK =
-  "https://cf.cjdropshipping.com/8c2a47b2-cff5-43ef-9950-1b0e517b85d7.png";
+import { isCatalogCdnUrl, PRODUCT_IMAGE_FALLBACK } from "@/lib/catalog-image";
 
 interface ProductGalleryProps {
   name: string;
@@ -23,7 +21,9 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
   const [broken, setBroken] = useState<Record<number, boolean>>({});
 
   const safeActive = Math.min(active, Math.max(gallery.length - 1, 0));
-  const currentSrc = broken[safeActive] ? FALLBACK : gallery[safeActive] || FALLBACK;
+  const currentSrc =
+    broken[safeActive] ? PRODUCT_IMAGE_FALLBACK : gallery[safeActive] || PRODUCT_IMAGE_FALLBACK;
+  const unoptimized = isCatalogCdnUrl(currentSrc);
   const hasVideo = Boolean(video?.startsWith("http"));
 
   return (
@@ -45,6 +45,7 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
             className="object-contain p-2"
             priority={safeActive === 0}
             sizes="(max-width: 1024px) 100vw, 50vw"
+            unoptimized={unoptimized}
             onError={() => setBroken((b) => ({ ...b, [safeActive]: true }))}
           />
         )}
@@ -86,11 +87,12 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
             aria-label={`View image ${i + 1}`}
           >
             <Image
-              src={broken[i] ? FALLBACK : src}
+              src={broken[i] ? PRODUCT_IMAGE_FALLBACK : src}
               alt=""
               fill
               className="object-contain p-0.5"
               sizes="64px"
+              unoptimized={isCatalogCdnUrl(src)}
               onError={() => setBroken((b) => ({ ...b, [i]: true }))}
             />
           </button>

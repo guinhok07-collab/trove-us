@@ -5,11 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { storeLabels } from "@/data/products";
 import { saveBrowseReturn } from "@/lib/browse-return";
+import { isCatalogCdnUrl, PRODUCT_IMAGE_FALLBACK } from "@/lib/catalog-image";
 import { Product } from "@/types/product";
 import { calcDiscount, formatUsd } from "@/lib/format";
-
-const FALLBACK_IMAGE =
-  "https://cf.cjdropshipping.com/8c2a47b2-cff5-43ef-9950-1b0e517b85d7.png";
 
 interface ProductCardProps {
   product: Product;
@@ -45,7 +43,8 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
               ? "(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
               : "(max-width: 768px) 50vw, 25vw"
           }
-          onError={() => setImageSrc(FALLBACK_IMAGE)}
+          unoptimized={isCatalogCdnUrl(imageSrc)}
+          onError={() => setImageSrc(PRODUCT_IMAGE_FALLBACK)}
         />
         {product.tags.includes("bestseller") && (
           <span

@@ -42,6 +42,8 @@ export const metadata: Metadata = {
     ...siteMetadata.openGraph,
     url: siteUrl,
   },
+  twitter: siteMetadata.twitter,
+  icons: siteMetadata.icons,
 };
 
 export default function RootLayout({

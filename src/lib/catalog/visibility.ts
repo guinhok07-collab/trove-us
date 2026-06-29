@@ -10,6 +10,7 @@ export const DEFAULT_HIDDEN_SLUGS = [
   "garbage-bag-holder",
   "mason-jar-storage-lids",
   "over-sink-dish-rack",
+  "silicone-food-storage-bags",
 ] as const;
 
 export type VisibilityOverride = Record<string, boolean>;
