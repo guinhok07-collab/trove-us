@@ -10,6 +10,7 @@ import { defaultHiddenForSlug } from "./lib/catalog-visibility.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const auditPath = resolve(__dirname, "../src/data/catalog-cj-audit.json");
+const imageAuditPath = resolve(__dirname, "../src/data/catalog-image-live-audit.json");
 const productsPath = resolve(__dirname, "../src/data/products.ts");
 
 if (!existsSync(auditPath)) {
@@ -48,6 +49,24 @@ if (visibleErrors.length) {
   }
   console.log("\nFAILED — loja visível não pode ter erro CJ. Relink com PID ou catalogHidden: true.\n");
   process.exit(1);
+}
+
+if (existsSync(imageAuditPath)) {
+  const imageAudit = JSON.parse(readFileSync(imageAuditPath, "utf8"));
+  const imageErrors = (imageAudit.issues ?? []).filter(
+    (i) => i.level === "error" && !isHidden(i.slug),
+  );
+  if (imageErrors.length) {
+    console.log("\nVISIBLE IMAGE ERRORS (broken URL or duplicate hero):");
+    for (const i of imageErrors) {
+      console.log(`  ✗ ${i.slug} — ${i.messages?.join("; ")}`);
+    }
+    console.log("\nFAILED — run npm run catalog:audit-images and hide/fix products.\n");
+    process.exit(1);
+  }
+  console.log(
+    `✓ Image live audit — ${imageAudit.summary?.brokenUrls ?? 0} broken URLs, ${imageAudit.summary?.visibleErrors ?? 0} visible errors`,
+  );
 }
 
 console.log("✓ Nenhum produto visível com erro CJ");

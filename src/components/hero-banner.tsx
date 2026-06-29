@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CatalogImage } from "@/components/catalog-image";
 import Link from "next/link";
 import { brand, copy } from "@/data/brand";
 import { storeList, storeShortNames } from "@/data/stores";
@@ -56,7 +56,7 @@ export function HeroBanner({ heroTiles }: HeroBannerProps) {
               className="group relative aspect-square overflow-hidden rounded-xl border border-[#e7e5e4]/80 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:aspect-[4/5] sm:rounded-2xl"
             >
               {image ? (
-                <Image
+                <CatalogImage
                   src={image}
                   alt={store.name}
                   fill

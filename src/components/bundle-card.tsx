@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { CatalogImage } from "@/components/catalog-image";
 import type { ProductBundle } from "@/data/bundles";
 import { getBundleProducts, getBundleSubtotal } from "@/data/bundles";
 import { useCart } from "@/context/cart-context";
@@ -51,7 +51,7 @@ export function BundleCard({ bundle }: BundleCardProps) {
             onClick={() => saveBrowseReturn(product.slug)}
             className="relative aspect-square overflow-hidden rounded-lg bg-white"
           >
-            <Image
+            <CatalogImage
               src={product.image}
               alt={product.name}
               fill

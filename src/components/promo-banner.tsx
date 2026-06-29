@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { CatalogImage } from "@/components/catalog-image";
 import { copy } from "@/data/brand";
 import { getProductBySlug } from "@/data/products";
 import { saveBrowseReturn } from "@/lib/browse-return";
@@ -45,7 +45,7 @@ export function PromoBanner() {
           </div>
         </div>
         <div className="relative mx-auto h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-[#e7e5e4] bg-white sm:h-40 sm:w-40 sm:rounded-2xl">
-          <Image
+          <CatalogImage
             src={product.image}
             alt={product.name}
             fill

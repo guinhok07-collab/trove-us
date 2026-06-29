@@ -10,6 +10,9 @@ export const DEFAULT_HIDDEN_SLUGS = [
   "garbage-bag-holder",
   "mason-jar-storage-lids",
   "over-sink-dish-rack",
+  "silicone-food-storage-bags",
+  "sleep-eye-mask",
+  "gaming-mouse-pad-large",
 ];
 
 export function defaultHiddenForSlug(slug, catalogHidden) {

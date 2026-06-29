@@ -12,6 +12,7 @@
     "catalog:check:cj": "node --env-file=.env.local scripts/catalog-check.mjs --cj",
     "catalog:audit": "node --env-file=.env.local scripts/audit-catalog-cj.mjs",
     "catalog:integrity": "node scripts/catalog-integrity-gate.mjs",
+    "catalog:audit-images": "node scripts/audit-live-product-images.mjs",
     "catalog:report": "node scripts/generate-verified-catalog-report.mjs",
     "catalog:expand:tech": "node --env-file=.env.local scripts/expand-tech-catalog.mjs",
     "catalog:expand:home-wellness": "node --env-file=.env.local scripts/expand-home-wellness-catalog.mjs",

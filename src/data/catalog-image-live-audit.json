@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "auditedAt": "2026-06-29T14:34:35.032Z",
+    "totalProducts": 143,
+    "uniqueUrls": 1714,
+    "brokenUrls": 0,
+    "issueCount": 4,
+    "visibleErrors": 0,
+    "visibleWarnings": 4,
+    "recommendHide": []
+  },
+  "issues": [
+    {
+      "slug": "sleep-eye-mask",
+      "name": "Contoured Sleep Eye Mask",
+      "store": "wellness",
+      "hidden": false,
+      "level": "warn",
+      "messages": [
+        "only 1 image(s) — minimum 4 recommended"
+      ],
+      "badUrls": [],
+      "dupPeers": []
+    },
+    {
+      "slug": "gaming-mouse-pad-large",
+      "name": "Large Gaming Mouse Pad",
+      "store": "tech",
+      "hidden": false,
+      "level": "warn",
+      "messages": [
+        "only 1 image(s) — minimum 4 recommended"
+      ],
+      "badUrls": [],
+      "dupPeers": []
+    },
+    {
+      "slug": "smartwatch-band-silicone",
+      "name": "Silicone Smartwatch Band",
+      "store": "tech",
+      "hidden": false,
+      "level": "warn",
+      "messages": [
+        "only 3 image(s) — minimum 4 recommended"
+      ],
+      "badUrls": [],
+      "dupPeers": []
+    },
+    {
+      "slug": "silicone-stove-gap-cover",
+      "name": "Silicone Stove Gap Cover",
+      "store": "home",
+      "hidden": false,
+      "level": "warn",
+      "messages": [
+        "only 3 image(s) — minimum 4 recommended"
+      ],
+      "badUrls": [],
+      "dupPeers": []
+    }
+  ],
+  "brokenUrls": []
+}
