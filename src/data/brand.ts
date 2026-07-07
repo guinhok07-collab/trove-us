@@ -90,6 +90,15 @@ export const copy = {
     { icon: "return" as const, label: "30-Day Returns" },
     { icon: "map-pin" as const, label: "All 50 States" },
   ],
+  homePaymentTrustTitle: "Shop with confidence",
+  homePaymentTrust: [
+    { icon: "lock" as const, label: "SSL Secure Checkout" },
+    { icon: "credit-card" as const, label: "Cards & PayPal Accepted", paymentMarks: true },
+    { icon: "credit-card" as const, label: "Pay in 4 — orders $30+" },
+    { icon: "truck" as const, label: "Free Shipping, all 50 states" },
+    { icon: "return" as const, label: "30-Day Returns" },
+    { icon: "support" as const, label: "Real Human Support" },
+  ] as const,
   aboutTitle: "Useful stuff, one place",
   aboutLead:
     "Trove is a tight catalog of everyday essentials for home, pets, wellness, and work — curated with care, priced honestly, and shipped free across the US.",

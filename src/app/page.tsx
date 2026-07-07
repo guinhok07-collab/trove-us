@@ -4,6 +4,7 @@ import { AboutSection, GuaranteeBanner } from "@/components/about-section";
 import { BundleCard } from "@/components/bundle-card";
 import { HeroBanner, StoreQuickNav, TrustBadges } from "@/components/hero-banner";
 import { FreeShippingBanner } from "@/components/free-shipping-banner";
+import { HomePaymentTrust } from "@/components/home-payment-trust";
 import { PromoBanner } from "@/components/promo-banner";
 import { ProductGrid } from "@/components/product-grid";
 import { bundles } from "@/data/bundles";
@@ -73,6 +74,8 @@ export default async function HomePage() {
         </div>
         <ProductGrid products={globalBestsellers} variant="compact" />
       </section>
+
+      <HomePaymentTrust />
 
       <StoreQuickNav className="hidden md:block" />
 
