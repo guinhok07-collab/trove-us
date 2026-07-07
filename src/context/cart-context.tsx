@@ -8,9 +8,10 @@ import {
   useMemo,
   useState,
 } from "react";
-import { CartItem, Product } from "@/types/product";
-import { cartLineKey } from "@/lib/catalog/variants";
+import { getProductBySlug } from "@/data/products";
+import { applyVariant, cartLineKey } from "@/lib/catalog/variants";
 import { roundUsd } from "@/lib/pricing";
+import { CartItem, Product } from "@/types/product";
 
 interface AddItemOptions {
   quantity?: number;
@@ -33,6 +34,30 @@ const CartContext = createContext<CartContextValue | null>(null);
 const STORAGE_KEY = "trove-cart";
 const LEGACY_STORAGE_KEY = "techdrop-us-cart";
 
+/** Refresh snapshot from live catalog so images/prices never go stale. */
+function refreshCartItem(item: CartItem): CartItem | null {
+  const slug = item.product?.slug?.trim();
+  if (!slug) return item;
+
+  const live = getProductBySlug(slug);
+  if (!live) return item;
+
+  const variantId = item.variantId ?? live.cjVid;
+  const product = applyVariant(live, variantId);
+  return {
+    ...item,
+    product,
+    variantId,
+    variantLabel: item.variantLabel,
+  };
+}
+
+function refreshCartItems(items: CartItem[]): CartItem[] {
+  return items
+    .map(refreshCartItem)
+    .filter((item): item is CartItem => Boolean(item?.product?.id));
+}
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
@@ -44,7 +69,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         stored = localStorage.getItem(LEGACY_STORAGE_KEY);
         if (stored) localStorage.setItem(STORAGE_KEY, stored);
       }
-      if (stored) setItems(JSON.parse(stored));
+      if (stored) {
+        const parsed = JSON.parse(stored) as CartItem[];
+        setItems(refreshCartItems(Array.isArray(parsed) ? parsed : []));
+      }
     } catch {
       /* ignore */
     }
@@ -60,6 +88,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const quantity = options.quantity ?? 1;
     const variantId = options.variantId ?? product.cjVid;
     const lineKey = cartLineKey(product.id, variantId);
+    const live = getProductBySlug(product.slug) ?? product;
+    const snapshot = applyVariant(live, variantId);
 
     setItems((current) => {
       const existing = current.find(
@@ -68,14 +98,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (existing) {
         return current.map((i) =>
           cartLineKey(i.product.id, i.variantId ?? i.product.cjVid) === lineKey
-            ? { ...i, quantity: i.quantity + quantity }
+            ? { ...i, product: snapshot, quantity: i.quantity + quantity }
             : i,
         );
       }
       return [
         ...current,
         {
-          product,
+          product: snapshot,
           quantity,
           variantId,
           variantLabel: options.variantLabel,

@@ -97,16 +97,23 @@ export async function createCjOrder(
   return json.data;
 }
 
+/** CJ payType: 2 = wallet auto-pay, 3 = create order, pay manually in CJ dashboard. */
+export function getCjPayType(): number {
+  const raw = process.env.CJ_PAY_TYPE?.trim();
+  const n = raw ? Number(raw) : 3;
+  if (n === 2 || n === 3) return n;
+  return 3;
+}
+
 export function getCjClientConfig(): CjClientConfig | null {
   const apiKey = process.env.CJ_API_KEY?.trim();
   if (!apiKey) return null;
 
-  const payType = Number(process.env.CJ_PAY_TYPE ?? "2");
   return {
     apiKey,
     fromCountryCode: process.env.CJ_FROM_COUNTRY?.trim() || "US",
     storeName: process.env.CJ_STORE_NAME?.trim() || "Trove",
-    payType: Number.isFinite(payType) ? payType : 2,
+    payType: getCjPayType(),
     logisticName: process.env.CJ_LOGISTIC_NAME?.trim() || undefined,
   };
 }

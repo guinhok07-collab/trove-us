@@ -1,18 +1,31 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqList, WhyShopGrid } from "@/components/faq-list";
+import { InstagramLink } from "@/components/instagram-link";
 import { brand, copy } from "@/data/brand";
 import { PolicyLayout, PolicySection } from "@/components/policy-layout";
 
 export const metadata: Metadata = {
   title: `About — ${brand.name}`,
-  description: copy.aboutText,
+  description: copy.aboutLead,
 };
+
+function StoryParagraphs({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("\n\n").map((paragraph) => (
+        <p key={paragraph.slice(0, 40)} className="mt-4 text-base leading-relaxed text-[#57534e] first:mt-0">
+          {paragraph}
+        </p>
+      ))}
+    </>
+  );
+}
 
 export default function AboutPage() {
   return (
     <PolicyLayout title={`About ${brand.name}`}>
-      <p className="text-base leading-relaxed text-[#57534e]">{copy.aboutText}</p>
+      <p className="text-base leading-relaxed text-[#57534e]">{copy.aboutLead}</p>
       <p className="text-sm font-medium text-[#5f8a7a]">{brand.tagline}</p>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -33,6 +46,52 @@ export default function AboutPage() {
           </div>
         ))}
       </div>
+
+      <PolicySection title={copy.aboutStoryTitle}>
+        <StoryParagraphs text={copy.aboutStoryText} />
+      </PolicySection>
+
+      <PolicySection title={copy.aboutCurationTitle}>
+        <p className="text-base leading-relaxed text-[#57534e]">{copy.aboutCurationIntro}</p>
+        <ul className="mt-4 space-y-2">
+          {copy.aboutCurationPoints.map((point) => (
+            <li key={point} className="flex gap-2 text-[#57534e]">
+              <span className="font-semibold text-[#5f8a7a]">•</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </PolicySection>
+
+      <PolicySection title={copy.aboutHowTitle}>
+        <p className="text-base leading-relaxed text-[#57534e]">{copy.aboutHowText}</p>
+      </PolicySection>
+
+      <PolicySection title={copy.aboutExpectTitle}>
+        <ul className="mt-2 space-y-2">
+          {copy.aboutPoints.map((p) => (
+            <li key={p} className="flex gap-2">
+              <span className="font-semibold text-[#5f8a7a]">✓</span>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+      </PolicySection>
+
+      <PolicySection title={copy.aboutEarlyTitle}>
+        <p className="text-base leading-relaxed text-[#57534e]">{copy.aboutEarlyText}</p>
+        <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
+          <a
+            href={`mailto:${brand.supportEmail}`}
+            className="text-[#5f8a7a] hover:text-[#4d7366] hover:underline"
+          >
+            Talk to us →
+          </a>
+          <Link href="/products" className="text-[#5f8a7a] hover:text-[#4d7366] hover:underline">
+            Shop the catalog →
+          </Link>
+        </div>
+      </PolicySection>
 
       <PolicySection title={copy.whyShopTitle}>
         <WhyShopGrid items={copy.whyShop} />
@@ -66,17 +125,6 @@ export default function AboutPage() {
             Full shipping & returns policy →
           </Link>
         </p>
-      </PolicySection>
-
-      <PolicySection title="What we believe">
-        <ul className="mt-2 space-y-2">
-          {copy.aboutPoints.map((p) => (
-            <li key={p} className="flex gap-2">
-              <span className="font-semibold text-[#5f8a7a]">✓</span>
-              <span>{p}</span>
-            </li>
-          ))}
-        </ul>
       </PolicySection>
 
       <PolicySection title="Payments & trust">
@@ -114,6 +162,10 @@ export default function AboutPage() {
             {brand.supportEmail}
           </a>
           . {copy.contactHelpResponse}
+        </p>
+        <p className="mt-3">
+          Follow us on Instagram:{" "}
+          <InstagramLink className="font-medium text-[#5f8a7a]" />
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm font-semibold">
           <Link href="/track" className="text-[#5f8a7a] hover:text-[#4d7366]">

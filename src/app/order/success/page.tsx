@@ -1,13 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
+import { CatalogImage } from "@/components/catalog-image";
 import { brand } from "@/data/brand";
+
 import { ORDER_STORAGE_KEY } from "@/lib/orders";
 import { formatUsd } from "@/lib/format";
 import { trackMetaPurchaseOnce } from "@/lib/meta-pixel";
+import { readTrafficAttribution, recordTrafficEvent } from "@/lib/traffic/client";
 
 interface SavedOrder {
   orderId: string;
@@ -48,6 +50,11 @@ function OrderSuccessContent() {
             quantity: item.quantity,
           })),
         );
+        recordTrafficEvent({
+          type: "purchase",
+          path: "/order/success",
+          ...readTrafficAttribution(),
+        });
       }
     } catch {
       /* ignore */
@@ -102,7 +109,7 @@ function OrderSuccessContent() {
           {order.items.map((item) => (
             <li key={item.name} className="flex items-center gap-3">
               <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-[#f5f5f4]">
-                <Image
+                <CatalogImage
                   src={item.image}
                   alt={item.name}
                   fill

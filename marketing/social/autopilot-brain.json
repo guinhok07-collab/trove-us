@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "rules": [
+    "instagram_identity",
+    "video_thumb_one",
+    "video_needs_png",
+    "placement_fix_cycle",
+    "concentrate_budget",
+    "discover_instagram_id"
+  ],
+  "events": [
+    {
+      "at": "2026-07-05T00:37:06.176Z",
+      "type": "llm_action_executed",
+      "action": "placement-fix",
+      "slug": "dog-chew-toy-durable"
+    },
+    {
+      "at": "2026-07-05T00:36:59.822Z",
+      "type": "llm_action_executed",
+      "action": "placement-fix",
+      "slug": "pet-nail-clipper"
+    },
+    {
+      "at": "2026-07-04T23:36:59.856Z",
+      "type": "llm_action_executed",
+      "action": "placement-fix",
+      "slug": "pet-nail-clipper"
+    },
+    {
+      "at": "2026-07-04T23:22:06.160Z",
+      "type": "llm_action_executed",
+      "action": "meta-recs",
+      "slug": "durable-dog-chew-toy"
+    },
+    {
+      "at": "2026-07-04T23:22:05.695Z",
+      "type": "llm_action_executed",
+      "action": "meta-recs",
+      "slug": "pet-nail-clipper"
+    },
+    {
+      "at": "2026-07-04T23:06:11.895Z",
+      "type": "llm_action_executed",
+      "action": "meta-recs",
+      "slug": "pet-nail-clipper"
+    },
+    {
+      "at": "2026-07-04T15:50:52.108Z",
+      "type": "llm_action_executed",
+      "action": "placement-fix",
+      "slug": "pet-hair-remover-roller"
+    },
+    {
+      "at": "2026-07-04T15:46:41.299Z",
+      "type": "raise_daily_budget"
+    },
+    {
+      "at": "2026-07-04T15:45:55.822Z",
+      "type": "llm_action_executed",
+      "action": "placement-fix",
+      "slug": "dog-chew-toy-durable"
+    },
+    {
+      "at": "2026-07-04T15:45:50.955Z",
+      "type": "llm_action_executed",
+      "action": "placement-fix",
+      "slug": "pet-nail-clipper"
+    },
+    {
+      "at": "2026-07-04T15:40:46.673Z",
+      "type": "raise_daily_budget"
+    },
+    {
+      "at": "2026-07-02T23:01:04.995Z",
+      "type": "llm_error",
+      "message": "OpenAI: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "at": "2026-07-02T23:00:51.175Z",
+      "type": "llm_error",
+      "message": "OpenAI: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "at": "2026-07-02T21:01:07.345Z",
+      "type": "llm_error",
+      "message": "OpenAI: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "at": "2026-07-02T21:00:53.109Z",
+      "type": "llm_error",
+      "message": "OpenAI: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "at": "2026-07-02T19:44:23.642Z",
+      "type": "llm_error",
+      "message": "OpenAI: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    }
+  ],
+  "lastBootstrap": "2026-07-07T05:00:10.905Z",
+  "instagramActorId": "17841410970170295"
+}

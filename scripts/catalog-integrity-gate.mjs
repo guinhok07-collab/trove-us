@@ -51,23 +51,39 @@ if (visibleErrors.length) {
   process.exit(1);
 }
 
-if (existsSync(imageAuditPath)) {
-  const imageAudit = JSON.parse(readFileSync(imageAuditPath, "utf8"));
-  const imageErrors = (imageAudit.issues ?? []).filter(
-    (i) => i.level === "error" && !isHidden(i.slug),
-  );
-  if (imageErrors.length) {
-    console.log("\nVISIBLE IMAGE ERRORS (broken URL or duplicate hero):");
-    for (const i of imageErrors) {
-      console.log(`  ✗ ${i.slug} — ${i.messages?.join("; ")}`);
-    }
-    console.log("\nFAILED — run npm run catalog:audit-images and hide/fix products.\n");
-    process.exit(1);
-  }
-  console.log(
-    `✓ Image live audit — ${imageAudit.summary?.brokenUrls ?? 0} broken URLs, ${imageAudit.summary?.visibleErrors ?? 0} visible errors`,
-  );
+if (!existsSync(imageAuditPath)) {
+  console.error("\n✗ Missing catalog-image-live-audit.json");
+  console.error("  Run: npm run catalog:audit-images\n");
+  process.exit(1);
 }
+
+const imageAudit = JSON.parse(readFileSync(imageAuditPath, "utf8"));
+const auditedAt = imageAudit.summary?.auditedAt
+  ? Date.parse(imageAudit.summary.auditedAt)
+  : 0;
+const ageHours = auditedAt ? (Date.now() - auditedAt) / 3_600_000 : Infinity;
+if (ageHours > 48) {
+  console.error(
+    `\n✗ Image audit is ${Math.round(ageHours)}h old (max 48h). Run: npm run catalog:audit-images\n`,
+  );
+  process.exit(1);
+}
+
+const imageErrors = (imageAudit.issues ?? []).filter(
+  (i) => i.level === "error" && !isHidden(i.slug),
+);
+if (imageErrors.length) {
+  console.log("\nVISIBLE IMAGE ERRORS (broken URL or duplicate hero):");
+  for (const i of imageErrors) {
+    console.log(`  ✗ ${i.slug} — ${i.messages?.join("; ")}`);
+  }
+  console.log("\nFAILED — run npm run catalog:audit-images and hide/fix products.\n");
+  process.exit(1);
+}
+console.log(
+  `✓ Image live audit — ${imageAudit.summary?.brokenUrls ?? 0} broken URLs, ${imageAudit.summary?.visibleErrors ?? 0} visible errors (${Math.round(ageHours)}h ago)`,
+);
 
 console.log("✓ Nenhum produto visível com erro CJ");
 console.log("PASS — catálogo visível íntegro\n");
+

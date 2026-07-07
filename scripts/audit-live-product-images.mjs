@@ -2,7 +2,7 @@
  * Live HTTP audit of every catalog image URL + duplicate-hero detection.
  * Usage: node scripts/audit-live-product-images.mjs
  */
-import { readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { extractProductBlock } from "./lib/cj-catalog-lib.mjs";
@@ -13,6 +13,13 @@ const productsPath = resolve(__dirname, "../src/data/products.ts");
 const variantsPath = resolve(__dirname, "../src/data/product-variants.json");
 const outPath = resolve(__dirname, "../src/data/catalog-image-live-audit.json");
 const reportPath = resolve(__dirname, "../src/data/catalog-integrity-report.json");
+const fallbackPath = resolve(__dirname, "../public/product-image-fallback.svg");
+
+if (!existsSync(fallbackPath)) {
+  console.error("✗ Missing public/product-image-fallback.svg");
+  process.exit(1);
+}
+
 
 const source = readFileSync(productsPath, "utf8");
 const variants = JSON.parse(readFileSync(variantsPath, "utf8"));
@@ -120,9 +127,20 @@ const issues = [];
 
 for (const p of products) {
   const bad = p.urls.filter((u) => !urlResults.get(u)?.ok);
+  const heroBroken = p.image ? !urlResults.get(p.image)?.ok : true;
+  const workingAlts = p.urls.filter((u) => u !== p.image && urlResults.get(u)?.ok);
   const dupPeers = urlToSlugs.get(p.image)?.filter((s) => s !== p.slug) ?? [];
   const messages = [];
 
+  if (!p.image) {
+    messages.push("missing primary image");
+  } else if (heroBroken) {
+    messages.push(
+      workingAlts.length
+        ? `primary image broken — swap to alternate: ${workingAlts[0]}`
+        : `primary image broken and no working alternate: ${p.image}`,
+    );
+  }
   if (bad.length) {
     messages.push(`${bad.length} broken URL(s): ${bad.slice(0, 2).join(", ")}`);
   }
@@ -139,9 +157,11 @@ for (const p of products) {
       name: p.name,
       store: p.store,
       hidden: p.hidden,
-      level: bad.length ? "error" : dupPeers.length ? "error" : "warn",
+      level: heroBroken || bad.length || dupPeers.length ? "error" : "warn",
       messages,
       badUrls: bad,
+      heroBroken,
+      suggestedPrimary: heroBroken ? workingAlts[0] ?? null : null,
       dupPeers,
     });
   }

@@ -5,6 +5,7 @@ import { Product } from "@/types/product";
 import { useCart } from "@/context/cart-context";
 import { trackEvent } from "@/lib/analytics";
 import { trackMetaAddToCart } from "@/lib/meta-pixel";
+import { readTrafficAttribution, recordTrafficEvent } from "@/lib/traffic/client";
 
 interface AddToCartButtonProps {
   product: Product;
@@ -30,6 +31,13 @@ export function AddToCartButton({
       slug: product.slug,
       name: product.name,
       price: product.price,
+    });
+    recordTrafficEvent({
+      type: "add_to_cart",
+      path: `/products/${product.slug}`,
+      productSlug: product.slug,
+      store: product.store,
+      ...readTrafficAttribution(),
     });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);

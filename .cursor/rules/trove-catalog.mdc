@@ -1,10 +1,22 @@
 ---
-description: Trove CJ catalog standards — pricing, variants, duplicates, deploy gate
-globs: "{src/data/products.ts,src/data/product-variants.json,scripts/**/*.mjs,src/components/product-variant-picker.tsx,src/lib/pricing.ts}"
+description: Trove CJ catalog standards — pricing, variants, images, duplicates, deploy gate
+globs: "{src/data/products.ts,src/data/product-variants.json,scripts/**/*.mjs,src/components/product-variant-picker.tsx,src/components/catalog-image.tsx,src/lib/catalog-image.ts,src/lib/pricing.ts,src/app/cart/**,src/app/checkout/**}"
 alwaysApply: true
 ---
 
 # Trove catalog (never skip for new/changed products)
+
+## Product images (never show broken photos)
+- **Always** render product photos with `CatalogImage` (`src/components/catalog-image.tsx`) — cart, checkout, cards, gallery, success, banners
+- **Never** use bare `next/image` for `product.image` (Vercel optimizer times out on CJ CDN → broken icon in cart)
+- Every product needs:
+  - `image: "https://…cjdropshipping.com/…"` (primary)
+  - `images: [ … ]` with **at least 3** URLs (prefer 4+) so cart can fall back if primary fails
+- Every **variant** needs its own `image` HTTPS URL
+- Brand fallback file must exist: `public/product-image-fallback.svg`
+- Cart refreshes live catalog on load (`cart-context.tsx`) — still keep URLs valid in data
+- Before deploy after catalog changes: **`npm run catalog:audit-images`** (all live URLs must be HTTP 200)
+- Integrity gate fails if image audit is missing, older than 48h, or has visible errors
 
 ## Pricing formula (every variant)
 - `retail = ceil((cjCost + cjShip) / (1 - 0.20 - 0.034)) - 0.01`, cap `$39.99`
@@ -20,9 +32,12 @@ alwaysApply: true
 1. Copy in `scripts/product-copy.json` for the slug
 2. `node --env-file=.env.local scripts/relink-product-cj.mjs <slug> <pid> [ship]`
 3. Verify with `grep` on `products.ts` (name + cjSku match listing)
-4. **`npm run catalog:check`** before commit — must pass
-5. **`npm run catalog:audit`** + **`npm run catalog:integrity`** — zero visible CJ errors
-6. Build + deploy + push
+4. Confirm `image` + `images[]` (3+) and every variant has `image`
+5. **`npm run catalog:check`** — must pass (blocks bare next/image + missing photos)
+6. **`npm run catalog:audit-images`** — zero broken URLs on visible products
+7. **`npm run catalog:audit`** + **`npm run catalog:integrity`** — zero visible CJ/image errors
+8. Or one shot: **`npm run catalog:verify`**
+9. Build + deploy + push
 
 ## Integrity (never sell wrong CJ item)
 - **Proibido** relabel-only: se não achou PID honesto → `catalogHidden: true` (ver `scripts/mark-catalog-hidden.mjs`)
@@ -33,10 +48,12 @@ alwaysApply: true
 ## Scripts (always use these)
 | Command | Purpose |
 |---------|---------|
-| `npm run catalog:check` | Gate: blocks, variants, duplicate cjVid/cjSku |
-| `npm run catalog:check:cj` | Above + full CJ price audit (127 products) |
+| `npm run catalog:check` | Gate: blocks, variants, images fields, CatalogImage surfaces |
+| `npm run catalog:audit-images` | Live HTTP check of every product/variant image URL |
+| `npm run catalog:check:cj` | Above + full CJ price audit |
 | `npm run catalog:audit` | Full CJ name/variant/price audit → `catalog-cj-audit.json` |
-| `npm run catalog:integrity` | Fail if any **visible** product has CJ audit error |
+| `npm run catalog:integrity` | Fail if any **visible** product has CJ or image error |
+| `npm run catalog:verify` | check + audit-images + integrity (use before deploy) |
 | `npm run catalog:duplicates` | Human-readable duplicate report |
 | `node scripts/sync-all-variants.mjs` | Refresh variants (only after parser fix verified) |
 
@@ -52,6 +69,6 @@ alwaysApply: true
 
 ## Pre-deploy checklist
 ```
-npm run catalog:check && npm run catalog:audit && npm run catalog:integrity && npm run build && npm run deploy
+npm run catalog:verify && npm run build && npm run deploy
 git push origin main
 ```

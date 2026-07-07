@@ -999,40 +999,16 @@
     "node scripts/generate-verified-catalog-report.mjs"
   ],
   "imageLiveAudit": {
-    "auditedAt": "2026-06-29T14:34:35.032Z",
+    "auditedAt": "2026-07-03T21:20:58.713Z",
     "totalProducts": 143,
     "uniqueUrls": 1714,
     "brokenUrls": 0,
-    "issueCount": 4,
+    "issueCount": 2,
     "visibleErrors": 0,
-    "visibleWarnings": 4,
+    "visibleWarnings": 2,
     "recommendHide": []
   },
   "imageLiveIssues": [
-    {
-      "slug": "sleep-eye-mask",
-      "name": "Contoured Sleep Eye Mask",
-      "store": "wellness",
-      "hidden": false,
-      "level": "warn",
-      "messages": [
-        "only 1 image(s) — minimum 4 recommended"
-      ],
-      "badUrls": [],
-      "dupPeers": []
-    },
-    {
-      "slug": "gaming-mouse-pad-large",
-      "name": "Large Gaming Mouse Pad",
-      "store": "tech",
-      "hidden": false,
-      "level": "warn",
-      "messages": [
-        "only 1 image(s) — minimum 4 recommended"
-      ],
-      "badUrls": [],
-      "dupPeers": []
-    },
     {
       "slug": "smartwatch-band-silicone",
       "name": "Silicone Smartwatch Band",

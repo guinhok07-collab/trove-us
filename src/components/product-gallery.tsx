@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
-import { isCatalogCdnUrl, PRODUCT_IMAGE_FALLBACK } from "@/lib/catalog-image";
+import { CatalogImage } from "@/components/catalog-image";
+import { PRODUCT_IMAGE_FALLBACK } from "@/lib/catalog-image";
 
 interface ProductGalleryProps {
   name: string;
@@ -18,13 +18,11 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
   );
   const [active, setActive] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
-  const [broken, setBroken] = useState<Record<number, boolean>>({});
 
   const safeActive = Math.min(active, Math.max(gallery.length - 1, 0));
-  const currentSrc =
-    broken[safeActive] ? PRODUCT_IMAGE_FALLBACK : gallery[safeActive] || PRODUCT_IMAGE_FALLBACK;
-  const unoptimized = isCatalogCdnUrl(currentSrc);
+  const currentSrc = gallery[safeActive] || PRODUCT_IMAGE_FALLBACK;
   const hasVideo = Boolean(video?.startsWith("http"));
+  const alternateCandidates = gallery.filter((_, i) => i !== safeActive);
 
   return (
     <div className="space-y-3">
@@ -35,18 +33,17 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
             controls
             playsInline
             className="h-full w-full object-contain bg-black"
-            poster={gallery[0]}
+            poster={gallery[0] || PRODUCT_IMAGE_FALLBACK}
           />
         ) : (
-          <Image
+          <CatalogImage
             src={currentSrc}
+            candidates={alternateCandidates}
             alt={`${name} — photo ${safeActive + 1}`}
             fill
             className="object-contain p-2"
             priority={safeActive === 0}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            unoptimized={unoptimized}
-            onError={() => setBroken((b) => ({ ...b, [safeActive]: true }))}
           />
         )}
         {gallery.length > 1 && !showVideo && (
@@ -86,14 +83,13 @@ export function ProductGallery({ name, image, images, video }: ProductGalleryPro
             }`}
             aria-label={`View image ${i + 1}`}
           >
-            <Image
-              src={broken[i] ? PRODUCT_IMAGE_FALLBACK : src}
+            <CatalogImage
+              src={src}
+              candidates={gallery.filter((_, idx) => idx !== i)}
               alt=""
               fill
               className="object-contain p-0.5"
               sizes="64px"
-              unoptimized={isCatalogCdnUrl(src)}
-              onError={() => setBroken((b) => ({ ...b, [i]: true }))}
             />
           </button>
         ))}

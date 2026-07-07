@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { recordPaymentIssue } from "@/lib/payment-issues/record";
 import { createPayPalOrder } from "@/lib/paypal";
 import {
   calculateOrderTotals,
@@ -8,9 +9,19 @@ import {
 import { toUserErrorMessage } from "@/lib/user-errors";
 
 export async function POST(request: Request) {
+  let orderId: string | undefined;
   try {
     const body = await request.json();
-    const { orderId, items } = body as {
+    ({ orderId } = body as {
+      orderId?: string;
+      items?: Array<{
+        productId?: string;
+        slug?: string;
+        variantId?: string;
+        quantity: number;
+      }>;
+    });
+    const { items } = body as {
       orderId?: string;
       items?: Array<{
         productId?: string;
@@ -52,9 +63,20 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[paypal/create-order]", error);
     const status = error instanceof OrderPricingError ? 400 : 502;
-    return NextResponse.json(
-      { error: toUserErrorMessage(error, "payment") },
-      { status },
-    );
+    const userMessage = toUserErrorMessage(error, "payment");
+    void recordPaymentIssue({
+      source: "auto_create",
+      problem: userMessage,
+      technicalDetail: [
+        error instanceof Error ? error.message : String(error),
+        (error as Error & { paypal?: { name?: string; debug_id?: string } }).paypal?.name,
+        (error as Error & { paypal?: { debug_id?: string } }).paypal?.debug_id,
+      ]
+        .filter(Boolean)
+        .join(" | "),
+      orderId,
+      path: "/checkout",
+    }).catch((err) => console.error("[paypal/create-order] issue log failed:", err));
+    return NextResponse.json({ error: userMessage }, { status });
   }
 }

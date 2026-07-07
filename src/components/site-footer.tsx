@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { brand } from "@/data/brand";
+import { InstagramLink } from "@/components/instagram-link";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export function SiteFooter() {
@@ -15,6 +16,9 @@ export function SiteFooter() {
             {brand.description}
           </p>
           <p className="mt-3 text-xs text-[#a8a29e]">{brand.locationLine}</p>
+          <div className="mt-4">
+            <InstagramLink className="text-sm font-medium text-[#5f8a7a]" />
+          </div>
           <NewsletterSignup />
         </div>
 
@@ -79,6 +83,9 @@ export function SiteFooter() {
               >
                 {brand.supportEmail}
               </a>
+            </li>
+            <li>
+              <InstagramLink className="text-[#78716c]" />
             </li>
           </ul>
         </div>

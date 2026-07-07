@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trove Aria</title>
+  <meta name="trove-ui-version" content="aria-8-fix-quotes" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f0f2f5;
+      --card: #fff;
+      --border: #dddfe2;
+      --text: #1c1e21;
+      --muted: #65676b;
+      --blue: #1877f2;
+      --green: #31a24c;
+      --red: #e41e3f;
+      --warn: #f7b928;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); font-size: 13px; }
+    a { color: var(--blue); text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; border-radius: 6px; padding: 8px 14px; font-weight: 600; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { filter: brightness(1.05); }
+    .btn-secondary { background: #e4e6eb; color: var(--text); }
+    .btn-danger { background: #ffeef0; color: var(--red); padding: 6px 10px; font-size: 12px; }
+
+    .topbar { background: var(--card); border-bottom: 1px solid var(--border); padding: 0 16px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 36px; height: 36px; border-radius: 8px; background: #5f8a7a; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
+    .topbar h1 { font-size: 17px; font-weight: 700; }
+    .topbar small { color: var(--muted); font-size: 12px; display: block; }
+    .topbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .main { max-width: 1280px; margin: 0 auto; padding: 16px; }
+    .budget-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
+    .budget-card.warn { border-color: var(--warn); background: #fffbeb; }
+    .budget-card.blocked { border-color: var(--red); background: #fff5f5; }
+    .budget-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+    .budget-head strong { font-size: 14px; }
+    .budget-bar { height: 8px; background: #e4e6eb; border-radius: 99px; overflow: hidden; }
+    .budget-fill { height: 100%; background: var(--green); border-radius: 99px; transition: width .3s; }
+    .budget-fill.warn { background: var(--warn); }
+    .budget-fill.blocked { background: var(--red); }
+    .budget-meta { display: flex; gap: 16px; margin-top: 8px; color: var(--muted); font-size: 12px; flex-wrap: wrap; }
+
+    .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 12px; }
+    @media (max-width: 900px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+    .kpi { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+    .kpi .lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; font-weight: 600; }
+    .kpi .val { font-size: 20px; font-weight: 700; margin-top: 4px; }
+
+    .toolbar { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .toolbar span { color: var(--muted); font-size: 12px; margin-right: 4px; }
+
+    .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 0; background: var(--card); border-radius: 8px 8px 0 0; border: 1px solid var(--border); border-bottom: none; }
+    .tab { padding: 12px 20px; font-weight: 600; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; }
+    .tab.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .panel { background: var(--card); border: 1px solid var(--border); border-top: none; border-radius: 0 0 8px 8px; margin-bottom: 16px; overflow: hidden; }
+    .panel.hidden { display: none; }
+
+    .ads-table { width: 100%; border-collapse: collapse; }
+    .ads-table th { text-align: left; padding: 10px 12px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border); background: #f7f8fa; font-weight: 600; }
+    .ads-table td { padding: 10px 12px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+    .ads-table tr:hover td { background: #fafbfc; }
+    .ad-cell { display: flex; align-items: center; gap: 10px; min-width: 200px; }
+    .thumb { width: 48px; height: 48px; border-radius: 6px; object-fit: cover; background: #e4e6eb; flex-shrink: 0; }
+    .ad-name { font-weight: 600; font-size: 13px; line-height: 1.3; }
+    .ad-slug { font-size: 11px; color: var(--muted); }
+
+    .pill { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .pill.active { background: #e7f3ff; color: var(--blue); }
+    .pill.paused { background: #e4e6eb; color: var(--muted); }
+    .pill.learning { background: #eef4f1; color: #4d7366; }
+    .pill.strong { background: #e6f4ea; color: var(--green); }
+    .pill.weak { background: #fce8e6; color: var(--red); }
+    .pill.contender { background: #e7f3ff; color: #1877f2; }
+
+    .log-list { max-height: 420px; overflow-y: auto; }
+    .log-item { padding: 10px 16px; border-bottom: 1px solid #f0f2f5; display: flex; gap: 12px; font-size: 13px; }
+    .log-item time { color: var(--muted); font-size: 11px; white-space: nowrap; min-width: 100px; }
+
+    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px; }
+    @media (max-width: 768px) { .ai-grid { grid-template-columns: 1fr; } }
+    .ai-card { border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+    .ai-card h4 { font-size: 13px; margin-bottom: 6px; }
+    .ai-card p { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .ai-card.good { border-left: 3px solid var(--green); }
+    .ai-card.warn { border-left: 3px solid var(--warn); }
+    .ai-card.error { border-left: 3px solid var(--red); }
+    .ai-card.info { border-left: 3px solid var(--blue); }
+
+    .queue-table td { font-size: 13px; }
+    .brief-bar { background: #e7f3ff; border: 1px solid #c9dff5; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; font-size: 13px; line-height: 1.5; }
+    .errors { background: #fff5f5; border: 1px solid #fcc; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; color: var(--red); font-size: 12px; }
+    .warnings { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; color: #92400e; font-size: 12px; }
+    .footer { text-align: center; color: var(--muted); font-size: 11px; padding: 16px; }
+    .toast { position: fixed; bottom: 16px; right: 16px; background: #1c1e21; color: #fff; padding: 12px 16px; border-radius: 8px; display: none; z-index: 99; font-size: 13px; max-width: 420px; line-height: 1.4; }
+    .toast.error { background: #8b1538; }
+    .toast.warn { background: #7a5c00; }
+    .settings-wrap { padding: 16px; max-width: 720px; }
+    .settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 768px) { .settings-grid { grid-template-columns: 1fr; } }
+    .field { margin-bottom: 4px; }
+    .field label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px; color: var(--muted); }
+    .field input, .field select { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font: inherit; }
+    .field-check { display: flex; align-items: center; gap: 8px; padding: 8px 0; }
+    .field-check input { width: auto; }
+    .settings-note { background: #f7f8fa; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+    .settings-actions { margin-top: 14px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .settings-actions small { color: var(--muted); }
+    .alert-box { background: #fff5f5; border: 1px solid #fcc; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; font-size: 12px; color: var(--red); }
+    .alert-box.warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+    .job-banner { background: #e7f3ff; border: 1px solid #1877f2; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; font-size: 13px; }
+    .job-banner.done { background: #e6f4ea; border-color: #31a24c; }
+    .job-banner.error { background: #fff5f5; border-color: #e41e3f; }
+    .job-progress { height: 6px; background: #e4e6eb; border-radius: 99px; margin: 8px 0; overflow: hidden; }
+    .job-progress-fill { height: 100%; background: var(--blue); border-radius: 99px; transition: width .4s; }
+    .job-lines { margin: 6px 0 0; padding-left: 18px; font-size: 12px; color: var(--muted); max-height: 140px; overflow-y: auto; }
+    .job-lines li { margin: 3px 0; }
+    .jarvis-bar { background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%); color: #e0e1dd; border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; border: 1px solid #778da9; }
+    .jarvis-console { display: flex; gap: 16px; align-items: stretch; background: linear-gradient(145deg, #050a12 0%, #0d1b2a 40%, #1a2332 100%); border: 1px solid #2a4a6b; border-radius: 14px; padding: 16px 18px; margin-bottom: 12px; box-shadow: 0 0 24px rgba(30, 136, 229, 0.12), inset 0 1px 0 rgba(100, 181, 246, 0.15); position: relative; overflow: hidden; }
+    .jarvis-console::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #64b5f6, transparent); opacity: 0.5; }
+    .jarvis-core { flex-shrink: 0; width: 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    .jarvis-reactor { width: 52px; height: 52px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #90caf9, #1e88e5 45%, #0d47a1 80%); box-shadow: 0 0 20px rgba(30, 136, 229, 0.6), inset 0 0 12px rgba(144, 202, 249, 0.4); animation: jarvis-pulse 2.5s ease-in-out infinite; }
+    .jarvis-console[data-state="thinking"] .jarvis-reactor { animation: jarvis-pulse-fast 0.8s ease-in-out infinite; box-shadow: 0 0 28px rgba(100, 181, 246, 0.9); }
+    .jarvis-console[data-state="speaking"] .jarvis-reactor { animation: jarvis-speak-glow 0.5s ease-in-out infinite alternate; }
+    .jarvis-console[data-state="permission"] .jarvis-reactor { background: radial-gradient(circle at 35% 35%, #ffe082, #f9a825 45%, #e65100 80%); box-shadow: 0 0 24px rgba(255, 193, 7, 0.7); }
+    .jarvis-console[data-state="offline"] .jarvis-reactor { background: radial-gradient(circle at 35% 35%, #666, #333 80%); box-shadow: none; animation: none; opacity: 0.5; }
+    @keyframes jarvis-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.04); opacity: 0.92; } }
+    @keyframes jarvis-pulse-fast { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+    @keyframes jarvis-speak-glow { from { box-shadow: 0 0 16px rgba(100, 181, 246, 0.5); } to { box-shadow: 0 0 32px rgba(100, 181, 246, 1); } }
+    .jarvis-waves { display: flex; gap: 3px; align-items: flex-end; height: 20px; opacity: 0; transition: opacity 0.3s; }
+    .jarvis-console[data-state="speaking"] .jarvis-waves,
+    .jarvis-console[data-state="thinking"] .jarvis-waves { opacity: 1; }
+    .jarvis-waves span { display: block; width: 4px; height: 8px; background: #64b5f6; border-radius: 2px; animation: jarvis-wave 0.9s ease-in-out infinite; }
+    .jarvis-waves span:nth-child(2) { animation-delay: 0.15s; height: 14px; }
+    .jarvis-waves span:nth-child(3) { animation-delay: 0.3s; height: 10px; }
+    .jarvis-waves span:nth-child(4) { animation-delay: 0.45s; height: 16px; }
+    .jarvis-waves span:nth-child(5) { animation-delay: 0.6s; height: 8px; }
+    @keyframes jarvis-wave { 0%, 100% { transform: scaleY(0.5); opacity: 0.5; } 50% { transform: scaleY(1.2); opacity: 1; } }
+    .jarvis-panel { flex: 1; min-width: 0; }
+    .jarvis-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .jarvis-name { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: #64b5f6; }
+    .jarvis-status-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 8px; border-radius: 99px; background: rgba(49, 162, 76, 0.2); color: #81c784; border: 1px solid rgba(49, 162, 76, 0.4); }
+    .jarvis-console[data-state="thinking"] .jarvis-status-label { background: rgba(100, 181, 246, 0.2); color: #90caf9; border-color: rgba(100, 181, 246, 0.4); }
+    .jarvis-console[data-state="permission"] .jarvis-status-label { background: rgba(255, 193, 7, 0.15); color: #ffd54f; border-color: rgba(255, 193, 7, 0.4); }
+    .jarvis-console[data-state="offline"] .jarvis-status-label { background: rgba(228, 30, 63, 0.15); color: #ef9a9a; border-color: rgba(228, 30, 63, 0.3); }
+    .jarvis-console[data-state="listening"] .jarvis-status-label { background: rgba(228, 30, 63, 0.2); color: #ff8a80; border-color: rgba(228, 30, 63, 0.5); animation: jarvis-pulse-fast 1s infinite; }
+    .jarvis-console[data-state="listening"] .jarvis-reactor { background: radial-gradient(circle at 35% 35%, #ff8a80, #e53935 50%, #b71c1c 80%); animation: jarvis-pulse-fast 0.6s infinite; }
+    .jarvis-console[data-state="listening"] .jarvis-dots { display: flex; }
+    .jarvis-ask-row { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
+    .jarvis-ask-input { flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(100, 181, 246, 0.35); background: rgba(0,0,0,0.35); color: #e8eaed; font: inherit; font-size: 13px; }
+    .jarvis-ask-input::placeholder { color: #7a8a99; }
+    .jarvis-mic-btn { width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(100, 181, 246, 0.2); color: #64b5f6; font-size: 18px; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .jarvis-mic-btn:hover { background: rgba(100, 181, 246, 0.35); }
+    .jarvis-mic-btn.active { background: #e53935; color: #fff; box-shadow: 0 0 16px rgba(229, 57, 53, 0.7); animation: jarvis-pulse-fast 0.8s infinite; }
+    .jarvis-you-said { font-size: 11px; color: #90caf9; margin-top: 6px; font-style: italic; }
+    .jarvis-toggles { margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .jarvis-voice-toggle { font-size: 11px; color: #9aa5b1; display: flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; }
+    .jarvis-voice-toggle input { accent-color: #64b5f6; }
+    .jarvis-voice-pick { font-size: 11px; padding: 3px 6px; border-radius: 6px; border: 1px solid rgba(100, 181, 246, 0.35); background: rgba(0,0,0,0.35); color: #e8eaed; max-width: 190px; }
+    .jarvis-speech { background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(100, 181, 246, 0.2); border-radius: 10px; padding: 12px 14px; min-height: 72px; position: relative; }
+    .jarvis-dots { display: none; gap: 6px; align-items: center; margin-bottom: 8px; }
+    .jarvis-console[data-state="thinking"] .jarvis-dots { display: flex; }
+    .jarvis-console[data-state="thinking"] #jarvisSpeech { opacity: 0.5; }
+    .jarvis-dots span { width: 8px; height: 8px; border-radius: 50%; background: #64b5f6; animation: jarvis-dot-bounce 1.2s ease-in-out infinite; }
+    .jarvis-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .jarvis-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes jarvis-dot-bounce { 0%, 80%, 100% { transform: translateY(0); opacity: 0.4; } 40% { transform: translateY(-6px); opacity: 1; } }
+    #jarvisSpeech { font-size: 14px; line-height: 1.55; color: #e8eaed; margin: 0; }
+    #jarvisQuip { font-size: 12px; color: #90caf9; font-style: italic; margin: 8px 0 0; opacity: 0.9; }
+    .jarvis-meta { display: flex; gap: 12px; margin-top: 10px; font-size: 11px; color: #7a8a99; flex-wrap: wrap; align-items: center; }
+    .jarvis-fixes { font-size: 11px; color: #64b5f6; margin-top: 6px; }
+    .btn-jarvis { background: linear-gradient(135deg, #1e88e5, #1565c0); color: #fff; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo" style="background:linear-gradient(135deg,#e91e63,#7b1fa2);box-shadow:0 0 12px rgba(233,30,99,.4)">A</div>
+      <div><h1>Trove Aria</h1><small id="assistantSubtitle">Assistente inteligente · Meta Ads + PC · Modo Alexa</small></div>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn-jarvis" onclick="runJarvis()">⚡ Aria</button>
+      <button class="btn-secondary" onclick="load()">Atualizar</button>
+      <button class="btn-primary" onclick="runScript('optimize')">Otimizar tudo</button>
+    </div>
+  </header>
+
+  <div class="main">
+    <div id="jarvisBar">
+      <div class="jarvis-console" id="jarvisConsole" data-state="standby">
+        <div class="jarvis-core">
+          <div class="jarvis-reactor"></div>
+          <div class="jarvis-waves"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="jarvis-panel">
+          <div class="jarvis-header">
+            <span class="jarvis-name" id="assistantNameLabel">ARIA</span>
+            <span class="jarvis-status-label" id="jarvisStatusLabel">STANDBY</span>
+            <div class="jarvis-toggles">
+              <label class="jarvis-voice-toggle" title="Modo Alexa — música, YouTube, apps no PC"><input type="checkbox" id="jarvisAlexa" checked /> Modo Alexa</label>
+              <label class="jarvis-voice-toggle" title="Aria fala com voz OpenAI"><input type="checkbox" id="jarvisVoice" checked /> Voz IA</label>
+              <select id="jarvisVoicePick" class="jarvis-voice-pick" title="Vozes OpenAI (API)"></select>
+              <label class="jarvis-voice-toggle" title="Escuta sempre — diga Aria e o comando"><input type="checkbox" id="jarvisConvo" checked /> Escuta</label>
+            </div>
+          </div>
+          <div class="jarvis-speech">
+            <div class="jarvis-dots" id="jarvisDots"><span></span><span></span><span></span></div>
+            <p id="jarvisSpeech">Conectando…</p>
+            <p id="jarvisQuip"></p>
+            <p id="jarvisYouSaid" class="jarvis-you-said" style="display:none"></p>
+          </div>
+          <div class="jarvis-ask-row">
+            <button type="button" class="jarvis-mic-btn" id="jarvisMicBtn" title="Microfone (Escuta ligada = não precisa apertar)">🎤</button>
+            <input type="text" class="jarvis-ask-input" id="jarvisAskInput" placeholder="Alexa/Aria: coloca música X · abre YouTube · abre Chrome · volume · anúncios" />
+            <button type="button" class="btn-secondary" style="font-size:12px;padding:8px 12px" onclick="submitJarvisQuestion()">Enviar</button>
+          </div>
+          <div class="jarvis-fixes" id="jarvisFixes"></div>
+          <div id="jarvisPermission" style="display:none;margin-top:10px">
+            <p id="jarvisPermAsk" style="font-size:12px;color:#ffd54f;margin-bottom:8px"></p>
+            <button class="btn-primary" style="font-size:12px;padding:6px 12px" onclick="llmPermission('approve')">Aprovar</button>
+            <button class="btn-secondary" style="font-size:12px;padding:6px 12px;margin-left:6px" onclick="llmPermission('dismiss')">Não agora</button>
+          </div>
+          <div class="jarvis-meta" id="jarvisMeta"></div>
+        </div>
+      </div>
+    </div>
+    <div id="paymentAlerts"></div>
+    <div id="errors"></div>
+    <div id="warnings"></div>
+    <div id="jobBanner" style="display:none"></div>
+    <div id="brief"></div>
+    <div id="budget"></div>
+    <div class="kpis" id="kpis"></div>
+
+    <div class="toolbar">
+      <span>Ações:</span>
+      <button class="btn-secondary" onclick="runScript('watch')" title="Analisa métricas e ajusta">Verificar agora</button>
+      <button class="btn-secondary" onclick="applyAction('meta-recs')" title="Aplica Reels e sugestões seguras">Meta recomendações</button>
+      <button class="btn-secondary" onclick="applyAction('placement-fix')" title="Miniatura em vídeos + placements Meta">Corrigir placements</button>
+      <button class="btn-secondary" onclick="runScript('autopilot')" title="Cria da fila se couber no budget">Criar anúncios</button>
+      <button class="btn-secondary" onclick="runScript('meta-recs')">Sync Meta</button>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-tab="ads">Anúncios (<span id="tabAdCount">0</span>)</div>
+      <div class="tab" data-tab="queue">Na fila (<span id="tabQueueCount">0</span>)</div>
+      <div class="tab" data-tab="log">Histórico de mudanças</div>
+      <div class="tab" data-tab="ai">IA · Público & campanhas</div>
+      <div class="tab" data-tab="agenda">Agenda</div>
+      <div class="tab" data-tab="social">Social · Reels</div>
+      <div class="tab" data-tab="settings">Configurações</div>
+    </div>
+
+    <div class="panel" id="panel-ads">
+      <div style="overflow-x:auto">
+        <table class="ads-table">
+          <thead>
+            <tr>
+              <th>Anúncio</th>
+              <th>Status</th>
+              <th>Gasto sem.</th>
+              <th>Orç/dia</th>
+              <th>Score</th>
+              <th>CTR</th>
+              <th>Cliques</th>
+              <th>Vendas</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="adsBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel hidden" id="panel-queue">
+      <table class="ads-table queue-table">
+        <thead><tr><th>Produto</th><th>Preço</th><th>Slug</th></tr></thead>
+        <tbody id="queueBody"></tbody>
+      </table>
+    </div>
+    <div class="panel hidden" id="panel-log">
+      <div class="log-list" id="logList"></div>
+    </div>
+    <div class="panel hidden" id="panel-ai">
+      <div class="ai-grid" id="aiGrid"></div>
+    </div>
+    <div class="panel hidden" id="panel-agenda">
+      <div class="settings-wrap">
+        <div class="settings-note" id="alexaCapabilitiesNote">Aria inteligente: música, YouTube, apps no PC — fale naturalmente. Verificando apps…</div>
+        <div class="settings-note">Estilo Alexa/JARVIS: obedece na hora (música, YouTube, Chrome, volume). Trove/ads quando pedir.</div>
+        <div id="agendaSummary" style="margin-bottom:12px"></div>
+        <div id="agendaList"></div>
+      </div>
+    </div>
+    <div class="panel hidden" id="panel-social">
+      <div class="settings-wrap" id="socialPanel">
+        <div class="settings-note">Social Autopilot — 1 Reel orgânico/dia em inglês · @shoptrove.us + Facebook · rotação automática de produtos.</div>
+        <div id="socialStatus"></div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="btn-primary" onclick="postSocialOrganic(true)">Postar agora</button>
+          <button type="button" class="btn-secondary" onclick="postSocialOrganic(false)">Preview / dry-run</button>
+        </div>
+        <pre id="socialPreview" style="margin-top:12px;padding:12px;background:#f7f8fa;border-radius:8px;font-size:12px;white-space:pre-wrap;max-height:320px;overflow:auto"></pre>
+        <div id="socialHistory" style="margin-top:12px;font-size:12px;color:var(--muted)"></div>
+      </div>
+    </div>
+    <div class="panel hidden" id="panel-settings">
+      <div class="settings-wrap">
+        <div class="settings-note">
+          Ajuste limites sem editar código. Salvar aplica na hora (orçamento, pausas, impulsionar).
+          O intervalo do auto-watch no Windows muda só após <code>npm run ads:watch:install</code>.
+        </div>
+        <div id="userAlerts"></div>
+        <form id="settingsForm" onsubmit="saveSettings(event)">
+          <div class="settings-grid">
+            <div class="field"><label>Orçamento semanal total (R$)</label><input type="number" name="weeklyBudgetBrl" min="30" max="10000" step="10" /></div>
+            <div class="field"><label>Orçamento diário por anúncio (R$)</label><input type="number" name="dailyBudgetBrl" min="2" max="500" step="1" /></div>
+            <div class="field"><label>Anúncios ativos alvo</label><input type="number" name="targetActiveAds" min="1" max="30" step="1" /></div>
+            <div class="field"><label>Máx. novos anúncios por rodada</label><input type="number" name="maxNewAdsPerRun" min="0" max="15" step="1" /></div>
+            <div class="field"><label>Teto diário máximo por anúncio (R$)</label><input type="number" name="maxDailyBudgetBrl" min="5" max="500" step="1" /></div>
+            <div class="field"><label>Atualização do painel (segundos)</label>
+              <select name="dashboardRefreshSeconds"><option value="30">30s</option><option value="60">60s</option><option value="120">2 min</option><option value="300">5 min</option></select>
+            </div>
+            <div class="field"><label>Auto-watch a cada (horas)</label>
+              <select name="watchIntervalHours"><option value="1">1h</option><option value="2">2h</option><option value="3">3h</option><option value="4">4h</option><option value="6">6h</option><option value="12">12h</option><option value="24">24h</option></select>
+            </div>
+            <div class="field"><label>Máx ~R$/dia por anúncio (calculado)</label><input type="text" id="calcMaxDaily" readonly style="background:#f7f8fa" /></div>
+          </div>
+          <div class="field-check"><input type="checkbox" name="autoBoost" id="autoBoost" /><label for="autoBoost">Impulsionar anúncios bons automaticamente</label></div>
+          <div class="field-check"><input type="checkbox" name="autoPause" id="autoPause" /><label for="autoPause">Pausar anúncios ruins automaticamente</label></div>
+          <div class="field-check"><input type="checkbox" name="autoApplyMetaRecs" id="autoApplyMetaRecs" /><label for="autoApplyMetaRecs">Aplicar recomendações Meta automaticamente</label></div>
+          <div class="settings-actions">
+            <button type="submit" class="btn-primary">Salvar configurações</button>
+            <small id="settingsUpdated"></small>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer" id="updated"></div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    let activeTab = "ads";
+    let refreshTimer = null;
+    let refreshMs = 60000;
+    let jobPollTimer = null;
+    let jarvisTypeTimer = null;
+    let lastJarvisSpokenKey = "";
+    let jarvisJobRunning = false;
+    let jarvisOwnerName = "Igor";
+    let jarvisSelectedVoice = null;
+    let jarvisTtsVoice = localStorage.getItem("jarvisTtsVoice") || "nova";
+    let jarvisTtsAudio = null;
+    let jarvisSpeaking = false;
+    let jarvisSpeakGen = 0;
+    let lastChatAt = 0;
+    let conversationOpenUntil = 0; // conversa emenda: sem precisar repetir "Aria"
+    const CONVO_SESSION_MS = 15 * 60 * 1000;
+
+    function localTimeContext() {
+      const now = new Date();
+      const h = now.getHours();
+      let period;
+      if (h >= 5 && h < 12) period = "Bom dia";
+      else if (h >= 12 && h < 18) period = "Boa tarde";
+      else period = "Boa noite";
+      return {
+        hour: h,
+        minute: now.getMinutes(),
+        period,
+        formatted: now.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }),
+      };
+    }
+
+    function alignGreetingPeriod(text) {
+      const t = String(text || "").trim();
+      if (!t) return t;
+      const { period } = localTimeContext();
+      return t.replace(/^(Bom dia|Boa tarde|Boa noite)/i, period);
+    }
+    let startListeningFn = null;
+    let stopListeningFn = null;
+    const HTTP_URL_RE = /^https?:\/\//i;
+
+    const JARVIS_THINKING_LINES = [
+      "Escaneando Meta Ads…",
+      "Corrigindo placements…",
+      "Analisando métricas…",
+      "Consultando estratégia…",
+    ];
+    let jarvisThinkIdx = 0;
+    let jarvisThinkTimer = null;
+    let loadRetryTimer = null;
+    let loadAttempts = 0;
+
+    function fetchJson(url, opts, timeoutMs) {
+      const ms = timeoutMs || 45000;
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), ms);
+      return fetch(url, { ...(opts || {}), signal: ctrl.signal })
+        .then((r) => r.json().then((d) => ({ res: r, data: d })))
+        .finally(() => clearTimeout(timer));
+    }
+
+    function showInstantJarvisGreeting() {
+      const el = document.getElementById("jarvisSpeech");
+      if (!el) return;
+      const tc = localTimeContext();
+      el.textContent = tc.period + ", " + jarvisOwnerName + ". Aria ligando — " + tc.formatted + ".";
+      setJarvisState("thinking");
+    }
+
+    if (localStorage.getItem("jarvisVoice") === "0") {
+      document.getElementById("jarvisVoice").checked = false;
+    }
+    if (localStorage.getItem("jarvisConvo") === "0") {
+      document.getElementById("jarvisConvo").checked = false;
+    }
+    if (localStorage.getItem("ariaAlexaMode") === "0") {
+      const alexaEl = document.getElementById("jarvisAlexa");
+      if (alexaEl) alexaEl.checked = false;
+    }
+    document.getElementById("jarvisVoice").onchange = function() {
+      localStorage.setItem("jarvisVoice", this.checked ? "1" : "0");
+    };
+    const alexaToggle = document.getElementById("jarvisAlexa");
+    if (alexaToggle) {
+      alexaToggle.onchange = function() {
+        localStorage.setItem("ariaAlexaMode", this.checked ? "1" : "0");
+        refreshAssistantBranding();
+        speakJarvis(this.checked ? "Modo Alexa ligado. Música, YouTube e apps no PC." : "Modo Trove. Foco em loja e anúncios.", { skipConvo: true });
+      };
+    }
+
+    function jarvisAlexaEnabled() {
+      const el = document.getElementById("jarvisAlexa");
+      if (el) return el.checked;
+      return localStorage.getItem("ariaAlexaMode") !== "0";
+    }
+
+    function getAssistantWake() {
+      const base = ["aria", "ária", "arya", "área", "jarvis"];
+      return jarvisAlexaEnabled() ? base.concat(["alexa", "alexia", "álexia", "aléxia"]) : base;
+    }
+
+    function refreshAssistantBranding() {
+      const alexa = jarvisAlexaEnabled();
+      const label = document.getElementById("assistantNameLabel");
+      const sub = document.getElementById("assistantSubtitle");
+      if (label) label.textContent = alexa ? "ARIA · ALEXA" : "ARIA";
+      if (sub) sub.textContent = alexa
+        ? "Modo Alexa — música · YouTube · PC · Trove quando pedir"
+        : "Assistente Trove · Meta Ads + loja";
+    }
+    refreshAssistantBranding();
+
+    function jarvisVoiceEnabled() {
+      return localStorage.getItem("jarvisVoice") !== "0";
+    }
+
+    function jarvisConvoEnabled() {
+      return localStorage.getItem("jarvisConvo") !== "0";
+    }
+
+    function initJarvisVoice() {
+      const sel = document.getElementById("jarvisVoicePick");
+      const openaiVoices = [
+        { id: "nova", label: "Nova (OpenAI · recomendada)" },
+        { id: "alloy", label: "Alloy (OpenAI)" },
+        { id: "shimmer", label: "Shimmer (OpenAI)" },
+        { id: "echo", label: "Echo (OpenAI)" },
+        { id: "fable", label: "Fable (OpenAI)" },
+        { id: "onyx", label: "Onyx (OpenAI · grave)" },
+      ];
+      if (!sel) return;
+      sel.innerHTML = openaiVoices.map((v) =>
+        '<option value="' + v.id + '"' + (v.id === jarvisTtsVoice ? " selected" : "") + ">" + v.label + "</option>"
+      ).join("");
+      sel.onchange = () => {
+        jarvisTtsVoice = sel.value || "nova";
+        localStorage.setItem("jarvisTtsVoice", jarvisTtsVoice);
+        speakJarvis("Aria aqui. Voz OpenAI ligada.", { skipConvo: true });
+      };
+    }
+
+    function queueJarvisListen() {
+      if (!jarvisConvoEnabled()) return;
+      setTimeout(() => {
+        if (jarvisSpeaking) return;
+        if (startListeningFn) startListeningFn();
+      }, 250);
+    }
+
+    function stopJarvisSpeech() {
+      jarvisSpeakGen += 1;
+      if (jarvisTypeTimer) {
+        clearInterval(jarvisTypeTimer);
+        jarvisTypeTimer = null;
+      }
+      if (jarvisTtsAudio) {
+        try { jarvisTtsAudio.pause(); } catch { /* ignore */ }
+        jarvisTtsAudio = null;
+      }
+      try { window.speechSynthesis?.cancel(); } catch { /* ignore */ }
+      jarvisSpeaking = false;
+    }
+
+    function presentJarvisMessage(text, opts) {
+      const msg = String(text || "").trim();
+      if (!msg) return;
+      const quip = opts?.quip;
+      const type = opts?.type ?? msg.length > 80;
+      const speak = opts?.speak !== false;
+      const skipConvo = opts?.skipConvo === true;
+
+      stopJarvisSpeech();
+      const myGen = jarvisSpeakGen;
+
+      const startVoice = () => {
+        if (myGen !== jarvisSpeakGen) return;
+        if (!speak || !jarvisVoiceEnabled()) {
+          if (!skipConvo) queueJarvisListen();
+          return;
+        }
+        speakJarvisReply(msg, quip, { skipConvo, speakGen: myGen });
+      };
+
+      if (type) {
+        typeJarvisSpeech(msg, startVoice);
+      } else {
+        const el = document.getElementById("jarvisSpeech");
+        if (el) el.textContent = msg;
+        startVoice();
+      }
+    }
+
+    function pauseMediaForListen() {
+      // Na conversa: para música de fundo por completo (só voz da Aria)
+      stopAlarm();
+      stopJarvisSpeech();
+    }
+
+    function speakJarvisBrowserFallback(text, opts) {
+      if (opts?.speakGen != null && opts.speakGen !== jarvisSpeakGen) return;
+      if (!window.speechSynthesis) {
+        if (opts?.onEnd) opts.onEnd();
+        else if (!opts?.skipConvo) queueJarvisListen();
+        return;
+      }
+      try {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(String(text).slice(0, 900));
+        u.lang = "pt-BR";
+        u.rate = 0.94;
+        u.onend = () => {
+          jarvisSpeaking = false;
+          if (opts?.onEnd) opts.onEnd();
+          else if (!opts?.skipConvo) queueJarvisListen();
+        };
+        u.onerror = () => {
+          jarvisSpeaking = false;
+          if (opts?.onEnd) opts.onEnd();
+        };
+        jarvisSpeaking = true;
+        setJarvisState("speaking");
+        window.speechSynthesis.speak(u);
+      } catch {
+        jarvisSpeaking = false;
+        if (opts?.onEnd) opts.onEnd();
+      }
+    }
+
+    async function speakJarvis(text, opts) {
+      if (!jarvisVoiceEnabled() || !text) {
+        if (opts?.onEnd) opts.onEnd();
+        else if (!opts?.skipConvo) queueJarvisListen();
+        return;
+      }
+      if (!opts?.speakGen) stopJarvisSpeech();
+      const myGen = opts?.speakGen ?? jarvisSpeakGen;
+      stopAlarm();
+      jarvisSpeaking = true;
+      setJarvisState("speaking");
+      try {
+        if (jarvisTtsAudio) {
+          jarvisTtsAudio.pause();
+          jarvisTtsAudio = null;
+        }
+        try { window.speechSynthesis?.cancel(); } catch { /* ignore */ }
+
+        const res = await fetch("/api/jarvis-tts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: String(text).slice(0, 900), voice: jarvisTtsVoice || "nova" }),
+        });
+        if (myGen !== jarvisSpeakGen) return;
+        if (!res.ok) throw new Error("tts fail");
+        const blob = await res.blob();
+        if (myGen !== jarvisSpeakGen) return;
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        jarvisTtsAudio = audio;
+        audio.onended = () => {
+          if (myGen !== jarvisSpeakGen) return;
+          jarvisSpeaking = false;
+          URL.revokeObjectURL(url);
+          jarvisTtsAudio = null;
+          if (opts?.onEnd) opts.onEnd();
+          else if (!opts?.skipConvo) queueJarvisListen();
+        };
+        audio.onerror = () => {
+          if (myGen !== jarvisSpeakGen) return;
+          jarvisSpeaking = false;
+          URL.revokeObjectURL(url);
+          jarvisTtsAudio = null;
+          speakJarvisBrowserFallback(text, { ...opts, speakGen: myGen });
+        };
+        await audio.play();
+        if (myGen !== jarvisSpeakGen) {
+          audio.pause();
+          URL.revokeObjectURL(url);
+          jarvisTtsAudio = null;
+        }
+      } catch {
+        if (myGen !== jarvisSpeakGen) return;
+        speakJarvisBrowserFallback(text, { ...opts, speakGen: myGen });
+      }
+    }
+
+    function speakJarvisReply(answer, quip, opts) {
+      const main = String(answer || "").trim();
+      const extra = String(quip || "").trim();
+      let toSpeak = main;
+      if (extra && main.length < 420) {
+        const bit = extra.replace(/[.!?]+$/, "");
+        if (bit && !main.toLowerCase().includes(bit.toLowerCase().slice(0, 12))) {
+          toSpeak = main + " " + bit + ".";
+        }
+      }
+      speakJarvis(toSpeak, opts);
+    }
+
+    function getAssistantWakeList() {
+      return getAssistantWake();
+    }
+
+    function normalizeWake(s) {
+      return String(s || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "");
+    }
+
+    function utteranceHasWake(raw) {
+      const t = normalizeWake(raw);
+      return getAssistantWake().some((w) => t.includes(normalizeWake(w)));
+    }
+
+    function normalizeJarvisQuestion(raw) {
+      let q = String(raw || "").trim();
+      for (const w of getAssistantWake()) {
+        const re = new RegExp("^(ei\s+|hey\s+|ok\s+|fala\s+)?(oi|olá|ola)?\s*" + w + "[,!\s]*", "i");
+        q = q.replace(re, "").trim();
+      }
+      return q || String(raw || "").trim();
+    }
+
+    function isJarvisWakeOnly(raw) {
+      const t = normalizeWake(raw).replace(/[!.?]/g, "").trim();
+      return getAssistantWake().some((w) => {
+        const n = normalizeWake(w);
+        return t === n || t === "oi " + n || t === "ola " + n || t === "hey " + n || t === "ei " + n;
+      });
+    }
+
+    function playClientMedia(url) {
+      if (!url || !HTTP_URL_RE.test(url)) return;
+      try {
+        stopAlarm();
+        if (alarmAudio) { alarmAudio.pause(); alarmAudio = null; }
+        alarmAudio = new Audio(url);
+        alarmAudio.loop = false;
+        alarmAudio.volume = 0.9;
+        alarmAudio.play().catch(() => toast("Não consegui tocar áudio aqui — abri no navegador.", "warn"));
+      } catch { /* ignore */ }
+    }
+
+    async function loadAlexaCapabilities() {
+      const note = document.getElementById("alexaCapabilitiesNote");
+      if (!note) return;
+      try {
+        const { data } = await fetchJson("/api/alexa/capabilities", {}, 15000);
+        const cap = data?.capabilities;
+        if (!cap) return;
+        const ok = (cap.ready || []).join(", ") || "Edge";
+        const miss = (cap.missing || []).length ? " Falta: " + cap.missing.join(", ") + "." : "";
+        note.textContent = "Modo Alexa · Apps: " + ok + "." + miss + " Comandos: coloca música X, abre YouTube, abre Chrome, volume, brilho.";
+      } catch {
+        note.textContent = "Modo Alexa — diga Alexa ou Aria + comando (música, YouTube, apps).";
+      }
+    }
+    loadAlexaCapabilities();
+
+    function typeJarvisSpeech(text, onDone) {
+      const el = document.getElementById("jarvisSpeech");
+      if (!el) return;
+      if (jarvisTypeTimer) clearInterval(jarvisTypeTimer);
+      el.textContent = "";
+      let i = 0;
+      const full = String(text || "");
+      if (!full) { onDone?.(); return; }
+      jarvisTypeTimer = setInterval(() => {
+        el.textContent += full[i++];
+        if (i >= full.length) {
+          clearInterval(jarvisTypeTimer);
+          jarvisTypeTimer = null;
+          onDone?.();
+        }
+      }, 18);
+    }
+
+    let jarvisRecognition = null;
+    let jarvisListening = false;
+
+    function jarvisSpeechSupported() {
+      return !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+    }
+
+    function initJarvisMic() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const btn = document.getElementById("jarvisMicBtn");
+      const input = document.getElementById("jarvisAskInput");
+      if (!btn) return;
+
+      if (!SpeechRecognition) {
+        btn.title = "Microfone: use Chrome ou Edge";
+        btn.style.opacity = "0.5";
+        return;
+      }
+
+      jarvisRecognition = new SpeechRecognition();
+      jarvisRecognition.lang = "pt-BR";
+      jarvisRecognition.continuous = true;
+      jarvisRecognition.interimResults = true;
+      jarvisRecognition.maxAlternatives = 3;
+
+      const startListening = () => {
+        if (!jarvisRecognition || jarvisListening || jarvisSpeaking) return;
+        if (!jarvisConvoEnabled() && btn.dataset.manual !== "1") return;
+        pauseMediaForListen();
+        try {
+          jarvisRecognition.start();
+        } catch {
+          /* already started */
+        }
+      };
+
+      const stopListening = () => {
+        try {
+          if (jarvisRecognition && jarvisListening) jarvisRecognition.stop();
+        } catch { /* ignore */ }
+      };
+
+      startListeningFn = startListening;
+      stopListeningFn = stopListening;
+
+      jarvisRecognition.onstart = () => {
+        jarvisListening = true;
+        btn.classList.add("active");
+        btn.title = "Ouvindo… (Escuta ligada)";
+        if (!jarvisSpeaking) {
+          setJarvisState("listening");
+          const el = document.getElementById("jarvisSpeech");
+          if (el && Date.now() > conversationOpenUntil) {
+            el.textContent = "Aria no ar — diga meu nome e fale. Em conversa, pode seguir sem repetir.";
+          } else if (el && Date.now() <= conversationOpenUntil) {
+            el.textContent = "Te escutando… pode continuar.";
+          }
+        }
+      };
+
+      jarvisRecognition.onresult = (e) => {
+        let text = "";
+        let isFinal = false;
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          text = (e.results[i][0].transcript || "").trim();
+          isFinal = e.results[i].isFinal;
+        }
+        if (!text) return;
+
+        const you = document.getElementById("jarvisYouSaid");
+        if (you) {
+          you.style.display = "block";
+          you.textContent = (isFinal ? "Você: " : "… ") + text;
+        }
+        if (input) input.value = text;
+        if (!isFinal) return;
+
+        const inSession = Date.now() < conversationOpenUntil;
+        const alwaysListen = jarvisConvoEnabled();
+        // Em sessão aberta: não precisa repetir "Aria"
+        if (alwaysListen && !inSession && !utteranceHasWake(text) && btn.dataset.manual !== "1") {
+          return;
+        }
+        delete btn.dataset.manual;
+
+        if (isJarvisWakeOnly(text)) {
+          conversationOpenUntil = Date.now() + CONVO_SESSION_MS;
+          submitJarvisQuestion(text);
+          return;
+        }
+
+        conversationOpenUntil = Date.now() + CONVO_SESSION_MS;
+        stopListening();
+        submitJarvisQuestion(text);
+      };
+
+      jarvisRecognition.onerror = (e) => {
+        jarvisListening = false;
+        btn.classList.remove("active");
+        if (e.error === "not-allowed") {
+          toast("Permita o microfone no Chrome para a Aria te ouvir.", "error");
+          return;
+        }
+        // no-speech / aborted: só reinicia
+        if (jarvisConvoEnabled() && !jarvisSpeaking && e.error !== "aborted") {
+          setTimeout(startListening, 300);
+        }
+      };
+
+      jarvisRecognition.onend = () => {
+        jarvisListening = false;
+        btn.classList.remove("active");
+        if (jarvisConvoEnabled() && !jarvisSpeaking) {
+          setTimeout(startListening, 200);
+        }
+      };
+
+      btn.onclick = () => {
+        if (jarvisListening) {
+          stopListening();
+          return;
+        }
+        btn.dataset.manual = "1";
+        conversationOpenUntil = Date.now() + CONVO_SESSION_MS;
+        startListening();
+      };
+
+      document.getElementById("jarvisConvo").onchange = function() {
+        localStorage.setItem("jarvisConvo", this.checked ? "1" : "0");
+        if (this.checked) startListening();
+        else stopListening();
+      };
+
+      if (input) {
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") { e.preventDefault(); submitJarvisQuestion(); }
+        });
+      }
+
+      if (jarvisConvoEnabled()) {
+        setTimeout(startListening, 800);
+      }
+    }
+
+    async function submitJarvisQuestion(forcedText) {
+      const input = document.getElementById("jarvisAskInput");
+      const raw = (forcedText || input?.value || "").trim();
+      if (!raw) { toast("Digite ou fale: Oi Aria…", "warn"); return; }
+
+      const q = isJarvisWakeOnly(raw) ? "oi aria" : normalizeJarvisQuestion(raw);
+      if (input && !forcedText) input.value = "";
+
+      if (stopListeningFn) stopListeningFn();
+      stopAlarm(); // conversa = sem música de fundo
+      conversationOpenUntil = Date.now() + CONVO_SESSION_MS;
+      setJarvisState("thinking");
+      const el = document.getElementById("jarvisSpeech");
+      const light = !/an[uú]ncio|meta|venda|visita|token|budget|tr[aá]fego|checkout/i.test(q);
+      if (el) el.textContent = light ? "Aria aqui…" : "Aria checando os dados…";
+
+      try {
+        const { data: d } = await fetchJson("/api/jarvis-ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            question: q,
+            wake: isJarvisWakeOnly(raw),
+            alexaMode: jarvisAlexaEnabled(),
+          }),
+        }, light ? 45000 : 120000);
+
+        if (!d.ok) {
+          toast(d.error || "Erro", "error");
+          setJarvisState("listening");
+          queueJarvisListen();
+          return;
+        }
+
+        const quipEl = document.getElementById("jarvisQuip");
+        const aiTag = d.instant
+          ? ""
+          : d.model === "pc-instant"
+            ? " · feito"
+            : d.local
+              ? " (reserva)"
+              : " · IA " + (d.model || "gpt-4o");
+        if (quipEl) quipEl.textContent = (d.jarvisQuip || "") + aiTag;
+        lastChatAt = Date.now();
+        lastJarvisSpokenKey = "chat|" + lastChatAt;
+        conversationOpenUntil = Date.now() + CONVO_SESSION_MS;
+
+        if (d.clientPlayUrl) playClientMedia(d.clientPlayUrl);
+
+        if (d.instant) {
+          if (el) el.textContent = d.answer;
+          if (jarvisVoiceEnabled()) speakJarvis(d.answer, { skipConvo: true });
+          setJarvisState("listening");
+          queueJarvisListen();
+        } else if (d.model === "pc-instant") {
+          if (el) el.textContent = d.answer;
+          if (d.clientPlayUrl) playClientMedia(d.clientPlayUrl);
+          if (jarvisVoiceEnabled()) speakJarvis(d.answer, { skipConvo: true });
+          setJarvisState("listening");
+          queueJarvisListen();
+        } else {
+          presentJarvisMessage(d.answer, {
+            quip: d.jarvisQuip,
+            type: !(d.answer && d.answer.length < 80),
+          });
+        }
+        if (d.local) toast("Resposta sem OpenAI (reserva). Verifique a API.", "warn");
+      } catch {
+        toast("Falha ao falar com a Aria.", "error");
+        setJarvisState("listening");
+        queueJarvisListen();
+      }
+    }
+
+    function setJarvisState(state) {
+      const console = document.getElementById("jarvisConsole");
+      if (!console) return;
+      console.dataset.state = state;
+      const labels = {
+        standby: "STANDBY",
+        thinking: "PROCESSANDO",
+        speaking: "FALANDO",
+        permission: "AGUARDANDO OK",
+        offline: "OFFLINE",
+        online: "ONLINE",
+        active: "ATIVO",
+        listening: "OUVINDO",
+      };
+      const lbl = document.getElementById("jarvisStatusLabel");
+      if (lbl) lbl.textContent = labels[state] || state.toUpperCase();
+    }
+
+    function startJarvisThinking() {
+      setJarvisState("thinking");
+      if (jarvisThinkTimer) clearInterval(jarvisThinkTimer);
+      jarvisThinkIdx = 0;
+      const el = document.getElementById("jarvisSpeech");
+      if (el) el.textContent = JARVIS_THINKING_LINES[0];
+      jarvisThinkTimer = setInterval(() => {
+        jarvisThinkIdx = (jarvisThinkIdx + 1) % JARVIS_THINKING_LINES.length;
+        if (el) el.textContent = JARVIS_THINKING_LINES[jarvisThinkIdx];
+      }, 2200);
+    }
+
+    function stopJarvisThinking() {
+      if (jarvisThinkTimer) {
+        clearInterval(jarvisThinkTimer);
+        jarvisThinkTimer = null;
+      }
+    }
+
+    function renderJarvis(j, jobRunning, totals, opts) {
+      const console = document.getElementById("jarvisConsole");
+      if (console) console.style.display = "flex";
+
+      if (jobRunning) {
+        jarvisJobRunning = true;
+        startJarvisThinking();
+        return;
+      }
+
+      if (jarvisJobRunning && !jobRunning) {
+        jarvisJobRunning = false;
+        stopJarvisThinking();
+      }
+
+      const sys = j?.systems || {};
+      let uiState = j?.status || "standby";
+      if (uiState === "online" || uiState === "active") uiState = "speaking";
+      if (uiState === "awaiting_permission") uiState = "permission";
+      if (j && !j.online) uiState = "offline";
+
+      const speech = alignGreetingPeriod(
+        (j && (j.messageToOwner || j.headline || j.greeting)) || clientGreeting(totals, j),
+      );
+      const quip = (j && j.jarvisQuip) || "Pode falar comigo.";
+      const today = new Date().toDateString();
+      const speakKey = today + "|" + speech.slice(0, 100);
+
+      setJarvisState(uiState === "standby" ? "speaking" : uiState);
+
+      const quipEl = document.getElementById("jarvisQuip");
+      // Não sobrescreve a última conversa de IA com texto de sistema
+      if (quipEl && Date.now() - lastChatAt > 120000) quipEl.textContent = quip;
+
+      const fixesEl = document.getElementById("jarvisFixes");
+      if (fixesEl) {
+        fixesEl.textContent = (j?.fixesApplied && j.fixesApplied.length)
+          ? "Últimas correções: " + j.fixesApplied.map(f => f.detail).join(" · ")
+          : "";
+      }
+
+      const metaEl = document.getElementById("jarvisMeta");
+      if (metaEl) {
+        let llmOn = "IA off";
+        if (j?.llmConfigured) {
+          llmOn = j.llmBillingOk === false ? "IA sem crédito ✗" : (j.llm ? "IA ligada ✓" : "IA off");
+        }
+        const payMeta = j?.metaPaymentOk === false ? "Pagamento Meta ✗" : (j?.metaPaymentOk === true ? "Pagamento Meta ✓" : "Pagamento Meta ?");
+        const cautiousTag = j?.cautious?.active ? '<span style="color:#ffd54f">🛡️ Cauteloso</span>' : "";
+        metaEl.innerHTML =
+          cautiousTag +
+          "<span>Meta " + (sys.meta?.ok ? "✓" : "✗") + "</span>" +
+          "<span>" + payMeta + "</span>" +
+          "<span>Site " + (sys.site?.ok ? "✓" : "✗") + "</span>" +
+          "<span>" + llmOn + "</span>" +
+          (j?.at ? "<span>Ciclo " + fmtDate(j.at) + "</span>" : "<span>Agora</span>");
+      }
+
+      const perm = j?.permissionRequest;
+      const permBox = document.getElementById("jarvisPermission");
+      const permAsk = document.getElementById("jarvisPermAsk");
+      if (permBox && permAsk) {
+        if (j?.cautious?.active) {
+          permBox.style.display = "block";
+          permAsk.textContent = (j.cautious.summary || j.messageToOwner || "") +
+            " Permito: " + (j.cautious.allows || []).join(", ") + ".";
+        } else if (j?.paymentAlert) {
+          permBox.style.display = "block";
+          permAsk.textContent = j.messageToOwner || "Problema de pagamento detectado — resolva para a Aria funcionar 100%.";
+        } else if (perm && perm.needed && perm.status !== "approved") {
+          permBox.style.display = "block";
+          permAsk.textContent = perm.ask || "Preciso da sua aprovação para continuar.";
+        } else {
+          permBox.style.display = "none";
+        }
+      }
+
+      // Não apaga resposta da IA com template do sistema a cada refresh
+      const recentChat = Date.now() - lastChatAt < 180000 || String(lastJarvisSpokenKey).startsWith("chat|");
+      const silent = opts?.silent || jarvisSpeaking;
+      if (!silent && !recentChat && speakKey !== lastJarvisSpokenKey) {
+        lastJarvisSpokenKey = speakKey;
+        presentJarvisMessage(speech, { quip, type: speech.length > 80 });
+      }
+    }
+
+    function clientGreeting(totals, j) {
+      const tc = localTimeContext();
+      const name = (j && j.ownerName) || jarvisOwnerName;
+      const t = totals || {};
+      const sales = t.salesTotal || 0;
+      const active = t.active || 0;
+      if (sales > 0) return tc.period + ", " + name + ". Aria aqui — " + sales + " venda(s), " + active + " anúncios no ar.";
+      return tc.period + ", " + name + ". Aria online — " + active + " anúncios ativos. Pode falar: música, YouTube, ads.";
+    }
+
+    let bootGreetingDone = false;
+
+    async function maybeBootGreeting(d) {
+      if (bootGreetingDone || sessionStorage.getItem("ariaBootGreeted")) {
+        bootGreetingDone = true;
+        return;
+      }
+      if (jarvisSpeaking || Date.now() - lastChatAt < 5000) return;
+
+      bootGreetingDone = true;
+      sessionStorage.setItem("ariaBootGreeted", "1");
+
+      const j = d.jarvis || {};
+      const totals = d.totals || {};
+      const llmFresh =
+        j.messageToOwner &&
+        j.at &&
+        Date.now() - new Date(j.at).getTime() < 4 * 3600 * 1000 &&
+        j.messageToOwner !== j.greeting;
+
+      if (llmFresh && j.llm) {
+        const speech = j.messageToOwner || j.headline || j.greeting;
+        presentJarvisMessage(speech, { quip: j.jarvisQuip, type: speech.length > 80 });
+        return;
+      }
+
+      if (!j.llmConfigured || j.llmBillingOk === false) {
+        presentJarvisMessage(clientGreeting(totals, j), { quip: j.jarvisQuip || "Pode falar comigo.", type: false });
+        return;
+      }
+
+      setJarvisState("thinking");
+      const el = document.getElementById("jarvisSpeech");
+      if (el) el.textContent = "Aria analisando sua conta…";
+
+      try {
+        const tc = localTimeContext();
+        const active = totals.active || 0;
+        const sales = totals.salesTotal || 0;
+        const spend = totals.spend || 0;
+        const q =
+          "Cumprimento de abertura para " + jarvisOwnerName +
+          ". Horário LOCAL agora: " + tc.period + ", " + tc.formatted +
+          " — use EXATAMENTE " + tc.period + " se cumprimentar, nunca bom dia à noite." +
+          " Status: " + active + " anúncios ativos, " + sales + " vendas, gasto R$ " + Number(spend).toFixed(2) +
+          ". 2-3 frases vivas, tom Aria/JARVIS inteligente, uma observação útil.";
+        const { data: ans } = await fetchJson("/api/jarvis-ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: q, wake: false, alexaMode: jarvisAlexaEnabled() }),
+        }, 90000);
+        if (ans.ok && !ans.instant && ans.answer) {
+          const quipEl = document.getElementById("jarvisQuip");
+          const aiTag = ans.local ? " (reserva)" : " · IA " + (ans.model || "gpt-4o");
+          if (quipEl) quipEl.textContent = (ans.jarvisQuip || "") + aiTag;
+          lastChatAt = Date.now();
+          lastJarvisSpokenKey = "boot|" + lastChatAt;
+          presentJarvisMessage(ans.answer, { quip: ans.jarvisQuip, type: ans.answer.length > 100 });
+        } else {
+          presentJarvisMessage(clientGreeting(totals, j), { quip: "Pode falar comigo.", type: false });
+        }
+      } catch {
+        presentJarvisMessage(clientGreeting(totals, j), { quip: "Pode falar comigo.", type: false });
+      }
+    }
+
+    document.querySelectorAll(".tab").forEach(t => {
+      t.onclick = () => {
+        activeTab = t.dataset.tab;
+        document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x.dataset.tab === activeTab));
+        document.querySelectorAll(".panel").forEach(p => p.classList.add("hidden"));
+        document.getElementById("panel-" + activeTab).classList.remove("hidden");
+      };
+    });
+
+    async function pollJob() {
+      try {
+        const j = await fetch("/api/job-status").then(r => r.json());
+        const el = document.getElementById("jobBanner");
+        const isJarvisJob = j.script === "jarvis" || (j.label || "").toLowerCase().includes("jarvis");
+        const anyJob = j.running;
+        if (anyJob) startJarvisThinking();
+        if (!j.running && jarvisJobRunning) {
+          jarvisJobRunning = false;
+          stopJarvisThinking();
+          setTimeout(load, 1500);
+        } else if (!j.running) {
+          jarvisJobRunning = false;
+        }
+        if (!j.running && j.status !== "done" && j.status !== "error") {
+          el.style.display = "none";
+          return;
+        }
+        el.style.display = "block";
+        el.className = "job-banner" + (j.running ? "" : j.status === "done" ? " done" : " error");
+        const icon = j.running ? "⏳ " : j.status === "done" ? "✅ " : "⚠️ ";
+        const lines = (j.lines || []).slice(-7).map(l => "<li>" + esc(l.text || l) + "</li>").join("");
+        el.innerHTML =
+          "<strong>" + icon + esc(j.label || "Processando") + "</strong>" +
+          (j.running ? '<div class="job-progress"><div class="job-progress-fill" style="width:' + (j.progress || 8) + '%"></div></div>' : "") +
+          '<ul class="job-lines">' + lines + "</ul>";
+        if (!j.running && j.status === "done") setTimeout(load, 2500);
+      } catch { /* ignore */ }
+    }
+
+    function startJobPolling() {
+      pollJob();
+      if (jobPollTimer) clearInterval(jobPollTimer);
+      jobPollTimer = setInterval(pollJob, 2000);
+    }
+
+    function toast(msg, kind) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.className = "toast" + (kind === "error" ? " error" : kind === "warn" ? " warn" : "");
+      el.style.display = "block";
+      setTimeout(() => { el.style.display = "none"; }, kind === "error" ? 8000 : 4500);
+    }
+    function fmtDate(iso) {
+      if (!iso) return "—";
+      return new Date(iso).toLocaleString("pt-BR", { day:"2-digit", month:"2-digit", hour:"2-digit", minute:"2-digit" });
+    }
+    function fmtMoney(n) { return "R$ " + (Number(n) || 0).toFixed(2); }
+
+    async function pauseAd(adId) {
+      if (!confirm("Pausar este anúncio no Meta?")) return;
+      const d = await fetch("/api/pause?adId=" + encodeURIComponent(adId), { method: "POST" }).then(r => r.json());
+      toast(d.ok ? "Anúncio pausado" : (d.error || "Erro ao pausar"), d.ok ? "" : "error");
+      load();
+    }
+    async function applyAction(action, slug) {
+      toast("Executando…");
+      let url = "/api/apply?action=" + encodeURIComponent(action);
+      if (slug) url += "&slug=" + encodeURIComponent(slug);
+      const d = await fetch(url, { method: "POST" }).then(x => x.json());
+      toast(d.message || d.error || (d.ok ? "Concluído" : "Erro"), d.ok ? "" : "error");
+      if (d.ok && action !== "meta-recs") startJobPolling();
+      setTimeout(load, action === "optimize" ? 15000 : 4000);
+    }
+    async function runJarvis() {
+      startJarvisThinking();
+      const d = await fetch("/api/jarvis", { method: "POST" }).then(x => x.json());
+      toast(d.message || d.error || "Ok", d.ok === false ? "error" : "");
+      if (d.ok) startJobPolling();
+      else { stopJarvisThinking(); setJarvisState("standby"); }
+    }
+    async function runScript(script) {
+      toast("Rodando… aguarde ~1 min");
+      const d = await fetch("/api/run?script=" + script, { method: "POST" }).then(x => x.json());
+      toast(d.message || d.error || "Ok", d.ok === false ? "error" : "");
+      if (d.ok) startJobPolling();
+      setTimeout(load, 12000);
+    }
+    async function postSocialOrganic(force) {
+      toast(force ? "Publicando Reel…" : "Gerando preview…", "warn");
+      try {
+        const url = "/api/social-organic" + (force ? "?force=1" : "");
+        const d = await fetch(url, { method: "POST" }).then((r) => r.json());
+        if (!d.ok && !d.dryRun) {
+          toast(d.error || "Falha ao publicar", "error");
+          return;
+        }
+        toast(force ? "Reel publicado!" : "Preview OK — veja aba Social", "warn");
+        load();
+      } catch {
+        toast("Erro ao chamar Social Autopilot", "error");
+      }
+    }
+
+    function agendaStatusStyle(status) {
+      if (status === "overdue" || status === "blocked") return "border-color:#ef4444;background:#fef2f2";
+      if (status === "due") return "border-color:#f59e0b;background:#fffbeb";
+      if (status === "done" || status === "ok") return "border-color:#22c55e;background:#f0fdf4";
+      return "border-color:var(--blue)";
+    }
+
+    function agendaStatusLabel(status) {
+      return ({
+        overdue: "ATRASADO",
+        due: "FAZER AGORA",
+        blocked: "BLOQUEADO",
+        scheduled: "AGENDADO",
+        done: "FEITO",
+        ok: "OK",
+      })[status] || status;
+    }
+
+    function renderAgendaPanel(agenda) {
+      const sumEl = document.getElementById("agendaSummary");
+      const listEl = document.getElementById("agendaList");
+      if (!sumEl || !listEl) return;
+      if (!agenda) {
+        sumEl.innerHTML = "";
+        listEl.innerHTML = '<p class="settings-note">Agenda indisponível</p>';
+        return;
+      }
+      const s = agenda.summary || {};
+      sumEl.innerHTML =
+        '<div class="ai-card info" style="border-color:var(--blue)">' +
+        "<h4>📅 " + esc(s.headline || "Agenda") + "</h4>" +
+        '<p style="font-size:12px;color:var(--muted)">' +
+        (s.overdue || 0) + " ação · " + (s.blocked || 0) + " bloqueado · " +
+        (s.ok || 0) + " ok · " + (s.total || 0) + " itens</p></div>";
+
+      listEl.innerHTML = (agenda.items || []).map((it) => {
+        const link = it.actionUrl
+          ? '<a href="' + esc(it.actionUrl) + '" target="_blank" rel="noopener" style="font-size:12px;margin-left:8px">' +
+            esc(it.actionLabel || "Abrir") + " →</a>"
+          : it.actionLabel === "Rodar JARVIS"
+            ? '<button type="button" class="btn-secondary" style="margin-left:8px;padding:4px 10px;font-size:12px" onclick="runJarvis()">Rodar JARVIS</button>'
+            : it.actionLabel === "Aba Social"
+              ? '<button type="button" class="btn-secondary" style="margin-left:8px;padding:4px 10px;font-size:12px" onclick="goTabSocial()">Social · Reels</button>'
+              : it.actionLabel === "Ok, feito"
+                ? "<button type=\"button\" class=\"btn-primary\" style=\"margin-left:8px;padding:4px 10px;font-size:12px\" onclick=\"ackPersonal('" + it.id + "')\">Ok, feito</button>"
+                : "";
+        return (
+          '<div class="ai-card" style="margin-bottom:10px;' + agendaStatusStyle(it.status) + '">' +
+          '<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">' +
+          '<h4 style="margin:0">' + esc(it.title) + "</h4>" +
+          '<span style="font-size:11px;font-weight:700;letter-spacing:.03em">' +
+          agendaStatusLabel(it.status) + "</span></div>" +
+          '<p style="margin:6px 0 0;font-size:13px"><strong>' + esc(it.when) + "</strong>" + link + "</p>" +
+          (it.detail ? '<p style="margin:4px 0 0;font-size:12px;color:var(--muted)">' + esc(it.detail) + "</p>" : "") +
+          "</div>"
+        );
+      }).join("") || '<p class="settings-note">Nenhum item na agenda</p>';
+    }
+
+    function renderSocialPanel(s) {
+      if (!s) return;
+      const el = document.getElementById("socialStatus");
+      const prev = document.getElementById("socialPreview");
+      const hist = document.getElementById("socialHistory");
+      if (!el) return;
+      const next = s.nextProduct;
+      el.innerHTML =
+        '<div class="ai-card info" style="border-color:var(--blue)">' +
+        "<h4>📱 Social Autopilot " + (s.enabled ? "(ON)" : "(OFF)") + "</h4>" +
+        "<p><strong>Próximo:</strong> " + esc(next?.product || "—") + (next?.price ? " · " + esc(next.price) : "") + "</p>" +
+        '<p style="font-size:12px;color:var(--muted)">Fila ' + (s.queueIndex + 1) + "/" + s.queueLength +
+        " · Horário ~" + s.scheduleHour + ":00 · Vídeo " + (s.hasVideo ? "pronto" : "será gerado") +
+        (s.taskInstalled ? ' · <strong style="color:var(--green)">Windows task ✓</strong>' : ' · <span style="color:var(--orange)">Instale: npm run social:organic:install</span>') + "</p>" +
+        (s.schedulerNote ? '<p style="font-size:12px">' + esc(s.schedulerNote) + "</p>" : "") +
+        (s.lastPostedAt ? '<p style="font-size:12px">Último: ' + esc(s.lastSlug || "") + " · " + fmtDate(s.lastPostedAt) + "</p>" : "") +
+        (!s.instagramId ? '<p style="color:var(--orange)">⚠ META_INSTAGRAM_ACTOR_ID necessário</p>' : "") +
+        "</div>";
+      if (prev && s.preview?.instagram) prev.textContent = s.preview.instagram;
+      if (hist && s.history?.length) {
+        hist.innerHTML = '<strong>Histórico</strong><ul style="margin:6px 0;padding-left:18px">' +
+          s.history.slice().reverse().map((h) =>
+            "<li>" + fmtDate(h.at) + " · " + esc(h.product) +
+            " (IG " + (h.instagram ? "✓" : "✗") + " FB " + (h.facebook ? "✓" : "✗") + ")</li>"
+          ).join("") + "</ul>";
+      }
+    }
+
+    async function llmPermission(decision) {
+      const d = await fetch("/api/llm-permission", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ decision }),
+      }).then(x => x.json());
+      toast(d.message || d.error || (d.ok ? "Ok" : "Erro"), d.ok ? "" : "error");
+      setTimeout(load, 2000);
+    }
+
+    function statusPill(a) {
+      if (a.status === "PAUSED") return '<span class="pill paused">Pausado</span>';
+      const t = a.tier || a.health;
+      const map = { strong: "strong", contender: "contender", weak: "weak", learning: "learning", good: "strong", bad: "weak", watch: "learning" };
+      const lbl = a.tierLabel || (t === "learning" ? "Aprendendo" : t === "paused" ? "Pausado" : "Ativo");
+      return '<span class="pill ' + (map[t] || "active") + '">' + lbl + '</span>';
+    }
+
+    function renderAds(ads) {
+      if (!ads.length) return '<tr><td colspan="9" class="empty">Nenhum anúncio. Clique em Criar anúncios.</td></tr>';
+      return ads.map(a => {
+        const img = '/api/creative?slug=' + encodeURIComponent(a.slug) + '&file=' + encodeURIComponent(a.imageFile || a.slug);
+        return '<tr>' +
+          '<td><div class="ad-cell"><img class="thumb" src="' + img + '" alt="" onerror="this.style.opacity=0.3" />' +
+          '<div><div class="ad-name">' + esc(a.product) + '</div><div class="ad-slug">' + esc(a.slug) + '</div></div></div></td>' +
+          '<td>' + statusPill(a) + '</td>' +
+          '<td><strong>' + fmtMoney(a.spendWeekBrl ?? a.spendBrl) + '</strong></td>' +
+          '<td>' + fmtMoney(a.dailyBudgetBrl ?? 10) + '</td>' +
+          '<td>' + (a.intelligenceScore ?? "—") + '</td>' +
+          '<td>' + (a.ctr ? a.ctr.toFixed(2) + "%" : "—") + '</td>' +
+          '<td>' + (a.linkClicks || "—") + '</td>' +
+          '<td>' + (a.salesTotal || "—") + '</td>' +
+          '<td>' + (a.status === "ACTIVE" ? "<button class=\"btn-danger\" onclick=\"pauseAd('" + a.adId + "')\">Pausar</button>" : "") + '</td>' +
+        '</tr>';
+      }).join("");
+    }
+
+    function esc(s) { return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+    function fillSettingsForm(s) {
+      if (!s) return;
+      const f = document.getElementById("settingsForm");
+      f.weeklyBudgetBrl.value = s.weeklyBudgetBrl ?? 120;
+      f.dailyBudgetBrl.value = s.dailyBudgetBrl ?? "10.00";
+      f.targetActiveAds.value = s.targetActiveAds ?? 3;
+      f.maxNewAdsPerRun.value = s.maxNewAdsPerRun ?? 3;
+      f.maxDailyBudgetBrl.value = s.maxDailyBudgetBrl ?? "20.00";
+      f.dashboardRefreshSeconds.value = String(s.dashboardRefreshSeconds ?? 60);
+      f.watchIntervalHours.value = String(s.watchIntervalHours ?? 2);
+      document.getElementById("autoBoost").checked = s.autoBoost !== false;
+      document.getElementById("autoPause").checked = s.autoPause !== false;
+      document.getElementById("autoApplyMetaRecs").checked = s.autoApplyMetaRecs !== false;
+      document.getElementById("calcMaxDaily").value = "R$ " + (s.maxDailyPerAdBrl ?? "5.71") + " / dia";
+      document.getElementById("settingsUpdated").textContent = s.updatedAt
+        ? "Salvo em " + fmtDate(s.updatedAt) : "";
+      refreshMs = (s.dashboardRefreshSeconds ?? 60) * 1000;
+    }
+
+    async function saveSettings(ev) {
+      ev.preventDefault();
+      const f = ev.target;
+      const payload = {
+        weeklyBudgetBrl: Number(f.weeklyBudgetBrl.value),
+        dailyBudgetCents: Math.round(Number(f.dailyBudgetBrl.value) * 100),
+        targetActiveAds: Number(f.targetActiveAds.value),
+        maxNewAdsPerRun: Number(f.maxNewAdsPerRun.value),
+        maxDailyBudgetCents: Math.round(Number(f.maxDailyBudgetBrl.value) * 100),
+        dashboardRefreshSeconds: Number(f.dashboardRefreshSeconds.value),
+        watchIntervalHours: Number(f.watchIntervalHours.value),
+        autoBoost: f.autoBoost.checked,
+        autoPause: f.autoPause.checked,
+        autoApplyMetaRecs: f.autoApplyMetaRecs.checked,
+      };
+      const d = await fetch("/api/settings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }).then(r => r.json());
+      if (!d.ok) {
+        toast((d.errors || [d.error]).join(" · "), "error");
+        return;
+      }
+      toast(d.message || "Configurações salvas");
+      fillSettingsForm(d.settings);
+      scheduleRefresh();
+      load();
+    }
+
+    function scheduleRefresh() {
+      if (refreshTimer) clearInterval(refreshTimer);
+      refreshTimer = setInterval(load, refreshMs);
+    }
+
+    async function load() {
+      document.getElementById("updated").textContent = "Carregando dados Meta… (pode levar ~20s na 1ª vez)";
+      let d;
+      try {
+        const { res, data } = await fetchJson("/api/data", null, 90000);
+        d = data;
+        loadAttempts = 0;
+        if (loadRetryTimer) { clearTimeout(loadRetryTimer); loadRetryTimer = null; }
+        if (!res.ok && d.error && !d.ads) {
+          toast(d.error, "error");
+          document.getElementById("jarvisSpeech").textContent = "Não consegui carregar: " + (d.error || "erro desconhecido");
+          return;
+        }
+      } catch (e) {
+        loadAttempts += 1;
+        if (loadAttempts < 4) {
+          document.getElementById("updated").textContent = "Reconectando ao Meta… tentativa " + loadAttempts;
+          loadRetryTimer = setTimeout(load, 4000);
+          return;
+        }
+        toast("Painel sem conexão — verifique se o Trove está aberto.", "error");
+        document.getElementById("jarvisSpeech").textContent = "Sem conexão com o servidor Trove. Reinicie o ícone Trove.";
+        return;
+      }
+      if (d.error && !d.ads) {
+        toast(d.error, "error");
+        return;
+      }
+      try {
+      document.getElementById("updated").textContent = "Atualizado " + fmtDate(d.generatedAt) + " · refresh " + Math.round(refreshMs/1000) + "s";
+
+      const checks = d.systemHealth?.checks || [];
+      const errors = checks.filter(c => !c.ok && c.severity === "error");
+      const warnings = checks.filter(c => !c.ok && c.severity === "warn");
+      const alerts = Array.isArray(d.userAlerts) ? d.userAlerts : (d.userAlerts ? [d.userAlerts] : []);
+      const alertHtml = alerts.map(a =>
+        '<div class="alert-box ' + (a.type === "error" ? "" : "warn") + '"><strong>' + esc(a.title) + ':</strong> ' + esc(a.detail) +
+        (a.actionUrl ? ' <a href="' + esc(a.actionUrl) + '" target="_blank" rel="noopener" style="color:inherit;font-weight:700">Resolver →</a>' : '') +
+        '</div>'
+      ).join("");
+      document.getElementById("paymentAlerts").innerHTML = alertHtml;
+      document.getElementById("userAlerts").innerHTML = alertHtml;
+
+      document.getElementById("errors").innerHTML = errors.length
+        ? '<div class="errors"><strong>Atenção:</strong> ' + errors.map(i => i.label + ": " + i.detail).join(" · ") + '</div>' : "";
+      document.getElementById("warnings").innerHTML = warnings.length
+        ? '<div class="warnings"><strong>Info:</strong> ' + warnings.map(i => i.label + ": " + i.detail).join(" · ") + '</div>' : "";
+
+      const agent = d.aiMarketer || {};
+      document.getElementById("brief").innerHTML = (d.jarvis && d.jarvis.mode)
+        ? ""
+        : (agent.briefing
+          ? '<div class="brief-bar"><strong>' + esc(agent.statusLabel) + '</strong> — ' + esc(agent.briefing) + '</div>'
+          : "");
+
+      renderJarvis(d.jarvis || {}, jarvisJobRunning, d.totals, { silent: true });
+      void maybeBootGreeting(d);
+      renderAgendaPanel(d.agenda);
+      renderSocialPanel(d.socialOrganic);
+
+      const b = d.weeklyBudget || {};
+      const bClass = b.status === "blocked" ? "blocked" : b.status === "warning" ? "warn" : "";
+      const fillClass = b.status === "blocked" ? "blocked" : b.status === "warning" ? "warn" : "";
+      document.getElementById("budget").innerHTML =
+        '<div class="budget-card ' + bClass + '">' +
+        '<div class="budget-head"><strong>Orçamento semanal (teto fixo)</strong><span>' + esc(b.label || "") + '</span></div>' +
+        '<div class="budget-bar"><div class="budget-fill ' + fillClass + '" style="width:' + Math.min(100, b.pct||0) + '%"></div></div>' +
+        '<div class="budget-meta">' +
+        '<span>Gasto: <strong>' + fmtMoney(b.spentBrl) + '</strong> / ' + fmtMoney(b.capBrl || 120) + '</span>' +
+        '<span>Restante: <strong>' + fmtMoney(b.remainingBrl) + '</strong></span>' +
+        '<span>Máx ~' + fmtMoney(b.maxDailyPerAdBrl) + '/dia por anúncio</span>' +
+        (b.atCap ? '<span style="color:var(--red)">Teto atingido — avise para subir limite</span>' : '') +
+        '</div></div>';
+
+      const t = d.totals || {};
+      document.getElementById("kpis").innerHTML = [
+        kpi("ROAS 7d", t.roas ? t.roas.toFixed(2)+"x" : "—"),
+        kpi("Gasto 7d", fmtMoney(t.spend)),
+        kpi("Cliques", t.clicks ?? "—"),
+        kpi("Vendas", t.salesTotal ?? "—"),
+        kpi("Ativos", (t.active||0) + " / " + ((t.active||0)+(t.paused||0))),
+      ].join("");
+
+      const allAds = d.ads || [];
+      const activeAds = allAds.filter(a => a.status === "ACTIVE");
+      const displayAds = activeAds.length ? activeAds : allAds;
+      document.getElementById("tabAdCount").textContent = activeAds.length || allAds.length;
+      document.getElementById("tabQueueCount").textContent = d.queueTotal || (d.queue||[]).length || 0;
+      document.getElementById("adsBody").innerHTML = renderAds(displayAds);
+
+      const q = d.queue || [];
+      document.getElementById("queueBody").innerHTML = q.length ? q.map(x =>
+        '<tr><td>' + esc(x.product) + '</td><td>' + fmtMoney(x.price) + '</td><td>' + esc(x.slug) + '</td></tr>'
+      ).join("") : '<tr><td colspan="3" class="empty">Fila vazia</td></tr>';
+
+      const log = d.changeLog || [];
+      document.getElementById("logList").innerHTML = log.length ? log.map(e =>
+        '<div class="log-item"><time>' + fmtDate(e.at) + '</time><div>' + esc(e.summary) + '</div></div>'
+      ).join("") : '<div class="empty">Nenhuma mudança registrada ainda</div>';
+
+      const ai = d.aiSuggestions || {};
+      const brain = d.autopilotBrain || {};
+      const brainCards = (brain.rules || []).slice(0, 4).map(r =>
+        '<div class="ai-card good"><h4>🧠 ' + esc(r.title) + '</h4><p>' + esc(r.detail) + '</p></div>'
+      ).join("");
+      const cards = (ai.insights || []).map(i =>
+        '<div class="ai-card ' + (i.type||"info") + '"><h4>' + esc(i.title) + '</h4><p>' + esc(i.detail) + '</p></div>'
+      ).join("");
+      const camps = (ai.campaigns || []).map(c =>
+        '<div class="ai-card info"><h4>' + esc(c.label) + '</h4><p><strong>' + esc(c.objective) + '</strong> — ' + esc(c.detail) + '</p>' +
+        (c.url ? '<p style="margin-top:6px"><a href="' + c.url + '" target="_blank">Abrir</a></p>' : '') + '</div>'
+      ).join("");
+      const llm = d.llmAdvisor || {};
+      let llmBlock = '';
+      if (llm.briefing || llm.messageToOwner) {
+        const main = esc(llm.messageToOwner || llm.briefing);
+        const creative = (llm.creativePlans || []).map(c =>
+          '<div style="margin-top:8px;padding:8px;background:rgba(0,0,0,.04);border-radius:6px">' +
+          '<strong>' + esc(c.slug) + '</strong> (' + esc(c.verdict || '') + ') · ' + esc(c.format || '') +
+          '<br><em>"' + esc(c.hook || '') + '"</em><br>' + esc(c.angle || '') +
+          (c.why ? '<br><span style="color:var(--muted);font-size:12px">' + esc(c.why) + '</span>' : '') +
+          '</div>'
+        ).join('');
+        const budget = llm.budgetAnalysis;
+        let budgetHtml = '';
+        if (budget) {
+          budgetHtml = '<p style="margin-top:8px;font-size:12px"><strong>Orçamento:</strong> ' +
+            (budget.withinLimits ? 'dentro do teto' : 'fora do teto') +
+            (budget.ifWeDoThis ? ' · Se fizer: ' + esc(budget.ifWeDoThis) : '') +
+            (budget.ifWeDont ? ' · Se não: ' + esc(budget.ifWeDont) : '') + '</p>';
+        }
+        const perm = llm.permissionRequest;
+        let permHtml = '';
+        if (perm && perm.needed && perm.status !== 'approved') {
+          permHtml = '<div style="margin-top:10px;padding:10px;border:1px solid var(--orange);border-radius:8px;background:rgba(255,180,0,.08)">' +
+            '<strong>🔐 Preciso da sua permissão</strong><p style="margin:6px 0">' + esc(perm.ask || '') + '</p>' +
+            (perm.expectedBenefit ? '<p style="font-size:12px;color:var(--muted)">' + esc(perm.expectedBenefit) + '</p>' : '') +
+            '<div style="margin-top:8px;display:flex;gap:8px">' +
+            "<button class=\"btn-primary\" onclick=\"llmPermission('approve')\">Aprovar</button>" +
+            "<button class=\"btn-secondary\" onclick=\"llmPermission('dismiss')\">Não agora</button>" +
+            '</div></div>';
+        }
+        const acts = (llm.actions || []).map(a => esc(a.action) + (a.slug ? ' (' + esc(a.slug) + ')' : '') + ': ' + esc(a.reason || '')).join(' · ');
+        llmBlock = '<div class="ai-card info" style="grid-column:1/-1;border-color:var(--blue)">' +
+          '<h4>🤖 Consultora OpenAI' + (llm.model ? ' · ' + esc(llm.model) : '') + '</h4>' +
+          '<p>' + main + '</p>' +
+          (llm.marketInsight ? '<p style="margin-top:8px;font-size:13px"><strong>🌍 Mercado:</strong> ' + esc(llm.marketInsight) + '</p>' : '') +
+          budgetHtml + creative +
+          (acts ? '<p style="margin-top:6px;font-size:12px;color:var(--muted)">Ações sugeridas: ' + acts + '</p>' : '') +
+          permHtml +
+          (llm.at ? '<p style="margin-top:4px;font-size:11px;color:var(--muted)">Atualizado ' + fmtDate(llm.at) + (llm.autoExecute ? ' · execução automática ON' : ' · só briefing até você aprovar') + '</p>' : '') +
+          '</div>';
+      } else if (llm.configured === false) {
+        llmBlock = '<div class="ai-card warn" style="grid-column:1/-1"><h4>🤖 Consultora OpenAI</h4><p>Adicione OPENAI_API_KEY no .env.local e billing na OpenAI. Reinicie o painel Trove.</p></div>';
+      } else if (llm.billingOk === false) {
+        llmBlock = '<div class="ai-card warn" style="grid-column:1/-1;border-color:var(--red)"><h4>🤖 Aria — sem crédito OpenAI</h4><p>' + esc(llm.billingDetail || "Ative billing na OpenAI") + '</p><p style="margin-top:8px"><a href="https://platform.openai.com/settings/organization/billing" target="_blank" rel="noopener">Abrir billing OpenAI →</a></p></div>';
+      }
+      document.getElementById("aiGrid").innerHTML = llmBlock + (brain.summary ? '<div class="ai-card info" style="grid-column:1/-1"><h4>Memória do autopilot</h4><p>' + esc(brain.summary) + (brain.instagramConfigured ? ' · Instagram OK' : ' · Instagram pendente') + '</p></div>' : '') + brainCards + cards + camps || '<div class="empty">Conecte o Meta para sugestões de IA</div>';
+
+      fillSettingsForm(d.settings);
+      scheduleRefresh();
+      pollJob();
+      } catch (err) {
+        console.error(err);
+        toast("Erro ao mostrar dados — clique em Atualizar.", "error");
+        const el = document.getElementById("jarvisSpeech");
+        if (el) el.textContent = "Erro ao carregar painel. Clique em Atualizar.";
+      }
+    }
+
+    async function jarvisBoot() {
+      try {
+        const { data: boot } = await fetchJson("/api/jarvis-boot", null, 8000);
+        if (boot.jarvis?.ownerName) jarvisOwnerName = boot.jarvis.ownerName;
+        if (boot.ok && boot.jarvis) {
+          renderJarvis(boot.jarvis, false, boot.totals, { silent: true });
+        }
+      } catch {
+        const el = document.getElementById("jarvisSpeech");
+        if (el) el.textContent = "Aria online — carregando dados…";
+        setJarvisState("thinking");
+        setTimeout(jarvisBoot, 8000);
+      }
+    }
+
+    function kpi(lbl, val) {
+      return '<div class="kpi"><div class="lbl">' + lbl + '</div><div class="val">' + val + '</div></div>';
+    }
+
+    function goTabSocial() {
+      const tab = document.querySelector('[data-tab="social"]');
+      if (tab) tab.click();
+    }
+
+    window.postSocialOrganic = postSocialOrganic;
+    window.load = load;
+    window.submitJarvisQuestion = submitJarvisQuestion;
+    window.runJarvis = runJarvis;
+    window.runScript = runScript;
+    window.applyAction = applyAction;
+    window.llmPermission = llmPermission;
+    window.pauseAd = pauseAd;
+    window.saveSettings = saveSettings;
+    window.goTabSocial = goTabSocial;
+
+    let alarmAudio = null;
+    const alarmAcked = new Set();
+
+    function playAlarmMusic(url, title) {
+      try {
+        if (alarmAudio) {
+          alarmAudio.pause();
+          alarmAudio = null;
+        }
+        if (url && /^https?:/i.test(url)) {
+          alarmAudio = new Audio(url);
+          alarmAudio.loop = true;
+          alarmAudio.volume = 0.85;
+          alarmAudio.play().catch(() => {
+            /* voz já tratada em presentJarvisMessage */
+          });
+        } else {
+          presentJarvisMessage("Despertador: " + (title || "hora de acordar"), {
+            type: false,
+            skipConvo: true,
+          });
+        }
+      } catch {
+        /* ignore */
+      }
+    }
+
+    function stopAlarm() {
+      if (alarmAudio) {
+        alarmAudio.pause();
+        alarmAudio = null;
+      }
+      try { window.speechSynthesis.cancel(); } catch { /* ignore */ }
+    }
+
+    async function pollPersonalDue() {
+      try {
+        const { data } = await fetchJson("/api/jarvis-personal", null, 10000);
+        const due = data.due || [];
+        for (const item of due) {
+          if (item.kind === "alarm") continue;
+          if (alarmAcked.has(item.id)) continue;
+          alarmAcked.add(item.id);
+          setJarvisState("speaking");
+          const msg = item.wakeSpeech || ("Lembrete: " + item.title);
+          presentJarvisMessage(msg, { type: true, skipConvo: true });
+          toast(msg, "warn");
+          fetch("/api/jarvis-personal/ack", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: item.id }),
+          }).catch(() => {});
+        }
+      } catch {
+        /* ignore */
+      }
+    }
+
+    window.stopAlarm = stopAlarm;
+    window.ackPersonal = async function (id) {
+      stopAlarm();
+      alarmAcked.add(id);
+      await fetch("/api/jarvis-personal/ack", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      }).catch(() => {});
+      load();
+    };
+
+    showInstantJarvisGreeting();
+    initJarvisVoice();
+    jarvisBoot();
+    load();
+    initJarvisMic();
+    scheduleRefresh();
+    startJobPolling();
+    setInterval(pollPersonalDue, 20000);
+    setTimeout(pollPersonalDue, 3000);
+  </script>
+</body>
+</html>

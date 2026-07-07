@@ -46,5 +46,9 @@ next-env.d.ts
 
 # generated marketing assets (regenerate locally)
 marketing/tiktok/output/
+marketing/social/output/
+marketing/social/autopilot-state.json
 screenshots-mobile/
 reports/
+
+.vercel

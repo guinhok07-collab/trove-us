@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+        background: #0f0f0f;
+        color: #fff;
+      }
+      .deck { width: 100%; height: 100%; position: relative; }
+      .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 120px 72px 140px;
+      }
+      .slide.active { opacity: 1; }
+      .slide-1 {
+        background: linear-gradient(165deg, #1c1917 0%, #2a3832 45%, #4d7366 100%);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .slide-2 {
+        background: #faf9f7;
+        color: #1c1917;
+        align-items: center;
+      }
+      .slide-3 {
+        background: linear-gradient(160deg, #4d7366 0%, #5f8a7a 100%);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .slide-4 {
+        background: #1c1917;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .brand {
+        position: absolute;
+        top: 72px;
+        left: 72px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        background: #5f8a7a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .slide-2 .brand { color: #1c1917; }
+      .slide-2 .mark { background: #5f8a7a; color: #fff; }
+      .hook {
+        font-size: 72px;
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        max-width: 900px;
+      }
+      .badge {
+        margin-top: 48px;
+        padding: 18px 32px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.14);
+        border: 2px solid rgba(255,255,255,0.22);
+        font-size: 26px;
+        font-weight: 700;
+      }
+      .product-frame {
+        margin-top: 120px;
+        width: 880px;
+        height: 880px;
+        border-radius: 40px;
+        background: #fff;
+        border: 3px solid #e7e5e4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 24px 80px rgba(0,0,0,0.08);
+      }
+      .product-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 40px;
+      }
+      .product-name {
+        margin-top: 48px;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 1.15;
+        text-align: center;
+        max-width: 900px;
+        letter-spacing: -0.03em;
+      }
+      .price-big {
+        font-size: 120px;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+      .compare {
+        margin-top: 20px;
+        font-size: 36px;
+        font-weight: 600;
+        opacity: 0.75;
+        text-decoration: line-through;
+      }
+      .perk {
+        margin-top: 36px;
+        font-size: 34px;
+        font-weight: 700;
+      }
+      .ship-row {
+        margin-top: 28px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .pill {
+        padding: 16px 28px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.16);
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .cta-title {
+        font-size: 64px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+      .cta-url {
+        margin-top: 28px;
+        font-size: 42px;
+        font-weight: 700;
+        color: #86efac;
+      }
+      .cta-sub {
+        margin-top: 24px;
+        font-size: 28px;
+        font-weight: 600;
+        color: #a8a29e;
+        max-width: 760px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="deck" id="deck">
+      <section class="slide slide-1 active" data-i="0">
+        <div class="brand"><div class="mark">T</div> Trove</div>
+        <h1 class="hook" id="hook"></h1>
+        <div class="badge" id="badge"></div>
+      </section>
+      <section class="slide slide-2" data-i="1">
+        <div class="brand"><div class="mark">T</div> Trove</div>
+        <div class="product-frame"><img id="img" alt="" /></div>
+        <h2 class="product-name" id="product"></h2>
+      </section>
+      <section class="slide slide-3" data-i="2">
+        <div class="brand"><div class="mark">T</div> Trove</div>
+        <div class="price-big" id="price"></div>
+        <div class="compare" id="compare"></div>
+        <div class="perk" id="perk"></div>
+        <div class="ship-row">
+          <span class="pill">Free US shipping</span>
+          <span class="pill">3–5 day delivery</span>
+        </div>
+      </section>
+      <section class="slide slide-4" data-i="3">
+        <div class="brand"><div class="mark">T</div> Trove</div>
+        <div class="mark" style="width:140px;height:140px;border-radius:44px;font-size:76px;margin-bottom:36px;">T</div>
+        <h2 class="cta-title">Shop now</h2>
+        <p class="cta-url">trove-us.com</p>
+        <p class="cta-sub" id="sub"></p>
+      </section>
+    </div>
+    <script>
+      const params = new URLSearchParams(location.search);
+      document.getElementById("hook").textContent = params.get("hook") || "New find at Trove";
+      document.getElementById("badge").textContent = params.get("badge") || "Free shipping · US delivery";
+      document.getElementById("product").textContent = params.get("product") || "Trove pick";
+      document.getElementById("price").textContent = params.get("price") || "$12.99";
+      document.getElementById("perk").textContent = params.get("perk") || "Free shipping included";
+      document.getElementById("sub").textContent = params.get("sub") || "Pet · Home · Wellness · Desk & Tech";
+      const compare = params.get("compare");
+      document.getElementById("compare").textContent = compare ? `Was ${compare}` : "";
+      const img = document.getElementById("img");
+      img.src = params.get("image") || "";
+      img.onerror = () => { img.style.display = "none"; };
+
+      const slides = [...document.querySelectorAll(".slide")];
+      const SLIDE_MS = Number(params.get("slideMs") || 2800);
+      let i = 0;
+      setInterval(() => {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }, SLIDE_MS);
+    </script>
+  </body>
+</html>

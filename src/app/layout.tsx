@@ -2,6 +2,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TrustStrip } from "@/components/trust-strip";
 import { MetaPixel } from "@/components/meta-pixel";
+import { TrackSiteTraffic } from "@/components/track-site-traffic";
 import { BrowseScrollRestore } from "@/components/browse-scroll-restore";
 import { CartProvider } from "@/context/cart-context";
 import "./globals.css";
@@ -57,6 +58,9 @@ export default function RootLayout({
         <CartProvider>
           <Suspense fallback={null}>
             <MetaPixel />
+          </Suspense>
+          <Suspense fallback={null}>
+            <TrackSiteTraffic />
           </Suspense>
           <Suspense fallback={null}>
             <BrowseScrollRestore />

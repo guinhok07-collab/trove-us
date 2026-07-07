@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { fulfillOrderWithCj } from "@/lib/cj/fulfill";
 import type { CreateStoreOrderRequest } from "@/lib/cj/types";
 import { persistPaidOrder } from "@/lib/orders/service";
+import { recordPaymentIssue } from "@/lib/payment-issues/record";
 import { capturePayPalOrder, getPayPalOrder } from "@/lib/paypal";
 import {
   amountsMatch,
@@ -11,12 +12,14 @@ import {
 import { toUserErrorMessage, toUserOrderNote } from "@/lib/user-errors";
 
 export async function POST(request: Request) {
+  let order: CreateStoreOrderRequest | undefined;
   try {
     const body = await request.json();
-    const { paypalOrderId, order } = body as {
+    const { paypalOrderId } = body as {
       paypalOrderId: string;
       order: CreateStoreOrderRequest;
     };
+    order = body.order;
 
     if (!paypalOrderId || !order?.orderId) {
       return NextResponse.json(
@@ -94,9 +97,24 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[capture-order]", error);
     const status = error instanceof OrderPricingError ? 400 : 502;
-    return NextResponse.json(
-      { error: toUserErrorMessage(error, "payment") },
-      { status },
-    );
+    const userMessage = toUserErrorMessage(error, "payment");
+    void recordPaymentIssue({
+      source: "auto_capture",
+      fullName: order?.fullName,
+      email: order?.email,
+      phone: order?.phone,
+      orderId: order?.orderId,
+      cartTotal: order?.total,
+      problem: userMessage,
+      technicalDetail: [
+        error instanceof Error ? error.message : String(error),
+        (error as Error & { paypal?: { name?: string; debug_id?: string } }).paypal?.name,
+        (error as Error & { paypal?: { debug_id?: string } }).paypal?.debug_id,
+      ]
+        .filter(Boolean)
+        .join(" | "),
+      path: "/checkout",
+    }).catch((err) => console.error("[capture-order] issue log failed:", err));
+    return NextResponse.json({ error: userMessage }, { status });
   }
 }

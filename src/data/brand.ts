@@ -5,6 +5,8 @@ export const brand = {
   description:
     "Everyday products for home, pets, wellness, and work — curated with care, delivered fast across the United States.",
   supportEmail: "orders@trove-us.com",
+  instagramUrl: "https://www.instagram.com/shoptrove.us/",
+  instagramHandle: "@shoptrove.us",
   locationLine: "Delivering to all 50 states",
   shippingLine: "Free US delivery on every order · Ships from US warehouses",
   deliveryLine: "Most orders arrive in 3–5 business days",
@@ -82,21 +84,41 @@ export const copy = {
   ],
   trustStrip: [
     { icon: "lock" as const, label: "SSL Secure Checkout" },
-    { icon: "credit-card" as const, label: "PayPal & Cards Accepted" },
+    { icon: "credit-card" as const, label: "Cards & PayPal Accepted" },
     { icon: "credit-card" as const, label: "Pay in 4 — orders $30+" },
     { icon: "package" as const, label: "Free Shipping" },
     { icon: "return" as const, label: "30-Day Returns" },
     { icon: "map-pin" as const, label: "All 50 States" },
   ],
-  aboutTitle: "Essentials worth keeping",
-  aboutText:
-    "Trove started with a simple idea: life is busy, and finding quality everyday products shouldn't be hard. We curate items for your home, your pets, and yourself — useful things at fair prices, backed by support you can actually reach.",
-  aboutPoints: [
-    "Hand-picked products — quality over quantity",
-    "Transparent pricing, no surprises",
-    "Order tracking sent to your email",
-    "Friendly support — real humans, not bots",
+  aboutTitle: "Useful stuff, one place",
+  aboutLead:
+    "Trove is a tight catalog of everyday essentials for home, pets, wellness, and work — curated with care, priced honestly, and shipped free across the US.",
+  aboutStoryTitle: "It started with an annoying little problem",
+  aboutStoryText:
+    "Every home has that running list of small things we always forget to buy — a phone stand, an LED light for the closet, a new toy for the dog, a resistance band after the gym. None of it is expensive. None of it is hard to find. But pulling it all together in one place, at a fair price, without the runaround? That was more annoying than it should be.\n\nTrove exists to fix exactly that: a lean catalog of useful products — without spammy marketing, without ten thousand lookalike options, and without fine-print shipping tricks.",
+  aboutCurationTitle: "How we choose what to sell",
+  aboutCurationIntro: "We don't sell everything. Every product in the catalog passes a simple filter:",
+  aboutCurationPoints: [
+    "Solves a real everyday problem — not just another item on a shelf",
+    "Has consistent reviews — we look at sales history and ratings before listing",
+    "Honest pricing — no fake \"was $200, now $20\" discounts",
+    "Truly free shipping — built into the price, no checkout surprise",
   ],
+  aboutHowTitle: "How we work",
+  aboutHowText:
+    "We're a small team and we own the process end to end: product curation, customer support, and order follow-through. If something arrives wrong, defective, or simply isn't what you expected, you have 30 days to sort it out with us — refund or exchange, no bureaucratic games.",
+  aboutExpectTitle: "What you can expect from Trove",
+  aboutPoints: [
+    "Products organized by real need — Pet, Home, Wellness, Desk & Tech",
+    "Free shipping to all 50 US states",
+    "Order tracking sent straight to your email",
+    "Support from real people — no generic bot stalling you",
+  ],
+  aboutEarlyTitle: "Still early, but focused on what matters",
+  aboutEarlyText:
+    "Trove is still building its track record — and we're transparent about that. Our focus right now is simple: every order that leaves here should leave the customer satisfied, full stop. That's how a new brand earns trust — deliver, keep the promise, earn the repeat.",
+  aboutText:
+    "Every home has that running list of small things we always forget to buy. Trove brings useful everyday products together in one place — fair prices, free US shipping, and support you can actually reach.",
   guaranteeTitle: "Our satisfaction guarantee",
   guaranteeText:
     "If your order isn't right, we'll fix it. Contact us within 30 days for a refund or replacement. No runaround, no fine print games.",
@@ -123,7 +145,8 @@ export const copy = {
     },
     {
       q: "What payment methods do you accept?",
-      a: "We accept PayPal, major credit and debit cards, and Pay in 4 on eligible orders of $30 or more. All prices are in USD with no hidden fees at checkout.",
+      a: "We accept major credit and debit cards (no PayPal account required), PayPal, and Pay in 4 on eligible orders of $30 or more. All prices are in USD with no hidden fees at checkout.",
+
     },
     {
       q: "How do I track my order?",
@@ -157,7 +180,17 @@ export const copy = {
   productDelivery: "Delivery in 3–5 business days",
   productShipsUs: "Ships anywhere in the US",
   checkoutSecure: "Secure checkout — your information is protected",
-  checkoutPayment: "Pay safely with PayPal, card, or Pay in 4 (on eligible orders)",
+  checkoutPayment: "Secure checkout powered by PayPal.",
+  checkoutProgress: ["Cart", "Shipping", "Payment"] as const,
+  checkoutAlmostDone: "Complete shipping above to unlock payment.",
+  checkoutUsOnly: "US shipping addresses only · Free delivery included in price",
+  checkoutTrust: [
+    { title: "Free US shipping", detail: "Included in every price" },
+    { title: "Secure payment", detail: "PayPal encrypted checkout" },
+    { title: "Fast delivery", detail: "3–5 business days" },
+  ] as const,
+  cartTrust: "Free US shipping · Secure PayPal checkout · 30-day returns",
+
   payLaterBelowMinimum:
     "Pay in 4 is available on orders $30+. Add an item to unlock installments at checkout.",
   marketingOptInLabel:

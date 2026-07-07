@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { fulfillOrderWithCj } from "@/lib/cj/fulfill";
-import { isCjConfigured } from "@/lib/cj/client";
+import { getCjPayType, isCjConfigured } from "@/lib/cj/client";
 import { isEmailConfigured } from "@/lib/email/client";
 import { persistPaidOrder } from "@/lib/orders/service";
 import { isOrderStoreConfigured } from "@/lib/orders/store";
@@ -19,7 +19,7 @@ export async function GET() {
     return NextResponse.json(publicConfig);
   }
 
-  const payType = Number(process.env.CJ_PAY_TYPE ?? "2");
+  const payType = getCjPayType();
   return NextResponse.json({
     ...publicConfig,
     payType,

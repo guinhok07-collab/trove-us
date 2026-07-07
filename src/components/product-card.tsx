@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { CatalogImage } from "@/components/catalog-image";
 import { storeLabels } from "@/data/products";
 import { saveBrowseReturn } from "@/lib/browse-return";
-import { isCatalogCdnUrl, PRODUCT_IMAGE_FALLBACK } from "@/lib/catalog-image";
 import { Product } from "@/types/product";
 import { calcDiscount, formatUsd } from "@/lib/format";
 
@@ -16,7 +14,6 @@ interface ProductCardProps {
 
 export function ProductCard({ product, variant = "default" }: ProductCardProps) {
   const discount = calcDiscount(product.price, product.compareAtPrice);
-  const [imageSrc, setImageSrc] = useState(product.image);
   const compact = variant === "compact";
 
   return (
@@ -33,8 +30,9 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
           compact ? "aspect-square" : "aspect-square sm:aspect-[4/5]"
         }`}
       >
-        <Image
-          src={imageSrc}
+        <CatalogImage
+          src={product.image}
+          candidates={product.images}
           alt={product.name}
           fill
           className="object-contain p-2 transition duration-500 group-hover:scale-[1.02]"
@@ -43,8 +41,6 @@ export function ProductCard({ product, variant = "default" }: ProductCardProps) 
               ? "(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
               : "(max-width: 768px) 50vw, 25vw"
           }
-          unoptimized={isCatalogCdnUrl(imageSrc)}
-          onError={() => setImageSrc(PRODUCT_IMAGE_FALLBACK)}
         />
         {product.tags.includes("bestseller") && (
           <span

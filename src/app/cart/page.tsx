@@ -1,18 +1,30 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { CatalogImage } from "@/components/catalog-image";
 import { copy } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
 import { cartLineKey } from "@/lib/catalog/variants";
 import { formatUsd } from "@/lib/format";
 import { calculateShipping } from "@/lib/pricing";
+import { readTrafficAttribution, recordTrafficEvent } from "@/lib/traffic/client";
+
 
 export default function CartPage() {
   const { items, subtotal, updateQuantity, removeItem, clearCart } = useCart();
 
   const shipping = subtotal === 0 ? 0 : calculateShipping(subtotal);
   const total = subtotal + shipping;
+
+  useEffect(() => {
+    if (items.length === 0) return;
+    recordTrafficEvent({
+      type: "view_cart",
+      path: "/cart",
+      ...readTrafficAttribution(),
+    });
+  }, [items.length]);
 
   if (items.length === 0) {
     return (
@@ -48,8 +60,9 @@ export default function CartPage() {
             return (
             <div key={lineKey} className="card flex gap-3 p-3 sm:gap-4 sm:p-4">
               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-[#f5f5f4] sm:h-24 sm:w-24 sm:rounded-xl">
-                <Image
+                <CatalogImage
                   src={product.image}
+                  candidates={product.images}
                   alt={product.name}
                   fill
                   className="object-contain p-1"
@@ -128,6 +141,15 @@ export default function CartPage() {
           <Link href="/checkout" className="btn-primary mt-6 w-full py-3">
             Proceed to Checkout
           </Link>
+          <p className="mt-3 text-center text-xs leading-relaxed text-[#78716c]">
+            {copy.cartTrust}
+          </p>
+          <p className="mt-2 text-center text-xs text-[#a8a29e]">
+            Payment trouble?{" "}
+            <Link href="/checkout" className="font-medium text-[#5f8a7a] hover:underline">
+              Report on checkout
+            </Link>
+          </p>
           <Link
             href="/products"
             className="mt-4 block text-center text-sm font-medium text-[#5f8a7a] hover:text-[#4d7366]"

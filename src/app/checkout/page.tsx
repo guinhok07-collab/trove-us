@@ -1,11 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { copy } from "@/data/brand";
+import { CatalogImage } from "@/components/catalog-image";
+import { copy, brand } from "@/data/brand";
 import { PayPalCheckout } from "@/components/paypal-checkout";
+import { CheckoutPaymentTrust } from "@/components/checkout-payment-trust";
+import { PaymentHelpForm } from "@/components/payment-help-form";
 import { useCart } from "@/context/cart-context";
 import { createOrderId, ORDER_STORAGE_KEY } from "@/lib/orders";
 import type { CreateStoreOrderRequest } from "@/lib/cj/types";
@@ -14,6 +16,7 @@ import { calculateShipping } from "@/lib/pricing";
 import { cartLineKey } from "@/lib/catalog/variants";
 import { toUserErrorMessage } from "@/lib/user-errors";
 import { trackMetaInitiateCheckout } from "@/lib/meta-pixel";
+import { readTrafficAttribution, recordTrafficEvent } from "@/lib/traffic/client";
 
 interface CjConfig {
   cjConfigured: boolean;
@@ -51,15 +54,19 @@ const emptyForm: ShippingForm = {
 };
 
 function isFormValid(form: ShippingForm) {
-  return (
-    form.fullName.trim() &&
-    form.address.trim() &&
-    form.city.trim() &&
-    form.state.trim() &&
-    form.zip.trim() &&
-    form.phone.trim() &&
-    form.email.trim()
-  );
+  return getMissingFields(form).length === 0;
+}
+
+function getMissingFields(form: ShippingForm): string[] {
+  const missing: string[] = [];
+  if (!form.fullName.trim()) missing.push("Full name");
+  if (!form.address.trim()) missing.push("Street address");
+  if (!form.city.trim()) missing.push("City");
+  if (!form.state.trim()) missing.push("State");
+  if (!form.zip.trim()) missing.push("ZIP code");
+  if (!form.phone.trim()) missing.push("Phone");
+  if (!form.email.trim()) missing.push("Email");
+  return missing;
 }
 
 export default function CheckoutPage() {
@@ -90,6 +97,32 @@ export default function CheckoutPage() {
   }, []);
 
   useEffect(() => {
+    const clientId = paypalConfig?.clientId;
+    if (!clientId || !paypalConfig?.configured) return;
+
+    const params = new URLSearchParams({
+      "client-id": clientId,
+      currency: "USD",
+      intent: "capture",
+      components: paypalConfig.mode === "live" ? "buttons,messages" : "buttons",
+      locale: "en_US",
+    });
+    const href = `https://www.paypal.com/sdk/js?${params.toString()}`;
+    if (document.querySelector('link[data-paypal-preload="1"]')) return;
+
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "script";
+    link.href = href;
+    link.setAttribute("data-paypal-preload", "1");
+    document.head.appendChild(link);
+
+    return () => {
+      link.remove();
+    };
+  }, [paypalConfig]);
+
+  useEffect(() => {
     if (items.length === 0) return;
     try {
       if (sessionStorage.getItem("trove-meta-initiate-checkout")) return;
@@ -103,6 +136,11 @@ export default function CheckoutPage() {
         })),
         subtotal + calculateShipping(subtotal),
       );
+      recordTrafficEvent({
+        type: "initiate_checkout",
+        path: "/checkout",
+        ...readTrafficAttribution(),
+      });
       sessionStorage.setItem("trove-meta-initiate-checkout", "1");
     } catch {
       trackMetaInitiateCheckout(
@@ -232,11 +270,48 @@ export default function CheckoutPage() {
   const directOrdersAllowed = cjConfig?.directOrdersAllowed ?? false;
   const demoCheckoutEnabled = sandboxMode && directOrdersAllowed;
   const formReady = Boolean(orderPayload);
+  const missingFields = getMissingFields(form);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
       <h1 className="section-title text-2xl">Secure Checkout</h1>
       <p className="section-subtitle mt-2">{copy.checkoutSecure}</p>
+      <p className="mt-1 text-sm text-[#78716c]">{copy.checkoutUsOnly}</p>
+
+      <ol className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+        {copy.checkoutProgress.map((step, index) => {
+          const active = index === 1;
+          const done = index === 0;
+          return (
+            <li key={step} className="flex items-center gap-2">
+              {index > 0 && <span className="text-[#d6d3d1]">→</span>}
+              <span
+                className={`rounded-full px-3 py-1 font-medium ${
+                  active
+                    ? "bg-[#eef4f1] text-[#3f5f52]"
+                    : done
+                      ? "text-[#5f8a7a]"
+                      : "text-[#a8a29e]"
+                }`}
+              >
+                {step}
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+
+      <div className="mt-5 grid gap-3 sm:grid-cols-3">
+        {copy.checkoutTrust.map((item) => (
+          <div
+            key={item.title}
+            className="rounded-xl border border-[#e7e5e4] bg-[#faf9f7] px-4 py-3 text-sm"
+          >
+            <p className="font-semibold text-[#1c1917]">{item.title}</p>
+            <p className="mt-0.5 text-[#78716c]">{item.detail}</p>
+          </div>
+        ))}
+      </div>
 
       {!paypalReady && paypalConfig !== null && (
         <div className="mt-6 rounded-xl border border-[#fde68a] bg-[#fffbeb] px-4 py-3 text-sm text-[#92400e]">
@@ -305,7 +380,15 @@ export default function CheckoutPage() {
           </section>
 
           <section className="card p-6">
-            <h2 className="text-base font-semibold text-[#1c1917]">Payment</h2>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 className="text-base font-semibold text-[#1c1917]">Payment</h2>
+                <p className="mt-1 text-sm text-[#78716c]">{copy.checkoutPayment}</p>
+              </div>
+              <p className="text-lg font-semibold text-[#1c1917]">{formatUsd(total)}</p>
+            </div>
+
+            <CheckoutPaymentTrust />
 
             {demoCheckoutEnabled && formReady ? (
               <div className="mt-4 space-y-4">
@@ -344,31 +427,56 @@ export default function CheckoutPage() {
                   </div>
                 </details>
               </div>
-            ) : paypalReady && orderPayload ? (
+            ) : paypalReady ? (
               <div className="mt-5 max-w-md">
-                <p className="text-sm text-[#78716c]">{copy.checkoutPayment}</p>
+                {!formReady ? (
+                  <p className="mb-3 text-sm text-[#92400e]">
+                    {copy.checkoutAlmostDone}{" "}
+                    <span className="text-[#78716c]">
+                      ({missingFields.join(" · ")})
+                    </span>
+                  </p>
+                ) : null}
                 <PayPalCheckout
                   clientId={paypalConfig!.clientId!}
                   mode={paypalConfig!.mode}
                   total={total}
                   orderPayload={orderPayload}
-                  disabled={!formReady || submitting}
+                  locked={!formReady}
+                  disabled={submitting}
                   onSuccess={completeOrder}
                   onError={(message) =>
                     setError(toUserErrorMessage(message, "payment"))
                   }
                 />
-                {!formReady && (
-                  <p className="mt-3 text-xs text-[#78716c]">
-                    Fill in all shipping fields to enable PayPal.
-                  </p>
-                )}
+                {error ? (
+                  <p className="mt-3 text-sm text-[#57534e]">{error}</p>
+                ) : null}
               </div>
             ) : (
               <p className="mt-5 text-sm text-[#78716c]">
-                PayPal buttons appear here once credentials are configured.
+                Payment buttons appear here once credentials are configured.
               </p>
             )}
+
+            <details className="mt-5 border-t border-[#e7e5e4] pt-4">
+              <summary className="cursor-pointer text-xs font-medium text-[#78716c] hover:text-[#57534e]">
+                Payment issue? We can help
+              </summary>
+              <div className="mt-3">
+                <PaymentHelpForm
+                  compact
+                  defaults={{
+                  fullName: form.fullName,
+                  email: form.email,
+                  phone: form.phone,
+                  orderId,
+                  cartTotal: total,
+                }}
+                lastError={error}
+              />
+              </div>
+            </details>
           </section>
         </div>
 
@@ -380,8 +488,9 @@ export default function CheckoutPage() {
             {items.map(({ product, quantity, variantId, variantLabel }) => (
               <li key={cartLineKey(product.id, variantId ?? product.cjVid)} className="flex gap-3">
                 <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-[#f5f5f4]">
-                  <Image
+                  <CatalogImage
                     src={product.image}
+                    candidates={product.images}
                     alt={product.name}
                     fill
                     className="object-contain p-0.5"

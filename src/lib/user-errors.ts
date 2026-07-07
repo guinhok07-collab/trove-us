@@ -47,6 +47,15 @@ export function toUserErrorMessage(
   }
 
   if (
+    lower.includes("load failed") ||
+    lower.includes("failed to fetch") ||
+    lower.includes("networkerror") ||
+    lower.includes("network request failed")
+  ) {
+    return "Connection lost during payment. You were not charged — check your internet and try again.";
+  }
+
+  if (
     lower.includes("paypal") ||
     lower.includes("capture failed") ||
     lower.includes("create order failed") ||

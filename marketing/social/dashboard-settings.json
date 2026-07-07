@@ -1,0 +1,15 @@
+{
+  "weeklyBudgetBrl": 120,
+  "dailyBudgetCents": 2000,
+  "targetActiveAds": 3,
+  "maxNewAdsPerRun": 3,
+  "maxDailyBudgetCents": 2000,
+  "watchIntervalHours": 2,
+  "dashboardRefreshSeconds": 60,
+  "autoBoost": true,
+  "autoPause": true,
+  "autoApplyMetaRecs": true,
+  "rateLimitPauseMs": 800,
+  "metaApiRetryCount": 2,
+  "updatedAt": "2026-07-04T15:46:39.745Z"
+}

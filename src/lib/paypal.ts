@@ -1,5 +1,7 @@
 export type PayPalMode = "sandbox" | "live";
 
+import { parsePayPalError } from "./paypal-health";
+
 export function getPayPalConfig() {
   const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID?.trim();
   const clientSecret = process.env.PAYPAL_CLIENT_SECRET?.trim();
@@ -137,9 +139,18 @@ export async function createPayPalOrder(input: {
     cache: "no-store",
   });
 
-  const json = (await res.json()) as { id?: string; message?: string };
+  const json = (await res.json()) as {
+    id?: string;
+    message?: string;
+    name?: string;
+    details?: Array<{ issue?: string; description?: string }>;
+    debug_id?: string;
+  };
   if (!res.ok || !json.id) {
-    throw new Error(json.message || "Failed to create PayPal order.");
+    const err = parsePayPalError(json, "Failed to create PayPal order.");
+    const e = new Error(err.message);
+    (e as Error & { paypal?: typeof err }).paypal = err;
+    throw e;
   }
 
   return json.id;
@@ -193,13 +204,19 @@ export async function capturePayPalOrder(paypalOrderId: string) {
   const json = (await res.json()) as {
     status?: string;
     message?: string;
+    name?: string;
+    details?: Array<{ issue?: string; description?: string }>;
+    debug_id?: string;
     purchase_units?: Array<{
       payments?: { captures?: Array<{ id?: string; status?: string }> };
     }>;
   };
 
   if (!res.ok || json.status !== "COMPLETED") {
-    throw new Error(json.message || "PayPal capture failed.");
+    const err = parsePayPalError(json, "PayPal capture failed.");
+    const e = new Error(err.message);
+    (e as Error & { paypal?: typeof err }).paypal = err;
+    throw e;
   }
 
   const captureId =

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { StoreCategory } from "@/types/product";
 import { trackEvent } from "@/lib/analytics";
 import { trackMetaViewContent } from "@/lib/meta-pixel";
+import { readTrafficAttribution, recordTrafficEvent } from "@/lib/traffic/client";
 
 export function TrackProductView({
   store,
@@ -21,6 +22,13 @@ export function TrackProductView({
   useEffect(() => {
     trackEvent(store, "view_product", productId);
     trackMetaViewContent({ id: productId, slug, name, price });
+    recordTrafficEvent({
+      type: "view_product",
+      path: `/products/${slug}`,
+      productSlug: slug,
+      store,
+      ...readTrafficAttribution(),
+    });
   }, [store, productId, slug, name, price]);
 
   return null;

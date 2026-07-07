@@ -382,6 +382,23 @@ const posts = [
         <p class="subtitle">Tap to shop pet, home, wellness &amp; desk picks — free delivery included</p>`,
     }),
   },
+  {
+    file: "10-massage-gun.png",
+    theme: "dark",
+    html: shell({
+      theme: "dark",
+      footer: "trove-us.com/products/percussion-massage-gun",
+      main: `
+        ${iconBox("wellness", "green")}
+        <p class="eyebrow" style="margin-top:28px;">This week's pick</p>
+        <h1 class="title">Mini Massage Gun</h1>
+        <p class="subtitle">Sore muscles? Recovery at home — quiet motor, multiple speeds, free US shipping.</p>
+        <div class="pills">
+          <span class="pill">$12.99 delivered</span>
+          <span class="pill">Ships in 3–5 days</span>
+        </div>`,
+    }),
+  },
 ];
 
 const tmpDir = resolve(root, "public/.instagram-export");

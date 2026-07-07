@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { AdminTrafficPanel } from "@/components/admin-traffic-panel";
+import { AdminPaymentIssuesPanel } from "@/components/admin-payment-issues-panel";
 import { brand } from "@/data/brand";
 import { formatUsd } from "@/lib/format";
 import type { ReturnRequestStatus, StoredReturnRequest } from "@/lib/returns/types";
+import type { TrafficReport } from "@/lib/traffic/types";
 
 interface AdminOrder {
   orderId: string;
@@ -73,7 +76,7 @@ interface CjAuditSummary {
   variantGap: number;
 }
 
-type Tab = "returns" | "orders" | "catalog" | "subscribers";
+type Tab = "traffic" | "payment-issues" | "returns" | "orders" | "catalog" | "subscribers";
 
 interface MarketingSubscriberRow {
   email: string;
@@ -105,7 +108,7 @@ function formatPtTime(iso: string) {
 }
 
 export function AdminDashboard() {
-  const [tab, setTab] = useState<Tab>("returns");
+  const [tab, setTab] = useState<Tab>("traffic");
   const [returns, setReturns] = useState<StoredReturnRequest[]>([]);
   const [orders, setOrders] = useState<AdminOrder[]>([]);
   const [catalog, setCatalog] = useState<CatalogProduct[]>([]);
@@ -121,6 +124,7 @@ export function AdminDashboard() {
   const [subscriberCount, setSubscriberCount] = useState(0);
   const [mailchimpConnected, setMailchimpConnected] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
+  const [paymentIssueCount, setPaymentIssueCount] = useState(0);
   const [pendingActionCount, setPendingActionCount] = useState(0);
   const [ordersFilter, setOrdersFilter] = useState<"all" | "pending">("all");
   const [filter, setFilter] = useState<ReturnRequestStatus | "all">("all");
@@ -129,6 +133,8 @@ export function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [traffic, setTraffic] = useState<TrafficReport | null>(null);
+  const [trafficLoading, setTrafficLoading] = useState(true);
   const initialPendingTab = useRef(false);
 
   const loadReturns = useCallback(async () => {
@@ -190,22 +196,46 @@ export function AdminDashboard() {
     }
   }, []);
 
+  const loadPaymentIssues = useCallback(async () => {
+    const res = await fetch("/api/owner/payment-issues?status=open&limit=1");
+    if (res.status === 401) {
+      window.location.reload();
+      return;
+    }
+    const data = await res.json();
+    if (data.ok) setPaymentIssueCount(data.openCount ?? 0);
+  }, []);
+
+  const loadTraffic = useCallback(async () => {
+    setTrafficLoading(true);
+    const res = await fetch("/api/owner/traffic?days=14");
+    if (res.status === 401) {
+      window.location.reload();
+      return;
+    }
+    const data = (await res.json()) as TrafficReport;
+    if (data.ok) setTraffic(data);
+    setTrafficLoading(false);
+  }, []);
+
   const refresh = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
       await Promise.all([
+        loadTraffic(),
         loadReturns(),
         loadOrders(),
         loadCatalog(),
         loadSubscribers(),
+        loadPaymentIssues(),
       ]);
     } catch {
       setError("Não foi possível carregar o painel.");
     } finally {
       setLoading(false);
     }
-  }, [loadReturns, loadOrders, loadCatalog, loadSubscribers]);
+  }, [loadTraffic, loadReturns, loadOrders, loadCatalog, loadSubscribers, loadPaymentIssues]);
 
   useEffect(() => {
     void refresh();
@@ -213,11 +243,12 @@ export function AdminDashboard() {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
+      void loadTraffic();
       void loadReturns();
       void loadOrders();
     }, 30_000);
     return () => window.clearInterval(timer);
-  }, [loadReturns, loadOrders]);
+  }, [loadTraffic, loadReturns, loadOrders]);
 
   useEffect(() => {
     if (!initialPendingTab.current && pendingActionCount > 0) {
@@ -401,6 +432,18 @@ export function AdminDashboard() {
         </div>
       </div>
 
+      {paymentIssueCount > 0 && (
+        <div className="mb-4 rounded-2xl border border-[#fecaca] bg-[#fef2f2] px-4 py-3 text-sm text-[#991b1b]">
+          <p className="font-semibold">
+            💳 {paymentIssueCount} problema{paymentIssueCount > 1 ? "s" : ""} de pagamento no
+            checkout
+          </p>
+          <p className="mt-1 text-[#78716c]">
+            Cliente não conseguiu pagar — veja nome e telefone na aba Pagamentos.
+          </p>
+        </div>
+      )}
+
       {pendingActionCount > 0 && (
         <div className="mb-4 rounded-2xl border border-amber-300 bg-[#fffbeb] px-4 py-3 text-sm text-[#92400e]">
           <p className="font-semibold">
@@ -408,13 +451,39 @@ export function AdminDashboard() {
             pendente{pendingActionCount > 1 ? "s" : ""} — cliente na mão
           </p>
           <p className="mt-1 text-[#78716c]">
-            Pagou no PayPal mas o pedido não foi para o CJ. Recarregue a wallet CJ ou
-            envie manual no painel CJ, depois marque como resolvido.
+            Pagou no PayPal — pague manual no painel CJ e marque como resolvido.
           </p>
         </div>
       )}
 
       <div className="mb-4 flex gap-2 border-b border-[#e7e5e4]">
+        <button
+          type="button"
+          onClick={() => setTab("traffic")}
+          className={`border-b-2 px-4 py-2 text-sm font-semibold ${
+            tab === "traffic"
+              ? "border-[#5f8a7a] text-[#4d7366]"
+              : "border-transparent text-[#78716c]"
+          }`}
+        >
+          Tráfego
+        </button>
+        <button
+          type="button"
+          onClick={() => setTab("payment-issues")}
+          className={`border-b-2 px-4 py-2 text-sm font-semibold ${
+            tab === "payment-issues"
+              ? "border-[#5f8a7a] text-[#4d7366]"
+              : "border-transparent text-[#78716c]"
+          }`}
+        >
+          Pagamentos
+          {paymentIssueCount > 0 && (
+            <span className="ml-2 rounded-full bg-[#fee2e2] px-2 py-0.5 text-xs text-[#991b1b]">
+              {paymentIssueCount}
+            </span>
+          )}
+        </button>
         <button
           type="button"
           onClick={() => setTab("returns")}
@@ -482,8 +551,12 @@ export function AdminDashboard() {
         </p>
       )}
 
-      {loading ? (
+      {loading && tab !== "traffic" ? (
         <p className="py-12 text-center text-sm text-[#78716c]">Carregando…</p>
+      ) : tab === "traffic" ? (
+        <AdminTrafficPanel report={traffic} loading={trafficLoading} />
+      ) : tab === "payment-issues" ? (
+        <AdminPaymentIssuesPanel />
       ) : tab === "returns" ? (
         <div className="grid gap-6 lg:grid-cols-5">
           <div className="space-y-3 lg:col-span-2">
