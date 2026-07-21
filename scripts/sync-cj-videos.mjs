@@ -8,7 +8,8 @@ import { fileURLToPath } from "url";
 import {
   extractProductBlock,
   replaceProductBlock,
-  extractVideo,
+  resolveProductVideo,
+  probeCjAccount,
   getToken,
   queryBySku,
   queryPid,
@@ -45,7 +46,10 @@ function patchVideo(block, video) {
 async function fetchVideo(token, { cjSku, supplierSku, slug }) {
   if (cjSku) {
     const hit = await queryBySku(token, cjSku);
-    if (hit?.data) return extractVideo(hit.data);
+    if (hit?.data) {
+      const video = await resolveProductVideo(token, hit.data);
+      if (video) return video;
+    }
   }
 
   const pidCandidates = [
@@ -57,7 +61,7 @@ async function fetchVideo(token, { cjSku, supplierSku, slug }) {
   for (const pid of pidCandidates) {
     const data = await queryPid(token, pid);
     if (data) {
-      const video = extractVideo(data);
+      const video = await resolveProductVideo(token, data);
       if (video) return video;
     }
   }
@@ -73,6 +77,16 @@ const targets = slugFilter ? [slugFilter] : slugs;
 console.log(`Syncing CJ videos for ${targets.length} product(s) (~1.1s each)…`);
 console.log("Authenticating CJ…");
 const token = await getToken(key);
+
+const probeSku = source.match(/cjSku: "([^"]+)"/)?.[1];
+if (probeSku) {
+  const probe = await probeCjAccount(token, probeSku);
+  if (!probe.ok) {
+    console.error(`\nCJ API blocked: ${probe.message}`);
+    console.error("Unfreeze your CJ account at cjdropshipping.com, then re-run: npm run catalog:sync-videos");
+    process.exit(1);
+  }
+}
 
 let added = 0;
 let cleared = 0;

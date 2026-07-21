@@ -57,9 +57,48 @@ export function supplierImages(data, variant) {
 }
 
 export function extractVideo(data) {
-  return typeof data?.productVideo === "string" && data.productVideo.startsWith("http")
-    ? data.productVideo
-    : undefined;
+  const raw = data?.productVideo;
+  if (typeof raw === "string" && raw.startsWith("http")) return raw;
+  if (Array.isArray(raw)) {
+    const url = raw.find((v) => typeof v === "string" && v.startsWith("http"));
+    if (url) return url;
+  }
+  return undefined;
+}
+
+export function productHasVideoMeta(data) {
+  if (!data) return false;
+  if (extractVideo(data)) return true;
+  if (data.isVideo === 1 || data.isVideo === "1") return true;
+  if (Array.isArray(data.productVideo) && data.productVideo.length) return true;
+  if (Array.isArray(data.videoList) && data.videoList.length) return true;
+  return false;
+}
+
+export async function queryVideosByProductId(token, productId) {
+  await sleep(1100);
+  const res = await fetch(`${API}/product/queryVideosByProductId`, {
+    method: "POST",
+    headers: {
+      "CJ-Access-Token": token,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ productId }),
+  }).then((r) => r.json());
+  if (!(res.result || res.success)) return [];
+  return Array.isArray(res.data) ? res.data : [];
+}
+
+export async function resolveProductVideo(token, data) {
+  const direct = extractVideo(data);
+  if (direct) return direct;
+  if (!productHasVideoMeta(data) || !data?.pid) return undefined;
+
+  const videos = await queryVideosByProductId(token, data.pid);
+  const pick =
+    videos.find((v) => v.videoState === "ON_STATE" && v.videoUrl?.startsWith("http")) ||
+    videos.find((v) => v.videoUrl?.startsWith("http"));
+  return pick?.videoUrl;
 }
 
 export function retailPrice(cost, shipping = 3.5) {
@@ -268,9 +307,10 @@ export async function getToken(key) {
 
 export async function queryBySku(token, cjSku) {
   await sleep(1100);
-  const res = await fetch(`${API}/product/query?variantSku=${encodeURIComponent(cjSku)}`, {
-    headers: { "CJ-Access-Token": token },
-  }).then((r) => r.json());
+  const res = await fetch(
+    `${API}/product/query?variantSku=${encodeURIComponent(cjSku)}&features=enable_video`,
+    { headers: { "CJ-Access-Token": token } },
+  ).then((r) => r.json());
   if (!res.result) return null;
   const variant =
     res.data?.variants?.find((v) => v.variantSku === cjSku) ||
@@ -281,10 +321,20 @@ export async function queryBySku(token, cjSku) {
 
 export async function queryPid(token, pid) {
   await sleep(1100);
-  const res = await fetch(`${API}/product/query?pid=${encodeURIComponent(pid)}`, {
-    headers: { "CJ-Access-Token": token },
-  }).then((r) => r.json());
+  const res = await fetch(
+    `${API}/product/query?pid=${encodeURIComponent(pid)}&features=enable_video`,
+    { headers: { "CJ-Access-Token": token } },
+  ).then((r) => r.json());
   return res.result ? res.data : null;
+}
+
+export async function probeCjAccount(token, cjSku) {
+  await sleep(1100);
+  const res = await fetch(
+    `${API}/product/query?variantSku=${encodeURIComponent(cjSku)}&features=enable_video`,
+    { headers: { "CJ-Access-Token": token } },
+  ).then((r) => r.json());
+  return { ok: Boolean(res.result), message: res.message || "" };
 }
 
 export function buildVariantsFromData(data, ship = 3.5) {
