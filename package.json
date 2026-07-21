@@ -9,6 +9,7 @@
     "lint": "eslint",
     "margins": "node scripts/margins.mjs",
     "catalog:check": "node scripts/catalog-check.mjs",
+    "catalog:normalize-labels": "node scripts/normalize-variant-labels.mjs",
     "catalog:check:cj": "node --env-file=.env.local scripts/catalog-check.mjs --cj",
     "catalog:audit": "node --env-file=.env.local scripts/audit-catalog-cj.mjs",
     "catalog:integrity": "node scripts/catalog-integrity-gate.mjs",

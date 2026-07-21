@@ -75,7 +75,7 @@ export function ProductVariantPicker({
         {dimensions.map((dim) => {
           const available = getAvailableValues(variants, dimensions, dim, selectedOptions);
           const current = selectedOptions[dim.name];
-          const isColor = dim.name === "Color";
+          const isColor = dim.name === "Color" || dim.displayName === "Color";
           const isPack = dim.displayName === "Pack size";
           const showPrices = optionPricesVary(
             variants,
@@ -89,11 +89,6 @@ export function ProductVariantPicker({
             <div key={dim.name}>
               <p className="text-xs font-semibold uppercase tracking-wide text-[#78716c]">
                 {dim.displayName}
-                {current ? (
-                  <span className="ml-2 normal-case tracking-normal text-[#57534e]">
-                    — {current}
-                  </span>
-                ) : null}
               </p>
 
               {isPack ? (

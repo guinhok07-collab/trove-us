@@ -83,6 +83,8 @@ for (const slug of slugs) {
   if (!entry?.variants?.length) {
     warnings.push(`${slug}: no variants in product-variants.json`);
   } else {
+    let badLabel = false;
+    let optionN = false;
     for (const v of entry.variants) {
       if (!v.cjVid || !v.cjSku || !v.price) {
         errors.push(`${slug}: variant missing cjVid, cjSku, or price`);
@@ -92,6 +94,19 @@ for (const slug of slugs) {
         errors.push(`${slug}: variant "${v.label ?? v.id}" missing image URL`);
         break;
       }
+      const label = String(v.label || "");
+      if (/^(default|as picture|as shown)$/i.test(label.trim()) || /\.\s*$/.test(label)) {
+        badLabel = true;
+      }
+      for (const key of Object.keys(v.optionValues || {})) {
+        if (/^Option \d+$/i.test(key)) optionN = true;
+      }
+    }
+    if (badLabel) {
+      warnings.push(`${slug}: variant label needs cleanup (Default / As picture / trailing punctuation)`);
+    }
+    if (optionN) {
+      warnings.push(`${slug}: has "Option N" groups — run: node scripts/normalize-variant-labels.mjs`);
     }
   }
 }

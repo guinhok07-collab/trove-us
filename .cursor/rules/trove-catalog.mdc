@@ -66,6 +66,9 @@ alwaysApply: true
 - Uniform grid in `product-variant-picker.tsx` — equal square thumbnails, labels below
 - Show per-variant `$` when prices differ
 - Mobile: 3-col variant grid, compact header (~100px), sticky Add to Cart bar on product page, `text-xl` max for product titles, `pb-20` for sticky bar clearance
+- Labels: Title Case English via `normalizeOptionValue` / `enrichVariantCatalog` — never show raw SKU, "Default", "As picture", trailing periods, or "Option 2/3" group names
+- Drop singleton dimensions (same value on every SKU) so the picker is not a mess
+- After CJ sync/relink: `node scripts/normalize-variant-labels.mjs` then `npm run catalog:check`
 
 ## Pre-deploy checklist
 ```
