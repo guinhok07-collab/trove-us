@@ -104,7 +104,8 @@
         overflow: hidden;
         box-shadow: 0 24px 80px rgba(0,0,0,0.08);
       }
-      .product-frame img {
+      .product-frame img,
+      .product-frame video {
         width: 100%;
         height: 100%;
         object-fit: contain;
@@ -181,7 +182,10 @@
       </section>
       <section class="slide slide-2" data-i="1">
         <div class="brand"><div class="mark">T</div> Trove</div>
-        <div class="product-frame"><img id="img" alt="" /></div>
+        <div class="product-frame" id="mediaFrame">
+          <video id="vid" autoplay muted loop playsinline style="display:none"></video>
+          <img id="img" alt="" />
+        </div>
         <h2 class="product-name" id="product"></h2>
       </section>
       <section class="slide slide-3" data-i="2">
@@ -213,16 +217,33 @@
       const compare = params.get("compare");
       document.getElementById("compare").textContent = compare ? `Was ${compare}` : "";
       const img = document.getElementById("img");
-      img.src = params.get("image") || "";
-      img.onerror = () => { img.style.display = "none"; };
+      const vid = document.getElementById("vid");
+      const cjVideo = params.get("video");
+      if (cjVideo && cjVideo.startsWith("http")) {
+        vid.src = cjVideo;
+        vid.style.display = "block";
+        img.style.display = "none";
+        vid.onerror = () => {
+          vid.style.display = "none";
+          img.style.display = "block";
+          img.src = params.get("image") || "";
+        };
+      } else {
+        img.src = params.get("image") || "";
+        img.onerror = () => { img.style.display = "none"; };
+      }
 
       const slides = [...document.querySelectorAll(".slide")];
       const SLIDE_MS = Number(params.get("slideMs") || 2800);
+      const hasCjVideo = Boolean(cjVideo && cjVideo.startsWith("http"));
       let i = 0;
       setInterval(() => {
         slides[i].classList.remove("active");
         i = (i + 1) % slides.length;
         slides[i].classList.add("active");
+        if (hasCjVideo && i === 1 && vid.paused) {
+          vid.play().catch(() => {});
+        }
       }, SLIDE_MS);
     </script>
   </body>

@@ -13,6 +13,7 @@
     "catalog:audit": "node --env-file=.env.local scripts/audit-catalog-cj.mjs",
     "catalog:integrity": "node scripts/catalog-integrity-gate.mjs",
     "catalog:audit-images": "node scripts/audit-live-product-images.mjs",
+    "catalog:sync-videos": "node --env-file=.env.local scripts/sync-cj-videos.mjs",
     "catalog:verify": "node scripts/catalog-check.mjs && node scripts/audit-live-product-images.mjs && node scripts/catalog-integrity-gate.mjs",
 
     "catalog:report": "node scripts/generate-verified-catalog-report.mjs",

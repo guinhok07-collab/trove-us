@@ -26,6 +26,7 @@ export function loadVisibleProducts() {
     const compareAtPrice = block.match(/compareAtPrice: ([\d.]+)/)?.[1];
     const store = block.match(/store: "([^"]+)"/)?.[1] ?? "home";
     const image = block.match(/image: "(https:[^"]+)"/)?.[1] ?? "";
+    const video = block.match(/video: "(https:[^"]+)"/)?.[1];
     const tagsMatch = block.match(/tags: \[([^\]]*)\]/);
     const tags = tagsMatch
       ? [...tagsMatch[1].matchAll(/"([^"]+)"/g)].map((m) => m[1])
@@ -42,6 +43,7 @@ export function loadVisibleProducts() {
       compareAtPrice: compareAtPrice ? Number(compareAtPrice) : null,
       store,
       image,
+      video: video || undefined,
       tags,
       url: `https://trove-us.com/products/${slug}`,
     });

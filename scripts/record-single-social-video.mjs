@@ -27,7 +27,9 @@ if (!ad) {
 }
 
 const SLIDE_MS = 2800;
-const RECORD_MS = 4 * SLIDE_MS + 600;
+const CJ_PRODUCT_SLIDE_MS = 6000;
+const RECORD_MS =
+  (ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS) * 4 + 600;
 
 const browser = await chromium.launch();
 const context = await browser.newContext({
@@ -43,9 +45,10 @@ const qs = new URLSearchParams({
   image: ad.image,
   badge: ad.badge,
   perk: ad.perk,
-  slideMs: String(SLIDE_MS),
+  slideMs: String(ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS),
 });
 if (ad.compare) qs.set("compare", ad.compare);
+if (ad.video?.startsWith("http")) qs.set("video", ad.video);
 
 const page = await context.newPage();
 await page.goto(`${pathToFileURL(template).href}?${qs}`, {

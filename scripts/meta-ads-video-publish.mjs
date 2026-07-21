@@ -1,8 +1,8 @@
 /**
- * Publica anúncios de vídeo Reels no Meta para produtos com .webm local.
+ * Publica anúncios de vídeo Reels no Meta — prefere vídeo CJ do catálogo.
  * Usage: node --env-file=.env.local scripts/meta-ads-video-publish.mjs [--dry-run] [--slug=xxx]
  */
-import { readFileSync, existsSync, mkdirSync, writeFileSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import {
@@ -15,10 +15,10 @@ import {
   preflightCreateAd,
   verifyAdHasInstagram,
 } from "./lib/ads-autopilot-brain.mjs";
+import { resolveAdVideoFile } from "./lib/cj-video-ad.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const feedDir = resolve(root, "marketing/social/output/feed");
-const videoDir = resolve(root, "marketing/social/output/videos");
 const adsPath = resolve(root, "marketing/social/ads.json");
 const dryRun = process.argv.includes("--dry-run");
 const slugFilter = process.argv.find((a) => a.startsWith("--slug="))?.split("=")[1];
@@ -46,20 +46,28 @@ for (const [slug, meta] of Object.entries(state.ads ?? {})) {
   }
 
   const file = meta.file ?? slug;
-  const webmCandidates = [
-    resolve(videoDir, `${file}.webm`),
-    resolve(videoDir, `${slug}.webm`),
-  ];
-  const webm = webmCandidates.find((p) => existsSync(p));
+  const adCopy = catalogBySlug.get(slug) ?? { slug, file };
   const png = [resolve(feedDir, `${file}.png`), resolve(feedDir, `${slug}.png`)].find((p) =>
     existsSync(p),
   );
-  if (!webm) {
-    console.log(`⏭ ${slug} — sem vídeo local (${webmCandidates[0]})`);
+
+  let videoFile;
+  try {
+    const resolved = await resolveAdVideoFile({
+      ...adCopy,
+      slug,
+      file,
+      video: adCopy.video || meta.cjVideo,
+    });
+    videoFile = resolved.path;
+    if (resolved.source === "cj") {
+      console.log(`  ↳ usando vídeo CJ (${slug})`);
+    }
+  } catch (err) {
+    console.log(`⏭ ${slug} — sem vídeo (${err.message})`);
     continue;
   }
 
-  const adCopy = catalogBySlug.get(slug);
   const message = adCopy?.facebook ?? adCopy?.hook ?? meta.product;
   const title = adCopy?.product ?? meta.product;
   const link = meta.url ?? adCopy?.url;
@@ -69,7 +77,7 @@ for (const [slug, meta] of Object.entries(state.ads ?? {})) {
   const preflight = preflightCreateAd({
     slug,
     imagePath: png,
-    videoPath: webm,
+    videoPath: videoFile,
     product: meta.product,
   });
   if (!preflight.ok) {
@@ -79,7 +87,7 @@ for (const [slug, meta] of Object.entries(state.ads ?? {})) {
   }
 
   if (dryRun) {
-    results.push({ slug, dryRun: true, webm });
+    results.push({ slug, dryRun: true, videoFile });
     continue;
   }
 
@@ -89,7 +97,7 @@ for (const [slug, meta] of Object.entries(state.ads ?? {})) {
       message,
       title,
       link,
-      videoPath: webm,
+      videoPath: videoFile,
       imagePath: png,
       campaignId: state.campaignId ?? meta.campaignId,
     });

@@ -16,7 +16,11 @@ mkdirSync(outDir, { recursive: true });
 const limit = process.argv[2] ? Number(process.argv[2]) : Infinity;
 const SLIDE_COUNT = 4;
 const SLIDE_MS = 2800;
-const RECORD_MS = SLIDE_COUNT * SLIDE_MS + 600;
+const CJ_PRODUCT_SLIDE_MS = 6000;
+const RECORD_MS = (ad) =>
+  (ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS) +
+  SLIDE_MS * (SLIDE_COUNT - 1) +
+  600;
 
 const ads = JSON.parse(readFileSync(adsPath, "utf8")).slice(0, limit);
 const browser = await chromium.launch();
@@ -35,16 +39,17 @@ for (const ad of ads) {
     image: ad.image,
     badge: ad.badge,
     perk: ad.perk,
-    slideMs: String(SLIDE_MS),
+    slideMs: String(ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS),
   });
   if (ad.compare) qs.set("compare", ad.compare);
+  if (ad.video?.startsWith("http")) qs.set("video", ad.video);
 
   const page = await context.newPage();
   await page.goto(`${pathToFileURL(template).href}?${qs}`, {
     waitUntil: "networkidle",
-    timeout: 90000,
+    timeout: 120000,
   });
-  await page.waitForTimeout(RECORD_MS);
+  await page.waitForTimeout(RECORD_MS(ad));
 
   const video = page.video();
   await context.close();

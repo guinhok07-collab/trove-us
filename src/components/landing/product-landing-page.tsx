@@ -3,6 +3,7 @@
 import type { ResolvedLandingPage } from "@/data/landing/registry";
 import { calcDiscount, formatUsd } from "@/lib/format";
 import { CatalogImage } from "@/components/catalog-image";
+import { ProductGallery } from "@/components/product-gallery";
 import { FaqList } from "@/components/faq-list";
 import { LandingBundleBuyButton, LandingBuyButton } from "@/components/landing/landing-buy-button";
 import { LandingExitIntentModal } from "@/components/landing/landing-exit-intent";
@@ -119,17 +120,13 @@ export function ProductLandingPage({ page }: ProductLandingPageProps) {
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="card relative aspect-square overflow-hidden bg-[#fafaf9]">
-              <CatalogImage
-                src={product.image}
-                candidates={product.images}
-                alt={config.displayName}
-                fill
-                priority
-                className="object-contain p-6 sm:p-10"
-                sizes="(max-width: 1024px) 90vw, 480px"
-              />
-            </div>
+            <ProductGallery
+              slug={product.slug}
+              name={config.displayName}
+              image={product.image}
+              images={product.images}
+              video={product.video}
+            />
           </div>
         </section>
 

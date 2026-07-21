@@ -115,6 +115,7 @@ function buildCopy(p, hook, index) {
     perk,
     badge,
     image: p.image,
+    video: p.video || "",
     url: p.url,
     instagram: `${hook}\n\n${shortName(p.name, 60)} — ${priceStr} with free shipping.\n\n${p.description}\n\n✓ Ships from US warehouse (3–5 days)\n✓ Free shipping on every order\n\nShop → link in bio\n${p.url.replace("https://", "")}\n\n${baseTags} ${extra}`.trim(),
     facebook: `${hook}\n\n${p.name} — ${priceStr}\nFree shipping included · Ships in 3–5 business days\n\n${p.description}\n\nShop now: ${p.url}`.trim(),
