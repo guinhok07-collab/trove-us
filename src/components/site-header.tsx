@@ -1,12 +1,45 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { brand } from "@/data/brand";
 import { useCart } from "@/context/cart-context";
 import { DesktopCategoryPills, MobileCategoryPills } from "@/components/category-nav";
+import { isLandingPath } from "@/lib/landing/paths";
 
 export function SiteHeader() {
   const { itemCount } = useCart();
+  const pathname = usePathname();
+  const landing = isLandingPath(pathname);
+
+  if (landing) {
+    return (
+      <header className="sticky top-0 z-50 isolate border-b border-[#e7e5e4]/80 bg-[#faf9f7]/95 backdrop-blur-md">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-3 py-2.5 sm:px-6 sm:py-3">
+          <Link href="/" className="flex shrink-0 items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#5f8a7a] font-display text-sm font-semibold text-white sm:h-9 sm:w-9">
+              T
+            </span>
+            <p className="font-display text-base font-semibold tracking-tight text-[#1c1917] sm:text-lg">
+              {brand.name}
+            </p>
+          </Link>
+          <Link
+            href="/cart"
+            className="flex items-center gap-1.5 rounded-full bg-[#5f8a7a] px-3 py-2 text-xs font-semibold text-white transition hover:bg-[#4d7366] sm:px-4 sm:text-sm"
+          >
+            <CartIcon />
+            Cart
+            {itemCount > 0 && (
+              <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-[#1c1917] px-1 text-[9px] font-bold leading-none">
+                {itemCount}
+              </span>
+            )}
+          </Link>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <>

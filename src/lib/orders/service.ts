@@ -81,6 +81,8 @@ export async function persistPaidOrder(
     subtotal: order.subtotal,
     shipping: order.shipping,
     total: order.total,
+    promoCode: order.promoCode,
+    discount: order.discount,
     status: meta.cjOrderId ? "processing" : "paid",
     paypalCaptureId: meta.paypalCaptureId,
     cjOrderId: meta.cjOrderId,

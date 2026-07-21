@@ -78,6 +78,7 @@ export async function createPayPalOrder(input: {
   orderId: string;
   total: number;
   shipping: number;
+  discount?: number;
   items: PayPalOrderItem[];
 }) {
   const { apiBase } = getPayPalConfig();
@@ -89,7 +90,27 @@ export async function createPayPalOrder(input: {
   );
   const itemTotalStr = roundUsd(itemTotal);
   const shippingStr = roundUsd(input.shipping);
+  const discount = Math.max(0, input.discount ?? 0);
+  const discountStr = roundUsd(discount);
   const totalStr = roundUsd(input.total);
+
+  const breakdown: Record<string, { currency_code: string; value: string }> = {
+    item_total: {
+      currency_code: "USD",
+      value: itemTotalStr,
+    },
+    shipping: {
+      currency_code: "USD",
+      value: shippingStr,
+    },
+  };
+
+  if (discount > 0) {
+    breakdown.discount = {
+      currency_code: "USD",
+      value: discountStr,
+    };
+  }
 
   const res = await fetch(`${apiBase}/v2/checkout/orders`, {
     method: "POST",
@@ -113,16 +134,7 @@ export async function createPayPalOrder(input: {
           amount: {
             currency_code: "USD",
             value: totalStr,
-            breakdown: {
-              item_total: {
-                currency_code: "USD",
-                value: itemTotalStr,
-              },
-              shipping: {
-                currency_code: "USD",
-                value: shippingStr,
-              },
-            },
+            breakdown,
           },
           items: input.items.map((item) => ({
             name: item.name.slice(0, 127),

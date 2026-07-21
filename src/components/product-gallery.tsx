@@ -2,21 +2,27 @@
 
 import { useMemo, useState } from "react";
 import { CatalogImage } from "@/components/catalog-image";
+import { getPreferredGalleryIndex } from "@/data/product-gallery-hints";
 import { PRODUCT_IMAGE_FALLBACK } from "@/lib/catalog-image";
 
 interface ProductGalleryProps {
+  slug: string;
   name: string;
   image: string;
   images: string[];
   video?: string;
 }
 
-export function ProductGallery({ name, image, images, video }: ProductGalleryProps) {
+export function ProductGallery({ slug, name, image, images, video }: ProductGalleryProps) {
   const gallery = useMemo(
     () => [...new Set([image, ...images].filter(Boolean))],
     [image, images],
   );
-  const [active, setActive] = useState(0);
+  const initialIndex = useMemo(
+    () => getPreferredGalleryIndex(slug, gallery.length),
+    [slug, gallery.length],
+  );
+  const [active, setActive] = useState(initialIndex);
   const [showVideo, setShowVideo] = useState(false);
 
   const safeActive = Math.min(active, Math.max(gallery.length - 1, 0));

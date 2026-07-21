@@ -1,6 +1,7 @@
 import { products } from "@/data/products";
 import { getVisibleProductBySlug } from "@/lib/catalog/visible-products";
 import { applyVariant, findVariant } from "@/lib/catalog/variants";
+import { applyPromoToOrderTotals } from "@/lib/promo/codes";
 import type { CreateStoreOrderItem, CreateStoreOrderRequest } from "@/lib/cj/types";
 
 /** Legacy threshold — kept for bundle copy; checkout shipping is always $0. */
@@ -127,14 +128,15 @@ export async function resolveOrderItems(
   return items;
 }
 
-export function calculateOrderTotals(items: CreateStoreOrderItem[]) {
+export function calculateOrderTotals(
+  items: CreateStoreOrderItem[],
+  promoCode?: string | null,
+) {
   const subtotal = roundUsd(
     items.reduce((sum, item) => sum + item.price * item.quantity, 0),
   );
   const shipping = calculateShipping(subtotal);
-  const total = roundUsd(subtotal + shipping);
-
-  return { subtotal, shipping, total };
+  return applyPromoToOrderTotals(subtotal, shipping, promoCode);
 }
 
 /** Rebuild line items and totals from the catalog — never trust client prices. */
@@ -148,12 +150,16 @@ export async function validateStoreOrder(
       variantId: item.variantId,
       quantity: item.quantity,
     })),
-  );  const totals = calculateOrderTotals(items);
+  );  const totals = calculateOrderTotals(items, order.promoCode);
 
   return {
     ...order,
     items,
-    ...totals,
+    subtotal: totals.subtotal,
+    shipping: totals.shipping,
+    total: totals.total,
+    discount: totals.discount > 0 ? totals.discount : undefined,
+    promoCode: totals.promoCode,
   };
 }
 

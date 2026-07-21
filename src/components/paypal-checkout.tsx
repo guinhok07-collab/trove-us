@@ -199,6 +199,7 @@ function PayPalCheckoutButtons({
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         orderId: orderPayload.orderId,
+        promoCode: orderPayload.promoCode,
         items: orderPayload.items.map((item) => ({
           productId: item.productId,
           slug: item.slug,

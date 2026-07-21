@@ -1,6 +1,7 @@
-import { SiteFooter } from "@/components/site-footer";
+import { LandingAwareFooter } from "@/components/landing-aware-footer";
+import { LandingAwareTrustStrip } from "@/components/landing-aware-trust-strip";
+import { SiteExitIntentModal } from "@/components/site-exit-intent";
 import { SiteHeader } from "@/components/site-header";
-import { TrustStrip } from "@/components/trust-strip";
 import { MetaPixel } from "@/components/meta-pixel";
 import { TrackSiteTraffic } from "@/components/track-site-traffic";
 import { BrowseScrollRestore } from "@/components/browse-scroll-restore";
@@ -65,10 +66,13 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <BrowseScrollRestore />
           </Suspense>
+          <Suspense fallback={null}>
+            <SiteExitIntentModal />
+          </Suspense>
           <SiteHeader />
-          <TrustStrip className="hidden sm:block" />
+          <LandingAwareTrustStrip className="hidden sm:block" />
           <main className="relative z-0 flex-1 pb-[max(1rem,env(safe-area-inset-bottom))]">{children}</main>
-          <SiteFooter />
+          <LandingAwareFooter />
         </CartProvider>
       </body>
     </html>

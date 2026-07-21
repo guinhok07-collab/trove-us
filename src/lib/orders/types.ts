@@ -21,6 +21,8 @@ export interface StoredOrder {
   subtotal: number;
   shipping: number;
   total: number;
+  promoCode?: string;
+  discount?: number;
   status: OrderStatus;
   paypalCaptureId?: string;
   cjOrderId?: string;

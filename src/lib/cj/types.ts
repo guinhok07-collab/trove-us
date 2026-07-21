@@ -86,6 +86,9 @@ export interface CreateStoreOrderRequest {
   subtotal: number;
   shipping: number;
   total: number;
+  /** Normalized promo code — validated server-side */
+  promoCode?: string;
+  discount?: number;
   marketingOptIn?: boolean;
 }
 

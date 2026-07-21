@@ -7,6 +7,7 @@ import { CatalogImage } from "@/components/catalog-image";
 import { copy, brand } from "@/data/brand";
 import { PayPalCheckout } from "@/components/paypal-checkout";
 import { CheckoutPaymentTrust } from "@/components/checkout-payment-trust";
+import { CheckoutPromoField, clearCheckoutPromo } from "@/components/checkout-promo-field";
 import { PaymentHelpForm } from "@/components/payment-help-form";
 import { useCart } from "@/context/cart-context";
 import { createOrderId, ORDER_STORAGE_KEY } from "@/lib/orders";
@@ -17,6 +18,7 @@ import { cartLineKey } from "@/lib/catalog/variants";
 import { toUserErrorMessage } from "@/lib/user-errors";
 import { trackMetaInitiateCheckout } from "@/lib/meta-pixel";
 import { readTrafficAttribution, recordTrafficEvent } from "@/lib/traffic/client";
+import { applyPromoToOrderTotals } from "@/lib/promo/codes";
 
 interface CjConfig {
   cjConfigured: boolean;
@@ -78,10 +80,12 @@ export default function CheckoutPage() {
   const [paypalConfig, setPaypalConfig] = useState<PayPalConfig | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [marketingOptIn, setMarketingOptIn] = useState(false);
+  const [promoCode, setPromoCode] = useState("");
   const [error, setError] = useState<string | null>(null);
 
   const shipping = calculateShipping(subtotal);
-  const total = subtotal + shipping;
+  const orderTotals = applyPromoToOrderTotals(subtotal, shipping, promoCode);
+  const { total, discount } = orderTotals;
 
   useEffect(() => {
     fetch("/api/orders")
@@ -168,10 +172,12 @@ export default function CheckoutPage() {
       city: form.city.trim(),
       state: form.state.trim(),
       zip: form.zip.trim(),
-      subtotal,
-      shipping,
-      total,
-      items: items.map(({ product, quantity, variantId }) => ({
+        subtotal,
+        shipping,
+        total,
+        discount: discount > 0 ? discount : undefined,
+        promoCode: orderTotals.promoCode,
+        items: items.map(({ product, quantity, variantId }) => ({
         productId: product.id,
         slug: product.slug,
         name: product.name,
@@ -184,7 +190,7 @@ export default function CheckoutPage() {
       })),
       marketingOptIn,
     };
-  }, [form, items, marketingOptIn, orderId, subtotal, shipping, total]);
+  }, [form, items, marketingOptIn, orderId, subtotal, shipping, total, discount, orderTotals.promoCode, promoCode]);
 
   function updateField(field: keyof ShippingForm, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
@@ -216,6 +222,7 @@ export default function CheckoutPage() {
       }),
     );
     clearCart();
+    clearCheckoutPromo();
     try {
       sessionStorage.removeItem("trove-meta-initiate-checkout");
     } catch {
@@ -512,6 +519,12 @@ export default function CheckoutPage() {
               </li>
             ))}
           </ul>
+          <CheckoutPromoField
+            subtotal={subtotal}
+            shipping={shipping}
+            promoCode={promoCode}
+            onPromoCodeChange={setPromoCode}
+          />
           <dl className="mt-5 space-y-2 border-t border-[#f5f5f4] pt-4 text-sm">
             <div className="flex justify-between text-[#78716c]">
               <dt>Subtotal</dt>
@@ -521,6 +534,12 @@ export default function CheckoutPage() {
               <dt>Shipping</dt>
               <dd>{shipping === 0 ? "Free" : formatUsd(shipping)}</dd>
             </div>
+            {discount > 0 && orderTotals.promoCode ? (
+              <div className="flex justify-between text-[#4d7366]">
+                <dt>Promo ({orderTotals.promoCode})</dt>
+                <dd>−{formatUsd(discount)}</dd>
+              </div>
+            ) : null}
             <div className="flex justify-between pt-2 font-semibold text-[#1c1917]">
               <dt>Total</dt>
               <dd>{formatUsd(total)}</dd>
