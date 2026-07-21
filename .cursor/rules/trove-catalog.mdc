@@ -19,8 +19,8 @@ alwaysApply: true
 - Integrity gate fails if image audit is missing, older than 48h, or has visible errors
 
 ## Pricing formula (every variant)
-- `retail = ceil((cjCost + cjShip) / (1 - 0.20 - 0.034)) - 0.01`, cap `$39.99`
-- `compareAt = ceil(retail * 1.1) - 0.01`
+- Floor: `(cjCost + cjShip) / (1 - 0.20 - 0.034)`, then charm-round **up** to `{.49,.79,.95,.97,.99}`, cap `$39.99`
+- `compareAt` = charm-round of `retail / (1 - discount)` where discount is a stable 18–35% band from slug/SKU hash (not a flat 10%)
 - Bundle variants (`2pcs`, `2set`, `Set4`) use **that variant's CJ cost**, not 2× unit price
 - Cart qty 2 = `price × 2`; server recalculates via `validateStoreOrder` — never trust client prices
 - PayPal `create-order` must pass **`variantId`** + slug + quantity

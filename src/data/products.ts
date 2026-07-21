@@ -26,7 +26,7 @@ export const products: Product[] = [
     longDescription:
       "Give your dog a cozy spot built for daily comfort and better sleep. The supportive foam contours to their body and helps relieve pressure on hips and joints. Removable, washable cover keeps cleanup simple. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 51.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/8c2a47b2-cff5-43ef-9950-1b0e517b85d7.png",
     images: [
@@ -66,7 +66,7 @@ export const products: Product[] = [
     longDescription:
       "Take the strain out of daily walks with a harness designed to reduce pulling without choking. The front clip redirects momentum so you stay in control on sidewalks and trails. Padded straps and adjustable fit keep your dog comfortable mile after mile. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 53.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/378a83bf-5772-456a-9016-487c7e9104aa.jpg",
     images: [
@@ -100,8 +100,8 @@ export const products: Product[] = [
     description: "Circulating fountain keeps fresh water flowing to encourage pets to drink more.",
     longDescription:
       "Keep your cat or dog hydrated with a quiet fountain that filters and recirculates water all day. The gentle flow attracts picky drinkers and helps reduce stale bowl water. Easy to disassemble for quick rinsing and refills. Ships from our US warehouse in 3–5 business days.",
-    price: 17.99,
-    compareAtPrice: 19.99,
+    price: 18.49,
+    compareAtPrice: 23.99,
     store: "pet",
     image: "https://cf.cjdropshipping.com/b496a496-ed1a-47e4-b209-17ba105ed332.jpg",
     images: [
@@ -137,8 +137,8 @@ export const products: Product[] = [
     description: "Quickly lifts pet hair from furniture, clothes, and car seats without sticky sheets.",
     longDescription:
       "Clear fur from couches, blankets, and outfits in seconds with a reusable roller that never needs refills. The built-in chamber collects lint and hair so you can empty and reuse it again and again. Compact size slips into a drawer, bag, or glove box. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.49,
+    compareAtPrice: 16.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1615203230753.jpg",
     images: [
@@ -178,8 +178,8 @@ export const products: Product[] = [
     description: "Maze design slows eating to support healthier digestion and less gulping.",
     longDescription:
       "Help your dog eat at a safer pace with a bowl that turns mealtime into a fun challenge. Raised ridges and channels spread kibble out so they work for every bite. Durable, food-safe material rinses clean in seconds. Ships from our US warehouse in 3–5 business days.",
-    price: 24.99,
-    compareAtPrice: 27.99,
+    price: 25.79,
+    compareAtPrice: 34.99,
     store: "pet",
     image: "https://cf.cjdropshipping.com/812e7e39-c63f-4ffc-855c-905636241fd9.jpg",
     images: [
@@ -214,7 +214,7 @@ export const products: Product[] = [
     longDescription:
       "Handle everyday grooming at home with brushes sized for dogs and cats of all coat types. Detangle mats, lift loose undercoat, and smooth finished fur without scratching skin. Ergonomic handles give you a steady grip through long sessions. Ships from our US warehouse in 3–5 business days.",
     price: 11.99,
-    compareAtPrice: 13.99,
+    compareAtPrice: 18.49,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1617180837710.jpg",
     images: [
@@ -245,7 +245,7 @@ export const products: Product[] = [
     longDescription:
       "Let your dog sniff and roam on walks with a smooth retractable lead that locks in place instantly. The comfortable grip and brake button make quick stops easy on busy streets. Durable tape stands up to daily use in sun and light rain. Ships from our US warehouse in 3–5 business days.",
     price: 12.99,
-    compareAtPrice: 14.99,
+    compareAtPrice: 16.95,
     store: "pet",
     image: "https://oss-cf.cjdropshipping.com/product/2024/10/09/06/34d69a82-df6e-4700-b32a-8c354042c8e5.jpg",
     images: [
@@ -275,8 +275,8 @@ export const products: Product[] = [
     description: "Tough chew toy built for aggressive chewers who need a safer outlet for energy.",
     longDescription:
       "Keep power chewers busy with a toy made to stand up to heavy gnawing and fetch sessions. Textured surfaces help clean teeth while satisfying natural chewing instincts. Sized for medium to large dogs who burn through softer toys fast. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.97,
+    compareAtPrice: 20.95,
     store: "pet",
     image: "https://oss-cf.cjdropshipping.com/product/2026/03/28/07/7736900d-b759-49bd-820a-e9683fb24bd2_trans.jpeg",
     images: [
@@ -317,7 +317,7 @@ export const products: Product[] = [
     longDescription:
       "Protect your furniture with a scratching post cats actually want to use. Wrapped sisal rope invites natural stretching and claw maintenance in one sturdy base. Compact footprint fits apartments, bedrooms, and living rooms without taking over the floor. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 61.99,
     store: "pet",
     image: "https://cf.cjdropshipping.com/b46750d2-5325-45b6-9f7d-3d82083bdf2d.png",
     images: [
@@ -355,7 +355,7 @@ export const products: Product[] = [
     longDescription:
       "Maintain healthy paws with clippers designed for confident at-home nail trims. A built-in guard helps you avoid cutting too short while sharp blades deliver clean edges. Non-slip handles stay steady even when pets wiggle. Ships from our US warehouse in 3–5 business days.",
     price: 11.99,
-    compareAtPrice: 13.99,
+    compareAtPrice: 15.49,
     store: "pet",
     image: "https://cf.cjdropshipping.com/20200827/1165411548665.jpg",
     images: [
@@ -387,8 +387,8 @@ export const products: Product[] = [
     description: "Pressure-activated mat stays cool without water, ice, or electricity.",
     longDescription:
       "Help your dog beat the heat on hot days with a mat that activates when they lie down. No freezing, plugging in, or messy gel packs required. Lightweight and foldable for crates, car rides, and backyard lounging. Ships from our US warehouse in 3–5 business days.",
-    price: 14.99,
-    compareAtPrice: 16.99,
+    price: 15.79,
+    compareAtPrice: 21.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/quick/product/b08e3a55-0f55-442b-8355-85b43df714d4.jpg",
     images: [
@@ -422,8 +422,8 @@ export const products: Product[] = [
     description: "USB rechargeable ball rolls on its own to keep indoor cats active and entertained.",
     longDescription:
       "Give cats a self-rotating ball that moves unpredictably across the floor to spark hunting instincts. USB rechargeable design runs quiet play sessions when you are busy or away from home. Compact size fits apartments and works on most hard floors. Ships from our US warehouse in 3–5 business days.",
-    price: 13.99,
-    compareAtPrice: 15.99,
+    price: 14.49,
+    compareAtPrice: 22.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/25bd2da8-f8ba-4f48-a340-fe2ac8484a57.jpg",
     images: [
@@ -463,8 +463,8 @@ export const products: Product[] = [
     description: "Car harness clips into seat belts to keep dogs secure on every road trip.",
     longDescription:
       "Travel safer with a harness that connects directly to your vehicle's seat belt system. Adjustable straps fit most dogs comfortably while limiting sudden movement during stops. Padded chest contact points reduce rubbing on longer drives. Ships from our US warehouse in 3–5 business days.",
-    price: 16.99,
-    compareAtPrice: 18.99,
+    price: 17.49,
+    compareAtPrice: 21.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/fa3d3abe-541d-42b4-9d69-e852fbb3ed0b.jpg",
     images: [
@@ -497,8 +497,8 @@ export const products: Product[] = [
     description: "All-in-one grooming set with shedding brush, nail clipper, flea comb, and bath tools.",
     longDescription:
       "Handle everyday pet care with a seven-piece kit that covers brushing, bathing, nail trimming, and dental hygiene. Self-cleaning shedding brush removes loose undercoat while the flea comb and bath brush tackle routine grooming. Compact tools store together for home use or travel. Ships from our US warehouse in 3–5 business days.",
-    price: 29.99,
-    compareAtPrice: 32.99,
+    price: 30.95,
+    compareAtPrice: 43.49,
     store: "pet",
     image: "https://cf.cjdropshipping.com/cce44566-bde0-4cb0-9ef2-ce6e87f61286.jpg",
     images: [
@@ -530,8 +530,8 @@ export const products: Product[] = [
     description: "Silicone bristle cup rinses muddy paws quickly before they track dirt inside.",
     longDescription:
       "Clean paws after walks, hikes, and yard time without wrestling a towel. Soft interior bristles gently scrub between toes while water flushes mud away. Portable cup design works at the door, in the car, or at the campsite. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.95,
+    compareAtPrice: 20.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/82239fff-b59c-42ca-b5be-3e92276f9e7f.jpg",
     images: [
@@ -569,8 +569,8 @@ export const products: Product[] = [
     description: "Clip-on dispenser keeps waste bags handy on every walk and hike.",
     longDescription:
       "Never leave home without bags thanks to a lightweight holder that attaches to leashes and harnesses. The secure clip opens fast when you need a bag in a hurry. Durable shell protects rolls from rain, dirt, and pocket wear. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.95,
+    compareAtPrice: 19.99,
     store: "pet",
     image: "https://oss-cf.cjdropshipping.com/product/2023/11/20/02/9a8a5f7a-cfb4-4e25-b397-9c0fa6acb9aa.jpg",
     images: [
@@ -611,7 +611,7 @@ export const products: Product[] = [
     longDescription:
       "Place this mat outside the box to catch granules stuck in paws after every visit. The honeycomb design holds litter until you shake or vacuum it out. Waterproof backing protects floors from stray moisture and dust. Ships from our US warehouse in 3–5 business days.",
     price: 12.99,
-    compareAtPrice: 14.99,
+    compareAtPrice: 16.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1614049457133.png",
     images: [
@@ -644,7 +644,7 @@ export const products: Product[] = [
     longDescription:
       "Store dry food in a container with a snap-tight lid that locks out air and moisture. Wide opening makes scooping easy while the stackable shape saves pantry space. BPA-free plastic wipes clean and stands up to daily use. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 61.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/d9d7a9aa-921e-4770-a316-4f06f21844f2.jpg",
     images: [
@@ -676,8 +676,8 @@ export const products: Product[] = [
     description: "Ventilated soft carrier for safe, comfortable trips to the vet or across town.",
     longDescription:
       "Carry small dogs and cats in a lightweight bag with mesh panels for airflow and visibility. Padded shoulder strap and top handle make short trips and vet visits easier on you both. Secure zippers and a washable inner liner keep travel tidy. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.97,
+    compareAtPrice: 18.97,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1620815516942.jpg",
     images: [
@@ -712,7 +712,7 @@ export const products: Product[] = [
     longDescription:
       "Maximize closet space with a hanging organizer that installs on any standard rod in minutes. Six sturdy shelves hold folded sweaters, jeans, handbags, and more without bulky furniture. Reinforced seams and breathable fabric keep items neat and easy to reach. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 51.79,
     store: "home",
     image: "https://cf.cjdropshipping.com/17634240/5d6c0c3a-20c0-4135-9701-a1ff2a641c8b.jpg",
     images: [
@@ -743,8 +743,8 @@ export const products: Product[] = [
     description: "Low-profile bags slide under beds to store linens, clothes, and seasonal gear.",
     longDescription:
       "Reclaim hidden space beneath the bed with zippered bags built for bulky seasonal items. Clear windows let you see contents at a glance without unpacking everything. Reinforced handles make pulling bags out and carrying them simple. Ships from our US warehouse in 3–5 business days.",
-    price: 22.99,
-    compareAtPrice: 25.99,
+    price: 23.97,
+    compareAtPrice: 33.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/d71f1303-e163-438b-beeb-da2170bb52ae.jpg",
     images: [
@@ -777,8 +777,8 @@ export const products: Product[] = [
     description: "Two-tier rack fits around pipes to organize cleaners and supplies below the sink.",
     longDescription:
       "Turn cluttered cabinet space into usable storage with an adjustable rack that works around plumbing. Two levels hold spray bottles, sponges, and bins within easy reach. Rust-resistant finish stands up to daily moisture in kitchens and bathrooms. Ships from our US warehouse in 3–5 business days.",
-    price: 32.99,
-    compareAtPrice: 36.99,
+    price: 33.95,
+    compareAtPrice: 47.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/cf27044b-820d-40cb-82c8-1730413061d9.jpg",
     images: [
@@ -812,8 +812,8 @@ export const products: Product[] = [
     description: "Rust-resistant caddy keeps shampoo, soap, and razors tidy in the shower.",
     longDescription:
       "Declutter your shower with a caddy that holds daily essentials at arm's reach. Ventilated shelves drain quickly and resist rust in steamy bathrooms. Adjustable hooks fit standard shower heads and poles without tools. Ships from our US warehouse in 3–5 business days.",
-    price: 16.99,
-    compareAtPrice: 18.99,
+    price: 17.49,
+    compareAtPrice: 27.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/678c2ac6-0c25-4306-9397-129b19c70ad6.jpg",
     images: [
@@ -843,7 +843,7 @@ export const products: Product[] = [
     longDescription:
       "Find the right seasoning fast with a stepped organizer that fits standard jars and bottles. Compact footprint frees counter space while keeping your most-used spices upfront. Easy to wipe clean after splatters and daily kitchen use. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 51.79,
     store: "home",
     image: "https://cf.cjdropshipping.com/17726688/c967e26d-a4ed-4f4e-9c6d-5d83b22c3d08.jpg",
     images: [
@@ -873,8 +873,8 @@ export const products: Product[] = [
     description: "Collapsible hamper holds a full load and folds flat when not in use.",
     longDescription:
       "Keep dirty clothes contained with a lightweight hamper that pops open in seconds. Reinforced handles make trips to the laundry room comfortable even when the bin is full. Folds flat for dorm rooms, closets, and small apartments. Ships from our US warehouse in 3–5 business days.",
-    price: 37.99,
-    compareAtPrice: 41.99,
+    price: 38.49,
+    compareAtPrice: 57.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/8c179f95-9d04-4acb-b653-7c34f69dd325.jpg",
     images: [
@@ -906,8 +906,8 @@ export const products: Product[] = [
     description: "Stick-on clips route cords neatly along desks, walls, and nightstands.",
     longDescription:
       "Tame charging cables and headphone wires with clips that mount in seconds on smooth surfaces. Strong adhesive holds cords in place without drilling or permanent damage. Reusable design works on desks, entertainment centers, and bedside tables. Ships from our US warehouse in 3–5 business days.",
-    price: 16.99,
-    compareAtPrice: 18.99,
+    price: 17.95,
+    compareAtPrice: 24.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/76604221-b954-48b3-a5a8-9f2a046d0d05.jpg",
     images: [
@@ -939,8 +939,8 @@ export const products: Product[] = [
     description: "Clip-on holder keeps pet waste bags ready on walks, hikes, and travel.",
     longDescription:
       "Carry waste bags wherever you go with a compact dispenser that clips to leashes and bags. The secure lid opens quickly when you need a bag on busy sidewalks or trails. Durable shell protects rolls from moisture and everyday wear. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.97,
+    compareAtPrice: 13.97,
     store: "home",
     image: "https://cf.cjdropshipping.com/20200917/3936955088484.png",
     images: [
@@ -973,7 +973,7 @@ export const products: Product[] = [
     longDescription:
       "Add storage anywhere with hooks that mount on tile, glass, metal, and painted walls. Strong adhesive backing supports everyday items while removing cleanly when repositioned. Multi-pack value covers bathrooms, kitchens, entryways, and garages. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 53.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/6e458c03-4761-4380-baa8-6b4e5fc326d4.jpg",
     images: [
@@ -1007,8 +1007,8 @@ export const products: Product[] = [
     description: "Over-door rack adds hooks for coats, bags, and towels without hardware.",
     longDescription:
       "Create instant storage behind bedroom, bathroom, or closet doors in under a minute. Multiple hooks hold jackets, robes, backpacks, and tote bags off the floor. Padded backing protects door finishes from scuffs and scratches. Ships from our US warehouse in 3–5 business days.",
-    price: 29.99,
-    compareAtPrice: 32.99,
+    price: 30.79,
+    compareAtPrice: 37.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/4a8a0702-f2b2-411d-ba6d-765fad9103c9.jpg",
     images: [
@@ -1042,8 +1042,8 @@ export const products: Product[] = [
     description: "Collapsible rack sits over the sink to dry dishes, produce, and utensils.",
     longDescription:
       "Expand counter space with a drain rack that folds out over your sink when you need it. Raised bars let water drip away while plates, cups, and veggies air dry. Rolls up compact for drawer storage when the sink is free. Ships from our US warehouse in 3–5 business days.",
-    price: 25.99,
-    compareAtPrice: 28.99,
+    price: 26.95,
+    compareAtPrice: 34.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/946f8e98-e3cc-4f7f-85d2-dab95825a2d3.jpg",
     images: [
@@ -1075,7 +1075,7 @@ export const products: Product[] = [
     longDescription:
       "Soft LED light turns on when motion is detected and shuts off to save power. Plug it into any outlet for instant coverage in hallways, nurseries, and guest rooms. Warm glow is easy on tired eyes without waking the whole house. Ships from our US warehouse in 3–5 business days.",
     price: 25.99,
-    compareAtPrice: 28.99,
+    compareAtPrice: 36.97,
     store: "home",
     image: "https://cf.cjdropshipping.com/17691264/66e6a7d4-9b99-414b-bfc4-7d289264ec31.jpg",
     images: [
@@ -1107,8 +1107,8 @@ export const products: Product[] = [
     description: "Space-saving bags compress clothes and bedding to free closet and suitcase room.",
     longDescription:
       "Shrink bulky seasonal items with bags that seal tight and compress with a household vacuum. Protect fabrics from dust, moisture, and pests while you store off-season gear. Reusable design works for closets, under-bed storage, and travel packing. Ships from our US warehouse in 3–5 business days.",
-    price: 29.99,
-    compareAtPrice: 32.99,
+    price: 30.97,
+    compareAtPrice: 41.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/77a26be1-8771-4459-a1ac-ba030dc129eb.jpg",
     images: [
@@ -1137,8 +1137,8 @@ export const products: Product[] = [
     description: "Battery-powered light brightens cabinets, closets, and shelves with no wiring.",
     longDescription:
       "Install under cabinets or inside closets with adhesive backing and no electrician needed. Tap or motion activation lights work zones exactly where you need them. Slim profile disappears under shelves while delivering focused task lighting. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.49,
+    compareAtPrice: 16.49,
     store: "home",
     image: "https://oss-cf.cjdropshipping.com/product/2023/11/20/03/203766dd-622e-4449-80f7-69816532f0cd.jpg?bid=2406210947451926900",
     images: [
@@ -1180,8 +1180,8 @@ export const products: Product[] = [
     description: "Soft blackout mask blocks light for deeper sleep at home or while traveling.",
     longDescription:
       "Contour padding lifts the mask off your eyes so blinking stays comfortable all night. Adjustable strap fits most head sizes without pulling hair or slipping off. Lightweight fabric packs easily for flights, hotels, and afternoon naps. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.49,
+    compareAtPrice: 17.99,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/dc02e2c4-db49-43e3-9963-a12d1e4049c4.jpg",
     images: [
@@ -1206,8 +1206,8 @@ export const products: Product[] = [
     description: "Manual roller with six wheels targets neck and shoulder tension without batteries.",
     longDescription:
       "Ease stiff neck and shoulder muscles with a handheld roller you control yourself. Six smooth wheels glide along tight spots for deep, focused relief after desk work or workouts. Compact and quiet with no cords, charging, or setup required. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.95,
+    compareAtPrice: 15.99,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/eaa68842-462e-4930-9a9c-5b8696495e80.jpg",
     images: [
@@ -1248,7 +1248,7 @@ export const products: Product[] = [
     longDescription:
       "Relax tight back, shoulder, and leg muscles with multiple heat settings you can dial in fast. Soft fabric cover feels comfortable against skin during longer sessions on the couch or in bed. Auto shutoff adds peace of mind when you doze off. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 51.79,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/dd722db8-e70a-4760-952c-8e17343b6f09.jpg",
     images: [
@@ -1287,8 +1287,8 @@ export const products: Product[] = [
     description: "Graduated compression supports circulation during long shifts, flights, and runs.",
     longDescription:
       "Fight leg fatigue with socks that apply steady pressure from ankle to calf. Breathable knit keeps feet comfortable through workdays, travel, and workouts. Reinforced heel and toe add durability for daily wear. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.97,
+    compareAtPrice: 15.49,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/20180925/96890834277.jpg",
     images: [
@@ -1327,8 +1327,8 @@ export const products: Product[] = [
     description: "Extra-cushion mat supports joints during yoga, Pilates, and floor workouts.",
     longDescription:
       "Practice with confidence on a mat that cushions knees, hips, and spine during longer sessions. Textured surface grips floors and hands even when you sweat. Includes carrying strap for studio classes, home workouts, and travel. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.49,
+    compareAtPrice: 18.95,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/1612753535682.png",
     images: [
@@ -1367,7 +1367,7 @@ export const products: Product[] = [
     longDescription:
       "Build better habits with gentle feedback that nudges you upright during desk work and daily tasks. Lightweight design fits discreetly under or over clothing. Adjustable straps accommodate most body types for comfortable all-day wear. Ships from our US warehouse in 3–5 business days.",
     price: 10.99,
-    compareAtPrice: 12.99,
+    compareAtPrice: 14.95,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/1620975366242.jpg",
     images: [
@@ -1396,8 +1396,8 @@ export const products: Product[] = [
     description: "Spring resistance trainer builds grip strength for sports, rehab, and daily tasks.",
     longDescription:
       "Strengthen hands and forearms with adjustable resistance you can increase as you progress. Compact size fits desks, gym bags, and travel kits for quick daily reps. Ergonomic handles stay comfortable through longer training sets. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.79,
+    compareAtPrice: 21.95,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/ed4f3a3f-005f-4efd-8495-4224d31abd07.png",
     images: [
@@ -1427,8 +1427,8 @@ export const products: Product[] = [
     description: "Cooling roller depuffs skin and refreshes your morning or post-workout routine.",
     longDescription:
       "Glide the chilled roller over face and neck to calm redness and wake up tired skin. Ergonomic handle gives precise control around eyes, cheeks, and jawline. Store in the freezer between uses for a ready-to-go spa moment at home. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.97,
+    compareAtPrice: 15.97,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/quick/product/343ee412-47c6-417c-b3d8-0c0c0ce50a9a.jpg",
     images: [
@@ -1468,8 +1468,8 @@ export const products: Product[] = [
     description: "Handheld massager delivers deep percussion relief for sore muscles after workouts.",
     longDescription:
       "Target tight quads, back, and shoulders with multiple speed settings and interchangeable heads. Quiet motor keeps sessions comfortable at home or after the gym. Rechargeable battery supports regular recovery without hunting for outlets mid-routine. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.97,
+    compareAtPrice: 21.95,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/52220b8c-c2c0-4e04-b6f3-d24a22f5ef77.jpg",
     images: [
@@ -1505,8 +1505,8 @@ export const products: Product[] = [
     description: "Lightweight brace pulls shoulders back to encourage better alignment all day.",
     longDescription:
       "Support healthier posture during desk work, commuting, and everyday movement. Breathable straps adjust to your frame for a snug fit under or over clothing. Discreet design helps you stand taller without bulky hardware. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.95,
+    compareAtPrice: 15.97,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/20200108/2265966782259.jpg",
     images: [
@@ -1545,7 +1545,7 @@ export const products: Product[] = [
     longDescription:
       "Fill your space with gentle fragrance using quiet ultrasonic mist that won't overheat oils. Soft LED lighting and timer options make evenings and work sessions more relaxing. Compact footprint fits nightstands, desks, and bathroom counters with ease. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 61.79,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/17634240/660c08d1-c661-485e-9f9e-84813cf093ac.jpg",
     images: [
@@ -1575,8 +1575,8 @@ export const products: Product[] = [
     description: "Multi-level bands add strength and stretch support to yoga and home workouts.",
     longDescription:
       "Progress at your own pace with color-coded bands for light to heavy resistance training. Use them for glute activation, stretching, Pilates, and physical therapy routines at home. Lightweight set stores in a drawer or gym bag between sessions. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.97,
+    compareAtPrice: 18.99,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/2051/341487999716.jpg",
     images: [
@@ -1617,8 +1617,8 @@ export const products: Product[] = [
     description: "Raised stand improves screen height and airflow for healthier desk posture.",
     longDescription:
       "Lift your laptop to eye level to reduce neck strain during long work and study sessions. Open-frame design improves airflow to help keep your device running cooler. Sturdy aluminum build supports most laptops from 11 to 16 inches. Ships from our US warehouse in 3–5 business days.",
-    price: 19.99,
-    compareAtPrice: 21.99,
+    price: 20.97,
+    compareAtPrice: 31.49,
     store: "tech",
     image: "https://oss-cf.cjdropshipping.com/product/2024/05/11/10/ad938adb-38c1-4fbd-8a8d-5fc3fdc6666a_trans.jpeg",
     images: [
@@ -1655,7 +1655,7 @@ export const products: Product[] = [
     longDescription:
       "Expand a single USB-C port into the connections you use every day at home or on the road. Plug in monitors, flash drives, and memory cards without carrying multiple adapters. Compact aluminum body slips into laptop bags and stay tidy on any desk. Ships from our US warehouse in 3–5 business days.",
     price: 36.99,
-    compareAtPrice: 40.99,
+    compareAtPrice: 57.49,
     store: "tech",
     image: "https://cf.cjdropshipping.com/20200629/6338771919952.jpg",
     images: [
@@ -1685,8 +1685,8 @@ export const products: Product[] = [
     description: "Compact earbuds deliver immersive sound for music, calls, and daily commuting.",
     longDescription:
       "Enjoy your playlists and podcasts with a snug in-ear fit that stays put on the move. Touch controls handle calls and tracks without reaching for your phone. Charging case keeps extra power ready for commutes, workouts, and travel days. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.79,
+    compareAtPrice: 16.95,
     store: "tech",
     image: "https://cf.cjdropshipping.com/e084bda0-747c-4b27-945c-e83db3706cb9.jpg",
     images: [
@@ -1723,7 +1723,7 @@ export const products: Product[] = [
     longDescription:
       "Pair fast with phones and tablets for kitchen dance breaks, desk background tunes, or outdoor hangouts. Rechargeable battery lasts through long playlists without hunting for outlets. Rugged shell handles desk spills and backyard use. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 61.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/c40df159-1515-4705-907f-aea9494d9e0a.png",
     images: [
@@ -1762,7 +1762,7 @@ export const products: Product[] = [
     longDescription:
       "Snap your MagSafe iPhone into place for stable GPS viewing on every drive. Vent clip installs in seconds and holds firm over bumps and turns. One-hand attachment makes getting in and out of the car effortless. Ships from our US warehouse in 3–5 business days.",
     price: 16.99,
-    compareAtPrice: 18.99,
+    compareAtPrice: 24.99,
     store: "tech",
     image: "https://oss-cf.cjdropshipping.com/product/2025/05/30/08/696a1904-5024-44bd-a375-7494e5f79dfa.jpg",
     images: [
@@ -1801,7 +1801,7 @@ export const products: Product[] = [
     longDescription:
       "Prop your phone upright for FaceTime, recipes, and desk notifications without picking it up. Adjustable tilt works in portrait or landscape for videos and typing. Non-slip base stays put on nightstands, kitchen counters, and work desks. Ships from our US warehouse in 3–5 business days.",
     price: 12.99,
-    compareAtPrice: 14.99,
+    compareAtPrice: 15.95,
     store: "tech",
     image: "https://cf.cjdropshipping.com/4d431db6-1620-45b9-9302-137716c5a5bf.png",
     images: [
@@ -1831,8 +1831,8 @@ export const products: Product[] = [
     description: "Slim power bank recharges phones and tablets when outlets are out of reach.",
     longDescription:
       "Keep devices topped up during travel, commutes, and busy workdays with reliable 10000mAh capacity. Dual USB outputs charge two gadgets at once when you need backup fast. LED indicators show remaining power at a glance. Ships from our US warehouse in 3–5 business days.",
-    price: 22.99,
-    compareAtPrice: 25.99,
+    price: 23.79,
+    compareAtPrice: 30.99,
     store: "tech",
     image: "https://cf.cjdropshipping.com/9265f304-b69d-44d2-984b-0c891b4f3dae.jpg",
     images: [
@@ -1867,8 +1867,8 @@ export const products: Product[] = [
     description: "Durable USB-C cable handles daily charging for phones, tablets, and accessories.",
     longDescription:
       "Power up your USB-C devices at home, in the car, or at the office with a reinforced cable built to flex. Nylon braiding resists fraying while snug connectors stay seated in busy ports. Compatible with phones, earbuds cases, and portable batteries. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.95,
+    compareAtPrice: 19.95,
     store: "tech",
     image: "https://cf.cjdropshipping.com/501e6f46-72a7-4f8f-8316-a0bd1253265e.jpg?bid=1796465182881886208",
     images: [
@@ -1908,8 +1908,8 @@ export const products: Product[] = [
     description: "Slim charging pad powers compatible phones without plugging in every night.",
     longDescription:
       "Drop your Qi-enabled phone on the pad for convenient overnight or desk-side charging. Non-slip surface keeps devices aligned while a low-profile design clears nightstand clutter. Works through most slim cases for hassle-free daily use. Ships from our US warehouse in 3–5 business days.",
-    price: 26.99,
-    compareAtPrice: 29.99,
+    price: 27.97,
+    compareAtPrice: 37.49,
     store: "tech",
     image: "https://cf.cjdropshipping.com/5651039d-38e6-4851-aaef-38be1445e4a4.jpg",
     images: [
@@ -1949,8 +1949,8 @@ export const products: Product[] = [
     description: "Portable ring light brightens selfies, video calls, and content on any phone.",
     longDescription:
       "Clip the light onto your phone for even, flattering illumination during calls and recordings. Adjustable brightness levels adapt to bedrooms, offices, and low-light events. Rechargeable design means no disposable batteries cluttering your bag. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.95,
+    compareAtPrice: 15.97,
     store: "tech",
     image: "https://oss-cf.cjdropshipping.com/product/2024/11/27/08/a2822ddc-8e08-4d08-9a07-a3256dbe36fc_fine.jpeg",
     images: [
@@ -1983,8 +1983,8 @@ export const products: Product[] = [
     description: "Extended desk mat gives mice smooth glide and keyboards a stable surface.",
     longDescription:
       "Cover your whole setup with a wide pad that tracks precisely for gaming and design work. Stitched edges prevent fraying while the textured surface stays flat during intense sessions. Non-slip rubber base grips desks even during fast flick movements. Ships from our US warehouse in 3–5 business days.",
-    price: 13.99,
-    compareAtPrice: 15.99,
+    price: 14.79,
+    compareAtPrice: 18.95,
     store: "tech",
     image: "https://cf.cjdropshipping.com/70a05b00-b88e-4080-bacd-5ff0920886ff.png",
     images: [
@@ -2010,7 +2010,7 @@ export const products: Product[] = [
     longDescription:
       "Connect streaming boxes, game consoles, and laptops to displays with reliable 4K picture and sound. Gold-plated connectors resist corrosion for a stable signal over time. Flexible jacket routes cleanly behind entertainment centers and desks. Ships from our US warehouse in 3–5 business days.",
     price: 20.99,
-    compareAtPrice: 23.99,
+    compareAtPrice: 32.95,
     store: "tech",
     image: "https://cf.cjdropshipping.com/2057/19449338367940.png",
     images: [
@@ -2048,8 +2048,8 @@ export const products: Product[] = [
     description: "Plug-in reader transfers photos and files from SD and microSD cards fast.",
     longDescription:
       "Move camera shots, drone footage, and documents to your laptop without built-in card slots. Compact body plugs directly into USB ports for travel-friendly file transfers. Supports standard SD and microSD cards used by cameras and action cams. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.49,
+    compareAtPrice: 15.49,
     store: "tech",
     image: "https://cf.cjdropshipping.com/20a255e2-ee92-4e17-bbe5-c7ad68ad011a.png",
     images: [
@@ -2079,8 +2079,8 @@ export const products: Product[] = [
     description: "Fast car charger powers two devices on road trips and daily commutes.",
     longDescription:
       "Charge phones and tablets from front-seat outlets with dual USB-C ports built for busy mornings. Compact head sits flush in most 12V sockets without blocking neighboring controls. Built-in safeguards help protect devices from overheating on long drives. Ships from our US warehouse in 3–5 business days.",
-    price: 20.99,
-    compareAtPrice: 23.99,
+    price: 21.49,
+    compareAtPrice: 29.95,
     store: "tech",
     image: "https://oss-cf.cjdropshipping.com/product/2024/10/15/05/459deae7-c7c9-4dbd-b183-f9bc148522bc.jpg",
     images: [
@@ -2120,8 +2120,8 @@ export const products: Product[] = [
     description: "Soft silicone band swaps in fast for workouts, office days, and everyday wear.",
     longDescription:
       "Refresh your watch look with a comfortable band that handles sweat, rain, and daily bumps. Pin-and-tuck closure adjusts securely to most wrist sizes without tools. Compatible with popular smartwatch lug widths for easy seasonal style changes. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.49,
+    compareAtPrice: 20.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/badcfc4f-be83-4cbb-a742-c8fc5674b0aa.png",
     images: [
@@ -2148,8 +2148,8 @@ export const products: Product[] = [
     description: "Cover power strips and adapters to hide cord clutter on desks and floors.",
     longDescription:
       "Tuck surge protectors and excess cable length inside a ventilated box that keeps setups looking clean. Wide opening fits most power strips while slots route cords neatly to your devices. Durable plastic shell blends into home offices, entertainment centers, and nightstands. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.49,
+    compareAtPrice: 12.99,
     store: "tech",
     image: "https://oss-cf.cjdropshipping.com/product/2024/03/05/12/34482e0c-c87e-40f2-8e16-9a8a97ebc0d1_trans.jpeg",
     images: [
@@ -2179,8 +2179,8 @@ export const products: Product[] = [
     description: "Hands-free viewing for recipes, video calls, and streaming.",
     longDescription:
       "Prop tablets at the perfect angle on desks, kitchen counters, and nightstands. Adjustable hinge holds position for typing, drawing, or watching shows. Non-slip base keeps the stand steady on smooth surfaces. Ships from our US warehouse in 3–5 business days.",
-    price: 16.99,
-    compareAtPrice: 18.99,
+    price: 17.97,
+    compareAtPrice: 21.99,
     store: "tech",
     image: "https://cf.cjdropshipping.com/3a9f71e1-9e6c-4be2-9e3e-f3624bd809f4.png",
     images: [
@@ -2210,7 +2210,7 @@ export const products: Product[] = [
     longDescription:
       "Give indoor cats a front-row view with a sturdy suction-mounted perch that installs in minutes. Reinforced cups and a padded platform support daily lounging without tools or permanent mounts. Fleece cover removes for washing. Ships from our US warehouse in 3–5 business days.",
     price: 19.99,
-    compareAtPrice: 21.99,
+    compareAtPrice: 27.99,
     store: "pet",
     image: "https://cf.cjdropshipping.com/03200bbb-02e5-414b-9ad7-f5b16aad2a0f.jpg",
     images: [
@@ -2239,8 +2239,8 @@ export const products: Product[] = [
     description: "Flexible silicone tray releases cubes easily and stacks in the freezer.",
     longDescription:
       "Make perfect ice cubes without the crack-and-fight routine. Soft silicone flexes to pop cubes out cleanly, while the lid helps block freezer odors. Dishwasher-safe and reusable season after season. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.79,
+    compareAtPrice: 17.99,
     store: "home",
     image: "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/37fd8b24-a4e6-494d-8d9f-f82f1f13d97c_trans.jpeg",
     images: [
@@ -2277,8 +2277,8 @@ export const products: Product[] = [
     description: "Blocks cold air, dust, and noise from slipping under doors.",
     longDescription:
       "Cut drafts and noise with a flexible under-door seal that installs in minutes. Helps rooms stay warmer in winter and keeps dust from creeping through the gap. Trim-to-fit design works on interior doors throughout the home. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.49,
+    compareAtPrice: 19.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/203102/1586134034732.png",
     images: [
@@ -2313,8 +2313,8 @@ export const products: Product[] = [
     description: "Clear pocket rack adds shoe storage behind any door — no floor space needed.",
     longDescription:
       "Free up closet and entryway floors with a hanging organizer that fits over standard doors in seconds. Twenty-four breathable pockets keep pairs visible and easy to grab on busy mornings. Great for apartments, dorm rooms, and seasonal shoe rotation. Ships from our US warehouse in 3–5 business days.",
-    price: 13.99,
-    compareAtPrice: 15.99,
+    price: 14.97,
+    compareAtPrice: 18.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/2058/1014290026775.jpg",
     images: [
@@ -2345,8 +2345,8 @@ export const products: Product[] = [
     description: "Leak-resistant bags replace disposable zip bags for snacks and meal prep.",
     longDescription:
       "Pack lunches and leftovers in reusable silicone bags that seal tight and rinse clean. Safe for fridge and freezer use without the single-use plastic waste. Great for sandwiches, chopped fruit, and meal-prep portions. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.79,
+    compareAtPrice: 14.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/11a48ce6-7d44-407e-865e-36d7155d3167.jpg",
     images: [
@@ -2376,8 +2376,8 @@ export const products: Product[] = [
     description: "Comfortable floor seat for meditation, stretching, and low tables.",
     longDescription:
       "Sit comfortably during meditation or floor dining with a firm cushion that supports hips and posture. Removable cover washes easily after daily practice. Lightweight design moves easily between rooms. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.79,
+    compareAtPrice: 18.49,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/1619487193181.jpg",
     images: [
@@ -2416,8 +2416,8 @@ export const products: Product[] = [
     description: "Cooling facial roller for morning de-puff and self-care routines.",
     longDescription:
       "Refresh your skincare routine with a natural jade roller designed for gentle facial massage. Store in the fridge for an extra cooling effect after serums and moisturizers. Smooth stone glides without tugging delicate skin. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.97,
+    compareAtPrice: 19.49,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/da308bf3-92f0-4693-8e42-069d383f8427.jpg",
     images: [
@@ -2453,8 +2453,8 @@ export const products: Product[] = [
     description: "Handheld stick targets sore legs, arms, and back after workouts.",
     longDescription:
       "Roll out tight muscles without lying on the floor. Independent handles let you control pressure on calves, quads, and shoulders after gym sessions or long shifts on your feet. Compact enough for gym bags and travel. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.97,
+    compareAtPrice: 17.97,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/b891614a-9e7f-466e-8e7a-efbee293df5f.jpg",
     images: [
@@ -2488,7 +2488,7 @@ export const products: Product[] = [
     longDescription:
       "Cover your webcam in one swipe when meetings end. Ultra-thin adhesive mount fits most laptops and tablets without blocking the lid from closing. Durable slide mechanism opens and closes smoothly every day. Ships from our US warehouse in 3–5 business days.",
     price: 10.99,
-    compareAtPrice: 12.99,
+    compareAtPrice: 13.95,
     store: "tech",
     image: "https://cf.cjdropshipping.com/20200519/1670343046324.jpg",
     images: [
@@ -2520,8 +2520,8 @@ export const products: Product[] = [
     description: "Screen-mounted lamp lights your desk without glare on the monitor.",
     longDescription:
       "Reduce eye strain during late-night work with a light bar that sits on top of your monitor. Asymmetric optics illuminate the desk while keeping the screen free of harsh reflections. USB-powered with adjustable brightness for home offices. Ships from our US warehouse in 3–5 business days.",
-    price: 22.99,
-    compareAtPrice: 25.99,
+    price: 23.79,
+    compareAtPrice: 29.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/1621914546725.jpg",
     images: [
@@ -2551,7 +2551,7 @@ export const products: Product[] = [
     longDescription:
       "Stop food and grease from falling into that hard-to-clean gap beside your range. Flexible silicone fits most stove-to-counter spaces and wipes clean in seconds. Heat-resistant for everyday cooking. Ships from our US warehouse in 3–5 business days.",
     price: 11.99,
-    compareAtPrice: 13.99,
+    compareAtPrice: 16.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/2053/237307748773.jpg",
     images: [
@@ -2579,7 +2579,7 @@ export const products: Product[] = [
     longDescription:
       "Keep water off your counters with a silicone mat that sits behind the faucet and along the backsplash. Absorbent surface catches splashes from washing dishes and produce. Rinse and reuse — no more puddles on the counter. Ships from our US warehouse in 3–5 business days.",
     price: 10.99,
-    compareAtPrice: 12.99,
+    compareAtPrice: 14.97,
     store: "home",
     image: "https://cf.cjdropshipping.com/94bc4237-f86e-462d-b3d1-8716eff32c89.jpg",
     images: [
@@ -2614,8 +2614,8 @@ export const products: Product[] = [
     description: "Reseals chip bags and snack pouches in seconds — less waste, fresher food.",
     longDescription:
       "Close open bags without clips or rubber bands. This compact heat sealer works on plastic snack bags, cereal pouches, and more so snacks stay crisp. Battery-powered and small enough for a kitchen drawer. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.49,
+    compareAtPrice: 15.99,
     store: "home",
     image: "https://oss-cf.cjdropshipping.com/product/2023/10/30/11/c5baa6fa-552c-4701-a9b0-ca5f71cc6aea.jpg?bid=2408310304181933400",
     images: [
@@ -2650,8 +2650,8 @@ export const products: Product[] = [
     description: "Adjustable tray keeps utensils, forks, and gadgets sorted in drawers.",
     longDescription:
       "Turn messy junk drawers into usable storage with a divider tray that expands to fit most kitchen drawers. Separate forks, spoons, spatulas, and small tools so everything has a spot. Easy to rinse clean after daily use. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.95,
+    compareAtPrice: 15.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/20210113/848668328555.jpg",
     images: [
@@ -2687,7 +2687,7 @@ export const products: Product[] = [
     longDescription:
       "Stop digging through deep cabinets with a smooth-rotating turntable that brings everything to the front. Works in pantries, fridges, under sinks, and on countertops. Non-slip base stays put while you spin. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 53.79,
     store: "home",
     image: "https://cf.cjdropshipping.com/17661024/63fea0c6-6ca7-4ad4-a4e6-e1d7e5ab71c5.jpg",
     images: [
@@ -2716,8 +2716,8 @@ export const products: Product[] = [
     description: "Ventilated containers keep fruits and veggies fresher longer in the fridge.",
     longDescription:
       "Extend the life of produce with containers designed for airflow and easy stacking. Clear design lets you see what's inside without opening every bin. Ideal for berries, greens, chopped veggies, and meal-prep portions. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.79,
+    compareAtPrice: 16.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/98fe68ce-11dc-43ba-b0a6-8aa249e7287e.jpg",
     images: [
@@ -2746,8 +2746,8 @@ export const products: Product[] = [
     description: "Heat-resistant mat protects counters while dishes air dry.",
     longDescription:
       "Give wet dishes a dedicated drying zone without soaking your countertops. Textured silicone grips plates and glasses while water drains away. Rolls up for drawer storage when not in use. Ships from our US warehouse in 3–5 business days.",
-    price: 13.99,
-    compareAtPrice: 15.99,
+    price: 14.95,
+    compareAtPrice: 20.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/57d39ec0-ebc7-401a-a3ff-f97f82558997.jpg",
     images: [
@@ -2777,8 +2777,8 @@ export const products: Product[] = [
     description: "Vertical rack stores pot lids and pans neatly inside cabinets.",
     longDescription:
       "Reclaim cabinet space with an adjustable rack that holds lids upright and easy to grab. Expandable width fits most standard kitchen cabinets. Keeps matching lids with the right pots without stacking chaos. Ships from our US warehouse in 3–5 business days.",
-    price: 16.99,
-    compareAtPrice: 18.99,
+    price: 17.49,
+    compareAtPrice: 25.97,
     store: "home",
     image: "https://cf.cjdropshipping.com/5fcf04ef-ad54-4776-b57d-72cbffccc128.jpg",
     images: [
@@ -2807,8 +2807,8 @@ export const products: Product[] = [
     description: "Touchless dispenser for kitchen or bathroom — hands-free and hygienic.",
     longDescription:
       "Reduce mess around the sink with an infrared sensor that dispenses soap without touching the pump. Works with liquid soap and sanitizer for kitchens, bathrooms, and laundry rooms. USB rechargeable for everyday use. Ships from our US warehouse in 3–5 business days.",
-    price: 18.99,
-    compareAtPrice: 20.99,
+    price: 19.95,
+    compareAtPrice: 26.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/947936eb-a29d-4faf-a63f-257225cb7454.jpg",
     images: [
@@ -2840,8 +2840,8 @@ export const products: Product[] = [
     description: "Interactive wand toy that keeps cats active indoors.",
     longDescription:
       "Help indoor cats burn energy with a feather teaser wand built for daily play. The lightweight wand and fluttering feather mimic prey movement to encourage pouncing and chasing. Great for bonding between you and your cat. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.49,
+    compareAtPrice: 15.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/quick/product/38c70b8c-d93e-4bea-a1c7-c90f355ea3e5.jpg",
     images: [
@@ -2881,8 +2881,8 @@ export const products: Product[] = [
     description: "De-shed and massage your pet while you stroke them.",
     longDescription:
       "Remove loose fur during cuddle time with grooming gloves that feel like a gentle petting session. Soft rubber tips lift hair from dogs and cats while massaging the coat. Rinse clean after use — ideal for sensitive pets who dislike brushes. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.49,
+    compareAtPrice: 14.97,
     store: "pet",
     image: "https://oss-cf.cjdropshipping.com/product/2026/03/13/01/293bd339-3856-4e9c-94d2-93cb30fc371c.jpg",
     images: [
@@ -2922,8 +2922,8 @@ export const products: Product[] = [
     description: "Summer cooling bandana for walks and outdoor play.",
     longDescription:
       "Keep your dog comfortable on warm days with a cooling bandana that wraps around the neck. Soak, wring, and wear for a refreshing walk accessory that looks great in photos too. Soft fabric and adjustable fit for small to medium dogs. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.95,
+    compareAtPrice: 18.97,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1b675001-87df-4344-a040-b5f34976bc4a.jpg",
     images: [
@@ -2956,8 +2956,8 @@ export const products: Product[] = [
     description: "3-in-1 walk cup for water, treats, and waste bags on the go.",
     longDescription:
       "Everything you need for a cleaner walk in one compact cup. Give your dog water from the built-in tray, store treats for training, and keep waste bags handy — perfect for daily routes and park trips. Leak-resistant design fits in a bag or clips to a leash. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.79,
+    compareAtPrice: 21.97,
     store: "pet",
     image: "https://cf.cjdropshipping.com/3b242743-3895-4ec3-b82b-e22dffe3b8c5.jpg",
     images: [
@@ -2997,8 +2997,8 @@ export const products: Product[] = [
     description: "Non-slip double bowl for food and water.",
     longDescription:
       "Serve food and water side by side with a stainless steel double bowl that rinses clean in seconds. The non-slip base helps prevent sliding during eager mealtimes. Durable, rust-resistant, and sized for everyday use with dogs and cats. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.49,
+    compareAtPrice: 16.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/20210102/1431431326335.jpg",
     images: [
@@ -3027,8 +3027,8 @@ export const products: Product[] = [
     description: "Cotton rope toy for chewing, tug, and dental play.",
     longDescription:
       "Give your dog a durable rope toy for chewing and tug games that support daily play habits. Natural cotton knots hold up to fetch and gentle tugging while helping keep teeth busy. A simple everyday essential for puppies and adult dogs. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.79,
+    compareAtPrice: 17.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/0d450c25-a8d8-4327-acaa-318a62cb3d69.jpeg",
     images: [
@@ -3066,8 +3066,8 @@ export const products: Product[] = [
     description: "LED clip-on light for safer night walks.",
     longDescription:
       "Make evening walks safer with a clip-on LED light that attaches to collars and harnesses. Visible from a distance so drivers and neighbors can spot your dog after dark. Lightweight, battery-powered, and easy to clip on before every walk. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.79,
+    compareAtPrice: 16.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/20210115/801441890763.jpg",
     images: [
@@ -3100,8 +3100,8 @@ export const products: Product[] = [
     description: "Fine-tooth comb for coat checks and grooming.",
     longDescription:
       "Keep coats tidy with a fine-tooth grooming comb for dogs and cats. Close teeth help lift debris and check the coat during regular grooming sessions at home. Compact size fits in a drawer or travel bag. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.97,
+    compareAtPrice: 15.97,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1854ea92-9f48-453d-aa19-5ffaa3339970.jpg",
     images: [
@@ -3132,7 +3132,7 @@ export const products: Product[] = [
     longDescription:
       "Stock up on sturdy poop bags so you never run out mid-walk. This 270-count pack uses thick, leak-resistant material that handles daily routes with confidence. Fits standard dispensers and stores easily in a pantry or leash bag. Ships from our US warehouse in 3–5 business days.",
     price: 18.99,
-    compareAtPrice: 20.99,
+    compareAtPrice: 23.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/17659296/bf527348-0c17-48e9-8379-0802e60a85bb.jpg",
     images: [
@@ -3161,8 +3161,8 @@ export const products: Product[] = [
     description: "Clip-on silicone pouch for treats on walks and training sessions.",
     longDescription:
       "Keep rewards within reach during training with a soft silicone treat pouch that clips to your belt or leash. Food-grade material wipes clean fast and opens with one hand while you hold the leash. Perfect for daily walks, puppy training, and park visits. Ships from our US warehouse in 3–5 business days.",
-    price: 20.99,
-    compareAtPrice: 23.99,
+    price: 21.49,
+    compareAtPrice: 26.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/17660160/2269b89b-8910-4601-b77a-9f6224d67dc7.jpg",
     images: [
@@ -3194,8 +3194,8 @@ export const products: Product[] = [
     description: "Gentle scalp massage during shampoo — relaxes and cleanses roots.",
     longDescription:
       "Turn shower time into a mini spa with soft silicone bristles that massage the scalp while you lather shampoo. Helps distribute product and feels great after a long day. Waterproof and easy to rinse — fits in a shower caddy. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.49,
+    compareAtPrice: 19.97,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/75fb9d49-f48b-4cc8-8c47-592f90d08e0f.jpg",
     images: [
@@ -3235,8 +3235,8 @@ export const products: Product[] = [
     description: "Spray + cloth kit for phones, laptops, and monitors.",
     longDescription:
       "Remove fingerprints and smudges from screens without streaks or harsh chemicals. Includes a fine-mist spray and large microfiber cloth safe for phones, tablets, glasses, and monitors. Keep one at your desk and one in a travel pouch. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.79,
+    compareAtPrice: 16.99,
     store: "tech",
     image: "https://cf.cjdropshipping.com/2701dcd6-756f-4446-aee8-2e137cc54d27.png",
     images: [
@@ -3276,8 +3276,8 @@ export const products: Product[] = [
     description: "Target knots in feet, glutes, and shoulders with firm massage balls.",
     longDescription:
       "Reach spots a foam roller misses with compact balls that dig into trigger points along the spine, feet, and hips. Includes single and peanut-style shapes for different muscle groups. Toss in a gym bag for post-run relief. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.95,
+    compareAtPrice: 18.97,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/1619178397196.jpg?bid=2406271316561938900",
     images: [
@@ -3312,8 +3312,8 @@ export const products: Product[] = [
     description: "Block snoring and street noise for quieter sleep.",
     longDescription:
       "Moldable foam ear plugs expand to fit most ear canals and cut down on partner snoring, traffic, and hotel noise. Reusable carry case keeps pairs clean in a nightstand or travel pouch. A simple upgrade for light sleepers and frequent travelers. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.97,
+    compareAtPrice: 19.97,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/20200601/235800077858.jpg",
     images: [
@@ -3344,8 +3344,8 @@ export const products: Product[] = [
     description: "Weigh portions for meal prep, baking, and macro tracking.",
     longDescription:
       "Hit your nutrition goals with a slim digital scale that switches between grams and ounces in one tap. Tempered glass surface wipes clean and the tare function zeroes out bowls and containers. Compact enough to leave on the counter. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.49,
+    compareAtPrice: 15.49,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/quick/product/539d0791-b846-4f9b-a488-adccd67bd17a.jpg",
     images: [
@@ -3385,8 +3385,8 @@ export const products: Product[] = [
     description: "Glute and leg bands for home workouts — no rolling or pinching.",
     longDescription:
       "Train hips, glutes, and thighs with fabric loop bands that stay put better than rubber alone. Three resistance levels scale from rehab to strength work. Folds into a pouch for travel and fits under a desk for quick movement breaks. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.79,
+    compareAtPrice: 13.99,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/4e5851b1-5979-48c8-9e66-289ae1399d5e.png",
     images: [
@@ -3427,7 +3427,7 @@ export const products: Product[] = [
     longDescription:
       "See everything at a glance with stackable clear bins that corral yogurt cups, soda cans, and produce drawers. Built-in handles slide out for quick grabs during meal prep. A simple organization upgrade that cuts food waste from forgotten items. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 58.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/0aeff894-a292-4d2f-bce8-1604952e0d3d.jpg",
     images: [
@@ -3461,8 +3461,8 @@ export const products: Product[] = [
     description: "Ring your keys or wallet from your phone when they're misplaced.",
     longDescription:
       "Attach a slim Bluetooth tag to keys, bags, or remotes and ping them from a phone app when something goes missing. Replaceable battery lasts months of daily use. Affordable peace of mind for busy households. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.49,
+    compareAtPrice: 15.99,
     store: "tech",
     image: "https://cf.cjdropshipping.com/1612605851894.png",
     images: [
@@ -3502,8 +3502,8 @@ export const products: Product[] = [
     description: "Sisal mat protects furniture and satisfies scratching instincts.",
     longDescription:
       "Give cats a dedicated scratching zone with a flat sisal mat that slides under a couch or leans against a wall. Saves sofas and door frames while keeping claws healthy. Lightweight and easy to move between rooms. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.95,
+    compareAtPrice: 19.95,
     store: "pet",
     image: "https://oss-cf.cjdropshipping.com/product/2024/06/15/02/b2e1afd3-7d8c-47ba-bc4d-6ec856d1867b.jpg",
     images: [
@@ -3542,8 +3542,8 @@ export const products: Product[] = [
     description: "Cardio anywhere — adjustable length for HIIT, boxing, and home workouts.",
     longDescription:
       "Burn calories in small spaces with a tangle-free jump rope built for fast spins and daily training. Comfortable silicone handles stay secure during longer sessions and the length adjusts for different heights. Fits in a gym bag for travel workouts. Ships from our US warehouse in 3–5 business days.",
-    price: 15.99,
-    compareAtPrice: 17.99,
+    price: 16.79,
+    compareAtPrice: 22.49,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/d0556328-3435-40bf-8af6-3a68b1cdf1c1.jpg",
     images: [
@@ -3580,8 +3580,8 @@ export const products: Product[] = [
     description: "Wet, snap, and cool down fast after workouts or hot days.",
     longDescription:
       "Beat heat during runs, yard work, or gym sessions with a microfiber towel that stays cool for hours after a quick soak and snap. Re-wet anytime to refresh. Clips to a gym bag or golf cart — a summer essential. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.95,
+    compareAtPrice: 14.99,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/db74b248-b123-48c7-be6e-682abfd6669c.jpg",
     images: [
@@ -3620,8 +3620,8 @@ export const products: Product[] = [
     description: "Soft squeaker toy for fetch, cuddles, and solo play.",
     longDescription:
       "Keep dogs entertained with a plush toy that squeaks during fetch and couch time. Reinforced stitching handles moderate chewers and the size fits small to medium breeds. An affordable add-on to any pet order. Ships from our US warehouse in 3–5 business days.",
-    price: 19.99,
-    compareAtPrice: 21.99,
+    price: 20.49,
+    compareAtPrice: 28.97,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1f4f119e-34a0-4021-99f0-5a86b0645e12.jpeg",
     images: [
@@ -3652,7 +3652,7 @@ export const products: Product[] = [
     longDescription:
       "Indoor cats love darting through a collapsible tunnel with crinkle sounds and peek holes for ambush play. Folds flat for storage and pops open in seconds for daily enrichment. Great paired with feather toys for exercise. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 61.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/ef5a14b7-fdd9-48e6-a835-d1e40a4bfe95.png",
     images: [
@@ -3691,8 +3691,8 @@ export const products: Product[] = [
     description: "Waterproof mat catches spills around food and water bowls.",
     longDescription:
       "Protect floors from kibble crumbs and water splashes with a raised-edge silicone mat that stays put under bowls. Wipe clean after every meal or toss in the dishwasher. Fits double bowls and single feeders alike. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.49,
+    compareAtPrice: 19.97,
     store: "pet",
     image: "https://cf.cjdropshipping.com/1619673833103.jpg",
     images: [
@@ -3727,8 +3727,8 @@ export const products: Product[] = [
     description: "Drain rack keeps sponges, soap, and brushes tidy by the sink.",
     longDescription:
       "Clear counter clutter with a sink-side caddy that drains water away from sponges and dish soap. Holds brushes and scrubbers in one spot for faster cleanup after meals. Rust-resistant finish suits everyday kitchen use. Ships from our US warehouse in 3–5 business days.",
-    price: 18.99,
-    compareAtPrice: 20.99,
+    price: 19.97,
+    compareAtPrice: 25.97,
     store: "home",
     image: "https://cf.cjdropshipping.com/582a93c1-79f2-4f36-8c72-c8c5e611259a.jpg",
     images: [
@@ -3763,8 +3763,8 @@ export const products: Product[] = [
     description: "Finger brushes and tools for at-home pet dental hygiene.",
     longDescription:
       "Support fresher breath and healthier gums with a compact dental kit designed for dogs and cats. Soft finger brushes slip on for gentle gum massage during short daily sessions. Rinse clean and store in the included case between uses. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.97,
+    compareAtPrice: 16.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/quick/product/5c59bd62-6840-495f-930e-ca4b3d03217b.jpg",
     images: [
@@ -3798,7 +3798,7 @@ export const products: Product[] = [
     longDescription:
       "Help indoor cats burn energy with a pocket laser toy built for daily play sessions. Rechargeable battery means no disposable cells — point, chase, repeat. Great for apartments and rainy days when outdoor time is limited. Ships from our US warehouse in 3–5 business days.",
     price: 12.99,
-    compareAtPrice: 14.99,
+    compareAtPrice: 17.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/203005/319211052394.png",
     images: [
@@ -3838,8 +3838,8 @@ export const products: Product[] = [
     description: "Scheduled meals for cats and dogs when you're away.",
     longDescription:
       "Dispense kibble on a timer so pets eat on schedule during workdays and short trips. Portion control helps with weight management and the hopper holds several days of dry food. Easy to program and disassemble for cleaning. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.79,
+    compareAtPrice: 18.99,
     store: "pet",
     image: "https://cf.cjdropshipping.com/a9f123ec-8d15-4318-9b0f-47873ee51a88.png",
     images: [
@@ -3875,8 +3875,8 @@ export const products: Product[] = [
     description: "Gentle steps help small and senior pets reach furniture safely.",
     longDescription:
       "Give older or small pets a boost onto the couch or bed without risky jumps. High-density foam steps support paws with a non-slip cover that removes for washing. Lightweight enough to move between rooms. Ships from our US warehouse in 3–5 business days.",
-    price: 14.99,
-    compareAtPrice: 16.99,
+    price: 15.97,
+    compareAtPrice: 24.79,
     store: "pet",
     image: "https://cf.cjdropshipping.com/cd42aba1-ce54-41df-95cb-f01755198332.jpg",
     images: [
@@ -3907,8 +3907,8 @@ export const products: Product[] = [
     description: "Quiet grinder trims nails smoothly without sharp clipper cuts.",
     longDescription:
       "Smooth rough nail edges with a low-noise rotary grinder that many pets tolerate better than clippers. Multiple grit heads handle small and large paws with a USB-rechargeable base. Work slowly at home between professional groomer visits. Ships from our US warehouse in 3–5 business days.",
-    price: 35.99,
-    compareAtPrice: 39.99,
+    price: 36.95,
+    compareAtPrice: 56.95,
     store: "pet",
     image: "https://cf.cjdropshipping.com/594a8333-5538-4504-88b3-eddf51bddcb1.jpg",
     images: [
@@ -3942,8 +3942,8 @@ export const products: Product[] = [
     description: "Countertop rack adds two levels of drying space beside your sink.",
     longDescription:
       "Air-dry plates, bowls, and utensils on a compact two-tier rack that sits on the counter next to your sink. Open design helps water drain fast and keeps everyday dishes within reach. Ships from our US warehouse in 3–5 business days.",
-    price: 28.99,
-    compareAtPrice: 31.99,
+    price: 29.49,
+    compareAtPrice: 39.97,
     store: "home",
     image: "https://cf.cjdropshipping.com/7af4a97f-cd2a-4b2b-9d69-fb2dbbea7614.jpg",
     images: [
@@ -3973,8 +3973,8 @@ export const products: Product[] = [
     description: "Gentle weight blocks light and eases tension for deeper sleep.",
     longDescription:
       "Fall asleep faster with a blackout mask that adds light pressure around the eyes — like a calm hug for your face. Soft fabric and an adjustable strap fit most head sizes without pulling hair. Great for travel, naps, and light-sensitive sleepers. Ships from our US warehouse in 3–5 business days.",
-    price: 17.99,
-    compareAtPrice: 19.99,
+    price: 18.95,
+    compareAtPrice: 29.95,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/11c04db8-a22d-4075-bce5-11af11eeae5b.png",
     images: [
@@ -4004,8 +4004,8 @@ export const products: Product[] = [
     description: "Rechargeable personal blender for protein shakes on the go.",
     longDescription:
       "Blend smoothies at the gym, office, or hotel with a compact USB-rechargeable cup blender. BPA-free jar rinses clean fast and the six-blade base handles frozen fruit and protein powder. One-button operation — no countertop space needed. Ships from our US warehouse in 3–5 business days.",
-    price: 22.99,
-    compareAtPrice: 25.99,
+    price: 23.49,
+    compareAtPrice: 34.95,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/1620715713618.jpg",
     images: [
@@ -4046,7 +4046,7 @@ export const products: Product[] = [
     longDescription:
       "Work in cafes and shared spaces without loud click sounds. Ergonomic shape supports all-day use and the USB receiver stores inside the mouse for travel. Plug-and-play on Windows and Mac — no driver hunt required. Ships from our US warehouse in 3–5 business days.",
     price: 10.99,
-    compareAtPrice: 12.99,
+    compareAtPrice: 17.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/203104/2027192008744.jpg",
     images: [
@@ -4080,8 +4080,8 @@ export const products: Product[] = [
     description: "Secure grip and kickstand for one-handed texting and video.",
     longDescription:
       "Reduce drop anxiety with a metal ring that rotates into a stand for recipes, FaceTime, and scrolling. Strong adhesive attaches to most phone cases and can be repositioned once. A low-cost upgrade that makes big phones easier to hold. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.79,
+    compareAtPrice: 16.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/dcfc8401-ddf3-4c2b-b929-904d3d25d553.jpg",
     images: [
@@ -4122,7 +4122,7 @@ export const products: Product[] = [
     longDescription:
       "Label and store folded sheet sets in breathable organizers so you grab the right size without digging through the linen closet. Fits standard queen and full sets and stacks neatly on shelves. A small change that makes laundry day faster. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 58.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/940c8781-28f8-417c-817f-1aa60f7d41a3.jpg",
     images: [
@@ -4156,8 +4156,8 @@ export const products: Product[] = [
     description: "Replacement metal rings for regular-mouth canning jars.",
     longDescription:
       "Keep your mason jars sealed with spare split-type metal rings for pantry storage and canning. Fits regular-mouth jars you already own — handy backup when rings warp or go missing. Ships from our US warehouse in 3–5 business days.",
-    price: 26.99,
-    compareAtPrice: 29.99,
+    price: 27.97,
+    compareAtPrice: 34.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/17633376/0fbfaa41-290f-46aa-83dc-da0e1a70b431.jpg",
     images: [
@@ -4189,7 +4189,7 @@ export const products: Product[] = [
     longDescription:
       "Save drawer space with a silicone colander that expands over the sink and collapses when you're done. Heat-resistant for hot pasta water and flexible enough to squeeze into tight cabinets. Dishwasher safe for everyday cooking. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 53.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/7e10299e-84aa-458a-ad55-7b76d24e5967.jpg",
     images: [
@@ -4222,7 +4222,7 @@ export const products: Product[] = [
     longDescription:
       "Custom-fit dividers expand to separate utensils, junk drawer gadgets, and office supplies without tools. Spring-loaded ends grip drawer walls and stay put when you pull items out. Set of 4 covers most kitchen and desk drawers. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 56.49,
     store: "home",
     image: "https://cf.cjdropshipping.com/0b35cc76-4f79-4c40-94c9-1a8dc72f2c5e.jpg",
     images: [
@@ -4255,8 +4255,8 @@ export const products: Product[] = [
     description: "Spike mat and pillow release back and neck tension in minutes.",
     longDescription:
       "Lie down on thousands of gentle pressure points that help loosen tight muscles after desk work or workouts. Includes a matching neck pillow for shoulder and upper-back relief. Comes with a carry bag for storage. Start with a thin shirt and build up to 10–20 minutes per session. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.97,
+    compareAtPrice: 13.97,
     store: "wellness",
     image: "https://oss-cf.cjdropshipping.com/product/2026/06/01/12/4da018ae-27e1-4757-b3a0-0d43b5f32417_trans.jpeg",
     images: [
@@ -4296,7 +4296,7 @@ export const products: Product[] = [
     longDescription:
       "Type comfortably on an iPad, Fire TV, or phone with a rechargeable Bluetooth keyboard that pairs in seconds. Quiet keys won't disturb roommates and the slim profile fits in a laptop sleeve pocket. One keyboard for couch browsing and hotel work sessions. Ships from our US warehouse in 3–5 business days.",
     price: 39.99,
-    compareAtPrice: 43.99,
+    compareAtPrice: 55.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/17634240/a4090746-213f-4c59-9017-e7b47b95c82b.jpg",
     images: [
@@ -4326,8 +4326,8 @@ export const products: Product[] = [
     description: "Keeps counters clean while cooking — holds ladles and spatulas.",
     longDescription:
       "Stop sauce drips on the counter with a heat-resistant spoon rest that sits beside the stove. Wide cradle fits ladles, tongs, and spatulas during busy meal prep. Wipes clean in seconds and stays stable on busy counters. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.97,
+    compareAtPrice: 17.79,
     store: "home",
     image: "https://cf.cjdropshipping.com/203006/195226114178.png",
     images: [
@@ -4359,8 +4359,8 @@ export const products: Product[] = [
     description: "Roll out sore legs, back, and IT band after workouts.",
     longDescription:
       "Speed up recovery with a firm EVA foam roller that targets quads, hamstrings, and upper back without a gym appointment. Textured surface grips the floor while you control pressure. Lightweight enough to stash by the couch or in a gym bag. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.49,
+    compareAtPrice: 17.99,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/bbe2ebcf-71d4-4d0a-b326-5daad7574f8b.jpg",
     images: [
@@ -4395,8 +4395,8 @@ export const products: Product[] = [
     description: "Improve stability for rehab, yoga, and standing desk breaks.",
     longDescription:
       "Add an unstable surface to squats, single-leg stands, and physical therapy exercises without bulky equipment. Closed-cell foam is waterproof and wipes clean after sweat sessions. Great for ankle rehab and core activation at home. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.95,
+    compareAtPrice: 17.95,
     store: "wellness",
     image: "https://oss-cf.cjdropshipping.com/product/2024/06/25/02/ecf82341-325a-4843-9d9c-31097f9bb771_trans.jpeg",
     images: [
@@ -4434,8 +4434,8 @@ export const products: Product[] = [
     description: "Slim scratch protection for MacBook and ultrabooks.",
     longDescription:
       "Slide your laptop into a padded neoprene sleeve before tossing it in a tote or backpack. Soft interior prevents scratches and the zipper opens wide for quick airport security checks. Fits most 13–14 inch laptops and tablets with keyboards. Ships from our US warehouse in 3–5 business days.",
-    price: 13.99,
-    compareAtPrice: 15.99,
+    price: 14.97,
+    compareAtPrice: 23.97,
     store: "tech",
     image: "https://cf.cjdropshipping.com/quick/product/080ca303-594c-451e-af38-e1159b1cbe26.jpg",
     images: [
@@ -4474,8 +4474,8 @@ export const products: Product[] = [
     description: "Turn an M.2 drive into fast portable USB storage.",
     longDescription:
       "Repurpose an NVMe SSD as an external drive for photo backups and video edits on the go. Tool-free tray and aluminum housing help manage heat during large transfers. USB-C connection up to 10Gbps when paired with a fast drive. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.79,
+    compareAtPrice: 15.97,
     store: "tech",
     image: "https://cf.cjdropshipping.com/1617334806009.jpg",
     images: [
@@ -4505,7 +4505,7 @@ export const products: Product[] = [
     longDescription:
       "Reduce wrist fatigue at your desk with a soft memory foam rest that sits in front of your keyboard. Non-slip base stays put on smooth surfaces and the breathable cover wipes clean. A simple upgrade for home offices and students. Ships from our US warehouse in 3–5 business days.",
     price: 12.99,
-    compareAtPrice: 14.99,
+    compareAtPrice: 18.49,
     store: "tech",
     image: "https://cf.cjdropshipping.com/quick/product/4259772d-8165-4663-8318-d45846ec4537.jpg",
     images: [
@@ -4544,8 +4544,8 @@ export const products: Product[] = [
     description: "Quiet fan helps laptops run cooler during work and gaming.",
     longDescription:
       "Keep your laptop from overheating on the couch or desk with a slim pad that pulls heat away through a built-in USB fan. Adjustable tray fits most 10–15 inch notebooks and plugs into your laptop for power. Ships from our US warehouse in 3–5 business days.",
-    price: 16.99,
-    compareAtPrice: 18.99,
+    price: 17.97,
+    compareAtPrice: 28.49,
     store: "tech",
     image: "https://cf.cjdropshipping.com/3bace58b-89ab-421a-bc0a-9115c05b87ce.jpg",
     images: [
@@ -4577,8 +4577,8 @@ export const products: Product[] = [
     description: "Smooth drawing and tapping on iPad, Android tablets, and phones.",
     longDescription:
       "Take notes and sketch on touch screens without smudged fingerprints. Soft tip glides smoothly across glass and works with most capacitive displays — no pairing or batteries required. Clip attaches to cases for daily carry. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.79,
+    compareAtPrice: 19.99,
     store: "tech",
     image: "https://cf.cjdropshipping.com/1616932431015.jpg",
     images: [
@@ -4608,8 +4608,8 @@ export const products: Product[] = [
     description: "Adds Bluetooth to desktops and laptops for earbuds and mice.",
     longDescription:
       "Pair wireless earbuds, speakers, and keyboards with older PCs that lack built-in Bluetooth. Plug-and-play dongle installs in seconds on common Windows setups. Tiny profile stays out of the way on laptops. Ships from our US warehouse in 3–5 business days.",
-    price: 9.99,
-    compareAtPrice: 10.99,
+    price: 10.49,
+    compareAtPrice: 14.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/15374592/1358851573710.jpg",
     images: [
@@ -4639,8 +4639,8 @@ export const products: Product[] = [
     description: "Stable desk stand for video calls, recipes, and streaming.",
     longDescription:
       "Prop your phone or tablet at a comfortable viewing angle on desks, kitchen counters, and nightstands. Rotating base switches between portrait and landscape for FaceTime and shows. Compact footprint fits small workspaces. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.97,
+    compareAtPrice: 16.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/15139872/2105404712819.jpg",
     images: [
@@ -4673,8 +4673,8 @@ export const products: Product[] = [
     description: "Adds four USB ports when your laptop runs out of sockets.",
     longDescription:
       "Connect a mouse, keyboard, flash drive, and webcam from one compact hub. USB 3.0 speeds help with everyday file transfers and peripherals on busy desks. Slim design travels well in laptop bags. Ships from our US warehouse in 3–5 business days.",
-    price: 11.99,
-    compareAtPrice: 13.99,
+    price: 12.79,
+    compareAtPrice: 17.79,
     store: "tech",
     image: "https://cf.cjdropshipping.com/34f69ab6-df1a-4711-b9f6-ca61d344e7f6.jpg",
     images: [
@@ -4703,8 +4703,8 @@ export const products: Product[] = [
     description: "Heavy-duty holder keeps phones upright while you work.",
     longDescription:
       "Aluminum stand holds your phone at eye level for notifications, timers, and video calls. Weighted base resists tipping and the open design fits most cases. A clean upgrade for WFH desks and kitchen counters. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.97,
+    compareAtPrice: 16.49,
     store: "tech",
     image: "https://oss-cf.cjdropshipping.com/product/2023/12/15/02/71195c6c-8fcb-4d4a-9b07-a018c4fd6ef7_trans.jpeg",
     images: [
@@ -4737,7 +4737,7 @@ export const products: Product[] = [
     longDescription:
       "Prep vegetables, fruit, and meat on a bamboo board with a built-in tray that catches juices and crumbs. Smooth surface is gentle on knife edges and rinses clean after every meal. Ships from our US warehouse in 3–5 business days.",
     price: 22.99,
-    compareAtPrice: 25.99,
+    compareAtPrice: 31.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/15693408/2850654167046.jpg",
     images: [
@@ -4774,8 +4774,8 @@ export const products: Product[] = [
     description: "Heat-resistant mitts protect hands when baking and grilling.",
     longDescription:
       "Pull casseroles and sheet pans from the oven with thick heat-resistant mitts that grip securely. Cotton lining adds comfort for longer baking sessions and hanging loops keep them within reach. Ships from our US warehouse in 3–5 business days.",
-    price: 14.99,
-    compareAtPrice: 16.99,
+    price: 15.49,
+    compareAtPrice: 20.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/d861b14c-23eb-4f6f-be5a-fd2327859f96.jpg",
     images: [
@@ -4815,8 +4815,8 @@ export const products: Product[] = [
     description: "Hang five shirts vertically in the space of one rod hook.",
     longDescription:
       "Free up closet rod space by hanging multiple shirts from one cascading hook. Sturdy folding design keeps outfits visible and wrinkle-free in small bedrooms and apartments. Ships from our US warehouse in 3–5 business days.",
-    price: 28.99,
-    compareAtPrice: 31.99,
+    price: 29.95,
+    compareAtPrice: 36.95,
     store: "home",
     image: "https://cf.cjdropshipping.com/15239232/969980215705.png",
     images: [
@@ -4848,8 +4848,8 @@ export const products: Product[] = [
     description: "Keeps brushes and toothpaste tidy beside the bathroom sink.",
     longDescription:
       "Mount brushes and toothpaste beside the sink with a wall holder that includes UV sterilization and a dispenser squeeze slot. Keeps bathroom counters clear for families sharing one vanity. Ships from our US warehouse in 3–5 business days.",
-    price: 19.99,
-    compareAtPrice: 21.99,
+    price: 20.79,
+    compareAtPrice: 29.79,
     store: "home",
     image: "https://cf.cjdropshipping.com/quick/product/4c28d25d-0148-48e7-9964-61b60e57d47a.jpg",
     images: [
@@ -4886,7 +4886,7 @@ export const products: Product[] = [
     longDescription:
       "Air-dry plates, bowls, and utensils on a folding rack that sits beside the sink and stores flat when not in use. Open design drains water fast in small kitchens and RVs. Ships from our US warehouse in 3–5 business days.",
     price: 12.99,
-    compareAtPrice: 14.99,
+    compareAtPrice: 18.99,
     store: "home",
     image: "https://cf.cjdropshipping.com/1612785973146.png",
     images: [
@@ -4917,8 +4917,8 @@ export const products: Product[] = [
     description: "Core trainer for abs and stability at home.",
     longDescription:
       "Strengthen your core with a dual-wheel roller that targets abs and obliques from the floor. Automatic rebound assist helps beginners control the movement and a knee pad cushions workouts. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.49,
+    compareAtPrice: 18.99,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/9ea9f8b5-e21b-4453-a0ee-75f573105766.jpg",
     images: [
@@ -4958,8 +4958,8 @@ export const products: Product[] = [
     description: "Adds light resistance to thighs, arms, and core exercises.",
     longDescription:
       "Add gentle resistance to Pilates, yoga, and barre routines with a flexible ring that tones thighs, arms, and core. Foam grips stay comfortable during longer home sessions. Ships from our US warehouse in 3–5 business days.",
-    price: 12.99,
-    compareAtPrice: 14.99,
+    price: 13.97,
+    compareAtPrice: 20.95,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/1617248912593.png",
     images: [
@@ -4999,7 +4999,7 @@ export const products: Product[] = [
     longDescription:
       "Hit daily hydration goals with a 1L bottle printed with hourly time markers and a leak-proof flip lid. Tritan plastic handles gym sessions, desk work, and commuting without odd tastes. Ships from our US warehouse in 3–5 business days.",
     price: 13.99,
-    compareAtPrice: 15.99,
+    compareAtPrice: 21.49,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/1619059109803.jpg",
     images: [
@@ -5039,8 +5039,8 @@ export const products: Product[] = [
     description: "Helps deepen stretches and improve flexibility safely.",
     longDescription:
       "Reach deeper into hamstring and shoulder stretches with an adjustable cotton strap and metal buckle. Helps beginners and rehab patients improve flexibility safely on the mat. Ships from our US warehouse in 3–5 business days.",
-    price: 10.99,
-    compareAtPrice: 12.99,
+    price: 11.95,
+    compareAtPrice: 14.97,
     store: "wellness",
     image: "https://cf.cjdropshipping.com/2042/1180722646546.png",
     images: [

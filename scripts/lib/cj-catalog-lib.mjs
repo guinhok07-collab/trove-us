@@ -10,8 +10,57 @@ export const PAYPAL_RATE = 0.034;
 export const MAX_RETAIL = 39.99;
 export const MIN_IMAGES = 4;
 export const MAX_IMAGES = 15;
+/** Charm price endings — retail rounds up to one of these. */
+export const CHARM_ENDINGS = [0.49, 0.79, 0.95, 0.97, 0.99];
+/** Compare-at discount bands (looks like a real sale, not a flat 10%). */
+export const COMPARE_DISCOUNT_BANDS = [0.18, 0.22, 0.25, 0.28, 0.32, 0.35];
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+export function hashSeed(seed) {
+  let h = 2166136261;
+  const str = String(seed ?? "");
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+/** Smallest-or-near charm price ≥ floor, picked stably from seed; never above max. */
+export function charmCeil(floor, seed = "", max = MAX_RETAIL) {
+  const floorR = Math.round(Number(floor) * 100) / 100;
+  if (!(floorR > 0)) return Math.min(CHARM_ENDINGS[CHARM_ENDINGS.length - 1], max);
+  if (floorR >= max) return max;
+
+  const candidates = [];
+  for (let whole = Math.floor(floorR); whole <= Math.floor(max) + 1; whole++) {
+    for (const end of CHARM_ENDINGS) {
+      const c = Math.round((whole + end) * 100) / 100;
+      if (c + 1e-9 >= floorR && c <= max + 1e-9) candidates.push(c);
+    }
+  }
+  if (!candidates.length) return max;
+
+  const unique = [...new Set(candidates)].sort((a, b) => a - b);
+  const pool = unique.slice(0, Math.min(5, unique.length));
+  return pool[hashSeed(seed) % pool.length];
+}
+
+export function retailPrice(cost, shipping = 3.5, seed = "") {
+  const base = Number(cost) + Number(shipping);
+  const raw = base / (1 - TARGET_MARGIN - PAYPAL_RATE);
+  const floor = Math.max(raw, base + 1.5);
+  return Math.min(charmCeil(floor, seed || String(cost), MAX_RETAIL), MAX_RETAIL);
+}
+
+export function compareAt(sell, seed = "") {
+  const bands = COMPARE_DISCOUNT_BANDS;
+  const pct = bands[hashSeed(seed || String(sell)) % bands.length];
+  const raw = Number(sell) / (1 - pct);
+  // Was-price can exceed MAX_RETAIL — strikethrough "list" price.
+  return charmCeil(raw, `${seed || sell}:was`, 999.99);
+}
 
 export function parseImageField(value) {
   const out = [];
@@ -99,16 +148,6 @@ export async function resolveProductVideo(token, data) {
     videos.find((v) => v.videoState === "ON_STATE" && v.videoUrl?.startsWith("http")) ||
     videos.find((v) => v.videoUrl?.startsWith("http"));
   return pick?.videoUrl;
-}
-
-export function retailPrice(cost, shipping = 3.5) {
-  const base = Number(cost) + Number(shipping);
-  const raw = base / (1 - TARGET_MARGIN - PAYPAL_RATE);
-  return Math.min(Math.max(Math.ceil(raw) - 0.01, base + 1.5), MAX_RETAIL);
-}
-
-export function compareAt(sell) {
-  return Math.ceil(sell * 1.1) - 0.01;
 }
 
 export function variantLabel(variant, parentSku, productNameEn) {
@@ -351,7 +390,8 @@ export function buildVariantsFromData(data, ship = 3.5) {
     const images = supplierImages(data, v);
     if (!images.length) continue;
     const cost = Number(v.variantSellPrice ?? data.sellPrice ?? 0);
-    const price = retailPrice(cost, ship);
+    const seed = v.variantSku || v.vid || "";
+    const price = retailPrice(cost, ship, seed);
     const key = (v.variantKey || "").trim();
     variants.push({
       id: v.vid,
@@ -359,7 +399,7 @@ export function buildVariantsFromData(data, ship = 3.5) {
       cjVid: v.vid,
       cjSku: v.variantSku,
       price,
-      compareAtPrice: compareAt(price),
+      compareAtPrice: compareAt(price, seed),
       image: images[0],
       images,
       inStock: true,

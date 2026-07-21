@@ -12,19 +12,62 @@ export const TARGET_MARGIN = 0.2;
 export const PAYPAL_RATE = 0.034;
 export const MAX_RETAIL = 39.99;
 export const DEFAULT_CJ_SHIPPING = 3.5;
+export const CHARM_ENDINGS = [0.49, 0.79, 0.95, 0.97, 0.99] as const;
+export const COMPARE_DISCOUNT_BANDS = [0.18, 0.22, 0.25, 0.28, 0.32, 0.35] as const;
 
-/** Mirror scripts/lib/cj-catalog-lib.mjs — cost + ship + 20% margin + PayPal fee. */
-export function retailPriceFromCost(cost: number, shipping = DEFAULT_CJ_SHIPPING): number {
-  const base = cost + shipping;
-  const raw = base / (1 - TARGET_MARGIN - PAYPAL_RATE);
-  return Math.min(
-    Math.max(Math.ceil(raw) - 0.01, base + 1.5),
-    MAX_RETAIL,
-  );
+export function hashSeed(seed: string | number | undefined): number {
+  let h = 2166136261;
+  const str = String(seed ?? "");
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
 }
 
-export function compareAtFromRetail(sell: number): number {
-  return Math.ceil(sell * 1.1) - 0.01;
+/** Charm price ≥ floor, stably picked from seed; never above max. */
+export function charmCeil(
+  floor: number,
+  seed = "",
+  max = MAX_RETAIL,
+): number {
+  const floorR = Math.round(Number(floor) * 100) / 100;
+  if (!(floorR > 0)) return Math.min(CHARM_ENDINGS[CHARM_ENDINGS.length - 1], max);
+  if (floorR >= max) return max;
+
+  const candidates: number[] = [];
+  for (let whole = Math.floor(floorR); whole <= Math.floor(max) + 1; whole++) {
+    for (const end of CHARM_ENDINGS) {
+      const c = Math.round((whole + end) * 100) / 100;
+      if (c + 1e-9 >= floorR && c <= max + 1e-9) candidates.push(c);
+    }
+  }
+  if (!candidates.length) return max;
+
+  const unique = [...new Set(candidates)].sort((a, b) => a - b);
+  const pool = unique.slice(0, Math.min(5, unique.length));
+  return pool[hashSeed(seed) % pool.length];
+}
+
+/** Mirror scripts/lib/cj-catalog-lib.mjs — cost + ship + 20% margin + PayPal fee. */
+export function retailPriceFromCost(
+  cost: number,
+  shipping = DEFAULT_CJ_SHIPPING,
+  seed = "",
+): number {
+  const base = cost + shipping;
+  const raw = base / (1 - TARGET_MARGIN - PAYPAL_RATE);
+  const floor = Math.max(raw, base + 1.5);
+  return Math.min(charmCeil(floor, seed || String(cost), MAX_RETAIL), MAX_RETAIL);
+}
+
+export function compareAtFromRetail(sell: number, seed = ""): number {
+  const pct =
+    COMPARE_DISCOUNT_BANDS[
+      hashSeed(seed || String(sell)) % COMPARE_DISCOUNT_BANDS.length
+    ];
+  const raw = sell / (1 - pct);
+  return charmCeil(raw, `${seed || sell}:was`, 999.99);
 }
 
 /** After PayPal fee, approximate net vs product cost (single unit, excl. store shipping). */

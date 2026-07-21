@@ -4,6 +4,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { compareAt } from "./lib/cj-catalog-lib.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const file = resolve(root, "src/data/products.ts");
@@ -18,8 +19,8 @@ const REPRICE = new Map([
   [9.99, 12.99],
 ]);
 
-function compareAtFromRetail(sell) {
-  return Math.ceil(sell * 1.1) - 0.01;
+function compareAtFromRetail(sell, seed = "") {
+  return compareAt(sell, seed);
 }
 
 const lines = readFileSync(file, "utf8").split("\n");
