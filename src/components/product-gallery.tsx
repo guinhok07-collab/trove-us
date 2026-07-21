@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { CatalogImage } from "@/components/catalog-image";
 import { getPreferredGalleryIndex } from "@/data/product-gallery-hints";
 import { PRODUCT_IMAGE_FALLBACK } from "@/lib/catalog-image";
+import { catalogVideoSrc } from "@/lib/catalog-video";
 
 interface ProductGalleryProps {
   slug: string;
@@ -27,15 +28,16 @@ export function ProductGallery({ slug, name, image, images, video }: ProductGall
 
   const safeActive = Math.min(active, Math.max(gallery.length - 1, 0));
   const currentSrc = gallery[safeActive] || PRODUCT_IMAGE_FALLBACK;
-  const hasVideo = Boolean(video?.startsWith("http"));
+  const playSrc = catalogVideoSrc(video);
+  const hasVideo = Boolean(playSrc);
   const alternateCandidates = gallery.filter((_, i) => i !== safeActive);
 
   return (
     <div className="space-y-3">
       <div className="relative aspect-square max-h-[min(70vh,480px)] overflow-hidden rounded-2xl bg-[#f5f5f4] sm:max-h-none sm:rounded-3xl">
-        {showVideo && hasVideo ? (
+        {showVideo && playSrc ? (
           <video
-            src={video}
+            src={playSrc}
             controls
             playsInline
             className="h-full w-full object-contain bg-black"

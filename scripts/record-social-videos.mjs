@@ -3,9 +3,10 @@
  * Usage: node scripts/record-social-videos.mjs [limit]
  */
 import { chromium } from "playwright";
-import { readFileSync, mkdirSync, readdirSync, unlinkSync } from "fs";
+import { readFileSync, mkdirSync, readdirSync, unlinkSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import { downloadCjVideo, cjVideoPath } from "./lib/cj-video-ad.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const template = resolve(root, "marketing/social/slides/video-ad-template.html");
@@ -17,10 +18,24 @@ const limit = process.argv[2] ? Number(process.argv[2]) : Infinity;
 const SLIDE_COUNT = 4;
 const SLIDE_MS = 2800;
 const CJ_PRODUCT_SLIDE_MS = 6000;
-const RECORD_MS = (ad) =>
-  (ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS) +
-  SLIDE_MS * (SLIDE_COUNT - 1) +
-  600;
+
+async function localCjVideoUrl(ad) {
+  if (!ad.video?.startsWith("http")) return null;
+  const dest = cjVideoPath(ad.slug, ad.file);
+  if (!existsSync(dest)) {
+    try {
+      await downloadCjVideo(ad.video, dest);
+      console.log("Downloaded CJ video:", dest);
+    } catch (err) {
+      console.warn(`CJ video skip ${ad.slug}:`, err.message);
+      return null;
+    }
+  }
+  return pathToFileURL(dest).href;
+}
+
+const RECORD_MS = (hasCj) =>
+  (hasCj ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS) + SLIDE_MS * (SLIDE_COUNT - 1) + 600;
 
 const ads = JSON.parse(readFileSync(adsPath, "utf8")).slice(0, limit);
 const browser = await chromium.launch();
@@ -31,6 +46,7 @@ for (const ad of ads) {
     recordVideo: { dir: outDir, size: { width: 1080, height: 1920 } },
   });
 
+  const localVideo = await localCjVideoUrl(ad);
   const qs = new URLSearchParams({
     hook: ad.hook,
     sub: ad.sub,
@@ -39,17 +55,17 @@ for (const ad of ads) {
     image: ad.image,
     badge: ad.badge,
     perk: ad.perk,
-    slideMs: String(ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS),
+    slideMs: String(localVideo ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS),
   });
   if (ad.compare) qs.set("compare", ad.compare);
-  if (ad.video?.startsWith("http")) qs.set("video", ad.video);
+  if (localVideo) qs.set("video", localVideo);
 
   const page = await context.newPage();
   await page.goto(`${pathToFileURL(template).href}?${qs}`, {
     waitUntil: "networkidle",
     timeout: 120000,
   });
-  await page.waitForTimeout(RECORD_MS(ad));
+  await page.waitForTimeout(RECORD_MS(Boolean(localVideo)));
 
   const video = page.video();
   await context.close();
@@ -58,7 +74,6 @@ for (const ad of ads) {
     const dest = resolve(outDir, `${ad.file}.webm`);
     await video.saveAs(dest);
     for (const f of readdirSync(outDir)) {
-      // Remove só temporários do Playwright — não apagar outros produtos .webm
       if (f.endsWith(".webm") && f !== `${ad.file}.webm` && !/^\d{2}-/.test(f)) {
         try {
           unlinkSync(resolve(outDir, f));

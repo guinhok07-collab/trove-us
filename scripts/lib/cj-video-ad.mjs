@@ -15,9 +15,14 @@ export function cjVideoPath(slug, fileBase) {
   return resolve(cjVideoDir, `${base}.mp4`);
 }
 
+const CJ_REFERER = "https://developers.cjdropshipping.com/";
+
 export async function downloadCjVideo(url, destPath) {
   mkdirSync(dirname(destPath), { recursive: true });
-  const res = await fetch(url, { redirect: "follow" });
+  const res = await fetch(url, {
+    redirect: "follow",
+    headers: { Referer: CJ_REFERER },
+  });
   if (!res.ok) {
     throw new Error(`Video download failed (${res.status}): ${url}`);
   }

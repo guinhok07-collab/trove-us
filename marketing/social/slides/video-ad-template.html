@@ -219,7 +219,8 @@
       const img = document.getElementById("img");
       const vid = document.getElementById("vid");
       const cjVideo = params.get("video");
-      if (cjVideo && cjVideo.startsWith("http")) {
+      const canPlayVideo = cjVideo && (cjVideo.startsWith("http") || cjVideo.startsWith("file:"));
+      if (canPlayVideo) {
         vid.src = cjVideo;
         vid.style.display = "block";
         img.style.display = "none";
@@ -235,7 +236,7 @@
 
       const slides = [...document.querySelectorAll(".slide")];
       const SLIDE_MS = Number(params.get("slideMs") || 2800);
-      const hasCjVideo = Boolean(cjVideo && cjVideo.startsWith("http"));
+      const hasCjVideo = Boolean(canPlayVideo);
       let i = 0;
       setInterval(() => {
         slides[i].classList.remove("active");

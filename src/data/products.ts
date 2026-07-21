@@ -117,6 +117,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/2887adb3-5c9b-411a-b380-c7a7c82b49c6.jpg",
       "https://oss-cf.cjdropshipping.com/product/2025/12/17/01/25da3c86-62b0-49be-9eed-0b711c37f724.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/96412a00f0a071ed806d6723a78f0102/fff3b1bce49a411297ca735d08cf79c1-7b1befad49f7eda0aa5bb46f9b70cdac-ld.mp4",
     rating: 4.8,
     reviews: 28,
     sold: 116,
@@ -157,6 +158,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2026/04/29/05/6975b15e-40e6-4e22-9d78-ef78d2e70c5e.jpg",
       "https://oss-cf.cjdropshipping.com/product/2026/04/29/05/6edf7acc-d7eb-45b9-92ef-9db9ca839c5a.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/4003a654cf1a71efbf904531958c0102/30c72e2edd254115bd26b367d24df6cd-f077c6d37f2a8dd0499d8a1f6b4ee617-ld.mp4",
     rating: 4.3,
     reviews: 26,
     sold: 145,
@@ -294,6 +296,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2026/03/28/07/9d229e22-45b8-4cf3-bf25-17b0ae2d2aa7_trans.jpeg",
       "https://oss-cf.cjdropshipping.com/product/2024/06/17/12/f8f64082-729d-4791-b2a9-f73db65682ea.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/30fddf611b8e71ef80176732b78e0102/49b17acb0f1149a2bcbbf3be6249f5fc-4a1570f08cf37b73c5ce00c7d11a7a1b-ld.mp4",
     rating: 4.3,
     reviews: 17,
     sold: 68,
@@ -399,6 +402,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/2cd4ed20-ba36-4e34-9f06-3b2689f055c0.jpg",
       "https://cf.cjdropshipping.com/baebc2db-1d7c-449c-a639-79fcb0a2a7d4_fine.jpeg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/50f963aa5ea871ef80114531959c0102/d699f6ec38064993815592332a04ced9-7fec4180de3560d4340e009d4a70329f-ld.mp4",
     rating: 4.6,
     reviews: 42,
     sold: 145,
@@ -439,6 +443,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/89a2606a-914c-41af-a90b-cb059a973e88.jpg",
       "https://cf.cjdropshipping.com/6aea9a2e-1af9-4328-81df-452dfab88809.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/00d4ec25767e71f0bf934531948c0102/7c2f6689579e494d8c5d5fcbb5d760e5-88f6f5f52c4cd9ec409f3cb090586301-ld.mp4",
     rating: 4.4,
     reviews: 8,
     sold: 44,
@@ -585,6 +590,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/c47c69a9-dfa5-4e1a-bd27-d9dd70e0dc81.jpg",
       "https://oss-cf.cjdropshipping.com/product/2026/03/03/05/a84633cd-409f-460d-9dc0-8f503d663aa0.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/b4618d10e3d371edbfc50674a2ce0102/55534107cfb14410a6973d7c4365ef52-8d1d4b89b122f5f93699b2cad6299f6f-ld.mp4",
     rating: 4.5,
     reviews: 18,
     sold: 91,
@@ -617,6 +623,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/7258ad26-16d9-46ad-9d50-0ccbe273521e.jpg",
       "https://cf.cjdropshipping.com/2053/19473445265880.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/705d24f4179371ef98d75017f0e90102/39e9fdd6ac994c73ad70ef45af754825-d722bb236307521260bd269c9ebf0eb5-ld.mp4",
     rating: 4.6,
     reviews: 6,
     sold: 36,
@@ -1151,6 +1158,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2023/11/20/03/b64f2475-d658-4298-8cee-46ea9db8b5a1.jpg",
       "https://oss-cf.cjdropshipping.com/product/2023/11/20/03/78fd31ab-99d4-4d93-827d-7700ea7d0277.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/806bfba021ba71ef96956733a78e0102/cce11ceabe964ecba0e0a3a49849573a-950c940af8377415df175222ba1d24d9-ld.mp4",
     rating: 4.8,
     reviews: 23,
     sold: 134,
@@ -1219,6 +1227,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2024/04/26/05/2f023096-c2c8-4ca6-9d77-2223a6dd08e5.jpg",
       "https://oss-cf.cjdropshipping.com/product/2024/05/30/07/5c23cf80-d4cb-4695-90a3-d8c0eafab06d.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/f09c42135dd371efbfa65017e1f80102/2d28e63402144c78aa7a9364d397adb8-f288c7420dd8ea0748c7a48da9914d83-ld.mp4",
     rating: 4.5,
     reviews: 13,
     sold: 41,
@@ -1439,6 +1448,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/quick/product/cc898fb0-d0c8-4a33-9dfe-3e4ba07197c4.jpg",
       "https://cf.cjdropshipping.com/quick/product/066a3ad0-d168-4720-9a4b-e8f807ce5661.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/a010934e52d471ef927d5017f0f80102/f1c8d8626b6f48cdb18eb406acef7d2d-f69c685fc161de6c664d610f293e01e0-ld.mp4",
     rating: 4.4,
     reviews: 28,
     sold: 88,
@@ -1475,6 +1485,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/7d9180db-b820-49e9-abd1-603ea4c5d2f1.jpg",
       "https://cf.cjdropshipping.com/c7fcd2fe-5b6d-41ce-9940-e3d7443bf8c5.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/4ac3b3075f5448ccb28835b5f33695bc/c0eefe261b854725800c56ec2dc6d3b4-713f55c5f986eca02f6140cbfb49ddb6-ld.mp4",
     rating: 4.5,
     reviews: 23,
     sold: 98,
@@ -1509,6 +1520,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2026/04/05/02/0c5ca0ff-0ff7-4357-8ca7-0e1682aec6f9.jpg",
       "https://cf.cjdropshipping.com/20200108/377343376763.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/30320ec37c9a71efbc396733a78e0102/9fe8cd8c50d2407185dc80500984928e-c1c196c67ac63273647ce861eb691788-ld.mp4",
     rating: 4.6,
     reviews: 18,
     sold: 65,
@@ -1583,6 +1595,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/2054/256297125235.jpg",
       "https://cf.cjdropshipping.com/2054/58333869162168.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/106aa1344a7871f080276732b68f0102/dabd0ca9eff944dc941647ea055c3775-6393b0e38c154b4e60b8ad68b3b3788c-ld.mp4",
     rating: 4.6,
     reviews: 31,
     sold: 123,
@@ -1621,6 +1634,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2024/03/21/07/f7838350-1228-4a37-a4c8-49098bd23e68.jpg",
       "https://oss-cf.cjdropshipping.com/product/2024/05/11/10/db807c18-2a53-4ee5-aeff-c5921852777f_trans.jpeg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/80a58de4e76771eebfe95017e1e90102/12b4dc743e3541128d92dc73e4f1d1d2-0b52d80f82e957b0b02ac53cda72679b-ld.mp4",
     rating: 4.4,
     reviews: 31,
     sold: 129,
@@ -1688,6 +1702,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/fb243b47-2d8d-48ed-9184-15dc36bd7c71.png",
       "https://cf.cjdropshipping.com/3078165f-845c-47ab-962f-a76255f5ba70.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/10db2d25c97a71efa0aa4531959c0102/fc93246de8fc48e8ba70bb6c473b13a2-98a7cc1590a9a1546554f0a1f28f1174-ld.mp4",
     rating: 4.7,
     reviews: 37,
     sold: 153,
@@ -1765,6 +1780,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/381b6cf1-02f1-4e46-8a34-571952539ed5_trans.jpeg",
       "https://cf.cjdropshipping.com/cdf29749-a0ec-4b74-a793-4673b885773f_trans.jpeg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/98d88f004afb71ee80145017e1f80102/0fbda9b887c7464785699e082bee1e6e-8e5c8be253dd8b79ee8fcdf2c4bcfb01-ld.mp4",
     rating: 4.8,
     reviews: 26,
     sold: 116,
@@ -1872,6 +1888,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/95875b84-03cc-4eaa-b088-9dc302296827.jpg",
       "https://cf.cjdropshipping.com/33f70b02-9df7-4596-8624-88116b86a553.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/d0681ac66f4971ef80316733a68f0102/f553a38a565d4b22b71aa9f4e3539938-32fb5158d8608d97f731d6e043dc3ed3-ld.mp4",
     rating: 4.3,
     reviews: 17,
     sold: 65,
@@ -1912,6 +1929,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2025/03/27/15/ba4a7155-44d5-4b44-b8d0-5681c1ea5d42.jpg",
       "https://cf.cjdropshipping.com/7c716b47-6fca-4cb0-87bd-7ed6267c72e8.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/f094eca48cfc71efad6d0764b3ec0102/53acaa93f41446b78020a87ebd2190c5-745c5c7cc576ca4293e990e987098805-ld.mp4",
     rating: 4.7,
     reviews: 21,
     sold: 77,
@@ -1945,6 +1963,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/15843744/1885331357680.jpg",
       "https://oss-cf.cjdropshipping.com/product/2024/11/27/08/183c1ce1-c778-4b19-ba77-69d842a72b1c.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/e0a945e9b9d14d589c1075f7fbf9a6e9/09db5afef0624c5a8708b25d16ff4ef3-9071f97f86688cf41d8c7b6d2bfd15c2-ld.mp4",
     rating: 4.4,
     reviews: 12,
     sold: 55,
@@ -2009,6 +2028,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/20190719/1425869946630.jpg",
       "https://cf.cjdropshipping.com/20200414/1202491041614.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/8f147fb04e1b45c5a35638a9438cc931/72d639ad412342a7a72fa496f34e4b45-2e7d4fd08ef44e621a306ac2dc1a3b28-ld.mp4",
     rating: 4.5,
     reviews: 31,
     sold: 118,
@@ -2080,6 +2100,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2023/11/13/13/1f27facb-6c39-49bf-8ac8-c86fecd26fe8.jpg",
       "https://cf.cjdropshipping.com/5a93019d-a453-4c61-8fbe-d0a5b3ace01e.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/9e183f1069aa71ee832c0675b3ed0102/7fe88aaddddd4dcda7adbe2c74ec390b-d197b0c44ca69ebed1f015c550a26874-ld.mp4",
     rating: 4.7,
     reviews: 28,
     sold: 89,
@@ -2138,6 +2159,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2024/03/05/12/94ef9dbb-7e4f-42b4-ba76-cbf6dcb5f956.jpg",
       "https://cf.cjdropshipping.com/quick/product/3ba38d03-5a89-4380-a876-b35af28f29c5.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/d03cb7a8e03a71eebfa44531959d0102/13b8b635e2514011ad4d6bb9e55ce814-b09ed22d39f9c4ff70f79391c6fe2d86-ld.mp4",
     rating: 4.7,
     reviews: 13,
     sold: 94,
@@ -2235,6 +2257,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/cbfd4701-07ca-46b8-aa29-0d08e13a4450_trans.jpeg",
       "https://oss-cf.cjdropshipping.com/product/2024/04/08/03/602c4fdf-5956-4ac9-af4c-9641191c45b2_trans.jpeg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/e06116c1f7a871eea4d16723b78e0102/9fb7b058ac3b421da92d9a21dc5acc31-6f70e00a4eaf32b0ab9a1044ab7047e4-ld.mp4",
     rating: 4.7,
     reviews: 18,
     sold: 64,
@@ -2270,6 +2293,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/20200619/494576766977.png",
       "https://cf.cjdropshipping.com/203102/2202004800399.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/ae3d06c231194f06ac74115f15565396/df49baf4f1974092a4c31a9dbd0c7edb-4e2317892463bf48b8378de87168df53-ld.mp4",
     rating: 4.5,
     reviews: 19,
     sold: 67,
@@ -2570,6 +2594,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/192fc9fa-4986-4bbc-adc6-1409994021a0.jpg",
       "https://cf.cjdropshipping.com/b5a4f9d2-a87a-43ee-800c-bcc0c55dde7c.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/d1c15ffee3d64893bca3f0b88d29c5b8/188b44e683bb4a7bbe6bb9335a64b198-16350b606d87e1567dc3daa186bb58da-ld.mp4",
     rating: 4.3,
     reviews: 8,
     sold: 52,
@@ -2605,6 +2630,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2023/10/30/11/fd642a84-8389-4d9b-9e6b-6b56cc27dde8.jpg",
       "https://oss-cf.cjdropshipping.com/product/2023/10/30/11/c5baa6fa-552c-4701-a9b0-ca5f71cc6aea.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/f550d4608dbb71ee87870764a0ec0102/bd2b827c525849488eb7d9d984d0df9a-9729f5d53fada9be0b5e013764b28752-ld.mp4",
     rating: 4.5,
     reviews: 30,
     sold: 103,
@@ -2640,6 +2666,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/20210113/1531743095779.jpg",
       "https://cf.cjdropshipping.com/20210113/4465935778203.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/c0db3b2b73104a06b5ab8fa52b9f08b8/c2c8523462f1420dbec9c088f1fea883-73610e59304d68c74eadd16b977150e1-ld.mp4",
     rating: 4.5,
     reviews: 9,
     sold: 56,
@@ -2793,6 +2820,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/82c2f1a7-986f-440a-b6dd-cb9c924798d4.jpg",
       "https://oss-cf.cjdropshipping.com/product/2026/05/27/05/24670565-51c6-4643-ad8d-acc812729d77.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/909773d6e81d71ef99506733a78e0102/433e8a73b55549eba0142b87a920ac8e-f51d74889712ba6e21829aa9e51053a9-ld.mp4",
     rating: 4.7,
     reviews: 21,
     sold: 118,
@@ -2833,6 +2861,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2025/11/28/01/bf322e6f-1a94-4444-b36f-38ef51712b49.jpg",
       "https://cf.cjdropshipping.com/quick/product/5b5ac9fc-c559-4373-909e-535c79a3c3fb.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/304e953f19b171efbf9f5017f0f80102/15d6f3ee2a684b46b5283ae722822248-cb4c1342436339007848c87341706ec4-ld.mp4",
     rating: 4.3,
     reviews: 17,
     sold: 69,
@@ -2873,6 +2902,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2026/02/02/06/6aa5cf3b-2e12-4149-a251-a0c07dcf0ab5.jpg",
       "https://oss-cf.cjdropshipping.com/product/2025/07/08/08/e4856533-8637-42ee-83db-34b73130d1fa.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/4083005d39f971f0a9436723b78e0102/383400b364be436c81e4bde480b58b0b-8057dbbff7df1c7e815cf522e3ff62ff-ld.mp4",
     rating: 4.4,
     reviews: 13,
     sold: 102,
@@ -2906,6 +2936,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/29be4bc9-5cfb-4200-bdca-ba7ccd8ef6c8.jpg",
       "https://cf.cjdropshipping.com/20190605/1537340952833.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/0317dcc805f942af8e60e87bbdcb37bd/09a73b8ef16944e887a1596f9f3e40d0-b37a7b0ed6b7df8f24fbc1fca4106d6d-ld.mp4",
     rating: 4.3,
     reviews: 22,
     sold: 76,
@@ -2946,6 +2977,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/8ed22516-fde5-4d20-9772-0b35fc127d08.jpg",
       "https://oss-cf.cjdropshipping.com/product/2024/05/29/02/454a941a-a9bd-453b-b4c2-1b36aee9b70f.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/1062bdb327bd71ef80126723b78e0102/a8a178a99f29401db7ffa8dfe3d09379-b792519666746e73e661a4c195cd311d-ld.mp4",
     rating: 4.7,
     reviews: 47,
     sold: 189,
@@ -3048,6 +3080,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/20210115/1993313677965.jpg",
       "https://cf.cjdropshipping.com/20210115/905455678217.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/0567f360db1042fd833261a6f4e40cc5/4e6ced6f07bb4cdab9c73570106fdeab-be0c5c93be7f60fc18ab4576fe704403-ld.mp4",
     rating: 4.7,
     reviews: 20,
     sold: 62,
@@ -3182,6 +3215,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/ea601a08-ebd9-4c6c-a9f9-686bff3d8cba.jpg",
       "https://cf.cjdropshipping.com/93f741a9-aba0-4ffe-a257-965f5c5c0be8.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/20e46cfc7c7471efbfd04531858c0102/b8c5bc5a5071483e89c6ca121c203664-2e20e24e19094a1c27518f519fe42c69-ld.mp4",
     rating: 4.4,
     reviews: 6,
     sold: 39,
@@ -3222,6 +3256,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/fc55860a-fa8d-4ce5-a763-c5de76d7d15a.jpg",
       "https://cf.cjdropshipping.com/add35bcf-ce28-4252-bf82-bf2d9ca291ab.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/205224f4a70971ef87785017f0e90102/6d2d8b766ee0417ab1c080167c38d944-29d61a3320e61dd5a6162c57eef6bf4a-ld.mp4",
     rating: 4.3,
     reviews: 13,
     sold: 49,
@@ -3257,6 +3292,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/1620789926655.jpg",
       "https://cf.cjdropshipping.com/1619178397201.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/2805c0b97eea474b9582bca28b73767e/301a7df5f08d4b348f27f4541c4eee4d-391526aba82c42b5560b78fffe289be5-ld.mp4",
     rating: 4.4,
     reviews: 16,
     sold: 52,
@@ -3288,6 +3324,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/20200601/2733939724891.jpg",
       "https://cf.cjdropshipping.com/20200601/396728856076.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/eb55d5e817f243d49bbe324e973ad5ed/e7a4a4ece2c6448ea122d8900a31ba21-b68034d4f9f995a93e7f577e6843a8a2-ld.mp4",
     rating: 4.7,
     reviews: 6,
     sold: 39,
@@ -3328,6 +3365,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/quick/product/f40ab7d7-5f07-4646-9cf5-2355d2d06c25.jpg",
       "https://cf.cjdropshipping.com/77d35a2c-dd6a-4d5f-9e33-561fd3f4d142.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/37713790ae6571ed919d0674a2ce0102/098ea78a3d204306a01513a52586da1a-bcf285bd98299f1362a56e1c4a21be4b-ld.mp4",
     rating: 4.8,
     reviews: 7,
     sold: 43,
@@ -3368,6 +3406,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/20200222/1780452202850.PNG",
       "https://cf.cjdropshipping.com/b644c02d-170c-4b88-a6be-a8e27d62201c.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/50c83d5a719c71efbfc16733a78e0102/faacb61e750f42198d7f29f2f4d01c23-be1c7753869ddde9bf6cf0f8c1c53cd8-ld.mp4",
     rating: 4.6,
     reviews: 8,
     sold: 44,
@@ -3443,6 +3482,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/763237f6-f84f-4756-9bbd-92f5eab3daab.png",
       "https://cf.cjdropshipping.com/1612605320201.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/cb3571fa55594945b80023ea83d64302/c3d07452530e44ba80da548edc7185c0-cfbd35edb9d32b3e32c68b070540a29d-ld.mp4",
     rating: 4.6,
     reviews: 17,
     sold: 60,
@@ -3520,6 +3560,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/a0b1b617-886c-40b1-8fc6-9ed03ab22614.jpg",
       "https://cf.cjdropshipping.com/4e7f72df-5bf9-435c-b605-1c1d12466ce6.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/fca41f8029c371ee810a6733a68f0102/c0c2e4d8380b4e088c96167f0e5e14da-6004f2aa07bd04d9d0d5f48548c5f52a-ld.mp4",
     rating: 4.7,
     reviews: 6,
     sold: 42,
@@ -3777,6 +3818,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/203107/1345340954843.png",
       "https://cf.cjdropshipping.com/203005/1681820682247.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/50457005860f71ef80414531958c0102/f8a78e7a3bcd481abf55790b47de953b-8f5450faa3e87df98f1c12642756f919-ld.mp4",
     rating: 4.4,
     reviews: 16,
     sold: 54,
@@ -3813,6 +3855,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/436dc743-da49-4841-8dde-2539d9b48159.jpg",
       "https://cf.cjdropshipping.com/9bf5652e-b481-4702-8076-11c1bc01c101.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/4038466bbd1d71ef862f4531958d0102/dd270d1907a54146b556682ddf148fb7-fb300b89fe602fa79104c4be871fc54d-ld.mp4",
     rating: 4.4,
     reviews: 8,
     sold: 44,
@@ -3982,6 +4025,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/1620715713632.jpg",
       "https://cf.cjdropshipping.com/c179a293-c7db-47dd-b67b-74b0b6f081cc.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/70eb4e6c700a71efbff24531948c0102/b02d466e2c174e6894ffaf14bd3ab7db-b4cbfd63c838227be90c14ff3249ef2c-ld.mp4",
     rating: 4.4,
     reviews: 6,
     sold: 38,
@@ -4057,6 +4101,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/ae1fad57-a052-4f1f-b14d-e945ddabc8c2.jpg",
       "https://cf.cjdropshipping.com/417f773f-2b75-443b-aad3-d6b9cb92a250.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/ba82d6c9a40d43da913016f9d77d2b70/30e80fd8a17b40308f7b0ca005162ffd-c5c5ea47c60a91b4ad3ccccd7d42c532-ld.mp4",
     rating: 4.5,
     reviews: 6,
     sold: 41,
@@ -4608,6 +4653,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/15139872/305513534996.jpg",
       "https://oss-cf.cjdropshipping.com/product/2024/06/07/07/2763a6e0-bb8f-4db5-8f4a-77df2d7ed3f1.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/004f156f7aed71ef801e4531958c0102/0081228fb4bb4f5c97b8643613bee534-ddb21288a6fb8c8858d12a6b02ed8b2a-ld.mp4",
     rating: 4.6,
     reviews: 23,
     sold: 127,
@@ -4670,6 +4716,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2023/12/15/02/170af882-62d0-4130-a5f4-5016edeab119_trans.jpeg",
       "https://oss-cf.cjdropshipping.com/product/2024/04/01/05/6de0dea8-d7a8-4c9f-ad03-b37f11e1b761.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/a0d23894b99d71ee8e6f6732b68e0102/5c4242af746346d2b22df8f7a630008a-c074113c5efafd116fcf09a5e6b02f0c-ld.mp4",
     rating: 4.8,
     reviews: 13,
     sold: 84,
@@ -4707,6 +4754,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/20190925/2503904262599.jpg",
       "https://cf.cjdropshipping.com/203105/4809566337348.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/279ae8880d8f48ecaa0d3e235fb8ce87/7103cfad6ed043bdb22af19ba0eb6ae6-dae0b4c9d31ec66d4e9b89e59fba4f22-ld.mp4",
     rating: 4.3,
     reviews: 7,
     sold: 65,
@@ -4747,6 +4795,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/5dcb2f4a-9129-4fe7-944a-b2d242638fde.jpg",
       "https://cf.cjdropshipping.com/732807bd-2193-4aa8-9582-1dcf1a518296.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/8312bfe0ebb771edbfbe0764a3fc0102/1480bb66c2324a57895f8c1330f616a1-a894b5d0f08d2ba1a7e68a6703d7ff90-ld.mp4",
     rating: 4.3,
     reviews: 13,
     sold: 74,
@@ -4816,6 +4865,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/17078688/2402140633240324800.jpg",
       "https://oss-cf.cjdropshipping.com/product/2024/03/07/10/24595add-719f-4463-b807-47e535253b57.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/b023b427d06771ee82080675b3ed0102/257cd771b0074f3b8eefe642de125ca0-7b4fac0e3e87c7903094e3f6c8717d85-ld.mp4",
     rating: 4.5,
     reviews: 35,
     sold: 108,
@@ -4847,6 +4897,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/1612785973189.png",
       "https://cf.cjdropshipping.com/1612785973177.png"
       ],
+    video: "https://download-only-api.cjdropshipping.com/cba862f836694e99b80367a4331cb52d/b618a8e8754a47a7a7719d665dddb348-292a53293862f3c7ac3a1133b5750c82-ld.mp4",
     rating: 4.4,
     reviews: 25,
     sold: 85,
@@ -4887,6 +4938,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/6346a882-ed86-4ecd-bd0f-8883b4753c9c.jpg",
       "https://cf.cjdropshipping.com/78510815-3928-4e92-afbb-514cec034f15.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/4038435fb78c71efb9355017f0e80102/fbf5513c907e419dab0710807d84594c-d08803c314367590ee93efd70f4883cd-ld.mp4",
     rating: 4.9,
     reviews: 47,
     sold: 164,
@@ -4967,6 +5019,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/e88951a4-e6d4-4ab3-860c-847f6814b2b2.jpg",
       "https://cf.cjdropshipping.com/1619059110098.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/80fbcdad134a71efad1e5017f0f80102/d567de2bb30c40428cd4f3a9b2b24cf1-5b09d994c0ddaba6d49e1a29c61b3a55-ld.mp4",
     rating: 4.7,
     reviews: 44,
     sold: 138,
@@ -5002,6 +5055,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/2042/2112661510295.png",
       "https://cf.cjdropshipping.com/203208/130282556579.jpg"
       ],
+    video: "https://download-only-api.cjdropshipping.com/0c73e5bddb5c4723992e3693c5622cf7/8821a64dd0bb4a59a5c847f05c1efba6-79d6ba150ae896ed32ee9cf595e55325-ld.mp4",
     rating: 4.4,
     reviews: 33,
     sold: 126,

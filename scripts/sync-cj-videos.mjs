@@ -133,7 +133,7 @@ for (let i = 0; i < slugs.length; i++) {
     continue;
   }
 
-  source = replaceProductBlock(source, slug, patched);
+  source = replaceProductBlock(source, slug, () => patched);
   if (video) {
     added++;
     console.log("VIDEO ✓");

@@ -3,9 +3,10 @@
  * Usage: node scripts/record-single-social-video.mjs <slug>
  */
 import { chromium } from "playwright";
-import { readFileSync, mkdirSync, readdirSync, unlinkSync } from "fs";
+import { readFileSync, mkdirSync, readdirSync, unlinkSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import { downloadCjVideo, cjVideoPath } from "./lib/cj-video-ad.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const slug = process.argv[2];
@@ -28,8 +29,24 @@ if (!ad) {
 
 const SLIDE_MS = 2800;
 const CJ_PRODUCT_SLIDE_MS = 6000;
-const RECORD_MS =
-  (ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS) * 4 + 600;
+
+async function localCjVideoUrl() {
+  if (!ad.video?.startsWith("http")) return null;
+  const dest = cjVideoPath(ad.slug, ad.file);
+  if (!existsSync(dest)) {
+    try {
+      await downloadCjVideo(ad.video, dest);
+      console.log("Downloaded CJ video:", dest);
+    } catch (err) {
+      console.warn(`CJ video skip ${ad.slug}:`, err.message);
+      return null;
+    }
+  }
+  return pathToFileURL(dest).href;
+}
+
+const localVideo = await localCjVideoUrl();
+const RECORD_MS = (localVideo ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS) * 4 + 600;
 
 const browser = await chromium.launch();
 const context = await browser.newContext({
@@ -45,10 +62,10 @@ const qs = new URLSearchParams({
   image: ad.image,
   badge: ad.badge,
   perk: ad.perk,
-  slideMs: String(ad.video?.startsWith("http") ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS),
+  slideMs: String(localVideo ? CJ_PRODUCT_SLIDE_MS : SLIDE_MS),
 });
 if (ad.compare) qs.set("compare", ad.compare);
-if (ad.video?.startsWith("http")) qs.set("video", ad.video);
+if (localVideo) qs.set("video", localVideo);
 
 const page = await context.newPage();
 await page.goto(`${pathToFileURL(template).href}?${qs}`, {
