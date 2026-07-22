@@ -1,0 +1,863 @@
+{
+  "generatedAt": "2026-07-21T05:37:37.167Z",
+  "rows": [
+    {
+      "slug": "orthopedic-dog-bed",
+      "imageCount": 15,
+      "hasLifestyleHint": true,
+      "status": "ok"
+    },
+    {
+      "slug": "no-pull-dog-harness",
+      "imageCount": 10,
+      "hasLifestyleHint": true,
+      "status": "ok"
+    },
+    {
+      "slug": "pet-water-fountain",
+      "imageCount": 11,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-hair-remover-roller",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "slow-feeder-dog-bowl",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-grooming-brush-set",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "retractable-dog-leash",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-chew-toy-durable",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cat-scratching-post",
+      "imageCount": 12,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-nail-clipper",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-cooling-mat",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "interactive-cat-toy",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-seat-belt-harness",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-deshedding-tool",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-paw-cleaner-cup",
+      "imageCount": 14,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-poop-bag-dispenser",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cat-litter-mat",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-food-storage-container",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "portable-pet-carrier",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "closet-organizer-6-shelf",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "under-bed-storage-bags",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "under-sink-organizer",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "shower-caddy-organizer",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "spice-rack-organizer",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "foldable-laundry-hamper",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cable-clips-adhesive",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "garbage-bag-holder",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "adhesive-wall-hooks",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "over-door-hook-rack",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "kitchen-sink-organizer",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "led-motion-night-light",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "vacuum-storage-bags",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cordless-cabinet-light",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "sleep-eye-mask",
+      "imageCount": 1,
+      "hasLifestyleHint": false,
+      "status": "needs_more_photos"
+    },
+    {
+      "slug": "neck-shoulder-massager",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "heating-pad-electric",
+      "imageCount": 14,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "compression-socks-pair",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "yoga-mat-thick",
+      "imageCount": 14,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "back-posture-trainer",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "hand-grip-strengthener",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "ice-roller-face",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "percussion-massage-gun",
+      "imageCount": 11,
+      "hasLifestyleHint": true,
+      "status": "ok"
+    },
+    {
+      "slug": "posture-corrector-brace",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "essential-oil-diffuser",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "yoga-resistance-bands",
+      "imageCount": 14,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "ergonomic-laptop-stand",
+      "imageCount": 11,
+      "hasLifestyleHint": true,
+      "status": "ok"
+    },
+    {
+      "slug": "usb-c-hub-7in1",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "wireless-earbuds-pro",
+      "imageCount": 11,
+      "hasLifestyleHint": true,
+      "status": "ok"
+    },
+    {
+      "slug": "mini-bluetooth-speaker",
+      "imageCount": 13,
+      "hasLifestyleHint": true,
+      "status": "ok"
+    },
+    {
+      "slug": "magsafe-car-mount",
+      "imageCount": 13,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "adjustable-phone-stand",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "power-bank-10000",
+      "imageCount": 11,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "usb-c-charging-cable",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "wireless-charger-pad",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "ring-light-phone",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "gaming-mouse-pad-large",
+      "imageCount": 1,
+      "hasLifestyleHint": false,
+      "status": "needs_more_photos"
+    },
+    {
+      "slug": "hdmi-cable-4k",
+      "imageCount": 13,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "sd-card-reader-usb",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "car-charger-usb-c",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "smartwatch-band-silicone",
+      "imageCount": 3,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cable-management-box",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "tablet-stand-adjustable",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cat-window-perch",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "ice-cube-tray-silicone",
+      "imageCount": 12,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "door-draft-stopper",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "over-door-shoe-organizer",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "silicone-food-storage-bags",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "meditation-cushion",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "jade-roller-gua-sha",
+      "imageCount": 12,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "muscle-roller-stick",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "webcam-cover-slide",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "monitor-light-bar",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "silicone-stove-gap-cover",
+      "imageCount": 3,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "sink-splash-guard-mat",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "handheld-bag-sealer",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "kitchen-drawer-organizer",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "lazy-susan-turntable",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "fridge-produce-containers",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "silicone-dish-drying-mat",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pot-lid-organizer-rack",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "automatic-soap-dispenser",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cat-feather-teaser",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-grooming-gloves",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-bandana-set",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "portable-pet-water-bottle",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-stainless-bowl-set",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-dental-chew-rope",
+      "imageCount": 14,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-safety-light-clip",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-comb-flea",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-waste-bag-refills",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-treat-pouch",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "scalp-massager-brush",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "screen-cleaner-kit",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "massage-ball-set",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "ear-plugs-sleep",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "digital-kitchen-scale",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "resistance-loop-bands",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "refrigerator-organizer-bins",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "bluetooth-item-finder",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cat-scratching-mat",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "jump-rope-weighted",
+      "imageCount": 12,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cooling-towel-sports",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "dog-squeaky-plush-toy",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cat-tunnel-toy",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-bowl-mat-silicone",
+      "imageCount": 11,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "kitchen-sink-sponge-holder",
+      "imageCount": 11,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-toothbrush-kit",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cat-laser-toy",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "automatic-pet-feeder",
+      "imageCount": 11,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-stairs-steps",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pet-nail-grinder",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "over-sink-dish-rack",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "weighted-sleep-mask",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "portable-blender-bottle",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "wireless-mouse-silent",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "phone-ring-holder",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "bed-sheet-organizer",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "mason-jar-storage-lids",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "collapsible-colander",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "drawer-divider-expandable",
+      "imageCount": 9,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "acupressure-mat-pillow",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "bluetooth-keyboard-mini",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "silicone-utensil-rest",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "foam-roller-recovery",
+      "imageCount": 11,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "balance-pad-foam",
+      "imageCount": 14,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "laptop-sleeve-13",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "portable-ssd-enclosure",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "ergonomic-keyboard-wrist-rest",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "laptop-cooling-pad",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "capacitive-stylus-pen",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "bluetooth-usb-adapter-pc",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "phone-tablet-stand",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "usb-hub-4port",
+      "imageCount": 5,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "metal-phone-stand-desk",
+      "imageCount": 7,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "bamboo-cutting-board",
+      "imageCount": 12,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "silicone-oven-mitts",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "cascading-clothes-hangers",
+      "imageCount": 8,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "wall-toothbrush-holder",
+      "imageCount": 11,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "countertop-dish-drying-rack",
+      "imageCount": 6,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "ab-roller-wheel",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "pilates-ring",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "time-marker-water-bottle",
+      "imageCount": 15,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    },
+    {
+      "slug": "yoga-stretching-strap",
+      "imageCount": 10,
+      "hasLifestyleHint": false,
+      "status": "review_lifestyle"
+    }
+  ]
+}

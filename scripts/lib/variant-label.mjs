@@ -15,6 +15,8 @@ const SMALL_WORDS = new Set(["a", "an", "the", "of", "and", "or", "for", "to", "
 /** CJ junk → shopper English */
 export const VALUE_ALIASES = {
   ordinary: "Standard",
+  "ordinary paragraph": "Standard",
+  "combination paragraph": "Bundle",
   "to enhance": "Enhanced",
   "without shell": "No case",
   "with shell": "With case",
@@ -23,6 +25,7 @@ export const VALUE_ALIASES = {
   "as picture": "As shown",
   "as shown": "As shown",
   default: "Standard",
+  single: "1 Pack",
 };
 
 export function looksLikePackValue(value) {
@@ -38,6 +41,7 @@ export function normalizeOptionValue(raw) {
   let s = String(raw ?? "")
     .trim()
     .replace(/[.!?]+$/g, "")
+    .replace(/([a-z])(\d)/gi, "$1 $2")
     .replace(/\s+/g, " ");
   if (!s) return s;
 
@@ -45,6 +49,7 @@ export function normalizeOptionValue(raw) {
   if (alias) return alias;
 
   if (/^(US|EU|UK|AU|JP)$/i.test(s)) return s.toUpperCase();
+  if (/^[a-z]$/i.test(s)) return `Style ${s.toUpperCase()}`;
   if (/^usb$/i.test(s)) return "USB";
   if (/^type-?c$/i.test(s)) return "USB-C";
   if (/^hdmi$/i.test(s)) return "HDMI";

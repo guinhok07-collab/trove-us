@@ -669,5 +669,137 @@
       "Multiple cord exit slots",
       "Fits most surge protectors"
     ]
+  },
+  "dog-raincoat-poncho": {
+    "name": "Waterproof Dog Raincoat Poncho",
+    "description": "Keeps dogs dry on wet walks without bulky jackets.",
+    "longDescription": "Keep walks going when the weather turns with a lightweight waterproof poncho that covers the back and chest without restricting movement. Adjustable straps fit growing dogs and reflective accents help with dusk visibility. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Waterproof shell",
+      "Adjustable straps",
+      "Easy on-off",
+      "Reflective trim"
+    ]
+  },
+  "pet-drying-towel-bag": {
+    "name": "Absorbent Pet Drying Robe",
+    "description": "Wraps wet dogs and cats after baths for faster drying.",
+    "longDescription": "After baths or rainy walks, wrap your pet in an absorbent microfiber robe that soaks up water faster than a regular towel. Soft fabric is gentle on skin and machine washable for weekly use. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Super absorbent",
+      "Soft microfiber",
+      "Adjustable fit",
+      "Machine washable"
+    ]
+  },
+  "cat-treat-dispenser-toy": {
+    "name": "Interactive Cat Treat Puzzle Toy",
+    "description": "Slow-release treat ball keeps cats busy and moving.",
+    "longDescription": "Turn snack time into play with a treat ball that releases kibble as cats bat and chase it. Adjustable openings slow eating and burn energy indoors. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Treat dispensing",
+      "BPA-free plastic",
+      "Adjustable difficulty",
+      "Indoor play"
+    ]
+  },
+  "kitchen-sink-strainer-plug": {
+    "name": "Kitchen Sink Drain Strainer",
+    "description": "Catches food scraps so kitchen drains stay clear.",
+    "longDescription": "Stop food scraps from clogging the drain with a wide-rim stainless strainer that lifts out for quick rinsing. A simple daily fix for busy kitchens. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Stainless mesh",
+      "Wide rim fit",
+      "Easy to clean",
+      "Durable"
+    ]
+  },
+  "garlic-press-mincer": {
+    "name": "Stainless Garlic Press",
+    "description": "Crush garlic cloves in one squeeze — no sticky knives.",
+    "longDescription": "Crush fresh garlic in one squeeze without sticky knife boards. Built-in cleaner pops residue free and the stainless body rinses clean. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Stainless build",
+      "Easy squeeze",
+      "Built-in cleaner",
+      "Dishwasher safe"
+    ]
+  },
+  "egg-separator-tool": {
+    "name": "Egg Yolk Separator",
+    "description": "Separates yolks from whites for baking without the mess.",
+    "longDescription": "Separate yolks from whites for baking with a food-safe tool that sits over a bowl. Less mess than shell juggling and easy to rinse. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Food-grade ceramic",
+      "Fits bowls",
+      "Easy clean",
+      "Compact"
+    ]
+  },
+  "laundry-lint-remover": {
+    "name": "Fabric Lint Remover Shaver",
+    "description": "Removes pills and fuzz from sweaters, couches, and coats.",
+    "longDescription": "Refresh sweaters and upholstery by shaving pills and lint into the catcher tray. USB rechargeable so you are not hunting batteries. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "USB rechargeable",
+      "Adjustable blade",
+      "Lint catcher",
+      "Travel size"
+    ]
+  },
+  "ankle-weights-pair": {
+    "name": "Adjustable Ankle Strap Pair",
+    "description": "Cable-machine ankle straps for glute and leg workouts at home.",
+    "longDescription": "Tone legs and glutes on walks or mat workouts with padded ankle weights that strap securely. Pair included for balanced training. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "D-ring attachment",
+      "Adjustable fit",
+      "Pair included",
+      "Gym & home"
+    ]
+  },
+  "pill-organizer-weekly": {
+    "name": "Weekly Pill Organizer",
+    "description": "Seven-day compartments keep vitamins and meds sorted.",
+    "longDescription": "Sort vitamins and medications into labeled day compartments so morning and night doses stay clear. Compact enough for travel bags. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "7-day boxes",
+      "Travel friendly",
+      "Clear windows",
+      "Durable case"
+    ]
+  },
+  "reusable-gel-ice-pack": {
+    "name": "Reusable Hot & Cold Gel Pack",
+    "description": "Soothes sore muscles — freeze for cold or warm for heat therapy.",
+    "longDescription": "Ease sore muscles with a flexible gel pack you freeze for cold therapy or warm for heat. Soft cover stays comfortable against skin. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Hot & cold use",
+      "Flexible gel",
+      "Soft cover",
+      "Reusable"
+    ]
+  },
+  "phone-tripod-flexible": {
+    "name": "Bluetooth Selfie Stick Tripod",
+    "description": "Extendable selfie stick with tripod base for photos and live video.",
+    "longDescription": "Wrap flexible legs around poles, bed frames, or desk edges for hands-free photos and video calls. Universal clamp fits most phones with cases. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Bluetooth shutter",
+      "Tripod base",
+      "Extendable pole",
+      "Phone clamp"
+    ]
+  },
+  "desk-mouse-pad-extended": {
+    "name": "Extended Desk Mouse Pad",
+    "description": "Wide mat covers keyboard and mouse for a cleaner desk setup.",
+    "longDescription": "Cover your keyboard and mouse zone with a stitched desk mat that stays put and cleans easily. Smooth tracking surface for daily work. Ships from our US warehouse in 3–5 business days.",
+    "features": [
+      "Large surface",
+      "Non-slip base",
+      "Stitched edges",
+      "Smooth tracking"
+    ]
   }
 }
